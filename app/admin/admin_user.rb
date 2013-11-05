@@ -1,9 +1,6 @@
 ActiveAdmin.register AdminUser do
   config.comments = false
 
-  #todo fazer de novo a part d criacao d  gem do projeto
-  #todo fazer de novo a parte de rspec do projeto
-
   filter :email
 
   index do
