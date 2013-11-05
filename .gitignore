@@ -13,9 +13,16 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-/config/database.yml
-/public/assets
 
 #IDE
 .idea
 *.ids
+
+/public/system
+/public/assets/images/
+
+.DS_Store
+/config/database.yml
+/config/initializers/paperclip_specific.rb
+
+/public/assets
