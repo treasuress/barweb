@@ -42,12 +42,10 @@
 
           <div class="principal-destaques">
 
-            <!-- todo: colocar a porcaria do link pra pagina do bar -->
-            <a href="<%= home_bar_path %>">
+            <a href="<%= home_bar_path(destaque.name) %>">
               <%= image_tag destaque.main_image.url(:thumb) %>
               <h5><%= destaque.name %></h5>
             </a>
-
 
           </div>
 
