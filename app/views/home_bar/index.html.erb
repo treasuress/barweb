@@ -1,0 +1,26 @@
+<!-- todo: colocar forma de voltar pra pagina anterior - talvez menu lateral ou breadcrumb em cima -->
+
+<section class="home-bar">
+
+  <% if @home_bar.address.present? %>
+
+      <h1><%= @home_bar.name %></h1>
+
+      <%= image_tag @home_bar.main_image.url(:home) %>
+
+      <h3> <%= @home_bar.address %>, <%= @home_bar.number %> - <%= @home_bar.neighborhood %> - <%= @home_bar.complement %></h3>
+      <h4> <%= @home_bar.city %> - <%= @home_bar.state %> - <%= @home_bar.country_bar %> - CEP: <%= @home_bar.zip %></h4>
+
+      <h5> Telefone: <%= @home_bar.phone_number %>,<%= @home_bar.cellphone_number %></h5>
+
+
+      <!-- todo: resolver negocio de recomendação -->
+
+      <fb:recommendations
+      site="example.com"
+      action="critiqueapp:despise,critiqueapp:review,critiqueapp:grade">
+      </fb:recommendations>
+
+  <% end %>
+
+</section>

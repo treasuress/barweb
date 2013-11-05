@@ -1,0 +1,22 @@
+<% @principals.each do |principal| %>
+
+    <!-- todo: colocar mapa do google - igual do picasa -->
+    <section class="header">
+      <h1><%= principal.title %></h1>
+
+      <hr/>
+
+      <div>
+        <!-- todo: buscar à medida q a pessoa vai digitando - oninput? -->
+        <input type="search" placeholder="Nome do Estabelecimento"/>
+      </div>
+
+      <hr/>
+
+      <%= image_tag principal.main_image.url(:medium), :class => "main" %>
+
+      <hr/>
+
+    </section>
+
+<% end %>

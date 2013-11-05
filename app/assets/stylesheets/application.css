@@ -1,0 +1,91 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+html, body {
+    height: 100%;
+}
+
+
+/* todo: fazer html responsivo - qndo diminui o tamanho da tela fik tdu horrivel */
+
+/* HEADER BODY */
+.header-body{
+    height: auto !important;
+    min-height: 96.7%;
+    padding-bottom: 22px;
+}
+
+/* HEADER */
+.header h1 {
+    text-align: center;
+    height: 35px;
+    background-color: pink;
+}
+
+.header .main {
+    margin: 30px 0 0 50px;
+}
+
+/* PRINCIPAL */
+
+/* todo: criar funcao PARA TODOS OS HR*/
+.principal hr {
+    height: 2px;
+    clear: both;
+}
+
+.principal .principal-links {
+    float: left;
+    padding: 10px;
+}
+.principal .principal-destaques {
+    float: left;
+    padding: 10px 7px;
+}
+
+
+/* HOME BAR */
+
+.home-bar h1 {
+    text-align: center;
+    height: 35px;
+}
+.home-bar img {
+    margin: 30px 0 0 50px;
+}
+.home-bar h3 {
+    padding: 0 494px 0 50px;
+}
+.home-bar h4 {
+    padding: 0 494px 0 50px;
+}
+.home-bar h5 {
+    padding: 0 494px 0 50px;
+}
+
+
+/* FOOTER */
+footer {
+    position: relative;
+    bottom: 0;
+    margin-top: -22px;
+    height: 22px;
+    background-color: pink;
+    width: 100%;
+    clear: both;
+}
