@@ -21,7 +21,16 @@ html, body {
 }
 
 
+.principal hr, .home-bar hr, .header hr {
+    height: 2px;
+    clear: both;
+}
+
+
 /* todo: fazer html responsivo - qndo diminui o tamanho da tela fik tdu horrivel */
+
+/* todo tirar underline dos links */
+/* todo fazer cores diferentes para links ativos, visitados, etc */
 
 /* HEADER BODY */
 .header-body{
@@ -29,6 +38,7 @@ html, body {
     min-height: 96.7%;
     padding-bottom: 22px;
 }
+
 
 /* HEADER */
 .header h1 {
@@ -41,14 +51,8 @@ html, body {
     margin: 30px 0 0 50px;
 }
 
+
 /* PRINCIPAL */
-
-/* todo: criar funcao PARA TODOS OS HR*/
-.principal hr {
-    height: 2px;
-    clear: both;
-}
-
 .principal .principal-links {
     float: left;
     padding: 10px;
@@ -60,7 +64,6 @@ html, body {
 
 
 /* HOME BAR */
-
 .home-bar h1 {
     text-align: center;
     height: 35px;
@@ -68,14 +71,15 @@ html, body {
 .home-bar img {
     margin: 30px 0 0 50px;
 }
-.home-bar h3 {
-    padding: 0 494px 0 50px;
+.home-bar h2 {
+    width: 30%;
+    padding-left: 5%;
+    padding-top: 4%;
 }
-.home-bar h4 {
-    padding: 0 494px 0 50px;
-}
-.home-bar h5 {
-    padding: 0 494px 0 50px;
+.address{
+    margin-left: 550px;
+    width: 50%;
+    margin-top: -20px;
 }
 
 

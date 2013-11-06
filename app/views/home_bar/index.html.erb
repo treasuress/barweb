@@ -2,24 +2,38 @@
 
 <section class="home-bar">
 
+  <!-- todo fazer validação melhor -->
   <% if @home_bar.address.present? %>
 
       <h1><%= @home_bar.name %></h1>
 
-      <%= image_tag @home_bar.main_image.url(:home) %>
+      <%= image_tag @home_bar.main_image.url(:home), :style => "float:left" %>
 
-      <h3> <%= @home_bar.address %>, <%= @home_bar.number %> - <%= @home_bar.neighborhood %> - <%= @home_bar.complement %></h3>
-      <h4> <%= @home_bar.city %> - <%= @home_bar.state %> - <%= @home_bar.country_bar %> - CEP: <%= @home_bar.zip %></h4>
+      <!-- todo img fixa deve ser substituida pelo mapa de onde é o bar -->
+      <%= image_tag "mapa.jpg", :style => "margin-left: 200px; margin-top: 84px;" %>
 
-      <h5> Telefone: <%= @home_bar.phone_number %>,<%= @home_bar.cellphone_number %></h5>
+      <h2><%= @home_bar.description %></h2>
 
+      <div class="address">
+          <h3> <%= @home_bar.address %>, <%= @home_bar.number %> - <%= @home_bar.neighborhood %> - <%= @home_bar.complement %></h3>
+          <h4> <%= @home_bar.city %> - <%= @home_bar.state %> - <%= @home_bar.country_bar %> - CEP: <%= @home_bar.zip %></h4>
 
-      <!-- todo: resolver negocio de recomendação -->
+          <h5> Telefone: <%= @home_bar.phone_number %>,<%= @home_bar.cellphone_number %></h5>
+      </div>
 
-      <fb:recommendations
-      site="example.com"
-      action="critiqueapp:despise,critiqueapp:review,critiqueapp:grade">
-      </fb:recommendations>
+      <hr/>
+
+      <!-- todo: colocar recomendações -->
+      <br /><br />
+      <div class="fb-comments" data-href="http://localhost:3000/uberlandia/" data-numposts="5"></div>
+
+      <!-- todo certo -->
+      <!-- todo testar se cada post está indo pro do bar certo -->
+      <!-- <div class="fb-comments" data-href="<%= home_bar_path(@home_bar.name) %>" data-num-posts="5"></div> -->
+
+  <% else %>
+
+    <!-- todo colokr pagina d bar n encontrado ou d endereço n encontrado -->
 
   <% end %>
 
