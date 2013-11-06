@@ -1,6 +1,8 @@
 class Principal < ActiveRecord::Base
   attr_accessible :title, :description, :main_image, :gallery_image, :events_image, :contact_image, :follow_fb_image, :follow_tw_image
 
+  has_many :home_bars
+
   validates_attachment_presence :main_image, :gallery_image, :events_image, :contact_image
 
   has_attached_file :main_image,

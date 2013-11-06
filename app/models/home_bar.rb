@@ -2,6 +2,8 @@ class HomeBar < ActiveRecord::Base
   attr_accessible :name, :description, :main_image, :phone_number, :cellphone_number,
                   :address, :number, :complement, :zip, :neighborhood, :city, :state, :country_bar
 
+  belongs_to :principal
+
   has_attached_file :main_image,
                     :styles => {:home => "400x300#", :thumb => "100x100#"},
                     :url => "/assets/home_bars/:id/images/main_:style.:extension",
