@@ -8,7 +8,7 @@ load "config/recipes/nodejs"
 load "config/recipes/rvm"
 load "config/recipes/check"
 
-#server "177.71.144.131", :web, :app, :db, primary: true
+server "192.168.0.103", :web, :app, :db, primary: true
 
 set :user, "deployer"
 set :application, "barweb"
