@@ -1,7 +1,10 @@
-<!-- colocar titulo, logo e buscas em paǵina separada para usar em todas as páginas -->
-
+<!-- todo n pod ter each, só pode ter 1 principal ativa por vez -->
 <% @principals.each do |principal| %>
 
+    <!-- todo colocar css e diminuir tamanho da letra -->
+    <h2><%= principal.description %></h2>
+
+    <!-- todo desativar links q ainda n funcionam -->
     <section class="principal">
 
       <div class="principal-links" style="padding-left:460px">
@@ -47,6 +50,51 @@
 
           </div>
 
+
+          <!-- todo debugar esse troço -->
+          <!-- o mouseleave parece td certo, mas n sei pq n muda o nome pro certo -->
+          <!-- todo colokr estilo aqui q qndo passa o mouse fica bonitinho e mesm q o nome for grand, n estrague o troço -->
+          <!-- <script>
+
+            var hover_ok = false;
+            var no_hover_ok = false;
+
+
+
+              $( "h5" ).hover(
+                      function() {
+
+                          if(hover_ok === true){
+                            no_hover_ok = false;
+                            return;
+                          }
+                          var bar_name = '<%= destaque.name %>';
+
+                          $(this).html(bar_name);
+                          hover_ok = true;
+                      }
+              );
+              $( "h5" ).mouseleave(
+                      function() {
+                          hover_ok = false;
+                          if(no_hover_ok === true){
+                              return;
+                          }
+                          else if(no_hover_ok === false){
+
+                              var bar_name = '<%= destaque.name.truncate(16) %>';
+
+
+                              $(this).html(bar_name);
+                              no_hover_ok = true;
+
+                              return;
+                          }
+
+                      }
+              );
+          </script>   -->
+
       <% end %>
 
       <hr/>
@@ -54,3 +102,6 @@
     </section>
 
 <% end %>
+
+
+
