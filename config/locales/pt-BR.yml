@@ -239,7 +239,8 @@ pt-BR:
 
     models:
       admin_user: "Administrador"
-      home_br: "Home Bar"
+      category: "Categoria"
+      home_bar: "Bares"
       principal: "Página Principal"
     attributes:
       admin_user:
@@ -252,8 +253,29 @@ pt-BR:
         password_confirmation: "Confirmar Senha"
         change_your_password: "Alterar Senha"
         remember_me: "Lembrar meus dados"
+      category:
+        id: "Id"
+        name: "Nome"
+        description: "Descrição"
+        active: "Ativo"
+        main_image: "Imagem"
+        created_at: "Cadastrado Em"
+        updated_at: "Atualizado Em"
+      principal:
+        id: "Id"
+        title: "Nome do Site"
+        description: "Descrição"
+        main_image: "Logo"
+        gallery_image: "Imagem Galeria"
+        events_image: "Imagem Eventos"
+        contact_image: "Imagem Contato"
+        follow_fb_image: "Imagem Facebook"
+        follow_tw_image: "Imagem Twitter"
+        created_at: "Cadastrado Em"
+        updated_at: "Atualizado Em"
       home_bar:
         id: "Id"
+        category: "Categoria"
         name: "Nome do Estabelecimento"
         description: "Descrição"
         main_image: "Imagem"
@@ -272,18 +294,7 @@ pt-BR:
 
         general_information: "Informações Gerais"
         address: "Endereço"
-      principal:
-        id: "Id"
-        title: "Nome do Site"
-        description: "Descrição"
-        main_image: "Logo"
-        gallery_image: "Imagem Galeria"
-        events_image: "Imagem Eventos"
-        contact_image: "Imagem Contato"
-        follow_fb_image: "Imagem Facebook"
-        follow_tw_image: "Imagem Twitter"
-        created_at: "Cadastrado Em"
-        updated_at: "Atualizado Em"
+
 
   active_admin:
     dashboard: "Painel Administrativo"

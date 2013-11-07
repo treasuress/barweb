@@ -33,10 +33,9 @@ ActiveAdmin.register Category do
   end
 
   form :html => {:enctype => "multipart/form-data"} do |f|
-    f.inputs I18n.t("activerecord.attributes.category.general_category"), :multipart => true do
+    f.inputs I18n.t("activerecord.attributes.category"), :multipart => true do
 
-      #todo vir marcado como ativo por default - fiz isso em algum proj
-      # qndo eh new, vem checado, caso contrario, pega do banco
+      #todo vir marcado como ativo por default - qndo eh new, vem checado, caso contrario, pega do banco
       f.input :active
       f.input :name
       f.input :description, :as => :text, :input_html => {:rows => 4}
