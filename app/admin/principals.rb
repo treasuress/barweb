@@ -67,3 +67,5 @@ ActiveAdmin.register Principal do
   end
 
 end
+
+#todo colokr pra pessoa poder visualizar a pagina antes de criar

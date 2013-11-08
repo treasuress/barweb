@@ -39,8 +39,6 @@ Barweb::Application.routes.draw do
   get "/uberlandia/:name/events" => "home_bar#events", :as => :homebar_events
 
 
-  #todo: ou a gent pod colokr nomeSite/nomeBar // mas aih n poderia ter nomes de bares repetidos na url
-
   #todo: fazer rel q gera lista de urls dos bares
 
   #todo: fazer parte gerencial ?!
