@@ -17,7 +17,10 @@ class HomeBarController < ApplicationController
     @principals = Principal.all
 
     #Busca aleatória por estabelecimentos - sqlite
-    @home_bars = HomeBar.all(:order => 'RANDOM()')
+    #@home_bars = HomeBar.all(:order => 'RANDOM()')
+    #todo gambiarra - acho q isso tah mt errado, mas deu certo
+    @home_bars = HomeBar.active
+    @home_bars = @home_bars.all(:order => 'RANDOM()')
   end
 
 end
