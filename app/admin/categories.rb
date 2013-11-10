@@ -9,7 +9,7 @@ ActiveAdmin.register Category do
       image_tag(record.main_image.url(:thumb))
     end
     column :active do |record|
-      record.active == true ? "Ativo" : "Inativo"
+      record.active == true ? 'Ativo' : 'Inativo'
     end
     default_actions
   end
@@ -21,7 +21,7 @@ ActiveAdmin.register Category do
         record.description.html_safe
       end
       row :active do |record|
-        record.active == true ? "Ativo" : "Inativo"
+        record.active == true ? 'Ativo' : 'Inativo'
       end
 
       if !category.main_image_file_size.nil?
@@ -32,11 +32,13 @@ ActiveAdmin.register Category do
     end
   end
 
-  form :html => {:enctype => "multipart/form-data"} do |f|
-    f.inputs I18n.t("activerecord.attributes.category"), :multipart => true do
-
-      #todo vir marcado como ativo por default - qndo eh new, vem checado, caso contrario, pega do banco
-      f.input :active
+  form :html => {:enctype => 'multipart/form-data'} do |f|
+    f.inputs I18n.t('activerecord.models.category'), :multipart => true do
+      if f.object.new_record?
+        f.input :active, :input_html => {:checked => 'true'}
+      else
+        f.input :active
+      end
       f.input :name
       f.input :description, :as => :text, :input_html => {:rows => 4}
       f.input :main_image
