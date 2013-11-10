@@ -54,6 +54,12 @@ html, body {
 
 
 /* PRINCIPAL */
+.principal h2{
+    width: 31.4%;
+    margin-left: 5%;
+    float: left;
+    margin-right: 1.5%;
+}
 .principal .principal-links {
     float: left;
     padding: 10px;
