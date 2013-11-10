@@ -1,6 +1,12 @@
 ActiveAdmin.register HomeBar do
   config.comments = false
 
+  #todo tirar esse 'açoes em lote' da pagina
+
+  scope :active, :default => true
+  scope :inactive
+  scope :pending
+
   filter :name
   filter :category
 
@@ -11,12 +17,18 @@ ActiveAdmin.register HomeBar do
     column :main_image do |record|
       image_tag(record.main_image.url(:thumb))
     end
+
+    #todo colokr akih forma de mudar o status dos bares
+    column :status
+
     default_actions
   end
 
+  #todo colokr botao para cadastrrar novo bar no show
   show do
     attributes_table do
       row :id
+      row :status
       row :category
       row :name
       row :description
@@ -34,12 +46,15 @@ ActiveAdmin.register HomeBar do
   #todo: colocar cadastro de email pra usar em contato - caso tenha pagado, senao n precisa
   form :html => {:enctype => "multipart/form-data"} do |f|
     f.inputs I18n.t("activerecord.attributes.home_bar.general_information"), :multipart => true do
+      f.input :status, :include_blank => false
       f.input :category
       f.input :name
 
-      #todo: colocar campo de text, pra colokr html (com formatacoes, etc)
+      #todo: colocar campo pra colokr html (com formatacoes, etc)
       #todo: limitar tamanho do campo
       f.input :description, :as => :text, :input_html => {:rows => 4}
+      # todo as vezes tem q colokr formtastic pra poder usar o editor q quero - n sei c eh esse
+      # :as => :ckeditor, :input_html => {:width => "76%"}
 
       f.input :main_image
 

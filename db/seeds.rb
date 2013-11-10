@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+if Status.all.size == 0
+  Status.create([
+      {:name => "Ativo"},
+      {:name => "Inativo"},
+      {:name => "Pendente"}
+  ], :without_protection => true)
+end
