@@ -1,0 +1,22 @@
+<!-- todo -->
+<!-- todo colokr varios tipos de ordenação para encontrar os bares -->
+<!-- todo colokr mapa de todos os bares cadastrados da cidad -->
+<!-- todo colokr qntidad d curtir e comentario o bar teve - dps pod pegar isso pra colokr em: bares mais comentados -->
+<!-- todo acho q n precisa da busca por index jah q n tah fazendo nd com ela -->
+<!-- todo colokr txt dinamico por tipo de estabelecimento -->
+<!-- todo colokr txt dinamico por cidad -->
+<!-- todo talvez colokr titulo no cadastro tb -->
+<!-- todo mudar este titulo -->
+<h1>Todos os Estabelecimentos de Uberlândia cadastrados</h1>
+<% @home_bars.each_with_index do |destaque, index| %>
+
+    <div class="home-bar-all">
+
+      <a href="<%= home_bar_path(destaque.name) %>">
+        <%= image_tag destaque.main_image.url(:thumb) %>
+        <h5><%= destaque.name.truncate(16) %></h5>
+      </a>
+
+    </div>
+
+<% end %>

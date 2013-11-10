@@ -5,10 +5,11 @@ class PrincipalController < ApplicationController
     @principals = Principal.all
     #@principal = Principal.limit(1).where("active = true")
 
+    #todo buscar aqui por tipo de estabelecimento qndo tiver mais d um tipo
     #Seleciona 8 bares aleatoriamente - slite
-    @home_bars = HomeBar.all(:order => 'RANDOM()', :limit => 8)
+    @home_bars = HomeBar.all(:order => 'RANDOM()', :limit => 7)
     #Seleciona 8 bares aleatoriamente - mysql
-    #@home_bars = HomeBar.all(:order => 'RAND()', :limit => 8)
+    #@home_bars = HomeBar.all(:order => 'RAND()', :limit => 7)
 
 
     #@home_bar = HomeBar.find(params[:name])

@@ -19,10 +19,14 @@ Barweb::Application.routes.draw do
   #todo: pegar nome da cidade dinamicament
   get "/uberlandia" => "home_uberlandia#index", :as => :home_uberlandia
 
+  #PÁGINA QUE MOSTRA TODOS OS BARES CADASTRADOS EM DETERMINADA CIDADE
+
+  get "/uberlandia/all" => "home_bar#all", :as => :all_home_bars
+
+
   #PÁGINA HOME PARA TODOS OS BARES
 
   get "/uberlandia/:name" => "home_bar#index", :as => :home_bar
-
 
 
   #PÁGINAS PAGAS - SÓ SÃO MOSTRADAS PARA ESTABELECIMENTOS QUE PAGAREM

@@ -37,7 +37,8 @@
 
       <hr/>
 
-      <!-- todo: se for colocar bares aleatorios tem q mudar esse titulo -->
+      <!-- todo talvez a img dos bares possa ser a logo -->
+      <!-- todo: mudar titulo para bares aleatórios -->
       <h4>Bares em Destaque</h4>
       <% @home_bars.each_with_index do |destaque, index| %>
 
@@ -97,11 +98,18 @@
 
       <% end %>
 
+      <!-- todo colokr no cadastro a img de ver mais bares se for ter mesm ela akih nesse lugar -->
+      <div class="principal-destaques">
+
+        <a href="<%= all_home_bars_path %>">
+          <%= image_tag "rails.png" %>
+          <h5> Todos os bares aqui! </h5>
+        </a>
+
+      </div>
+
       <hr/>
 
     </section>
 
 <% end %>
-
-
-
