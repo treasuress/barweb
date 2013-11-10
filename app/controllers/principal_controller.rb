@@ -5,8 +5,10 @@ class PrincipalController < ApplicationController
     @principals = Principal.all
     #@principal = Principal.limit(1).where("active = true")
 
-    #TODO: selecionar 8 bares de forma aleatoria!
-    @home_bars = HomeBar.limit(8).all
+    #Seleciona 8 bares aleatoriamente - slite
+    @home_bars = HomeBar.all(:order => 'RANDOM()', :limit => 8)
+    #Seleciona 8 bares aleatoriamente - mysql
+    #@home_bars = HomeBar.all(:order => 'RAND()', :limit => 8)
 
 
     #@home_bar = HomeBar.find(params[:name])
