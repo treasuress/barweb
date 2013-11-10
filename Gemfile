@@ -10,6 +10,9 @@ gem 'activeadmin'
 gem 'paperclip'
 gem 'rack-p3p'
 
+#todo seria bom mudar pra versao atual, mas n conseguih fazer funcionar direito
+gem 'ckeditor', '3.7.1'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -31,6 +31,12 @@ html, body {
     height: 2px;
     clear: both;
 }
+.ckeditor_fields, #test, .home_bar_description{
+    width: 78% !important;
+    margin-left: 20% !important;
+}
+
+
 
 
 /* HEADER BODY */

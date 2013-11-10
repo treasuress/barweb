@@ -50,11 +50,14 @@ ActiveAdmin.register HomeBar do
       f.input :category
       f.input :name
 
-      #todo: colocar campo pra colokr html (com formatacoes, etc)
       #todo: limitar tamanho do campo
-      f.input :description, :as => :text, :input_html => {:rows => 4}
-      # todo as vezes tem q colokr formtastic pra poder usar o editor q quero - n sei c eh esse
-      # :as => :ckeditor, :input_html => {:width => "76%"}
+      #todo fazer ficar 20% à direita - n pega o style nem classe separada
+      #todo colokr q n pod redimencionar campo
+      f.input :description, :as => :ckeditor, :input_html => {:width => "79%", :style => 'margin-left: 20%'}
+      #f.input :description, :as => :ckeditor, :input_html => { class: 'home_bar_description'}
+      #f.input :description, :as => :ckeditor, :input_html => {:width => "78%", :"margin-left" => "20%" }
+      #f.input :description, :as => :ckeditor, :input_html => {:width => "78%", "margin-left" => "20%" }
+
 
       f.input :main_image
 
