@@ -1,18 +1,16 @@
 class PrincipalController < ApplicationController
 
   def index
-    #TODO: buscar só a página principal ativa
+    #todo gambiarra - tirar (consegui tirar dos outros, n sei pq n deu certo akih)
     @principals = Principal.all
-    #@principal = Principal.limit(1).where("active = true")
 
-    #todo buscar aqui por tipo de estabelecimento qndo tiver mais d um tipo
-    #Seleciona 8 bares aleatoriamente - slite
-    #@home_bars = HomeBar.all(:order => 'RANDOM()', :limit => 7)
-    #todo gambiarra
+    #todo futuro buscar aqui por tipo de estabelecimento - qndo tiver mais d um tipo
+    #Seleciona 7 bares aleatoriamente - slite
     @home_bars = HomeBar.active
     @home_bars = @home_bars.all(:order => 'RANDOM()', :limit => 7)
-    #Seleciona 8 bares aleatoriamente - mysql
-    #@home_bars = HomeBar.all(:order => 'RAND()', :limit => 7)
+    #Seleciona 7 bares aleatoriamente - mysql
+    #@home_bars = HomeBar.active
+    #@home_bars = @home_bars.all(:order => 'RAND()', :limit => 7)
 
 
     #@home_bar = HomeBar.find(params[:name])
@@ -28,11 +26,6 @@ class PrincipalController < ApplicationController
   end
 
   def contact
-
-    #TODO: COLOKR BUSCA 'PRINCIPALS' EM TDAS JAH Q VAI USAR EM TDAS
-    #todo: gambiarra - tirar
-    @principals = Principal.all
-
     render('layouts/contact')
   end
 

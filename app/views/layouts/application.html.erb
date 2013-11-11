@@ -30,7 +30,7 @@
 </script>
 
 <div class="header-body">
-    <%= render :partial => "layouts/header" %>
+    <%= render :partial => "layouts/header", :locals => {:@principals => get_header_data} %>
     <%= yield %>
 </div>
 
