@@ -13,7 +13,6 @@
  */
 
 
-/* todo tirar underline dos links */
 /* todo fazer cores diferentes para links ativos, visitados, etc */
 
 /* PROJETO */
@@ -31,9 +30,12 @@ html, body {
     height: 2px;
     clear: both;
 }
-.ckeditor_fields, #test, .home_bar_description{
+.ckeditor_fields, .home_bar_description{
     width: 78% !important;
     margin-left: 20% !important;
+}
+.principal a, .home-bar-all a, .contact a{
+    text-decoration: none;
 }
 
 
