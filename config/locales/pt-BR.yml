@@ -271,6 +271,7 @@ pt-BR:
         contact_image: "Imagem Contato"
         follow_fb_image: "Imagem Facebook"
         follow_tw_image: "Imagem Twitter"
+        all_homes_image: "Imagem Todas as Homes"
         created_at: "Cadastrado Em"
         updated_at: "Atualizado Em"
       home_bar:

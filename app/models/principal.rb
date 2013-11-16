@@ -1,9 +1,9 @@
 class Principal < ActiveRecord::Base
-  attr_accessible :title, :description, :main_image, :gallery_image, :events_image, :contact_image, :follow_fb_image, :follow_tw_image
+  attr_accessible :title, :description, :main_image, :gallery_image, :events_image, :contact_image, :follow_fb_image, :follow_tw_image, :all_homes_image
 
   has_many :home_bars
 
-  validates_attachment_presence :main_image, :gallery_image, :events_image, :contact_image
+  validates_attachment_presence :main_image, :gallery_image, :events_image, :contact_image, :all_homes_image
 
   has_attached_file :main_image,
                     :styles => {:medium => "400x300#", :thumb => "100x100#"},
@@ -29,6 +29,10 @@ class Principal < ActiveRecord::Base
                     :styles => {:medium => "400x300#", :thumb => "100x45#"},
                     :url => "/assets/principals/:id/images/follow_tw_:style.:extension",
                     :path => ":rails_root/public/assets/principals/:id/images/follow_tw_:style.:extension"
+  has_attached_file :all_homes_image,
+                    :styles => {:medium => "400x300#", :thumb => "100x45#"},
+                    :url => "/assets/principals/:id/images/all_homes_:style.:extension",
+                    :path => ":rails_root/public/assets/principals/:id/images/all_homes_:style.:extension"
 
   #TODO we futuro - COLOCAR SE ESTÁ OU NÃO ATIVA, PERMITIR QUE APENAS UMA FIQUE ATIVA
 end

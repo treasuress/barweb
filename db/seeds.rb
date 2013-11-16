@@ -35,7 +35,7 @@ if Rails.env.development?
   #Creating Principal example
   if Principal.all.size == 0
     Principal.create([
-                         {:title => "Principal titulo", :description => "Descricao principal", :main_image => File.open('public/principal/logo.jpg'), :gallery_image => File.open('public/principal/gallery.jpg'), :events_image => File.open('public/principal/events.jpg'), :contact_image => File.open('public/principal/contact.jpg'), :follow_fb_image => File.open('public/principal/follow_fb.jpg'), :follow_tw_image => File.open('public/principal/follow_tw.jpg') }
+                         {:title => "Principal titulo", :description => "Descricao principal", :main_image => File.open('public/principal/logo.jpg'), :gallery_image => File.open('public/principal/gallery.jpg'), :events_image => File.open('public/principal/events.jpg'), :contact_image => File.open('public/principal/contact.jpg'), :follow_fb_image => File.open('public/principal/follow_fb.jpg'), :follow_tw_image => File.open('public/principal/follow_tw.jpg'), :all_homes_image => File.open('public/principal/all_homes.jpg') }
                      ], :without_protection => true)
   end
 
@@ -45,7 +45,7 @@ if Rails.env.development?
                        #Ativos
                        #Completo
                        {:status_id => 1, :category_id => 1, :name => "Nome bar 1", :description => "descricao bar 1", :main_image => File.open('public/home_bars/bar1.JPG'), :phone_number => "telefone bar 1", :cellphone_number => "cel bar 1", :zip => "cep bar 1", :country_bar => "país bar 1", :state => "estado bar 1", :city => "cidade bar 1", :address => "logradouro bar 1", :number => "123", :neighborhood => "bairro bar 1", :complement => "complemento bar 1" },
-                       {:status_id => 1, :category_id => 1, :name => "Nome bar 8", :description => "descricao bar 8", :main_image => File.open('public/home_bars/bar8.JPG'), :phone_number => "telefone bar 8", :cellphone_number => "cel bar 8", :zip => "cep bar 8", :country_bar => "país bar 8", :state => "estado bar 8", :city => "cidade bar 8", :address => "logradouro bar 8", :number => "823", :neighborhood => "bairro bar 8", :complement => "complemento bar 8" },
+                       {:status_id => 1, :category_id => 1, :name => "Nome grande bar 8", :description => "descricao bar 8", :main_image => File.open('public/home_bars/bar8.JPG'), :phone_number => "telefone bar 8", :cellphone_number => "cel bar 8", :zip => "cep bar 8", :country_bar => "país bar 8", :state => "estado bar 8", :city => "cidade bar 8", :address => "logradouro bar 8", :number => "823", :neighborhood => "bairro bar 8", :complement => "complemento bar 8" },
                        {:status_id => 1, :category_id => 1, :name => "Nome bar 11", :description => "descricao bar 11", :main_image => File.open('public/home_bars/bar11.jpg'), :phone_number => "telefone bar 11", :cellphone_number => "cel bar 11", :zip => "cep bar 11", :country_bar => "país bar 11", :state => "estado bar 11", :city => "cidade bar 11", :address => "logradouro bar 11", :number => "1123", :neighborhood => "bairro bar 11", :complement => "complemento bar 11" },
 
                        #Sem descrição, cep, telefone e complemento
@@ -74,3 +74,5 @@ if Rails.env.development?
   end
 
 end
+
+#todo now - mudar pro mysql

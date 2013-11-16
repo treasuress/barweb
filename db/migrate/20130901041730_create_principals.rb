@@ -34,6 +34,11 @@ class CreatePrincipals < ActiveRecord::Migration
       t.integer :follow_tw_image_file_size
       t.datetime :follow_tw_image_updated_at
 
+      t.string :all_homes_image_file_name
+      t.string :all_homes_image_content_type
+      t.integer :all_homes_image_file_size
+      t.datetime :all_homes_image_updated_at
+
       t.timestamps
     end
   end
