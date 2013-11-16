@@ -8,6 +8,7 @@ class HomeBarController < ApplicationController
   def all
     #todo futuro - colokr busca aleatoria aqui qndo for colokr varios tipos d ordenacao
 
+    #todo futuro - buscar apenas por categorias ativas
     #Busca estabelecimentos - ordem alfabética
     @home_bars = HomeBar.active
     @home_bars = @home_bars.all.sort! { |a, b| a['name'].downcase <=> b['name'].downcase }

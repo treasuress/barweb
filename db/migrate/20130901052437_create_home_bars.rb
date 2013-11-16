@@ -46,7 +46,7 @@ class CreateHomeBars < ActiveRecord::Migration
       t.integer :follow_fb_image_file_size
       t.datetime :follow_fb_image_updated_at
 
-      t.references :categories
+      t.references :category
 
       t.timestamps
     end

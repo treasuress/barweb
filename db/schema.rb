@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130901052437) do
+ActiveRecord::Schema.define(:version => 20131110190353) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -71,7 +71,7 @@ ActiveRecord::Schema.define(:version => 20130901052437) do
     t.string   "country_bar",                  :null => false
     t.string   "address",                      :null => false
     t.integer  "number",                       :null => false
-    t.string   "complement",                   :null => false
+    t.string   "complement"
     t.string   "neighborhood",                 :null => false
     t.string   "state",                        :null => false
     t.string   "city",                         :null => false
@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(:version => 20130901052437) do
     t.integer  "category_id"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
+    t.integer  "status_id"
   end
 
   create_table "principals", :force => true do |t|
@@ -123,8 +124,18 @@ ActiveRecord::Schema.define(:version => 20130901052437) do
     t.string   "follow_tw_image_content_type"
     t.integer  "follow_tw_image_file_size"
     t.datetime "follow_tw_image_updated_at"
+    t.string   "all_homes_image_file_name"
+    t.string   "all_homes_image_content_type"
+    t.integer  "all_homes_image_file_size"
+    t.datetime "all_homes_image_updated_at"
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
+  end
+
+  create_table "status", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

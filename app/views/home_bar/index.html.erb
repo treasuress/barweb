@@ -48,11 +48,13 @@
       <hr/>
 
       <!-- todo now futuro - colocar recomendações -->
-      <!-- todo now - colokr txt falando pra pessoa comentar -->
       <br /><br />
-      <div class="fb-comments" data-href="http://localhost:3000/uberlandia/<%= @home_bar.name %>" data-numposts="5"></div>
+      <!-- todo now - colokr da cor da logo -->
+      <div class="comments">
+          <h6>Deixe seu comentário!</h6>
+          <div class="fb-comments" data-href="http://localhost:3000/uberlandia/<%= @home_bar.name %>" data-numposts="5"></div>
+      </div>
 
-      <!-- todo now - teste fim - ver se cada post está indo pro do bar certo -->
       <!-- <div class="fb-comments" data-href="<%= home_bar_path(@home_bar.name) %>" data-num-posts="5"></div> -->
 
   <% else %>

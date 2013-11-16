@@ -2,15 +2,14 @@
 <!-- todo now - colokr mapa de todos os bares cadastrados da cidad -->
 <!-- todo now futuro - colokr qntidad d curtir, tw e comentario o bar teve em cada um
 <!-- todo futuro - pegar qntidad d comentario e curtir e tw e colokr em: bares mais comentados, etc -->
-<!-- todo now futuro - acho q n precisa da busca por index jah q n tah fazendo nd com ela -->
 <!-- todo futuro - colokr busca dinamica por tipo de estabelecimento -->
 <!-- todo futuro - colokr txt dinamico por tipo de estabelecimento -->
 <!-- todo futuro - colokr busca dinamica por cidad -->
 <!-- todo futuro - colokr txt dinamico por cidad -->
 <!-- todo now - mudar este titulo -->
 <section class="home-bar-all">
-    <h1>Todos os Estabelecimentos de Uberlândia cadastrados</h1>
-    <% @home_bars.each_with_index do |destaque, index| %>
+    <h1>Estabelecimentos de Uberlândia</h1>
+    <% @home_bars.each do |destaque| %>
       <a href="<%= home_bar_path(destaque.name) %>">
         <%= image_tag destaque.main_image.url(:thumb) %>
         <h5><%= destaque.name.truncate(16) %></h5>
