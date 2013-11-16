@@ -63,7 +63,7 @@ ActiveAdmin.register Principal do
     f.inputs I18n.t("activerecord.models.principal"), :multipart => true do
       f.input :title
       #f.input :description, :as => :ckeditor, :input_html => {:width => "79%", :style => 'margin-left: 20%'}
-      f.input :description, :as => :text
+      f.input :description, :as => :text, :input_html => { :maxlength => 380 }
       f.input :main_image
       f.input :gallery_image
       f.input :events_image
