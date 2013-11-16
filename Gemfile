@@ -10,7 +10,7 @@ gem 'activeadmin'
 gem 'paperclip'
 gem 'rack-p3p'
 
-#todo seria bom mudar pra versao atual, mas n conseguih fazer funcionar direito
+#todo futuro - seria bom mudar pra versao atual, mas n conseguih fazer funcionar direito
 gem 'ckeditor', '3.7.1'
 
 

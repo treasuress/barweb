@@ -13,7 +13,7 @@
  */
 
 
-/* todo!!! fazer cores diferentes para links ativos, visitados, etc - de acordo com as cores da logo */
+/* todo now - fazer cores diferentes para links ativos, visitados, etc - de acordo com as cores da logo */
 
 /* PROJETO */
 * {
@@ -117,7 +117,7 @@ header .main {
 }
 
 /* HOME BAR - ALL */
-.home-bar-all div{
+.home-bar-all a{
     float: left;
     margin-right: 5px;
     margin-left: 5px;
@@ -126,7 +126,7 @@ header .main {
 
 
 /* PRINCIPAL - CONTACT */
-/* todo!!! fazer css */
+/* todo now - fazer css */
 .contact{
 }
 

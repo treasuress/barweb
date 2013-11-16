@@ -39,8 +39,6 @@ if Rails.env.development?
                      ], :without_protection => true)
   end
 
-
-  #todo como n dah pra dxar em branco alguns campos, posso mudar a validação do endereço da pagina inicial dos bares
   #Creating Home Bars examples
   if HomeBar.all.size == 0
     HomeBar.create([

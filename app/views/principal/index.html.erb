@@ -1,8 +1,8 @@
-<!-- todo colokr mapa com tdos os bares cadastrados de todas as cidades -->
-<!-- todo n pod ter each, só pode ter 1 principal ativa por vez -->
+<!-- todo now - colokr mapa com tdos os bares cadastrados de todas as cidades -->
+<!-- todo futuro - n pod ter each, só pode ter 1 principal ativa por vez -->
 <% @principals.each do |principal| %>
 
-    <!-- todo!!! desativar links q ainda n funcionam -->
+    <!-- todo now - desativar links q ainda n funcionam -->
     <section class="principal">
 
     <h2><%= principal.description %></h2>
@@ -29,8 +29,8 @@
       </div>
 
       <div style="display: table-caption;font-size: 14px;">
-        <!-- todo: colocar links -->
-        <!-- todo colokr do g+? -->
+        <!-- todo now - colocar links -->
+        <!-- todo now - colokr do g+? -->
         <%= image_tag principal.follow_fb_image.url(:thumb), :class=>"principal-links" %>
         <%= image_tag principal.follow_tw_image.url(:thumb), :class=>"principal-links", :style => "padding-top:0; padding-bottom:0;" %>
         <h4 class="principal-links" style="padding-top:5px">Siga-nos!</h4>
@@ -38,9 +38,9 @@
 
       <hr/>
 
-      <!-- todo talvez a img dos bares possa ser a logo -->
-      <!-- todo ver quais problemas legais posso ter por usar a logo do estabelecimento -->
-      <!-- todo: mudar titulo para bares aleatórios -->
+      <!-- todo now - talvez a img dos bares possa ser a logo -->
+      <!-- todo now - ver quais problemas legais posso ter por usar a logo do estabelecimento -->
+      <!-- todo now - mudar titulo para bares aleatórios -->
       <h4>Bares em Destaque</h4>
       <% @home_bars.each_with_index do |destaque, index| %>
 
@@ -54,9 +54,9 @@
           </div>
 
 
-          <!-- todo debugar esse troço -->
+          <!-- todo now futuro - debugar esse troço -->
           <!-- o mouseleave parece td certo, mas n sei pq n muda o nome pro certo -->
-          <!-- todo colokr estilo aqui q qndo passa o mouse fica bonitinho e mesm q o nome for grand, n estrague o troço -->
+          <!-- todo now futuro - colokr estilo aqui q qndo passa o mouse fica bonitinho e mesm q o nome for grand, n estrague o troço -->
           <!-- <script>
 
             var hover_ok = false;
@@ -100,7 +100,7 @@
 
       <% end %>
 
-      <!-- todo colokr no cadastro a img de ver mais bares se for ter mesm ela akih nesse lugar -->
+      <!-- todo now - colokr no cadastro a img de ver mais bares se for ter mesm ela akih nesse lugar -->
       <div class="principal-destaques">
 
         <a href="<%= all_home_bars_path %>">

@@ -15,17 +15,18 @@ Barweb::Application.routes.draw do
   get "/events" => "principal#events", :as => :principal_events
 
 
-  #PÁGINA PRINCIPAL POR CIDADE
+  #PÁGINA PRINCIPAL - POR CIDADE
 
-  #todo: pegar nome da cidade dinamicament
+  #todo futuro - pegar nome da cidade dinamicament
   get "/uberlandia" => "home_uberlandia#index", :as => :home_uberlandia
 
-  #PÁGINA QUE MOSTRA TODOS OS BARES CADASTRADOS EM DETERMINADA CIDADE
+
+  #PÁGINA DE TODOS OS BARES CADASTRADOS - POR CIDADE
 
   get "/uberlandia/all" => "home_bar#all", :as => :all_home_bars
 
 
-  #PÁGINA HOME PARA TODOS OS BARES
+  #PÁGINA HOME - POR ESTABELECIMENTO
 
   get "/uberlandia/:name" => "home_bar#index", :as => :home_bar
 
@@ -35,18 +36,17 @@ Barweb::Application.routes.draw do
 
   #OBS: SE SÓ A GENTE FOR MEXER NO ADMIN, NÃO PRECISA DE SUPER ADMIN PARA SEPARAR ISSO, CASO CONTRÁRIO, PRECISA!
 
-  # TODO: PEGAR TXT DINAMICAMENTE PRA PODER CRIAR SÓ UM ARQUIVO
-  # DEVE DAR PRA USAR O MESMO PELO MENOS ENTRE AS HOMES
-  get "/uberlandia/:name/contact" => "home_bar#contact", :as => :homebar_contac
+  # TODO futuro - PEGAR TXT DINAMICAMENTE PRA PODER CRIAR SÓ UM ARQUIVO
+  get "/uberlandia/:name/contact" => "home_bar#contact", :as => :home_bar_contac
 
-  get "/uberlandia/:name/gallery" => "home_bar#gallery", :as => :homebar_gallery
+  get "/uberlandia/:name/gallery" => "home_bar#gallery", :as => :home_bar_gallery
 
-  get "/uberlandia/:name/events" => "home_bar#events", :as => :homebar_events
+  get "/uberlandia/:name/events" => "home_bar#events", :as => :home_bar_events
 
 
-  #todo: fazer rel q gera lista de urls dos bares
+  #todo futuro - fazer rel q gera lista de urls dos bares
 
-  #todo: fazer parte gerencial ?!
+  #todo futuro - fazer parte gerencial ?!
 
   root :to =>  "principal#index"
 

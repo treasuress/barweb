@@ -17,14 +17,15 @@ class CreateHomeBars < ActiveRecord::Migration
       t.string :country_bar, :null => false
       t.string :address, :null => false
       t.integer :number, :null => false
-      t.string :complement, :null => false
+      t.string :complement
       t.string :neighborhood, :null => false
       t.string :state, :null => false
       t.string :city, :null => false
 
       #Imagens personalizadas de galeria de fotos, eventos e contato
       # E ELA SÓ É MUDADA, CASO A PESSOA CADASTRE UMA NOVA IMG
-      #TODO: COLOCAR UMA IMG PADRÃO NO CSS OU ALGUM OUTRO LUGAR,
+      #TODO futuro - COLOCAR UMA IMG PADRÃO NO CSS OU ALGUM OUTRO LUGAR,
+      #todo futuro - tem q ter uma principal por estabelecimento pra poder trocar essas imgs
       t.string :gallery_image_file_name
       t.string :gallery_image_content_type
       t.integer :gallery_image_file_size
@@ -45,7 +46,7 @@ class CreateHomeBars < ActiveRecord::Migration
       t.integer :follow_fb_image_file_size
       t.datetime :follow_fb_image_updated_at
 
-      t.references :category
+      t.references :categories
 
       t.timestamps
     end

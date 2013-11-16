@@ -68,4 +68,4 @@ ActiveAdmin.register Principal do
 
 end
 
-#todo colokr pra pessoa poder visualizar a pagina antes de criar
+#todo we - colokr pra pessoa poder visualizar a pagina antes de criar

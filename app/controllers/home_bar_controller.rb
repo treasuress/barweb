@@ -6,7 +6,7 @@ class HomeBarController < ApplicationController
   end
 
   def all
-    #todo colokr busca aleatoria aqui qndo for colokr varios tipos d ordenacao
+    #todo futuro - colokr busca aleatoria aqui qndo for colokr varios tipos d ordenacao
 
     #Busca estabelecimentos - ordem alfabética
     @home_bars = HomeBar.active

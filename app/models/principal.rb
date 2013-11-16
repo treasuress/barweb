@@ -30,5 +30,5 @@ class Principal < ActiveRecord::Base
                     :url => "/assets/principals/:id/images/follow_tw_:style.:extension",
                     :path => ":rails_root/public/assets/principals/:id/images/follow_tw_:style.:extension"
 
-  #TODO: COLOCAR SE ESTÁ OU NÃO ATIVA, PERMITIR QUE APENAS UMA FIQUE ATIVA
+  #TODO we futuro - COLOCAR SE ESTÁ OU NÃO ATIVA, PERMITIR QUE APENAS UMA FIQUE ATIVA
 end

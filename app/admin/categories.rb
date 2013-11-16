@@ -4,6 +4,7 @@ ActiveAdmin.register Category do
   filter :name
 
   index do
+    column :id
     column :name
     column :main_image do |record|
       image_tag(record.main_image.url(:thumb))
@@ -16,6 +17,7 @@ ActiveAdmin.register Category do
 
   show do |category|
     attributes_table do
+      row :id
       row :name
       row :description do |record|
         record.description.html_safe

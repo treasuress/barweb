@@ -1,5 +1,4 @@
-<!-- todo baxar logos de bares -->
-<!-- todo!!! colocar forma de voltar pra pagina anterior - talvez menu lateral ou breadcrumb em cima -->
+<!-- todo now futuro - colocar forma de voltar pra pagina anterior - talvez menu lateral ou breadcrumb em cima -->
 
 <section class="home-bar">
 
@@ -7,7 +6,7 @@
 
       <h1><%= @home_bar.name %></h1>
 
-      <!-- todo ver onde colocar -->
+      <!-- todo now - ver onde colocar -->
       <div class="fb-like" data-href="http://localhost:3000/uberlandia/<%= @home_bar.name %>" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
       <a href="https://twitter.com/share" class="twitter-share-button" data-lang="pt">Tweetar</a>
       <p><g:plusone size="standard" annotation="bubble"></g:plusone></p>
@@ -15,7 +14,7 @@
 
       <%= image_tag @home_bar.main_image.url(:home), :style => "float:left" %>
 
-      <!-- todo!! img fixa deve ser substituida pelo mapa de onde é o bar -->
+      <!-- todo now - img fixa deve ser substituida pelo mapa de onde é o bar -->
       <%= image_tag "mapa.jpg", :style => "margin-left: 200px; margin-top: 84px;" %>
 
       <h2><%= @home_bar.description %></h2>
@@ -39,7 +38,7 @@
           </h4>
           <h5>
             <% if !@home_bar.phone_number.blank? %>
-                <!-- todo ver se no mobile dah pra fazer a pessoa jah clicar pra ligar -->
+                <!-- todo futuro - ver se no mobile dah pra fazer a pessoa jah clicar pra ligar -->
                 Telefone: <%= @home_bar.phone_number %>
                 <%= ", " + @home_bar.cellphone_number if !@home_bar.cellphone_number.blank? %>
             <% end %>
@@ -48,17 +47,17 @@
 
       <hr/>
 
-      <!-- todo!!: colocar recomendações -->
-      <!-- todo colokr txt falando pra pessoa comentar -->
+      <!-- todo now futuro - colocar recomendações -->
+      <!-- todo now - colokr txt falando pra pessoa comentar -->
       <br /><br />
       <div class="fb-comments" data-href="http://localhost:3000/uberlandia/<%= @home_bar.name %>" data-numposts="5"></div>
 
-      <!-- todo teste fim - ver se cada post está indo pro do bar certo -->
+      <!-- todo now - teste fim - ver se cada post está indo pro do bar certo -->
       <!-- <div class="fb-comments" data-href="<%= home_bar_path(@home_bar.name) %>" data-num-posts="5"></div> -->
 
   <% else %>
 
-    <!-- todo! colokr pagina d bar n encontrado ou d endereço n encontrado -->
+    <!-- todo now - colokr pagina d bar n encontrado ou d endereço n encontrado -->
 
   <% end %>
 
