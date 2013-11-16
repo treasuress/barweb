@@ -29,4 +29,8 @@ class PrincipalController < ApplicationController
     render('layouts/contact')
   end
 
+  def terms
+    render('layouts/terms')
+  end
+
 end
