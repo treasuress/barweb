@@ -14,6 +14,8 @@ Barweb::Application.routes.draw do
 
   get "/events" => "principal#events", :as => :principal_events
 
+  get "/terms" => "principal#terms", :as => :terms
+
 
   #PÁGINA PRINCIPAL - POR CIDADE
 
