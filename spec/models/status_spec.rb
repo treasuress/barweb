@@ -1,5 +1,10 @@
 require 'spec_helper'
 
 describe Status do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "create status success" do
+    Status.create(new_status_hash)
+    Status.count().should == 1
+  end
+
 end

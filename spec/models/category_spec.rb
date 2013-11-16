@@ -1,5 +1,15 @@
 require 'spec_helper'
 
 describe Category do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "create category success" do
+    Category.create(new_category_hash)
+    Category.count().should == 1
+  end
+
+  it "error on create category" do
+    Category.create({:name => nil})
+    Category.count().should == 0
+  end
+
 end
