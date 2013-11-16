@@ -2,7 +2,7 @@ class CreatePrincipals < ActiveRecord::Migration
   def up
     create_table :principals do |t|
       t.string :title
-      t.string :description
+      t.string :description, :limit => 380
 
       t.string :main_image_file_name
       t.string :main_image_content_type

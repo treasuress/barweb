@@ -53,7 +53,9 @@ ActiveAdmin.register HomeBar do
       #todo now - limitar tamanho do campo
       #todo we - fazer ficar 20% à direita - n pega o style nem classe separada
       #todo we - todo colokr q n pod redimencionar campo
-      f.input :description, :as => :ckeditor, :input_html => {:width => "79%", :style => 'margin-left: 20%;'}
+      #todo we - trocar pro ckeditor dps d novo pra ver se funciona (n limita qntidad d caracteres)
+      f.input :description, :as => :text
+      #f.input :description, :as => :ckeditor, :input_html => {:width => "79%", :style => 'margin-left: 20%;', :maxlength => 380}
       #f.input :description, :as => :ckeditor, :input_html => { class: 'home_bar_description'}'}
       #f.input :description, :as => :ckeditor, :input_html => {:width => "79%", :style => 'margin-left: 20%;'}
       #f.input :description, :as => :ckeditor, :input_html => { class: 'home_bar_description'}
