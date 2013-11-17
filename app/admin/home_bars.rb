@@ -50,7 +50,6 @@ ActiveAdmin.register HomeBar do
       f.input :category, :include_blank => false
       f.input :name
 
-      #todo now - limitar tamanho do campo
       #todo we - fazer ficar 20% à direita - n pega o style nem classe separada
       #todo we - todo colokr q n pod redimencionar campo
       #todo we - trocar pro ckeditor dps d novo pra ver se funciona (n limita qntidad d caracteres)

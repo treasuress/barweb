@@ -59,8 +59,8 @@ ActiveRecord::Schema.define(:version => 20131110190353) do
   end
 
   create_table "home_bars", :force => true do |t|
-    t.string   "name",                         :null => false
-    t.string   "description"
+    t.string   "name",                                        :null => false
+    t.string   "description",                  :limit => 380
     t.string   "phone_number"
     t.string   "cellphone_number"
     t.string   "main_image_file_name"
@@ -68,13 +68,13 @@ ActiveRecord::Schema.define(:version => 20131110190353) do
     t.integer  "main_image_file_size"
     t.datetime "main_image_updated_at"
     t.string   "zip"
-    t.string   "country_bar",                  :null => false
-    t.string   "address",                      :null => false
-    t.integer  "number",                       :null => false
+    t.string   "country_bar",                                 :null => false
+    t.string   "address",                                     :null => false
+    t.integer  "number",                                      :null => false
     t.string   "complement"
-    t.string   "neighborhood",                 :null => false
-    t.string   "state",                        :null => false
-    t.string   "city",                         :null => false
+    t.string   "neighborhood",                                :null => false
+    t.string   "state",                                       :null => false
+    t.string   "city",                                        :null => false
     t.string   "gallery_image_file_name"
     t.string   "gallery_image_content_type"
     t.integer  "gallery_image_file_size"
@@ -92,14 +92,14 @@ ActiveRecord::Schema.define(:version => 20131110190353) do
     t.integer  "follow_fb_image_file_size"
     t.datetime "follow_fb_image_updated_at"
     t.integer  "category_id"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
     t.integer  "status_id"
   end
 
   create_table "principals", :force => true do |t|
     t.string   "title"
-    t.string   "description"
+    t.string   "description",                  :limit => 380
     t.string   "main_image_file_name"
     t.string   "main_image_content_type"
     t.integer  "main_image_file_size"
@@ -128,8 +128,8 @@ ActiveRecord::Schema.define(:version => 20131110190353) do
     t.string   "all_homes_image_content_type"
     t.integer  "all_homes_image_file_size"
     t.datetime "all_homes_image_updated_at"
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
   end
 
   create_table "status", :force => true do |t|

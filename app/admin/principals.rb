@@ -58,7 +58,6 @@ ActiveAdmin.register Principal do
     end
   end
 
-  #todo now - tdos qndo edita, a descricao q usa ckeditor fik errada (aparece um <p> antes e dps)
   form :html => {:enctype => "multipart/form-data"} do |f|
     f.inputs I18n.t("activerecord.models.principal"), :multipart => true do
       f.input :title
