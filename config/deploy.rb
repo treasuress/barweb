@@ -3,12 +3,12 @@ require "bundler/capistrano"
 load "config/recipes/base"
 load "config/recipes/nginx"
 load "config/recipes/unicorn"
-load "config/recipes/sqlite"
+load "config/recipes/mysql"
 load "config/recipes/nodejs"
 load "config/recipes/rvm"
 load "config/recipes/check"
 
-server "192.168.0.104", :web, :app, :db, primary: true
+server "192.168.0.105", :web, :app, :db, primary: true
 
 set :user, "deployer"
 set :application, "barweb"
@@ -29,5 +29,15 @@ namespace :deploy do
   desc "reload the database with seed data"
   task :seed do
     run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
+  end
+end
+
+def press_enter( ch, stream, data)
+  if data =~ /Press.\[ENTER\].to.continue/
+    # prompt, and then send the response to the remote process
+    ch.send_data( "\n")
+  else
+    # use the default handler for all other text
+    Capistrano::Configuration.default_io_proc.call( ch, stream, data)
   end
 end

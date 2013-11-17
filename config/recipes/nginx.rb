@@ -1,7 +1,9 @@
 namespace :nginx do
   desc "Install latest stable release of nginx"
   task :install, roles: :web do
-    run "#{sudo} add-apt-repository ppa:nginx/stable"
+    run "#{sudo} add-apt-repository ppa:nginx/stable", pty: true do |ch, stream, data|
+      press_enter( ch, stream, data)
+    end
     run "#{sudo} apt-get -y update"
     run "#{sudo} apt-get -y install nginx"
   end
