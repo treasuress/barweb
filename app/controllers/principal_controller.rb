@@ -6,11 +6,11 @@ class PrincipalController < ApplicationController
 
     #todo futuro - futuro buscar aqui por categoria de estabelecimento - qndo tiver mais d uma categoria
     #Seleciona 7 bares aleatoriamente - slite
-    @home_bars = HomeBar.active
-    @home_bars = @home_bars.all(:order => 'RANDOM()', :limit => 7)
-    #Seleciona 7 bares aleatoriamente - mysql
     #@home_bars = HomeBar.active
-    #@home_bars = @home_bars.all(:order => 'RAND()', :limit => 7)
+    #@home_bars = @home_bars.all(:order => 'RANDOM()', :limit => 7)
+    #Seleciona 7 bares aleatoriamente - mysql
+    @home_bars = HomeBar.active
+    @home_bars = @home_bars.all(:order => 'RAND()', :limit => 7)
 
 
     #@home_bar = HomeBar.find(params[:name])
