@@ -8,6 +8,7 @@ def new_principal_hash
       :events_image => File.new(IMAGE_EXAMPLE),
       :contact_image => File.new(IMAGE_EXAMPLE),
       :follow_fb_image => File.new(IMAGE_EXAMPLE),
-      :follow_tw_image => File.new(IMAGE_EXAMPLE)
+      :follow_tw_image => File.new(IMAGE_EXAMPLE),
+      :all_homes_image => File.new(IMAGE_EXAMPLE)
   }
 end
