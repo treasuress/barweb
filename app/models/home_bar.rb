@@ -15,7 +15,8 @@ class HomeBar < ActiveRecord::Base
 
   #TODO now - VERIFICAR QUAIS CAMPOS DEVEM SER OBRIGATORIOS
   validates_attachment_presence :main_image
-  validates_presence_of :name, :address, :number
+  #todo now - ver se cadastrar sem alterar categoria e status dah certo, ou c ele considera q n selecionou nd
+  validates_presence_of :name, :address, :number, :neighborhood, :state, :city, :category_id, :status_id
 
   def self.active()
     #todo now futuro - FUNCIONA - mas n acho q teja certo - c mudar id tdas as buscam ficarão erradas - o bom seria fazer o join pra pegar pelo nome, mas n deu certo
