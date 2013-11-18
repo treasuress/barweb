@@ -7,16 +7,14 @@ class HomeBar < ActiveRecord::Base
   belongs_to :category
   belongs_to :status
 
+  validates_presence_of :name, :address, :number, :neighborhood, :state, :city, :category_id, :status_id
+
+  validates_attachment_presence :main_image
+
   has_attached_file :main_image,
                     :styles => {:home => "400x300#", :thumb => "100x100#"},
                     :url => "/assets/home_bars/:id/images/main_:style.:extension",
                     :path => ":rails_root/public/assets/home_bars/:id/images/main_:style.:extension"
-
-
-  #TODO now - VERIFICAR QUAIS CAMPOS DEVEM SER OBRIGATORIOS
-  validates_attachment_presence :main_image
-  #todo now - ver se cadastrar sem alterar categoria e status dah certo, ou c ele considera q n selecionou nd
-  validates_presence_of :name, :address, :number, :neighborhood, :state, :city, :category_id, :status_id
 
   def self.active()
     #todo now futuro - FUNCIONA - mas n acho q teja certo - c mudar id tdas as buscam ficarão erradas - o bom seria fazer o join pra pegar pelo nome, mas n deu certo

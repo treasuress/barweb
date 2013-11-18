@@ -64,6 +64,7 @@ ActiveAdmin.register HomeBar do
 
       f.input :main_image
 
+      #todo we - colokr validacoes com html 5 em tdos
       #TODO we - COLOCAR ALGUMA MASCARA PRA N TER COMO ENVIAR ERRADO (HTML5)
       #todo we - ou colocar ddd separado, ou colokr mascara bonitinha: 034 1234 5678 - 034 12345 6789
       #todo we - colokr tdos os campos d tel com o 9o digito. se a pessoa n preencher, add um 0 no comeco

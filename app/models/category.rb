@@ -1,5 +1,4 @@
 class Category < ActiveRecord::Base
-
   attr_accessible :active, :name, :description, :main_image
 
   has_many :home_bars
