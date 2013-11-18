@@ -34,7 +34,7 @@
 
       <div style="display: table-caption;font-size: 14px;">
         <!-- todo now - colocar links -->
-        <!-- todo now - colokr do g+ -->
+        <!-- todo futuro - colokr do g+ -->
         <%= image_tag principal.follow_fb_image.url(:thumb), :class=>"principal-links" %>
         <%= image_tag principal.follow_tw_image.url(:thumb), :class=>"principal-links", :style => "padding-top:0; padding-bottom:0;" %>
         <h4 class="principal-links" style="padding-top:5px">Siga-nos!</h4>
@@ -52,55 +52,26 @@
 
               <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
               <% if destaque.main_image_file_size.nil? %>
-                  <img src="<%= image_path "rails.png" %>" />
+                  <% if destaque.name.length >= 17 %>
+                      <img src="<%= image_path "rails.png" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" />
+                  <% else %>
+                      <img src="<%= image_path "rails.png" %>" alt="<%= destaque.name %>" />
+                  <% end %>
               <% else %>
-                  <%= image_tag destaque.main_image.url(:thumb) %>
+                  <% if destaque.name.length >= 17 %>
+                    <%= image_tag destaque.main_image.url(:thumb), :alt => destaque.name, :title => destaque.name %>
+                  <% else %>
+                      <%= image_tag destaque.main_image.url(:thumb), :alt => destaque.name %>
+                  <% end %>
               <% end %>
 
               <h5><%= destaque.name.truncate(16) %></h5>
-
-              <!-- todo now futuro - debugar esse troço -->
-              <!-- o mouseleave parece td certo, mas n sei pq n muda o nome pro certo -->
-              <!-- todo now futuro - colokr estilo aqui q qndo passa o mouse fica bonitinho e mesm q o nome for grand, n estrague o troço -->
-              <!-- <script>
-
-                  var hover_ok = false;
-                  var no_hover_ok = false;
-
-                  $( "h5" ).hover(
-                          function() {
-                              no_hover_ok = false;
-                              if(hover_ok === true){
-                                  return;
-                              }
-                              else{
-                                  var bar_name = '<%= destaque.name %>';
-                                  $(this).html(bar_name);
-                                  hover_ok = true;
-                              }
-                          }
-                  );
-                  $( "h5" ).mouseleave(
-                          function() {
-                              hover_ok = false;
-                              if(no_hover_ok === true){
-                                  return;
-                              }
-                              else {
-                                  var bar_name = '<%= destaque.name.truncate(16) %>';
-                                  $(this).html(bar_name);
-                                  no_hover_ok = true;
-                              }
-                          }
-                  );
-              </script> -->
 
             </a>
 
           </div>
 
       <% end %>
-
 
       <div class="principal-destaques">
         <a href="<%= all_home_bars_path %>">

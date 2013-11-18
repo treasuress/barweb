@@ -18,9 +18,17 @@
 
         <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
         <% if destaque.main_image_file_size.nil? %>
-            <img src="<%= image_path "rails.png" %>" />
+            <% if destaque.name.length >= 17 %>
+                <img src="<%= image_path "rails.png" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" />
+            <% else %>
+                <img src="<%= image_path "rails.png" %>" alt="<%= destaque.name %>" />
+            <% end %>
         <% else %>
-            <%= image_tag destaque.main_image.url(:thumb) %>
+            <% if destaque.name.length >= 17 %>
+                <%= image_tag destaque.main_image.url(:thumb), :alt => destaque.name, :title => destaque.name %>
+            <% else %>
+                <%= image_tag destaque.main_image.url(:thumb), :alt => destaque.name %>
+            <% end %>
         <% end %>
 
         <h5><%= destaque.name.truncate(16) %></h5>
