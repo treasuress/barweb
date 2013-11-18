@@ -15,7 +15,14 @@
   <h1>Estabelecimentos de Uberlândia</h1>
     <% @home_bars.each do |destaque| %>
       <a href="<%= home_bar_path(destaque.name) %>">
-        <%= image_tag destaque.main_image.url(:thumb) %>
+
+        <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+        <% if destaque.main_image_file_size.nil? %>
+            <img src="<%= image_path "rails.png" %>" />
+        <% else %>
+            <%= image_tag destaque.main_image.url(:thumb) %>
+        <% end %>
+
         <h5><%= destaque.name.truncate(16) %></h5>
       </a>
     <% end %>

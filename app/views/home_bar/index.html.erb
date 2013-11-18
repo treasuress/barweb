@@ -9,7 +9,12 @@
 
       <h1><%= @home_bar.name %></h1>
 
-      <%= image_tag @home_bar.main_image.url(:home), :style => "float:left" %>
+      <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+      <% if @home_bar.main_image_file_size.nil? %>
+          <img src="<%= image_path "rails.png" %>" style="float:left" />
+      <% else %>
+          <%= image_tag @home_bar.main_image.url(:home), :style => "float:left" %>
+      <% end %>
 
       <!-- todo now - img fixa deve ser substituida pelo mapa de onde é o bar -->
       <%= image_tag "mapa.jpg", :style => "margin-left: 200px; margin-top: 84px;" %>

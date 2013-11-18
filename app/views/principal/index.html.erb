@@ -3,8 +3,8 @@
 <section class="principal">
 
   <!--todo now test - ver pra q serv o type -->
-  <!-- todo now - n acho q esse .first tah certo -->
-  <!-- todo now - n eh pra pegar o title, é pra pegar o title da pagina - em tdos -->
+  <!-- todo now - esse .first dev tah errado -->
+  <!-- todo now - n eh pra pegar o title principal, é pra pegar o title de cada pagina - em tdos -->
   <%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @principals.first.title, :type => 'principal'} %>
   <hr/>
 
@@ -43,13 +43,20 @@
       <hr/>
 
       <!-- todo now - mudar titulo -->
-      <h4>Bares em Destaque</h4>
+      <h4>Alguns Bares</h4>
       <% @home_bars.each_with_index do |destaque, index| %>
 
           <div class="principal-destaques">
 
             <a href="<%= home_bar_path(destaque.name)%>" alt="<%= destaque.name %>" >
-              <%= image_tag destaque.main_image.url(:thumb) %>
+
+              <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+              <% if destaque.main_image_file_size.nil? %>
+                  <img src="<%= image_path "rails.png" %>" />
+              <% else %>
+                  <%= image_tag destaque.main_image.url(:thumb) %>
+              <% end %>
+
               <h5><%= destaque.name.truncate(16) %></h5>
 
               <!-- todo now futuro - debugar esse troço -->
