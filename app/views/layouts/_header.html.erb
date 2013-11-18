@@ -1,6 +1,6 @@
-<% @principals.each do |principal| %>
+<header>
 
-    <header>
+  <% @principals.each do |principal| %>
 
       <a href="<%= principal_path %>">
         <%= image_tag principal.main_image.url(:medium) %>
@@ -9,12 +9,12 @@
       <hr/>
 
       <!--<div>-->
-        <!-- todo futuro - buscar à medida q a pessoa vai digitando - oninput? -->
-        <!-- <input type="search" placeholder="Nome do Estabelecimento"/> -->
+      <!-- todo futuro - buscar à medida q a pessoa vai digitando - oninput? -->
+      <!-- <input type="search" placeholder="Nome do Estabelecimento"/> -->
       <!--</div>-->
 
       <!--<hr/>-->
 
-    </header>
+  <% end %>
 
-<% end %>
+</header>
