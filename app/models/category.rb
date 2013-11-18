@@ -4,10 +4,11 @@ class Category < ActiveRecord::Base
 
   has_many :home_bars
 
-  validates :name , :presence => true
+  validates_presence_of :name, :active
 
   has_attached_file :main_image,
                     :styles => {:home => "400x300#", :thumb => "100x100#"},
                     :url => "/assets/categories/:id/images/main_:style.:extension",
                     :path => ":rails_root/public/assets/categories/:id/images/main_:style.:extension"
+
 end

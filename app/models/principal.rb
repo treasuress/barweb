@@ -3,7 +3,9 @@ class Principal < ActiveRecord::Base
 
   has_many :home_bars
 
-  validates_attachment_presence :main_image, :gallery_image, :events_image, :contact_image, :all_homes_image
+  validates_presence_of :title
+
+  validates_attachment_presence :main_image, :gallery_image, :events_image, :contact_image, :follow_fb_image, :follow_tw_image, :all_homes_image
 
   has_attached_file :main_image,
                     :styles => {:medium => "400x300#", :thumb => "100x100#"},
