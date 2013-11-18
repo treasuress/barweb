@@ -1,105 +1,110 @@
 <!-- todo now - colokr mapa com tdos os bares cadastrados de todas as cidades -->
 <!-- todo futuro - n pod ter each, só pode ter 1 principal ativa por vez -->
-<% @principals.each do |principal| %>
+<section class="principal">
 
-    <section class="principal">
+  <!--todo now test - ver pra q serv o type -->
+  <!-- todo now - n acho q esse .first tah certo -->
+  <!-- todo now - n eh pra pegar o title, é pra pegar o title da pagina - em tdos -->
+  <%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @principals.first.title, :type => 'principal'} %>
+  <hr/>
 
-        <h2><%= principal.description %></h2>
+    <% @principals.each do |principal| %>
+      <h2><%= principal.description %></h2>
 
-          <div class="principal-links">
-            <!--<a href="<%= principal_gallery_path %>">-->
-              <%= image_tag principal.gallery_image.url(:thumb)%>
-              <h4>Fotos</h4>
-            <!--</a>-->
-          </div>
+      <div class="principal-links">
+        <!--<a href="<%= principal_gallery_path %>">-->
+          <%= image_tag principal.gallery_image.url(:thumb)%>
+          <h4>Fotos</h4>
+        <!--</a>-->
+      </div>
 
-          <div class="principal-links">
-            <!--<a href="<%= principal_events_path %>">-->
-              <%= image_tag principal.events_image.url(:thumb)%>
-              <h4>Eventos</h4>
-            <!--</a>-->
-          </div>
+      <div class="principal-links">
+        <!--<a href="<%= principal_events_path %>">-->
+          <%= image_tag principal.events_image.url(:thumb)%>
+          <h4>Eventos</h4>
+        <!--</a>-->
+      </div>
 
-          <div class="principal-links">
-            <a href="<%= principal_contact_path %>">
-              <%= image_tag principal.contact_image.url(:thumb)%>
-              <h4>Contato</h4>
-            </a>
-          </div>
+      <div class="principal-links">
+        <a href="<%= principal_contact_path %>">
+          <%= image_tag principal.contact_image.url(:thumb)%>
+          <h4>Contato</h4>
+        </a>
+      </div>
 
-          <div style="display: table-caption;font-size: 14px;">
-            <!-- todo now - colocar links -->
-            <!-- todo now - colokr do g+ -->
-            <%= image_tag principal.follow_fb_image.url(:thumb), :class=>"principal-links" %>
-            <%= image_tag principal.follow_tw_image.url(:thumb), :class=>"principal-links", :style => "padding-top:0; padding-bottom:0;" %>
-            <h4 class="principal-links" style="padding-top:5px">Siga-nos!</h4>
-          </div>
+      <div style="display: table-caption;font-size: 14px;">
+        <!-- todo now - colocar links -->
+        <!-- todo now - colokr do g+ -->
+        <%= image_tag principal.follow_fb_image.url(:thumb), :class=>"principal-links" %>
+        <%= image_tag principal.follow_tw_image.url(:thumb), :class=>"principal-links", :style => "padding-top:0; padding-bottom:0;" %>
+        <h4 class="principal-links" style="padding-top:5px">Siga-nos!</h4>
+      </div>
 
-          <hr/>
+      <hr/>
 
-          <!-- todo now - mudar titulo -->
-          <h4>Bares em Destaque</h4>
-          <% @home_bars.each_with_index do |destaque, index| %>
-
-              <div class="principal-destaques">
-
-                <a href="<%= home_bar_path(destaque.name)%>" alt="<%= destaque.name %>" >
-                  <%= image_tag destaque.main_image.url(:thumb) %>
-                  <h5><%= destaque.name.truncate(16) %></h5>
-
-                  <!-- todo now futuro - debugar esse troço -->
-                  <!-- o mouseleave parece td certo, mas n sei pq n muda o nome pro certo -->
-                  <!-- todo now futuro - colokr estilo aqui q qndo passa o mouse fica bonitinho e mesm q o nome for grand, n estrague o troço -->
-                  <!-- <script>
-
-                      var hover_ok = false;
-                      var no_hover_ok = false;
-
-                      $( "h5" ).hover(
-                              function() {
-                                  no_hover_ok = false;
-                                  if(hover_ok === true){
-                                      return;
-                                  }
-                                  else{
-                                      var bar_name = '<%= destaque.name %>';
-                                      $(this).html(bar_name);
-                                      hover_ok = true;
-                                  }
-                              }
-                      );
-                      $( "h5" ).mouseleave(
-                              function() {
-                                  hover_ok = false;
-                                  if(no_hover_ok === true){
-                                      return;
-                                  }
-                                  else {
-                                      var bar_name = '<%= destaque.name.truncate(16) %>';
-                                      $(this).html(bar_name);
-                                      no_hover_ok = true;
-                                  }
-                              }
-                      );
-                  </script> -->
-
-                </a>
-
-              </div>
-
-          <% end %>
-
+      <!-- todo now - mudar titulo -->
+      <h4>Bares em Destaque</h4>
+      <% @home_bars.each_with_index do |destaque, index| %>
 
           <div class="principal-destaques">
-            <a href="<%= all_home_bars_path %>">
-              <%= image_tag principal.all_homes_image.url(:thumb) %>
-              <!-- todo now - mudar txt -->
-              <h5> Todos os bares aqui! </h5>
+
+            <a href="<%= home_bar_path(destaque.name)%>" alt="<%= destaque.name %>" >
+              <%= image_tag destaque.main_image.url(:thumb) %>
+              <h5><%= destaque.name.truncate(16) %></h5>
+
+              <!-- todo now futuro - debugar esse troço -->
+              <!-- o mouseleave parece td certo, mas n sei pq n muda o nome pro certo -->
+              <!-- todo now futuro - colokr estilo aqui q qndo passa o mouse fica bonitinho e mesm q o nome for grand, n estrague o troço -->
+              <!-- <script>
+
+                  var hover_ok = false;
+                  var no_hover_ok = false;
+
+                  $( "h5" ).hover(
+                          function() {
+                              no_hover_ok = false;
+                              if(hover_ok === true){
+                                  return;
+                              }
+                              else{
+                                  var bar_name = '<%= destaque.name %>';
+                                  $(this).html(bar_name);
+                                  hover_ok = true;
+                              }
+                          }
+                  );
+                  $( "h5" ).mouseleave(
+                          function() {
+                              hover_ok = false;
+                              if(no_hover_ok === true){
+                                  return;
+                              }
+                              else {
+                                  var bar_name = '<%= destaque.name.truncate(16) %>';
+                                  $(this).html(bar_name);
+                                  no_hover_ok = true;
+                              }
+                          }
+                  );
+              </script> -->
+
             </a>
+
           </div>
 
-          <hr/>
+      <% end %>
 
-    </section>
 
-<% end %>
+      <div class="principal-destaques">
+        <a href="<%= all_home_bars_path %>">
+          <%= image_tag principal.all_homes_image.url(:thumb) %>
+          <!-- todo now - mudar txt -->
+          <h5> Todos os bares aqui! </h5>
+        </a>
+      </div>
+
+      <hr/>
+
+    <% end %>
+
+</section>

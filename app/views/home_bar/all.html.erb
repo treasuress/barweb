@@ -8,11 +8,16 @@
 <!-- todo futuro - colokr txt dinamico por cidad -->
 <!-- todo now - mudar este titulo -->
 <section class="home-bar-all">
-    <h1>Estabelecimentos de Uberlândia</h1>
+
+  <%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @home_bars.first.name, :type => 'all_home_bars'} %>
+  <hr/>
+
+  <h1>Estabelecimentos de Uberlândia</h1>
     <% @home_bars.each do |destaque| %>
       <a href="<%= home_bar_path(destaque.name) %>">
         <%= image_tag destaque.main_image.url(:thumb) %>
         <h5><%= destaque.name.truncate(16) %></h5>
       </a>
     <% end %>
+
 </section>
