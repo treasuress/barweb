@@ -1,10 +1,10 @@
 <% @principals.each do |principal| %>
 
     <header>
-      <!-- todo now - colokr link certo -->
-      <!--<h1><%= link_to principal.title,"http://localhost:3000/" %></h1>-->
 
-      <%= image_tag principal.main_image.url(:medium) %>
+      <a href="<%= principal_path %>">
+        <%= image_tag principal.main_image.url(:medium) %>
+      </a>
 
       <hr/>
 

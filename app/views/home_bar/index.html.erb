@@ -50,10 +50,8 @@
       <!-- todo now - colokr da cor da logo -->
       <div class="comments">
           <h6>Deixe seu comentário!</h6>
-          <div class="fb-comments" data-href="http://localhost:3000/uberlandia/<%= @home_bar.name %>" data-numposts="5"></div>
+          <div class="fb-comments" data-href="<%= home_bar_path(@home_bar.name) %>" data-numposts="5"></div>
       </div>
-
-      <!-- <div class="fb-comments" data-href="<%= home_bar_path(@home_bar.name) %>" data-num-posts="5"></div> -->
 
   <% else %>
 
