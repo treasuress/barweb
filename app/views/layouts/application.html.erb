@@ -7,8 +7,21 @@
       <%= stylesheet_link_tag    "application", :media => "all" %>
       <%= javascript_include_tag "application" %>
       <%= csrf_meta_tags %>
+
+      <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+      <!-- Google Maps -->
+      <!-- Maps API Javascript -->
+      <!-- todo futuro - colokr key -->
+      <script src="http://maps.googleapis.com/maps/api/js?key=&sensor=false"></script>
+      <!-- funcionou - https -->
+      <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>-->
+
+      <!-- Inicialização do Maps -->
+      <script src="maps.js"></script>
+
     </head>
-    <body>
+    <body onload="initialize()">
 
         <!-- facebook -->
         <div id="fb-root"></div>
