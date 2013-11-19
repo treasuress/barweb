@@ -85,9 +85,9 @@ header h1 {
     background-color: pink;
 }
 header img {
-    margin: 10px 0 0 40px;
+    margin: 10px 0 0 0px;
     height: 150px;
-    width: 95%;
+    width: 100%;
 }
 
 
@@ -173,7 +173,7 @@ header img {
     margin-left: 5px;
     margin-top: 15px;
 }
-.home-bar-all h1{
+.home-bar-all h1, .home-bar-all h5 {
     text-align: left;
 }
 
