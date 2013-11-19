@@ -21,9 +21,9 @@
         <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
         <% if destaque.logo_bar_image_file_size.nil? %>
             <% if destaque.name.length >= 17 %>
-                <img src="<%= image_path "rails.png" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" />
+                <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" class="no-image" />
             <% else %>
-                <img src="<%= image_path "rails.png" %>" alt="<%= destaque.name %>" />
+                <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque.name %>" class="no-image" />
             <% end %>
         <% else %>
             <% if destaque.name.length >= 17 %>

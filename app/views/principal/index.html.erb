@@ -18,7 +18,7 @@
     <% @principals.each do |principal| %>
       <h2><%= principal.description %></h2>
 
-      <div class="principal-links">
+      <div class="principal-links" style="margin-left: 8%;">
         <!--<a href="<%= principal_gallery_path %>">-->
           <%= image_tag principal.gallery_image.url(:thumb)%>
           <h4>Fotos</h4>
@@ -61,9 +61,9 @@
                   <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
                   <% if destaque.logo_bar_image_file_size.nil? %>
                       <% if destaque.name.length >= 17 %>
-                          <img src="<%= image_path "rails.png" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" />
+                          <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" class="no-image" />
                       <% else %>
-                          <img src="<%= image_path "rails.png" %>" alt="<%= destaque.name %>" />
+                          <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque.name %>" class="no-image" />
                       <% end %>
                   <% else %>
                       <% if destaque.name.length >= 17 %>
@@ -83,7 +83,7 @@
 
           <div class="principal-destaques">
             <a href="<%= all_home_bars_path %>">
-              <%= image_tag principal.all_homes_image.url(:thumb) %>
+              <%= image_tag principal.all_homes_image.url(:thumb), :style => "width: 100px;height: 100px;"  %>
               <!-- todo now - mudar txt -->
               <h5> <%= I18n.t("principal.index.all_bars") %> </h5>
             </a>
