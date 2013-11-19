@@ -5,7 +5,7 @@ set_default(:mysql_password) { Capistrano::CLI.password_prompt "MySQL #{mysql_us
 set_default(:mysql_database) { "#{application}_production" }
 
 namespace :mysql do
-  #todo now futuro - fazer funcionar direito
+  #todo now futuro - fazer funcionar
   #desc "Install the latest stable release of MySQL."
   #task :install, roles: :db, only: {primary: true} do
   #  run "#{sudo} apt-get -y install mysql-server mysql-client libmysqlclient-dev"

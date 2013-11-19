@@ -9,8 +9,6 @@ class HomeBar < ActiveRecord::Base
 
   validates_presence_of :name, :address, :number, :neighborhood, :state, :city, :category_id, :status_id
 
-  validates_attachment_presence :main_image
-
   has_attached_file :main_image,
                     :styles => {:home => "400x300#", :thumb => "100x100#"},
                     :url => "/assets/home_bars/:id/images/main_:style.:extension",
