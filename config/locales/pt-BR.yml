@@ -355,15 +355,18 @@ pt-BR:
 
 
 # parte web
-  product:
+  home_bar:
+    all:
+      title: "Estabelecimentos de Uberlândia"
     index:
-      menu_home: "Home"
-      menu_products: "Celular"
-      menu_list: "Lista de Produtos"
-      title: "Produtos"
-      image_click: "Veja Mais Detalhes"
-      old_price: "de: "
-      new_price: "por: "
+      zip: "CEP: "
+      phone: "Telefone: "
+      fb-comments: "Deixe seu comentário sobre este estabelecimento!"
+
+  principal:
+    index:
+      all_bars: "Todos os bares aqui!"
+
     show:
       menu_home: "Home"
       menu_products: "Pré-Pago"

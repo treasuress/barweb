@@ -12,7 +12,7 @@
 <hr/>
 
 <section class="home-bar-all">
-  <h1>Estabelecimentos de Uberlândia</h1>
+  <h1><%= I18n.t("home_bar.all.title") %></h1>
     <% @home_bars.each do |destaque| %>
       <a href="<%= home_bar_path(destaque.name) %>">
 

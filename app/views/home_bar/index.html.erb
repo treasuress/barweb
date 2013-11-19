@@ -37,12 +37,12 @@
             <%= @home_bar.city %>
             - <%= @home_bar.state %>
             - <%= @home_bar.country_bar %>
-            <%= "- CEP: " + @home_bar.zip if !@home_bar.zip.blank? %>
+            <%= "- " + I18n.t("home_bar.index.zip") + @home_bar.zip if !@home_bar.zip.blank? %>
           </h4>
           <h5>
             <% if !@home_bar.phone_number.blank? %>
                 <!-- todo futuro - ver se no mobile dah pra fazer a pessoa jah clicar pra ligar -->
-                Telefone: <%= @home_bar.phone_number %>
+                <%= I18n.t("home_bar.index.phone") + @home_bar.phone_number %>
                 <%= ", " + @home_bar.cellphone_number if !@home_bar.cellphone_number.blank? %>
             <% end %>
           </h5>
@@ -53,8 +53,9 @@
       <!-- todo now futuro - colocar recomendações -->
       <br /><br />
       <!-- todo now - colokr da cor da logo -->
+      <!-- todo now - pegar nome do estabelecimento -->
       <div class="comments">
-          <h6>Deixe seu comentário sobre este estabelecimento!</h6>
+          <h6><%= I18n.t("home_bar.index.fb-comments") %></h6>
           <div class="fb-comments" data-href="<%= home_bar_path(@home_bar.name) %>" data-numposts="5"></div>
       </div>
 
