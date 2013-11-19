@@ -1,9 +1,9 @@
 <!-- todo now futuro - colocar forma de voltar pra pagina anterior - talvez menu lateral ou breadcrumb em cima -->
 
-<section class="home-bar">
+<%= render :partial => 'layouts/social', :locals => {:url => home_bar_path(@home_bar.name), :share_text => @home_bar.name, :type => 'home_bar'} %>
+<hr/>
 
-  <%= render :partial => 'layouts/social', :locals => {:url => home_bar_path(@home_bar.name), :share_text => @home_bar.name, :type => 'home_bar'} %>
-  <hr/>
+<section class="home-bar">
 
   <% if @home_bar.address.present? %>
 
@@ -54,7 +54,7 @@
       <br /><br />
       <!-- todo now - colokr da cor da logo -->
       <div class="comments">
-          <h6>Deixe seu comentário!</h6>
+          <h6>Deixe seu comentário sobre este estabelecimento!</h6>
           <div class="fb-comments" data-href="<%= home_bar_path(@home_bar.name) %>" data-numposts="5"></div>
       </div>
 

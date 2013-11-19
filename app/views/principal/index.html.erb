@@ -1,12 +1,12 @@
 <!-- todo now - colokr mapa com tdos os bares cadastrados de todas as cidades -->
 <!-- todo futuro - n pod ter each, só pode ter 1 principal ativa por vez -->
-<section class="principal">
+<!--todo now test - ver pra q serv o type -->
+<!-- todo now - esse .first dev tah errado -->
+<!-- todo now - n eh pra pegar o title principal, é pra pegar o title de cada pagina - em tdos -->
+<%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @principals.first.title, :type => 'principal'} %>
+<hr/>
 
-  <!--todo now test - ver pra q serv o type -->
-  <!-- todo now - esse .first dev tah errado -->
-  <!-- todo now - n eh pra pegar o title principal, é pra pegar o title de cada pagina - em tdos -->
-  <%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @principals.first.title, :type => 'principal'} %>
-  <hr/>
+<section class="principal">
 
     <% @principals.each do |principal| %>
       <h2><%= principal.description %></h2>

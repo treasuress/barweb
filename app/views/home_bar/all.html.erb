@@ -7,11 +7,11 @@
 <!-- todo futuro - colokr busca dinamica por cidad -->
 <!-- todo futuro - colokr txt dinamico por cidad -->
 <!-- todo now - mudar este titulo -->
+
+<%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @home_bars.first.name, :type => 'all_home_bars'} %>
+<hr/>
+
 <section class="home-bar-all">
-
-  <%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @home_bars.first.name, :type => 'all_home_bars'} %>
-  <hr/>
-
   <h1>Estabelecimentos de Uberlândia</h1>
     <% @home_bars.each do |destaque| %>
       <a href="<%= home_bar_path(destaque.name) %>">
