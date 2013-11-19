@@ -53,9 +53,8 @@
       <!-- todo now futuro - colocar recomendações -->
       <br /><br />
       <!-- todo now - colokr da cor da logo -->
-      <!-- todo now - pegar nome do estabelecimento -->
       <div class="comments">
-          <h6><%= I18n.t("home_bar.index.fb-comments") %></h6>
+          <h6><%= I18n.t("home_bar.index.fb-comments") + @home_bar.name + "!" %></h6>
           <div class="fb-comments" data-href="<%= home_bar_path(@home_bar.name) %>" data-numposts="5"></div>
       </div>
 
