@@ -50,12 +50,12 @@ ActiveRecord::Schema.define(:version => 20131110190353) do
     t.string   "name"
     t.string   "description"
     t.boolean  "active"
-    t.string   "main_image_file_name"
-    t.string   "main_image_content_type"
-    t.integer  "main_image_file_size"
-    t.datetime "main_image_updated_at"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.string   "category_image_file_name"
+    t.string   "category_image_content_type"
+    t.integer  "category_image_file_size"
+    t.datetime "category_image_updated_at"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "home_bars", :force => true do |t|
@@ -63,10 +63,10 @@ ActiveRecord::Schema.define(:version => 20131110190353) do
     t.string   "description",                  :limit => 380
     t.string   "phone_number"
     t.string   "cellphone_number"
-    t.string   "main_image_file_name"
-    t.string   "main_image_content_type"
-    t.integer  "main_image_file_size"
-    t.datetime "main_image_updated_at"
+    t.string   "logo_bar_image_file_name"
+    t.string   "logo_bar_image_content_type"
+    t.integer  "logo_bar_image_file_size"
+    t.datetime "logo_bar_image_updated_at"
     t.string   "zip"
     t.string   "country_bar",                                 :null => false
     t.string   "address",                                     :null => false
@@ -100,10 +100,10 @@ ActiveRecord::Schema.define(:version => 20131110190353) do
   create_table "principals", :force => true do |t|
     t.string   "title"
     t.string   "description",                  :limit => 380
-    t.string   "main_image_file_name"
-    t.string   "main_image_content_type"
-    t.integer  "main_image_file_size"
-    t.datetime "main_image_updated_at"
+    t.string   "logo_image_file_name"
+    t.string   "logo_image_content_type"
+    t.integer  "logo_image_file_size"
+    t.datetime "logo_image_updated_at"
     t.string   "gallery_image_file_name"
     t.string   "gallery_image_content_type"
     t.integer  "gallery_image_file_size"
