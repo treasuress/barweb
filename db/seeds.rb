@@ -46,7 +46,9 @@ if Rails.env.development?
                        #Completo
                        {:status_id => 1, :category_id => 1, :name => "Nome bar 1", :description => "descricao bar 1", :main_image => File.open('public/home_bars/bar1.JPG'), :phone_number => "telefone bar 1", :cellphone_number => "cel bar 1", :zip => "cep bar 1", :country_bar => "país bar 1", :state => "estado bar 1", :city => "cidade bar 1", :address => "logradouro bar 1", :number => "123", :neighborhood => "bairro bar 1", :complement => "complemento bar 1" },
                        {:status_id => 1, :category_id => 1, :name => "Nome grande bar 8", :description => "descricao bar 8", :main_image => File.open('public/home_bars/bar8.JPG'), :phone_number => "telefone bar 8", :cellphone_number => "cel bar 8", :zip => "cep bar 8", :country_bar => "país bar 8", :state => "estado bar 8", :city => "cidade bar 8", :address => "logradouro bar 8", :number => "823", :neighborhood => "bairro bar 8", :complement => "complemento bar 8" },
-                       {:status_id => 1, :category_id => 1, :name => "Nome bar 11", :description => "descricao bar 11", :main_image => File.open('public/home_bars/bar11.jpg'), :phone_number => "telefone bar 11", :cellphone_number => "cel bar 11", :zip => "cep bar 11", :country_bar => "país bar 11", :state => "estado bar 11", :city => "cidade bar 11", :address => "logradouro bar 11", :number => "1123", :neighborhood => "bairro bar 11", :complement => "complemento bar 11" },
+
+                       #Sem imagem
+                       {:status_id => 1, :category_id => 1, :name => "Nome bar 11", :description => "descricao bar 11", :phone_number => "telefone bar 11", :cellphone_number => "cel bar 11", :zip => "cep bar 11", :country_bar => "país bar 11", :state => "estado bar 11", :city => "cidade bar 11", :address => "logradouro bar 11", :number => "1123", :neighborhood => "bairro bar 11", :complement => "complemento bar 11" },
 
                        #Sem descrição, cep, telefone e complemento
                        {:status_id => 1, :category_id => 1, :name => "Nome bar 2", :main_image => File.open('public/home_bars/bar2.jpg'), :country_bar => "país bar 2", :state => "estado bar 2", :city => "cidade bar 2", :address => "logradouro bar 2", :number => "233", :neighborhood => "bairro bar 2" },
@@ -74,5 +76,3 @@ if Rails.env.development?
   end
 
 end
-
-#todo now - mudar pro mysql
