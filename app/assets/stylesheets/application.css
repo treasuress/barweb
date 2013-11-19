@@ -12,11 +12,7 @@
  *= require_tree .
  */
 
-
-/* todo now - fazer cores diferentes para links ativos, visitados, etc - de acordo com as cores da logo */
-/* todo now - colokr imgs no css e q sao alteradas c for mudado no cadastro */
-
-/* PROJETO */
+/* TODAS AS PÁGINAS */
 * {
     margin: 0;
     padding: 0;
@@ -24,15 +20,10 @@
 html, body {
     height: 100%;
     font-family: Helvetica;
+    width: 90%;
+    text-align: -webkit-right;
 }
-/* todo now - melhorar isso */
-.bts{ padding:0; margin:-19px -11px 0 0; float:right;}
-.bts li{ float:left; list-style:none; overflow:hidden; margin-right:5px;}
-.bts li iframe{ width:98px !important}
-
-
-/* VÁRIAS PÁGINAS */
-.principal hr, .home-bar hr, .header hr {
+hr {
     height: 2px;
     clear: both;
 }
@@ -40,10 +31,43 @@ html, body {
     width: 78% !important;
     margin-left: 20% !important;
 }
-.principal a, .home-bar-all a, .contact a{
+/* LINKs */
+a {
     text-decoration: none;
+    color: darkblue;
+}
+a:visited {
+    color:#006AAB;
+}
+a:hover {
+    color: cornflowerblue;
+}
+a:focus {
+    outline: thin dotted;
+}
+a:hover, a:active {
+    outline: 0;
 }
 
+
+
+/* SOCIAL */
+/* todo now - melhorar isso */
+.bts {
+    padding:0;
+    margin:6px 0 3px 0;
+    float:right;
+    font-size: 10px;
+}
+.bts li {
+    float:left;
+    list-style:none;
+    overflow:hidden;
+    margin-right:5px;
+}
+.bts li iframe {
+    width:98px !important;
+}
 
 
 /* APPLICATION */
@@ -75,6 +99,9 @@ header img {
     margin-right: 1.5%;
     font-size: 14px;
     text-align: justify;
+}
+.principal h4, .principal h5 {
+    text-align: left;
 }
 .principal .principal-links {
     float: left;
@@ -146,6 +173,9 @@ header img {
     margin-left: 5px;
     margin-top: 15px;
 }
+.home-bar-all h1{
+    text-align: left;
+}
 
 /* FOOTER */
 footer {
@@ -156,4 +186,5 @@ footer {
     background-color: pink;
     width: 100%;
     clear: both;
+    text-align: left;
 }
