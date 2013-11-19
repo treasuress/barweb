@@ -8,6 +8,8 @@
 
 <section class="principal">
 
+  <nav>
+
     <% @principals.each do |principal| %>
       <h2><%= principal.description %></h2>
 
@@ -44,45 +46,47 @@
 
       <!-- todo now - mudar titulo -->
       <h4>Alguns Bares</h4>
-      <% @home_bars.each_with_index do |destaque, index| %>
+
+          <% @home_bars.each do |destaque| %>
+
+              <div class="principal-destaques">
+
+                <a href="<%= home_bar_path(destaque.name)%>" alt="<%= destaque.name %>" >
+
+                  <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+                  <% if destaque.main_image_file_size.nil? %>
+                      <% if destaque.name.length >= 17 %>
+                          <img src="<%= image_path "rails.png" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" />
+                      <% else %>
+                          <img src="<%= image_path "rails.png" %>" alt="<%= destaque.name %>" />
+                      <% end %>
+                  <% else %>
+                      <% if destaque.name.length >= 17 %>
+                        <%= image_tag destaque.main_image.url(:thumb), :alt => destaque.name, :title => destaque.name %>
+                      <% else %>
+                          <%= image_tag destaque.main_image.url(:thumb), :alt => destaque.name %>
+                      <% end %>
+                  <% end %>
+
+                  <h5><%= destaque.name.truncate(16) %></h5>
+
+                </a>
+
+              </div>
+
+          <% end %>
 
           <div class="principal-destaques">
-
-            <a href="<%= home_bar_path(destaque.name)%>" alt="<%= destaque.name %>" >
-
-              <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
-              <% if destaque.main_image_file_size.nil? %>
-                  <% if destaque.name.length >= 17 %>
-                      <img src="<%= image_path "rails.png" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" />
-                  <% else %>
-                      <img src="<%= image_path "rails.png" %>" alt="<%= destaque.name %>" />
-                  <% end %>
-              <% else %>
-                  <% if destaque.name.length >= 17 %>
-                    <%= image_tag destaque.main_image.url(:thumb), :alt => destaque.name, :title => destaque.name %>
-                  <% else %>
-                      <%= image_tag destaque.main_image.url(:thumb), :alt => destaque.name %>
-                  <% end %>
-              <% end %>
-
-              <h5><%= destaque.name.truncate(16) %></h5>
-
+            <a href="<%= all_home_bars_path %>">
+              <%= image_tag principal.all_homes_image.url(:thumb) %>
+              <!-- todo now - mudar txt -->
+              <h5> <%= I18n.t("principal.index.all_bars") %> </h5>
             </a>
-
           </div>
-
-      <% end %>
-
-      <div class="principal-destaques">
-        <a href="<%= all_home_bars_path %>">
-          <%= image_tag principal.all_homes_image.url(:thumb) %>
-          <!-- todo now - mudar txt -->
-          <h5> <%= I18n.t("principal.index.all_bars") %> </h5>
-        </a>
-      </div>
 
       <hr/>
 
     <% end %>
+  </nav>
 
 </section>
