@@ -5,7 +5,7 @@ def new_home_bar_hash
       :category_id => 1,
       :name => "Bares",
       :description => "Todos os Bares",
-      :main_image => File.new(IMAGE_EXAMPLE),
+      :logo_bar_image => File.new(IMAGE_EXAMPLE),
       :phone_number => "telefone bar 1",
       :cellphone_number => "cel bar 1",
       :zip => "cep bar 1",

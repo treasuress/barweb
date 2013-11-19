@@ -4,10 +4,10 @@ class CreatePrincipals < ActiveRecord::Migration
       t.string :title
       t.string :description, :limit => 380
 
-      t.string :main_image_file_name
-      t.string :main_image_content_type
-      t.integer :main_image_file_size
-      t.datetime :main_image_updated_at
+      t.string :logo_image_file_name
+      t.string :logo_image_content_type
+      t.integer :logo_image_file_size
+      t.datetime :logo_image_updated_at
 
       t.string :gallery_image_file_name
       t.string :gallery_image_content_type

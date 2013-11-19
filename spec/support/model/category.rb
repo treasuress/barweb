@@ -4,6 +4,6 @@ def new_category_hash
       :active => true,
       :name => "Bares ",
       :description => "Todos os Bares",
-      :main_image => File.new(IMAGE_EXAMPLE)
+      :category_image => File.new(IMAGE_EXAMPLE)
   }
 end

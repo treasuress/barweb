@@ -6,8 +6,8 @@ ActiveAdmin.register Principal do
   index do
     column :id
     column :title
-    column :main_image do |record|
-      image_tag(record.main_image.url(:thumb))
+    column :logo_image do |record|
+      image_tag(record.logo_image.url(:thumb))
     end
     column :gallery_image do |record|
       image_tag(record.gallery_image.url(:thumb))
@@ -34,8 +34,8 @@ ActiveAdmin.register Principal do
     attributes_table do
       row :id
       rows :title, :description
-      row :main_image do |record|
-        image_tag(record.main_image.url(:thumb))
+      row :logo_image do |record|
+        image_tag(record.logo_image.url(:thumb))
       end
       row :gallery_image do |record|
         image_tag(record.gallery_image.url(:thumb))
@@ -63,7 +63,7 @@ ActiveAdmin.register Principal do
       f.input :title
       #f.input :description, :as => :ckeditor, :input_html => {:width => "79%", :style => 'margin-left: 20%'}
       f.input :description, :as => :text, :input_html => { :maxlength => 380 }
-      f.input :main_image
+      f.input :logo_image
       f.input :gallery_image
       f.input :events_image
       f.input :contact_image

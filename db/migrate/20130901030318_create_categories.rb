@@ -5,10 +5,10 @@ class CreateCategories < ActiveRecord::Migration
       t.string :description
       t.boolean :active
 
-      t.string :main_image_file_name
-      t.string :main_image_content_type
-      t.integer :main_image_file_size
-      t.datetime :main_image_updated_at
+      t.string :category_image_file_name
+      t.string :category_image_content_type
+      t.integer :category_image_file_size
+      t.datetime :category_image_updated_at
 
       t.timestamps
     end

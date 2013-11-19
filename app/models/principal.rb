@@ -1,16 +1,19 @@
 class Principal < ActiveRecord::Base
-  attr_accessible :title, :description, :main_image, :gallery_image, :events_image, :contact_image, :follow_fb_image, :follow_tw_image, :all_homes_image
+  attr_accessible :title, :description, :logo_image, :gallery_image, :events_image, :contact_image, :follow_fb_image, :follow_tw_image, :all_homes_image
 
   has_many :home_bars
 
   validates_presence_of :title
 
-  validates_attachment_presence :main_image, :gallery_image, :events_image, :contact_image, :follow_fb_image, :follow_tw_image, :all_homes_image
+  validates_attachment_presence :logo_image, :gallery_image, :events_image, :contact_image, :follow_fb_image, :follow_tw_image, :all_homes_image
 
-  has_attached_file :main_image,
+  #todo now - mudar nome do campos pra logo
+  #todo now - colokr tamanho certo da logo
+  has_attached_file :logo_image,
                     :styles => {:medium => "400x300#", :thumb => "100x100#"},
-                    :url => "/assets/principals/:id/images/main_:style.:extension",
-                    :path => ":rails_root/public/assets/principals/:id/images/main_:style.:extension"
+                    :url => "/assets/principals/:id/images/logo_:style.:extension",
+                    :path => ":rails_root/public/assets/principals/:id/images/logo_:style.:extension"
+  #todo now - tirar tamanhos grands dessas imgs jah q n vai usar
   has_attached_file :gallery_image,
                     :styles => {:medium => "400x300#", :thumb => "100x100#"},
                     :url => "/assets/principals/:id/images/gallery_:style.:extension",

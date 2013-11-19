@@ -1,5 +1,5 @@
 class HomeBar < ActiveRecord::Base
-  attr_accessible :name, :description, :main_image, :phone_number, :cellphone_number,
+  attr_accessible :name, :description, :logo_bar_image, :phone_number, :cellphone_number,
                   :address, :number, :complement, :zip, :neighborhood, :city, :state, :country_bar,
                   :category_id, :status_id
 
@@ -9,10 +9,10 @@ class HomeBar < ActiveRecord::Base
 
   validates_presence_of :name, :address, :number, :neighborhood, :state, :city, :category_id, :status_id
 
-  has_attached_file :main_image,
+  has_attached_file :logo_bar_image,
                     :styles => {:home => "400x300#", :thumb => "100x100#"},
-                    :url => "/assets/home_bars/:id/images/main_:style.:extension",
-                    :path => ":rails_root/public/assets/home_bars/:id/images/main_:style.:extension"
+                    :url => "/assets/home_bars/:id/images/logo_bar_:style.:extension",
+                    :path => ":rails_root/public/assets/home_bars/:id/images/logo_bar_:style.:extension"
 
   def self.active()
     #todo now futuro - FUNCIONA - mas n acho q teja certo - c mudar id tdas as buscam ficarão erradas - o bom seria fazer o join pra pegar pelo nome, mas n deu certo

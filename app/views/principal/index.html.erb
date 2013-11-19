@@ -59,7 +59,7 @@
                 <a href="<%= home_bar_path(destaque.name)%>" alt="<%= destaque.name %>" >
 
                   <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
-                  <% if destaque.main_image_file_size.nil? %>
+                  <% if destaque.logo_bar_image_file_size.nil? %>
                       <% if destaque.name.length >= 17 %>
                           <img src="<%= image_path "rails.png" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" />
                       <% else %>
@@ -67,9 +67,9 @@
                       <% end %>
                   <% else %>
                       <% if destaque.name.length >= 17 %>
-                        <%= image_tag destaque.main_image.url(:thumb), :alt => destaque.name, :title => destaque.name %>
+                        <%= image_tag destaque.logo_bar_image.url(:thumb), :alt => destaque.name, :title => destaque.name %>
                       <% else %>
-                          <%= image_tag destaque.main_image.url(:thumb), :alt => destaque.name %>
+                          <%= image_tag destaque.logo_bar_image.url(:thumb), :alt => destaque.name %>
                       <% end %>
                   <% end %>
 

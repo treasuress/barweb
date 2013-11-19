@@ -3,7 +3,7 @@ def new_principal_hash
   {
       :title => "Titulo Principal",
       :description => "Descrição principal",
-      :main_image => File.new(IMAGE_EXAMPLE),
+      :logo_image => File.new(IMAGE_EXAMPLE),
       :gallery_image => File.new(IMAGE_EXAMPLE),
       :events_image => File.new(IMAGE_EXAMPLE),
       :contact_image => File.new(IMAGE_EXAMPLE),

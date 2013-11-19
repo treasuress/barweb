@@ -7,10 +7,10 @@ class CreateHomeBars < ActiveRecord::Migration
       t.string :phone_number
       t.string :cellphone_number
 
-      t.string :main_image_file_name
-      t.string :main_image_content_type
-      t.integer :main_image_file_size
-      t.datetime :main_image_updated_at
+      t.string :logo_bar_image_file_name
+      t.string :logo_bar_image_content_type
+      t.integer :logo_bar_image_file_size
+      t.datetime :logo_bar_image_updated_at
 
       #Endereço
       t.string :zip

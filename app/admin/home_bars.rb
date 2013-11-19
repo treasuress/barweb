@@ -14,8 +14,8 @@ ActiveAdmin.register HomeBar do
     column :id
     column :category
     column :name
-    column :main_image do |record|
-      image_tag(record.main_image.url(:thumb))
+    column :logo_bar_image do |record|
+      image_tag(record.logo_bar_image.url(:thumb))
     end
 
     #todo we - colokr akih forma de mudar o status dos bares
@@ -33,8 +33,8 @@ ActiveAdmin.register HomeBar do
       row :name
       row :description
 
-      row :main_image do |record|
-        image_tag(record.main_image.url(:thumb))
+      row :logo_bar_image do |record|
+        image_tag(record.logo_bar_image.url(:thumb))
       end
       rows :phone_number, :cellphone_number   #todo futuro - cellphone? - colocar pra escolher tipo de telefone - criar funcao q cria no banco os tipos d telefones, aí chamar no combo esses tipos
 
@@ -62,7 +62,7 @@ ActiveAdmin.register HomeBar do
       #f.input :description, :as => :ckeditor, :input_html => {:width => "78%", "margin-left" => "20%" }
 
 
-      f.input :main_image
+      f.input :logo_bar_image
 
       #todo we - colokr validacoes com html 5 em tdos
       #TODO we - COLOCAR ALGUMA MASCARA PRA N TER COMO ENVIAR ERRADO (HTML5)

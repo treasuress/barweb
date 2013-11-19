@@ -6,8 +6,8 @@ ActiveAdmin.register Category do
   index do
     column :id
     column :name
-    column :main_image do |record|
-      image_tag(record.main_image.url(:thumb))
+    column :category_image do |record|
+      image_tag(record.category_image.url(:thumb))
     end
     column :active do |record|
       record.active == true ? 'Ativo' : 'Inativo'
@@ -26,9 +26,9 @@ ActiveAdmin.register Category do
         record.active == true ? 'Ativo' : 'Inativo'
       end
 
-      if !category.main_image_file_size.nil?
-        row :main_image do
-          image_tag(category.main_image.url(:thumb))
+      if !category.category_image_file_size.nil?
+        row :category_image do
+          image_tag(category.category_image.url(:thumb))
         end
       end
     end
@@ -43,7 +43,7 @@ ActiveAdmin.register Category do
       end
       f.input :name
       f.input :description, :as => :text, :input_html => {:rows => 4}
-      f.input :main_image
+      f.input :category_image
     end
     f.actions
   end
