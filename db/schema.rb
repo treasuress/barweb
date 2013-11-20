@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131110190353) do
+ActiveRecord::Schema.define(:version => 20131120150244) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -58,9 +58,23 @@ ActiveRecord::Schema.define(:version => 20131110190353) do
     t.datetime "updated_at",                  :null => false
   end
 
+  create_table "cities", :force => true do |t|
+    t.string   "name"
+    t.integer  "state_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "countries", :force => true do |t|
+    t.string   "iso"
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "home_bars", :force => true do |t|
-    t.string   "name",                                        :null => false
-    t.string   "description",                  :limit => 380
+    t.string   "name",                                       :null => false
+    t.string   "description",                 :limit => 380
     t.string   "phone_number"
     t.string   "cellphone_number"
     t.string   "logo_bar_image_file_name"
@@ -68,33 +82,17 @@ ActiveRecord::Schema.define(:version => 20131110190353) do
     t.integer  "logo_bar_image_file_size"
     t.datetime "logo_bar_image_updated_at"
     t.string   "zip"
-    t.string   "country_bar",                                 :null => false
-    t.string   "address",                                     :null => false
-    t.integer  "number",                                      :null => false
+    t.string   "address",                                    :null => false
+    t.integer  "number",                                     :null => false
     t.string   "complement"
-    t.string   "neighborhood",                                :null => false
-    t.string   "state",                                       :null => false
-    t.string   "city",                                        :null => false
-    t.string   "gallery_image_file_name"
-    t.string   "gallery_image_content_type"
-    t.integer  "gallery_image_file_size"
-    t.datetime "gallery_image_updated_at"
-    t.string   "events_image_file_name"
-    t.string   "events_image_content_type"
-    t.integer  "events_image_file_size"
-    t.datetime "events_image_updated_at"
-    t.string   "contact_image_file_name"
-    t.string   "contact_image_content_type"
-    t.integer  "contact_image_file_size"
-    t.datetime "contact_image_updated_at"
-    t.string   "follow_fb_image_file_name"
-    t.string   "follow_fb_image_content_type"
-    t.integer  "follow_fb_image_file_size"
-    t.datetime "follow_fb_image_updated_at"
+    t.string   "neighborhood",                               :null => false
     t.integer  "category_id"
-    t.datetime "created_at",                                  :null => false
-    t.datetime "updated_at",                                  :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
     t.integer  "status_id"
+    t.integer  "country_id"
+    t.integer  "state_id"
+    t.integer  "city_id"
   end
 
   create_table "principals", :force => true do |t|
@@ -130,6 +128,14 @@ ActiveRecord::Schema.define(:version => 20131110190353) do
     t.datetime "all_homes_image_updated_at"
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false
+  end
+
+  create_table "states", :force => true do |t|
+    t.string   "iso"
+    t.string   "name"
+    t.integer  "country_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "status", :force => true do |t|

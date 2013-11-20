@@ -39,7 +39,7 @@ ActiveAdmin.register HomeBar do
       rows :phone_number, :cellphone_number   #todo futuro - cellphone? - colocar pra escolher tipo de telefone - criar funcao q cria no banco os tipos d telefones, aí chamar no combo esses tipos
 
       rows :address, :number, :complement, :zip
-      rows :neighborhood, :city, :state, :country_bar
+      rows :neighborhood, :city, :state, :country
     end
   end
 
@@ -74,9 +74,11 @@ ActiveAdmin.register HomeBar do
 
     f.inputs I18n.t("activerecord.attributes.home_bar.address"), :multipart => true do
       f.input :zip
-      f.input :country_bar
-      f.input :state
-      f.input :city
+      #todo we - colokr campos maiores pq tao mt feios
+      #todo now - colokr pais como campo obrigatorio
+      f.input :country, :include_blank => false
+      f.input :state, :include_blank => false
+      f.input :city, :include_blank => false
       f.input :address
       f.input :number
       f.input :neighborhood

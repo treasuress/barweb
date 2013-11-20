@@ -283,7 +283,7 @@ pt-BR:
         phone_number: "Telefone para Contato"
         cellphone_number: "Telefone para Contato"
         zip: "CEP"
-        country_bar: "País"
+        country: "País"
         state: "Estado"
         city: "Cidade"
         address: "Logradouro"
