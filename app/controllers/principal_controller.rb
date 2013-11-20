@@ -33,4 +33,12 @@ class PrincipalController < ApplicationController
     render('layouts/terms')
   end
 
+  def gallery
+    render('layouts/page_building')
+  end
+
+  def events
+    render('layouts/page_building')
+  end
+
 end
