@@ -240,7 +240,7 @@ pt-BR:
     models:
       admin_user: "Administrador"
       category: "Categoria"
-      home_bar: "Bares"
+      home_bar: "Estabelecimento"
       principal: "Página Principal"
     attributes:
       admin_user:
