@@ -14,14 +14,28 @@
       <!-- Maps API Javascript -->
       <!-- todo futuro - colokr key -->
       <script src="http://maps.googleapis.com/maps/api/js?key=&sensor=false"></script>
+      <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
       <!-- funcionou - https -->
       <!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>-->
 
-      <!-- Inicialização do Maps -->
-      <script src="maps.js"></script>
-
     </head>
-    <body onload="initialize()">
+
+    <body>
+        <!-- Maps -->
+        <script type="text/javascript">
+            var local;
+
+            $(document).ready(function () {
+                //todo now - fazer if dentro do initializer pra ver se tem component pra n continuar a execução caso n tiver
+                initialize();
+                if(local != null)
+                {
+                    for(var i=0;i<local.length;i++){
+                        carregarNoMapa(local[i]);
+                    }
+                }
+            });
+        </script>
 
         <!-- facebook -->
         <div id="fb-root"></div>

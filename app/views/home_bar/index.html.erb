@@ -58,6 +58,12 @@
           <div class="fb-comments" data-href="<%= home_bar_path(@home_bar.name) %>" data-numposts="5"></div>
       </div>
 
+      <!-- dados para mapa -->
+      <script type="text/javascript">
+          local = new Array();
+          local[0] = '<%= @home_bar.address + ", " + @home_bar.number.to_s + ", " + @home_bar.city %>';
+      </script>
+
   <% else %>
 
     <!-- todo now - colokr pagina d bar n encontrado ou d endereço n encontrado -->
