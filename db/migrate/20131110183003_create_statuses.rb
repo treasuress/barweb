@@ -1,7 +1,7 @@
 class CreateStatuses < ActiveRecord::Migration
   def up
     create_table :status do |t|
-      t.string :name
+      t.string :name, :null => false
 
       t.timestamps
     end

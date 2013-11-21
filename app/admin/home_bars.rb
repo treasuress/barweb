@@ -75,7 +75,6 @@ ActiveAdmin.register HomeBar do
     f.inputs I18n.t("activerecord.attributes.home_bar.address"), :multipart => true do
       f.input :zip
       #todo we - colokr campos maiores pq tao mt feios
-      #todo now - colokr pais como campo obrigatorio
       f.input :country, :include_blank => false
       f.input :state, :include_blank => false
       f.input :city, :include_blank => false

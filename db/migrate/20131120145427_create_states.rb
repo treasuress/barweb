@@ -1,8 +1,8 @@
 class CreateStates < ActiveRecord::Migration
   def up
     create_table :states do |t|
-      t.string :iso
-      t.string :name
+      t.string :iso, :null => false
+      t.string :name, :null => false
 
       t.references :country
 
