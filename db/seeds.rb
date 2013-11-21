@@ -23,22 +23,17 @@ if Status.all.size == 0
                 ], :without_protection => true)
 end
 
-#todo now - tirar isso antes d colokr em producao
-#Creating Admin User
-if AdminUser.all.size == 0
-  AdminUser.create([
-                       {:email => "admin@example.com", :password => "password"}
-                   ], :without_protection => true)
-end
-
-
 if Rails.env.development?
+
+  Category.delete_all
+  Principal.delete_all
+  HomeBar.delete_all
 
   #Creating Categories example
   if Category.all.size == 0
     Category.create([
-                      {:active => true, :name => "Bares", :description => "Todos os Bares", :category_image => File.open('public/categories/category1.jpg') },
-                      {:active => false, :name => "Restaurantes", :description => "Todos os Restaurantes", :category_image => File.open('public/categories/category2.jpg') }
+                      {:name => "Bares", :active => true, :description => "Todos os Bares", :category_image => File.open('public/categories/category1.jpg') },
+                      {:name => "Restaurantes", :active => false, :description => "Todos os Restaurantes", :category_image => File.open('public/categories/category2.jpg') }
                   ], :without_protection => true)
   end
 
@@ -49,6 +44,7 @@ if Rails.env.development?
                      ], :without_protection => true)
   end
 
+  #todo now - ver se isso aqui faz sentido ainda
   #Creating Home Bars examples
   if HomeBar.all.size == 0
     HomeBar.create([
