@@ -29,8 +29,10 @@
             var local;
 
             $(document).ready(function () {
-                //todo now - fazer if dentro do initializer pra ver se tem component pra n continuar a execução caso n tiver
-                initialize();
+                //verifica se paǵina contém mapa - para saber é necessário executar essa função
+                if($(map_canvas).length){
+                    initialize();
+                }
                 if(local != null)
                 {
                     for(var i=0;i<local.length;i++){
