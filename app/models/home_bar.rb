@@ -10,7 +10,7 @@ class HomeBar < ActiveRecord::Base
   belongs_to :state
   belongs_to :city
 
-  validates_presence_of :name, :address, :number, :neighborhood, :state, :city, :category_id, :status_id
+  validates_presence_of :name, :address, :number, :neighborhood, :country_id, :state_id, :city_id, :category_id, :status_id
 
   has_attached_file :logo_bar_image,
                     :styles => {:home => "400x300#", :thumb => "100x100#"},
