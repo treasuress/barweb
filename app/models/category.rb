@@ -5,6 +5,8 @@ class Category < ActiveRecord::Base
 
   validates_presence_of :name, :active
 
+  validates_uniqueness_of :name
+
   has_attached_file :category_image,
                     :styles => {:home => "400x300#", :thumb => "100x100#"},
                     :url => "/assets/categories/:id/images/category_:style.:extension",

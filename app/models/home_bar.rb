@@ -12,6 +12,8 @@ class HomeBar < ActiveRecord::Base
 
   validates_presence_of :name, :address, :number, :neighborhood, :country_id, :state_id, :city_id, :category_id, :status_id
 
+  validates_uniqueness_of :name
+
   has_attached_file :logo_bar_image,
                     :styles => {:home => "400x300#", :thumb => "100x100#"},
                     :url => "/assets/home_bars/:id/images/logo_bar_:style.:extension",
