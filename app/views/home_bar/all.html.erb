@@ -1,3 +1,6 @@
+<!-- todo now - mudar txt -->
+<% @title = "Todos os Bares" %>
+
 <!-- todo futuro - colokr varios tipos de ordenação para encontrar os bares -->
 <!-- todo now futuro - colokr qntidad d curtir, tw e comentario o bar teve em cada um
 <!-- todo futuro - pegar qntidad d comentario e curtir e tw e colokr em: bares mais comentados, etc -->
@@ -5,9 +8,8 @@
 <!-- todo futuro - colokr txt dinamico por tipo de estabelecimento -->
 <!-- todo futuro - colokr busca dinamica por cidad -->
 <!-- todo futuro - colokr txt dinamico por cidad -->
-<!-- todo now - mudar este titulo -->
 
-<%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @home_bars.first.name, :type => 'all_home_bars'} %>
+<%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @title, :type => 'all_home_bars'} %>
 <hr/>
 
 <section class="home-bar-all">
@@ -17,7 +19,7 @@
     <% @home_bars.each do |destaque| %>
       <a href="<%= home_bar_path(destaque.name) %>">
 
-        <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+        <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina (colokr width e heigh qndo add img -->
         <% if destaque.logo_bar_image_file_size.nil? %>
             <% if destaque.name.length >= 17 %>
                 <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" class="no-image" />

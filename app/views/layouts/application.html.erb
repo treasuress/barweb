@@ -2,8 +2,9 @@
 <html>
     <head>
       <!-- todo now - mudar titulo da pagina -->
-      <!-- todo now - mudar titulo d acordo com a pagina q estiver -->
-      <title>Barweb</title>
+      <!-- todo now - em tdas colokr nome da pagina, tipo: narua.com - principal -->
+      <title><%= @title %></title>
+
       <%= stylesheet_link_tag    "application", :media => "all" %>
       <%= javascript_include_tag "application" %>
       <%= csrf_meta_tags %>
@@ -30,7 +31,7 @@
 
             $(document).ready(function () {
                 //verifica se paǵina contém mapa - para saber é necessário executar essa função
-                if($(map_canvas).length){
+                if($(map_canvas).length > 0){
                     initialize();
                 }
                 if(local != null)

@@ -1,8 +1,9 @@
+<!-- todo now - mudar txt -->
+<% @title = "Principal" %>
+
 <!-- todo futuro - n pod ter each, só pode ter 1 principal ativa por vez -->
 <!--todo now test - ver pra q serv o type -->
-<!-- todo now - esse .first dev tah errado -->
-<!-- todo now - n eh pra pegar o title principal, é pra pegar o title de cada pagina - em tdos -->
-<%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @principals.first.title, :type => 'principal'} %>
+<%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @title, :type => 'principal'} %>
 <hr/>
 
 <section class="principal">

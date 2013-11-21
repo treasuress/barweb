@@ -1,6 +1,10 @@
+<!-- todo now - mudar txt -->
+<% @title = @home_bar.name %>
+
+
 <!-- todo now futuro - colocar forma de voltar pra pagina anterior - talvez menu lateral ou breadcrumb em cima -->
 
-<%= render :partial => 'layouts/social', :locals => {:url => home_bar_path(@home_bar.name), :share_text => @home_bar.name, :type => 'home_bar'} %>
+<%= render :partial => 'layouts/social', :locals => {:url => home_bar_path(@home_bar.name), :share_text => @title, :type => 'home_bar'} %>
 <hr/>
 
 <section class="home-bar">
