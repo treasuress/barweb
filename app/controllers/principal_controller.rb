@@ -1,14 +1,15 @@
 class PrincipalController < ApplicationController
 
   def index
-    #todo now - gambiarra - tirar (consegui tirar dos outros, n sei pq n deu certo akih)
     @principals = Principal.all
+
+    #todo now futuro - ver se dah pra colokr essa busca na application e chamar ela qndo precisar - jah q precisa na principal e na home bar
+    @home_all_active_bars = HomeBar.active
+
 
     #todo futuro - futuro buscar aqui por categoria de estabelecimento - qndo tiver mais d uma categoria
     #Seleciona 7 bares aleatoriamente - mysql
-    #todo now futuro - ver se dah pra colokr essa busca na application e chamar ela qndo precisar - jah q precisa na principal e na home bar
-    @home_bars = HomeBar.active
-    @home_bars = @home_bars.all(:order => 'RAND()', :limit => 7)
+    @home_bars = @home_all_active_bars.all(:order => 'RAND()', :limit => 7)
 
 
     @home_bar = HomeBar.find_by_name(get_current_bar_name)
