@@ -2,7 +2,16 @@ class HomeBarController < ApplicationController
 
   def index
     @home_bar = HomeBar.find_by_name(params[:name])
-    #@home_bar = HomeBar.find_all_by_name(get_current_bar_name)
+
+
+    #todo now - mt errado, arrumar
+    @home_bar_country = Country.getCountryName
+    #@home_bar_country = Country.getCountryName(params[:id],params[:id])
+    #@home_bar_country = Country.getCountryName(1, 1)
+
+    @home_bar_state = State.getStateName
+    @home_bar_city = City.getCityName
+
   end
 
   def all

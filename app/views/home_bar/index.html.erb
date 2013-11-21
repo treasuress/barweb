@@ -33,9 +33,9 @@
                 <%= " - " + @home_bar.complement if !@home_bar.complement.blank? %>
           </h3>
           <h4>
-            <%= @home_bar.city %>
-            - <%= @home_bar.state %>
-            - <%= @home_bar.country %>
+            <%= @home_bar_city.name %>
+            - <%= @home_bar_state.name %>
+            - <%= @home_bar_country.name %>
             <%= "- " + I18n.t("home_bar.index.zip") + @home_bar.zip if !@home_bar.zip.blank? %>
           </h4>
           <h5>
@@ -60,7 +60,7 @@
       <!-- dados para mapa -->
       <script type="text/javascript">
           local = new Array();
-          local[0] = '<%= @home_bar.address + ", " + @home_bar.number.to_s + ", " + @home_bar.city %>';
+          local[0] = '<%= @home_bar.address + ", " + @home_bar.number.to_s + ", " + @home_bar_city.name %>';
       </script>
 
   <% else %>

@@ -5,17 +5,13 @@ class PrincipalController < ApplicationController
     @principals = Principal.all
 
     #todo futuro - futuro buscar aqui por categoria de estabelecimento - qndo tiver mais d uma categoria
-    #Seleciona 7 bares aleatoriamente - slite
-    #@home_bars = HomeBar.active
-    #@home_bars = @home_bars.all(:order => 'RANDOM()', :limit => 7)
     #Seleciona 7 bares aleatoriamente - mysql
+    #todo now futuro - ver se dah pra colokr essa busca na application e chamar ela qndo precisar - jah q precisa na principal e na home bar
     @home_bars = HomeBar.active
     @home_bars = @home_bars.all(:order => 'RAND()', :limit => 7)
 
 
-    #@home_bar = HomeBar.find(params[:name])
     @home_bar = HomeBar.find_by_name(get_current_bar_name)
-    #@home_bar = HomeBar.find_by_name(params[:name])
 
 
     #Filtros de Busca
@@ -23,6 +19,10 @@ class PrincipalController < ApplicationController
     #todo futuro - colokr no fim dos resultados - link para lista completa de bares e criar uma otra pagina pra mostrar todos os resultados
     @bar_name = HomeBar.find_by_name(params[:name])
 
+
+    #todo now - ver se dah pra colokr essas buscas na application
+    #todo now - mt errado, arrumar
+    @home_bar_city = City.getCityName
   end
 
   def contact
