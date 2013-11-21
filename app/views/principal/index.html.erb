@@ -96,7 +96,7 @@
     <% end %>
   </nav>
 
-  <% @home_all_active_bars.each_with_index do |all_active_bars, index| %>
+  <% @all_active_bars.each_with_index do |all_active_bars, index| %>
       <!-- dados para mapa -->
       <script type="text/javascript">
         local[<%= index %>] = '<%= all_active_bars.address + ", " + all_active_bars.number.to_s + ", " + @home_bar_city.name %>';

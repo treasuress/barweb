@@ -1,29 +1,26 @@
 class PrincipalController < ApplicationController
 
   def index
-    @principals = Principal.all
+    get_principal_data
 
-    #todo now futuro - ver se dah pra colokr essa busca na application e chamar ela qndo precisar - jah q precisa na principal e na home bar
-    @home_all_active_bars = HomeBar.active
+    get_active_bars
 
-
+    #todo futuro - talvez dah pra colokr até rand() em application pra poder usar em homeBar/all qndo for buscar randomicamente lá
     #todo futuro - futuro buscar aqui por categoria de estabelecimento - qndo tiver mais d uma categoria
     #Seleciona 7 bares aleatoriamente - mysql
-    @home_bars = @home_all_active_bars.all(:order => 'RAND()', :limit => 7)
+    @home_bars = get_active_bars.all(:order => 'RAND()', :limit => 7)
 
 
     @home_bar = HomeBar.find_by_name(get_current_bar_name)
 
 
     #Filtros de Busca
+    #todo futuro - acho q dev fikr em application e passar o resultado pra renderizadao do header já q a busca ficará lá
     #todo futuro - buscar todos os bares ATIVOS que contem o que a pessoa digitar
     #todo futuro - colokr no fim dos resultados - link para lista completa de bares e criar uma otra pagina pra mostrar todos os resultados
     @bar_name = HomeBar.find_by_name(params[:name])
 
-
-    #todo now - ver se dah pra colokr essas buscas na application
-    #todo now - mt errado, arrumar
-    @home_bar_city = City.getCityName
+    get_current_city
   end
 
   def contact
