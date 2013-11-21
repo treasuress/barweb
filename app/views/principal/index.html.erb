@@ -56,7 +56,7 @@
         <!-- todo now - mudar titulo -->
         <h4>Alguns Bares</h4>
 
-        <% @home_bars.each_with_index do |destaque, index| %>
+        <% @home_bars.each do |destaque| %>
             <div class="principal-destaques">
 
               <a href="<%= home_bar_path(destaque.name)%>" alt="<%= destaque.name %>" >
@@ -81,13 +81,6 @@
               </a>
 
             </div>
-
-            <!-- todo now - n pod ser esse loop pq ele soh mostra os q sao mostrados nessa página e quero mostrar tooodos q estao cadastrados nesse mapa
-            <!-- dados para mapa -->
-            <script type="text/javascript">
-              local[<%= index %>] = '<%= destaque.address + ", " + destaque.number.to_s + ", " + @home_bar_city.name %>';
-            </script>
-
         <% end %>
 
         <div class="principal-destaques">
@@ -102,5 +95,12 @@
 
     <% end %>
   </nav>
+
+  <% @home_all_active_bars.each_with_index do |all_active_bars, index| %>
+      <!-- dados para mapa -->
+      <script type="text/javascript">
+        local[<%= index %>] = '<%= all_active_bars.address + ", " + all_active_bars.number.to_s + ", " + @home_bar_city.name %>';
+      </script>
+  <% end %>
 
 </section>
