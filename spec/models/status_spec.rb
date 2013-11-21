@@ -7,4 +7,9 @@ describe Status do
     Status.count().should == 1
   end
 
+  it "error on create status" do
+    Status.create({:name => nil})
+    Status.count().should == 0
+  end
+
 end
