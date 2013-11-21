@@ -1,6 +1,8 @@
 class Status < ActiveRecord::Base
    attr_accessible :name
 
+   validates_presence_of :name
+
    #todo now - fazer teste para isso
    #todo now - nos q tem tela, fazer test de cadastro no admin - normal e duplicado
    validates_uniqueness_of :name

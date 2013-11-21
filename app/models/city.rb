@@ -3,6 +3,8 @@ class City < ActiveRecord::Base
 
   belongs_to :state
   has_many :home_bars
+  
+  validates_presence_of :name, :state_id
 
   #todo now - mt errado, arrumar
   def self.getCityName
