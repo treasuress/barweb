@@ -11,6 +11,8 @@
       local = new Array();
   </script>
 
+  <!-- todo now futuro - colokr icone personalizado -->
+  <!-- todo now futuro - colokr icones agrupados -->
   <div id="map_canvas" style="height: 200px; width: 100%"></div>
 
   <hr/>
@@ -80,9 +82,10 @@
 
             </div>
 
+            <!-- todo now - n pod ser esse loop pq ele soh mostra os q sao mostrados nessa página e quero mostrar tooodos q estao cadastrados nesse mapa
             <!-- dados para mapa -->
             <script type="text/javascript">
-                local[<%= index %>] = '<%= destaque.address + ", " + destaque.number.to_s + ", " + destaque.city %>';
+              local[<%= index %>] = '<%= destaque.address + ", " + destaque.number.to_s + ", " + @home_bar_city.name %>';
             </script>
 
         <% end %>
