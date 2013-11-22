@@ -14,6 +14,11 @@ describe Category do
         create_category_with_success
       end
 
+      it "should fail at create a duplicate category" do
+        sign_in_admin_with_success
+        create_category_duplicate
+      end
+
       it "should fail at create a new category" do
         sign_in_admin_with_success
         fail_at_create_category
