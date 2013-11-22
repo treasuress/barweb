@@ -5,7 +5,7 @@ class State < ActiveRecord::Base
   has_many :cities
   has_many :home_bars
 
-  validates_presence_of :iso, :name, :country_id
+  validates_presence_of :iso, :name
 
   #todo now - mt errado, arrumar
   def self.getStateName
