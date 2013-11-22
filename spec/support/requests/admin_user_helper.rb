@@ -69,15 +69,15 @@ end
 
 def fill_in_admin_user
   fill_in "admin_user_email", :with => "usuario@email.com.br"
-  fill_in "admin_user_password", :with => "123456"
-  fill_in "admin_user_password_confirmation", :with => "123456"
+  fill_in "admin_user_password", :with => "12345678"
+  fill_in "admin_user_password_confirmation", :with => "12345678"
 
-  click_button "admin_user_submit"
+  click_button "Criar Administrador"
 end
 
 def fail_at_create_new_admin_user
   prepare_to_create_admin_user
-  click_button "admin_user_submit"
+  click_button "Criar Administrador"
   page.should have_content("não pode ficar em branco")
 end
 
@@ -90,7 +90,7 @@ def fail_at_edit_the_admin_user
   prepare_to_edit
   edit_admin_user_validator
   change_fields_admin_user_to_blank
-  click_button "admin_user_submit"
+  click_button "Atualizar Administrador"
   edit_admin_user_validator
   page.should have_content("não pode ficar em branco")
 end
@@ -98,13 +98,13 @@ end
 def change_fields_admin_user
   fill_in "admin_user_email", :with => "usuario2@email.com.br"
 
-  click_button "admin_user_submit"
+  click_button "Atualizar Administrador"
 end
 
 def change_fields_admin_user_to_blank
   fill_in "admin_user_email", :with => ""
 
-  click_button "admin_user_submit"
+  click_button "Atualizar Administrador"
 end
 
 def delete_validator
@@ -114,7 +114,7 @@ def delete_validator
 end
 
 def show_admin_user_details_validator
-  page.should_not have_button("admin_user_submit")
+  page.should_not have_button("Criar Administrador")
   page.should have_content(I18n.t("activerecord.models.admin_user"))
   page.should have_content(I18n.t("activerecord.attributes.admin_user.id"))
   page.should have_content("usuario@email.com.br")
@@ -129,7 +129,7 @@ def index_validator
 end
 
 def show_admin_user_change_details_validator
-  page.should_not have_button("admin_user_submit")
+  page.should_not have_button("Criar Administrador")
   page.should have_content(I18n.t("activerecord.models.admin_user"))
   page.should have_content(I18n.t("activerecord.attributes.admin_user.id"))
   page.should have_content("usuario2@email.com.br")

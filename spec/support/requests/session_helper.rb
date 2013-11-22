@@ -25,7 +25,7 @@ def sign_in_with_success
   sign_in
   page.should_not have_content("admin_user_email")
   page.should_not have_content("admin_user_password")
-  page.should_not have_content("admin_user_submit")
+  page.should_not have_content("Entrar")
   page.should have_content("Sair")
 end
 
@@ -36,25 +36,32 @@ end
 def sign_in
   fill_in "admin_user_email", :with => @admin_user.email
   fill_in "admin_user_password", :with => @admin_user.password
-  click_button "admin_user_submit"
+
+  click_button "Entrar"
+end
+
+def sign_in_failure
+  fill_in "admin_user_email", :with => @admin_user.email
+  fill_in "admin_user_password", :with => ""
+
+  click_button "Entrar"
 end
 
 def sign_in_with_failure
   prepare_to_sign_in
-  sign_in
+  sign_in_failure
   page.should have_content("Senha ou e-mail inválidos.")
   sign_in_validator
 end
 
 def sign_in_validator
-  page.should have_button("admin_user_submit")
-  #page.should have_link("Esqueceu sua senha?")
-  page.should have_link("Forgot your password?")
+  page.should have_button("Entrar")
+  page.should have_link("Esqueceu sua senha?")
   page.should_not have_content("Sair")
 end
 
 def sign_out_with_success
   click_link "Sair"
-  click_button "admin_user_submit"
+  click_button "Entrar"
   sign_in_validator
 end

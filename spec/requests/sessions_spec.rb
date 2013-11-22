@@ -1,13 +1,13 @@
 #encoding: UTF-8
 require 'spec_helper'
 
-describe "Sing in" do
+describe "Sing in", :js => true do
 
   before do
     prepare_session_tests
   end
 
-  describe "Sing In" do
+  describe "Sing In", :js => true do
 
     before do
       prepare_session_tests
@@ -33,7 +33,7 @@ describe "Sing in" do
 end
 
 
-describe "Sign Out" do
+describe "Sign Out", :js => true do
   before do
     prepare_session_tests
   end
