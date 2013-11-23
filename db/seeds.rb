@@ -7,12 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 require_relative "countries.rb"
-#require_relative "categories.rb"
+require_relative "categories.rb"
 
 create_countries
-#todo now - descomentar pra colokr em producao
-#create_categories
-
 
 #Creating Status
 if Status.all.size == 0
@@ -21,6 +18,10 @@ if Status.all.size == 0
                     {:name => "Inativo"},
                     {:name => "Pendente"}
                 ], :without_protection => true)
+end
+
+if Rails.env.production?
+  create_categories
 end
 
 if Rails.env.development?
@@ -81,4 +82,12 @@ if Rails.env.development?
                    ], :without_protection => true)
   end
 
+end
+
+if Rails.env.test?
+    if Category.all.size == 0
+      Category.create([
+                          {:name => "Restaurantes", :active => true, :description => "Todos os Restaurantes", :category_image => File.open('public/categories/category2.jpg') }
+                      ], :without_protection => true)
+    end
 end
