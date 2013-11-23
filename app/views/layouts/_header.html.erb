@@ -3,7 +3,7 @@
   <% @principals.each do |principal| %>
 
       <a href="<%= principal_path %>">
-        <%= image_tag principal.logo_image.url(:medium) %>
+        <%= image_tag principal.logo_image.url(:medium), :alt => principal.title %>
       </a>
 
       <hr/>

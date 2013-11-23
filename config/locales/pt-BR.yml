@@ -366,69 +366,8 @@ pt-BR:
   principal:
     index:
       all_bars: "Todos os bares aqui!"
-
-    show:
-      menu_home: "Home"
-      menu_products: "Pré-Pago"
-      menu_product_information: "Informações do produto"
-      old_price: "de: "
-      new_price: "por: "
-      description: "Descrição: "
-      wall_comment: "Comente no mural:"
-      rating: "Avaliações dos usuários"
-      evaluated: "pessoas avaliaram este produto!"
-      write_review: "Escreva uma avaliação!"
-      evaluation_question: "O QUE ACHA DESTE PRODUTO?"
-      write_comment: "Comentários:"
-      load_more: "Carregar mais"
-      submit_review: "Enviar comentário ›"
-      has_review: "Você já avaliou este produto."
-
-      itens_review:
-        without_itens: "Nenhum item para avaliação!"
-      view_custom_values:
-        without_custom_values: "Não há valores diferentes para outras cidades!"
-        cities: "Cidade"
-        normal_price: "Preço Normal"
-        discounted_price: "Preço c/ Desconto"
-
-  service:
-    index:
-      menu_home: "Home"
-      menu_services: "Banda Larga"
-      menu_list: "Listagem"
-      title: "Banda Larga"
-      image_click: "Veja Mais Detalhes"
-      old_price: "de: "
-      new_price: "por: "
-    show:
-      menu_home: "Home"
-      menu_services: "Banda Larga"
-      menu_service_information: "Informações"
-      old_price: "de: "
-      new_price: "por: "
-      description: "Descrição: "
-      wall_comment: "Comente no mural:"
-  tv:
-    index:
-      menu_home: "Home"
-      menu_tvs: "TV"
-      menu_list: "Listagem"
-      title: "TV"
-      image_click: "Veja Mais Detalhes"
-      old_price: "de: "
-      new_price: "por: "
-    show:
-      menu_home: "Home"
-      menu_tvs: "TV"
-      menu_tv_information: "Informações"
-      old_price: "de: "
-      new_price: "por: "
-      description: "Descrição: "
-      wall_comment: "Comente no mural:"
-      channels: "Canais"
-      additional_packages: "Pacotes Adicionais"
-      itens_channels:
-         without_channels: "Não existe Canal associado a este serviço!"
-      itens_packages:
-         without_packages: "Não existe Pacote Adicional associado a este serviço!"
+      galley_image_name: "Fotos"
+      events_image_name: "Eventos"
+      contact_image_name: "Fotos"
+      follow_image_name: "Siga-nos!"
+      title_bars: "Alguns bares"

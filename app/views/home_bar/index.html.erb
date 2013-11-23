@@ -15,9 +15,9 @@
 
       <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
       <% if @home_bar.logo_bar_image_file_size.nil? %>
-          <img src="<%= image_path "bar0.jpg" %>" style="float:left;width: 400px;height: 300px;margin-right: 7%;" />
+          <img src="<%= image_path "bar0.jpg" %>" style="float:left;width: 400px;height: 300px;margin-right: 7%;" alt="<%= @home_bar.name %>" />
       <% else %>
-          <%= image_tag @home_bar.logo_bar_image.url(:home), :style => "float:left;margin-right: 7%;" %>
+          <%= image_tag @home_bar.logo_bar_image.url(:home), :style => "float:left;margin-right: 7%;", :alt => @home_bar.name %>
       <% end %>
 
       <div id="map_canvas" style="height: 300px; width: 449px;margin-top: 3%;"></div>

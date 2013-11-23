@@ -1,12 +1,11 @@
 class Status < ActiveRecord::Base
    attr_accessible :name
 
+   has_many :home_bars
+
    validates_presence_of :name
 
-   #todo now - fazer teste para isso
    validates_uniqueness_of :name
-
-   has_many :home_bars
 
    #Status dos Estabelecimentos
 
