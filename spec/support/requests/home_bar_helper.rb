@@ -9,13 +9,13 @@ def create_home_bar_with_success
   create_home_bar
 end
 
-def create_home_bar_duplicate
-  create_home_bar
-  visit admin_home_bars_path
-  prepare_to_create_home_bar
-  fill_in_home_bar
-  page.should have_content("já está em uso")
-end
+#def create_home_bar_duplicate
+#  create_home_bar
+#  visit admin_home_bars_path
+#  prepare_to_create_home_bar
+#  fill_in_home_bar
+#  page.should have_content("já está em uso")
+#end
 
 def fail_at_create_home_bar
   fail_at_create_new_home_bar
