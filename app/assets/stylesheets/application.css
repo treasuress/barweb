@@ -31,6 +31,12 @@ hr {
     width: 78% !important;
     margin-left: 20% !important;
 }
+/* todo now - funciona - ver que tamanho fica bom pra cada tamanho d tela */
+.map{
+    /*width: 100px !important;*/
+    /*height: 100px !important;*/
+}
+
 /* LINKs */
 a {
     text-decoration: none;
