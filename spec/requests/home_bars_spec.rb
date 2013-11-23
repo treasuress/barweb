@@ -14,6 +14,11 @@ describe HomeBar do
         create_home_bar_with_success
       end
 
+      it "should fail at create a duplicate home_bar" do
+        sign_in_admin_with_success
+        create_home_bar_duplicate
+      end
+
       it "should fail at create a new home_bar" do
         sign_in_admin_with_success
         fail_at_create_home_bar

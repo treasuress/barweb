@@ -7,6 +7,12 @@ describe Category do
     Category.count().should == 1
   end
 
+  it "error on create duplicate category" do
+    Category.create(new_category_hash)
+    Category.create(new_category_hash)
+    Category.count().should == 1
+  end
+
   it "error on create category" do
     Category.create({:name => nil})
     Category.count().should == 0

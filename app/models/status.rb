@@ -4,7 +4,6 @@ class Status < ActiveRecord::Base
    validates_presence_of :name
 
    #todo now - fazer teste para isso
-   #todo now - nos q tem tela, fazer test de cadastro no admin - normal e duplicado
    validates_uniqueness_of :name
 
    has_many :home_bars

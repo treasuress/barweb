@@ -9,9 +9,18 @@ def create_category_with_success
   create_category
 end
 
+def create_category_duplicate
+  create_category
+  visit admin_categories_path
+  prepare_to_create_category
+  fill_in_category
+  page.should have_content("já está em uso")
+end
+
 def fail_at_create_category
   fail_at_create_new_category
 end
+
 
 private
 def create_category
