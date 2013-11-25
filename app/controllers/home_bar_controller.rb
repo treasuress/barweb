@@ -6,9 +6,14 @@ class HomeBarController < ApplicationController
     get_current_country
     get_current_state
     get_current_city
+
   end
 
   def all
+
+    get_current_city
+    get_current_category
+
     #todo futuro - colokr busca aleatoria aqui qndo for colokr varios tipos d ordenacao
 
     #todo futuro - buscar apenas por categorias ativas

@@ -357,7 +357,7 @@ pt-BR:
 # parte web
   home_bar:
     all:
-      title: "Estabelecimentos de Uberlândia"
+      title: " de "
     index:
       zip: "CEP: "
       phone: "Telefone: "
