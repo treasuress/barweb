@@ -24,7 +24,7 @@ ActiveAdmin.register HomeBar do
     default_actions
   end
 
-  #todo we - colokr botao para cadastrrar novo bar no show
+  #todo we - colokr botao para cadastrar novo bar no show
   show do
     attributes_table do
       row :id
@@ -47,7 +47,7 @@ ActiveAdmin.register HomeBar do
   form :html => {:enctype => "multipart/form-data"} do |f|
     f.inputs I18n.t("activerecord.attributes.home_bar.general_information"), :multipart => true do
       f.input :status, :include_blank => false
-      f.input :category, :include_blank => false
+      f.input :category, :include_blank => false, :collection => Category.active
       f.input :name
 
       #todo we - fazer ficar 20% à direita - n pega o style nem classe separada
@@ -64,16 +64,15 @@ ActiveAdmin.register HomeBar do
 
       f.input :logo_bar_image
 
-      #todo we - colokr validacoes com html 5 em tdos
+      #todo we - pattern n funciona n sei pq
       #TODO we - COLOCAR ALGUMA MASCARA PRA N TER COMO ENVIAR ERRADO (HTML5)
-      #todo we - ou colocar ddd separado, ou colokr mascara bonitinha: 034 1234 5678 - 034 12345 6789
       #todo we - colokr tdos os campos d tel com o 9o digito. se a pessoa n preencher, add um 0 no comeco
-      f.input :phone_number, :as => :phone #, :input_html => {:patter => "\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4}"}
-      f.input :cellphone_number, :as => :phone
+      f.input :phone_number, :as => :phone, :input_html => { :pattern => "[\(]\d{3}[\)]\d{4}[\-]\d{4}", :placeholder => "(034) 3232-3232"}
+      f.input :cellphone_number, :as => :phone, :input_html => { :pattern => "[\(]\d{3}[\)]\d{4}[\-]\d{4}", :placeholder => "(034) 99898-9898"}
     end
 
     f.inputs I18n.t("activerecord.attributes.home_bar.address"), :multipart => true do
-      f.input :zip
+      f.input :zip, :input_html => { :pattern => "\d{5}-\d{3}", :placeholder => "38400-000" }
       #todo we - colokr campos maiores pq tao mt feios
       f.input :country, :include_blank => false
       f.input :state, :include_blank => false
