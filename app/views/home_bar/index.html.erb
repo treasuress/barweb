@@ -45,6 +45,7 @@
           <h5>
             <% if !@home_bar.phone_number.blank? %>
                 <!-- todo futuro - ver se no mobile dah pra fazer a pessoa jah clicar pra ligar -->
+                <!-- todo now - decidir forma d cadastrar tels e mostrar aqui -->
                 <%= I18n.t("home_bar.index.phone") + @home_bar.phone_number %>
                 <%= ", " + @home_bar.cellphone_number if !@home_bar.cellphone_number.blank? %>
             <% end %>

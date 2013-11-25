@@ -1,7 +1,7 @@
 class HomeBar < ActiveRecord::Base
   attr_accessible :name, :description, :logo_bar_image, :phone_number, :cellphone_number,
-                  :address, :number, :complement, :zip, :neighborhood, :city, :state, :country_bar,
-                  :category_id, :status_id, :country_id, :state_id, :city_id
+                  :address, :number, :complement, :zip, :neighborhood, :category_id, :status_id,
+                  :country_id, :state_id, :city_id
 
   belongs_to :principal
   belongs_to :category

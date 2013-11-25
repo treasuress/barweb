@@ -3,6 +3,7 @@ var map;
 var geocoder;
 
 function initialize() {
+    //todo now - tem um lugar q explica como mostrar todos os pontos do mapa (nas coisas do google)
     var latlng = new google.maps.LatLng(-18.9113046, -48.26219249999997);
 
     var options = {

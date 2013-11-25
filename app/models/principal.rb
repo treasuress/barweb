@@ -1,5 +1,6 @@
 class Principal < ActiveRecord::Base
-  attr_accessible :title, :description, :logo_image, :gallery_image, :events_image, :contact_image, :follow_fb_image, :follow_tw_image, :all_homes_image
+  attr_accessible :title, :description, :logo_image, :gallery_image, :events_image, :contact_image,
+                  :follow_fb_image, :follow_tw_image, :all_homes_image
 
   has_many :home_bars
 
