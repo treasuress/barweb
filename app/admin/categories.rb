@@ -1,6 +1,9 @@
 ActiveAdmin.register Category do
   config.comments = false
 
+  scope :active, :default => true
+  scope :inactive
+
   filter :name
 
   index do
