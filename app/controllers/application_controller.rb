@@ -20,8 +20,8 @@ class ApplicationController < ActionController::Base
   end
 
 
-  def get_current_country
-    @home_bar_country = Country.getCountryName
+  def get_current_country(country_id)
+    @home_bar_country = Country.getCountryName(country_id)
   end
 
   def get_current_state
