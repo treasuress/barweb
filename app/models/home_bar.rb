@@ -19,7 +19,7 @@ class HomeBar < ActiveRecord::Base
                     :url => "/assets/home_bars/:id/images/logo_bar_:style.:extension",
                     :path => ":rails_root/public/assets/home_bars/:id/images/logo_bar_:style.:extension"
 
-  def self.active()
+  def self.active
     #todo now futuro - FUNCIONA - mas n acho q teja certo - c mudar id tdas as buscam ficarão erradas - o bom seria fazer o join pra pegar pelo nome, mas n deu certo
     where(:status_id => 1)
   end

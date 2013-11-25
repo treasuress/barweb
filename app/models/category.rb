@@ -23,7 +23,7 @@ class Category < ActiveRecord::Base
 
   #todo now - mt errado, arrumar
   def self.getCategoryName
-    Category.find_by_sql("select c.name from categories c, home_bars h where 1 = c.id and h.id = 1")["name".to_i]
+    Category.find_by_sql("select c.name from categories c where 1 = id")["name".to_i]
   end
 
 end
