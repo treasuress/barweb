@@ -58,10 +58,6 @@ a:hover, a:active {
 
 
 /*VÁRIAS PÁGINAS */
-.no-image{
-    width: 100px;
-    height: 100px;
-}
 #map_canvas {
     height: 100%
 }
