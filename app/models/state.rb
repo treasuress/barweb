@@ -8,7 +8,7 @@ class State < ActiveRecord::Base
   validates_presence_of :iso, :name
 
   def self.getStateName(state_id)
-    State.find_by_sql("select name from states where id = " + state_id.to_s)["name".to_i]
+    where("id = " + state_id.to_s)["name".to_i]
   end
 
 end
