@@ -37,6 +37,10 @@ hr {
     /*width: 100px !important;*/
     /*height: 100px !important;*/
 }
+h1 {
+    text-align: center;
+    height: 35px;
+}
 /* LINKs */
 a {
     text-decoration: none;
@@ -61,13 +65,15 @@ a:hover, a:active {
 #map_canvas {
     height: 100%
 }
-.home-bar-all img, .principal img{
+/*todo now futuro - ver como colokr tamanho dif pra kda tamanho d tela e mudar tamanhos de imgs pra fikr como quero*/
+.category img, .principal img, .all-categories img{
     width: 100px;
     height: 100px;
 }
-.home-bar h1, .categories h1 {
-    text-align: center;
-    height: 35px;
+.principal .principal-destaques, .all-categories nav a, .category nav a {
+    float: left;
+    padding: 10px 7px;
+    font-size: 14px;
 }
 
 
@@ -98,11 +104,6 @@ a:hover, a:active {
 
 
 /* HEADER */
-header h1 {
-    text-align: center;
-    height: 35px;
-    background-color: pink;
-}
 header img {
     margin: 10px 0 0 0px;
     height: 150px;
@@ -125,11 +126,6 @@ header img {
 .principal .principal-links {
     float: left;
     padding: 10px;
-    font-size: 14px;
-}
-.principal .principal-destaques {
-    float: left;
-    padding: 10px 7px;
     font-size: 14px;
 }
 
@@ -176,14 +172,8 @@ header img {
 }
 
 
-/* HOME BAR - ALL */
-.home-bar-all a{
-    float: left;
-    margin-right: 5px;
-    margin-left: 5px;
-    margin-top: 15px;
-}
-.home-bar-all h1, .home-bar-all h5 {
+/* CATEGORY */
+.category h5 {
     text-align: left;
 }
 
@@ -192,7 +182,9 @@ header img {
 /* todo now - fazer css */
 .contact{
     text-align: center;
-    margin-top: 3%;
+}
+.contact .breadcrumb{
+    text-align: left;
 }
 
 
