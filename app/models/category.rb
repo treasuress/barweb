@@ -21,9 +21,8 @@ class Category < ActiveRecord::Base
     where(:active => false)
   end
 
-  #todo now - mt errado, arrumar
-  def self.getCategoryName
-    Category.find_by_sql("select c.name from categories c where 1 = id")["name".to_i]
+  def self.getCategoryName(category_id)
+    Category.find_by_sql("select name from categories where id = " + category_id.to_s)["name".to_i]
   end
 
 end

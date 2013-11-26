@@ -24,8 +24,8 @@ class ApplicationController < ActionController::Base
     @home_bar_country = Country.getCountryName(country_id)
   end
 
-  def get_current_state
-    @home_bar_state = State.getStateName
+  def get_current_state(state_id)
+    @home_bar_state = State.getStateName(state_id)
   end
 
   def get_current_city
@@ -35,8 +35,8 @@ class ApplicationController < ActionController::Base
     #end
   end
 
-  def get_current_category
-    @home_bar_category = Category.getCategoryName
+  def get_current_category(category_id)
+    @home_bar_category = Category.getCategoryName(category_id)
   end
 
   def get_current_bar_name
