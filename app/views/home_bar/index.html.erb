@@ -9,6 +9,12 @@
 
 <section class="home-bar">
 
+  <!--todo now - add div pra colokr estilos -->
+  <!--todo now - colokr no arquivo de traducoes-->
+  <%= link_to "Página Principal", principal_path %> > <%= @home_bar.name %>
+
+  <hr/>
+
   <% if @home_bar.address.present? %>
 
       <h1><%= @home_bar.name %></h1>

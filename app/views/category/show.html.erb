@@ -11,6 +11,13 @@
 <hr/>
 
 <section class="home-bar-all">
+
+  <!--todo now - add div pra colokr estilos -->
+  <!--todo now - colokr no arquivo de traducoes-->
+  <%= link_to "Página Principal", principal_path %> > Categorias > Bares
+
+  <hr/>
+
   <h1><%= @home_bar_category.name + I18n.t("home_bar.all.title") + @home_bar_city.name %></h1>
 
   <nav>
