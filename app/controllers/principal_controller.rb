@@ -24,19 +24,19 @@ class PrincipalController < ApplicationController
   end
 
   def contact
-    render('layouts/contact')
+    render('contact')
   end
 
   def terms
-    render('layouts/terms')
+    render('terms')
   end
 
   def gallery
-    render('layouts/page_building')
+    render('layouts/_page_building')
   end
 
   def events
-    render('layouts/page_building')
+    render('layouts/_page_building')
   end
 
 end
