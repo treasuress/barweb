@@ -5,9 +5,10 @@
 <!--todo now futuro - colokr pra essas informacoes aparecerem em cima da tela na pagina inicial -->
 <section class="contact">
 
-  <!--todo now - add div pra colokr estilos -->
-  <!--todo now - colokr no arquivo de traducoes-->
-  <%= link_to "Página Principal", principal_path %> > Contato
+  <div class="breadcrumb">
+    <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
+    <%= I18n.t("breadcrumb_contact") %>
+  </div>
 
   <hr/>
 

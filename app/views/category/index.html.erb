@@ -4,11 +4,12 @@
 <%= render :partial => 'layouts/social', :locals => {:url => all_categories_path, :share_text => @title, :type => 'categories'} %>
 <hr/>
 
-<section class="categories">
+<section class="all-categories">
 
-  <!--todo now - add div pra colokr estilos -->
-  <!--todo now - colokr no arquivo de traducoes-->
-  <%= link_to "Página Principal", principal_path %> > Categorias
+  <div class="breadcrumb">
+    <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
+    <%= I18n.t("breadcrumb_categories") %>
+  </div>
 
   <hr/>
 

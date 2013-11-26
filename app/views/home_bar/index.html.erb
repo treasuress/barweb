@@ -9,9 +9,10 @@
 
 <section class="home-bar">
 
-  <!--todo now - add div pra colokr estilos -->
-  <!--todo now - colokr no arquivo de traducoes-->
-  <%= link_to "Página Principal", principal_path %> > <%= @home_bar.name %>
+  <div class="breadcrumb">
+    <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
+    <%= @home_bar.name %>
+  </div>
 
   <hr/>
 
@@ -26,6 +27,7 @@
           <%= image_tag @home_bar.logo_bar_image.url(:home), :style => "float:left;margin-right: 7%;", :alt => @home_bar.name %>
       <% end %>
 
+      <!--todo now - colokr pequena descrição em cima do mapa pra falar o q eh o mapa - em tdas as paginas-->
       <div id="map_canvas" style="height: 300px; width: 449px;margin-top: 3%;" class="map"></div>
 
       <h2><%= @home_bar.description %></h2>

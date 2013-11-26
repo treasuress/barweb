@@ -10,11 +10,13 @@
 <%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @title, :type => 'all_home_bars'} %>
 <hr/>
 
-<section class="home-bar-all">
+<section class="category">
 
-  <!--todo now - add div pra colokr estilos -->
-  <!--todo now - colokr no arquivo de traducoes-->
-  <%= link_to "Página Principal", principal_path %> > Categorias > Bares
+  <div class="breadcrumb">
+    <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
+    <%= link_to I18n.t("breadcrumb_categories"), all_categories_path %> >
+    <%= @home_bar_category.name %>
+  </div>
 
   <hr/>
 

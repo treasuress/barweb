@@ -371,3 +371,10 @@ pt-BR:
       contact_image_name: "Contato"
       follow_image_name: "Siga-nos!"
       title_bars: "Alguns bares"
+
+
+
+  breadcrumb_principal: "Página Principal"
+  breadcrumb_categories: "Categorias"
+  breadcrumb_contact: "Contato"
+  breadcrumb_terms: "Termos de Uso"
