@@ -85,7 +85,8 @@
         <% end %>
 
         <div class="principal-destaques">
-          <a href="<%= all_home_bars_path %>">
+          <!--todo now - arrumar chamada da rota-->
+          <a href="<%= category_path("Bares") %>">
             <%= image_tag principal.all_homes_image.url(:thumb)  %>
             <!-- todo now - mudar txt -->
             <h5> <%= I18n.t("principal.index.all_bars") %> </h5>

@@ -19,13 +19,16 @@ Barweb::Application.routes.draw do
 
   #PÁGINA PRINCIPAL - POR CIDADE
 
-  #todo futuro - pegar nome da cidade dinamicament
+  #todo now futuro - pegar nome da cidade dinamicament
   get "/uberlandia" => "home_uberlandia#index", :as => :home_uberlandia
 
 
-  #PÁGINA DE TODOS OS BARES CADASTRADOS - POR CIDADE
+  #PÁGINA DE TODAS AS CATEGORIAS CADASTRADAS - POR CIDADE
+  get "/uberlandia/categories" => "category#index", :as => :all_categories
 
-  get "/uberlandia/all" => "home_bar#all", :as => :all_home_bars
+
+  #PÁGINA DE TODOS OS BARES CADASTRADOS - POR CIDADE
+  get "/uberlandia/category/:name" => "category#show", :as => :category
 
 
   #PÁGINA HOME - POR ESTABELECIMENTO

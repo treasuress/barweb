@@ -1,0 +1,42 @@
+<!-- todo now - mudar txt -->
+<% @title = "Categorias" %>
+
+<%= render :partial => 'layouts/social', :locals => {:url => all_categories_path, :share_text => @title, :type => 'categories'} %>
+<hr/>
+
+<section class="categories">
+
+  <% if @all_active_categories.present? %>
+
+      <!--todo now - arrumar -->
+      <h1><%= "Categorias de Estabelecimentos em Uberlândia" %></h1>
+
+      <nav>
+        <% @all_active_categories.each do |category| %>
+            <a href="<%= category_path(category.name)%>">
+
+              <!-- todo now - adicionar img para categories para ser feita -->
+              <!-- todo now - add img certa na pasta - do tamanho certo pra essa pagina -->
+              <% if category.category_image_file_size.nil? %>
+                  <% if category.name.length >= 17 %>
+                      <!--todo now - mudar img padrao-->
+                      <img src="<%= image_path "bar0.jpg" %>" alt="<%= category.name %>" title="<%= category.name %>" />
+                  <% else %>
+                      <img src="<%= image_path "bar0.jpg" %>" alt="<%= category.name %>" />
+                  <% end %>
+              <% else %>
+                  <% if category.name.length >= 17 %>
+                      <%= image_tag category.category_image.url(:thumb), :alt => category.name, :title => category.name %>
+                  <% else %>
+                      <%= image_tag category.category_image.url(:thumb), :alt => category.name %>
+                  <% end %>
+              <% end %>
+
+              <h5><%= category.name.truncate(16) %></h5>
+            </a>
+        <% end %>
+      </nav>
+
+  <% end %>
+
+</section>

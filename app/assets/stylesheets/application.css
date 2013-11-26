@@ -37,7 +37,6 @@ hr {
     /*width: 100px !important;*/
     /*height: 100px !important;*/
 }
-
 /* LINKs */
 a {
     text-decoration: none;
@@ -66,6 +65,11 @@ a:hover, a:active {
     width: 100px;
     height: 100px;
 }
+.home-bar h1, .categories h1 {
+    text-align: center;
+    height: 35px;
+}
+
 
 /* SOCIAL */
 .bts {
@@ -131,10 +135,6 @@ header img {
 
 
 /* HOME BAR */
-.home-bar h1 {
-    text-align: center;
-    height: 35px;
-}
 .home-bar img {
     margin: 30px 0 0 50px;
     width: 41%;
