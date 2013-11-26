@@ -15,12 +15,13 @@
   <div class="breadcrumb">
     <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
     <%= link_to I18n.t("breadcrumb_categories"), all_categories_path %> >
-    <%= @home_bar_category.name %>
+    <%= @current_category.name %>
   </div>
 
   <hr/>
 
-  <h1><%= @home_bar_category.name + I18n.t("home_bar.all.title") + @home_bar_city.name %></h1>
+  <!--todo now - verificar se tem algum bar cadastrado na categoria q está entrando, c n tiver, colokr página n existent-->
+  <h1><%= @current_category.name + I18n.t("home_bar.all.title") + @current_city.name %></h1>
 
   <nav>
     <% @home_bars.each do |destaque| %>

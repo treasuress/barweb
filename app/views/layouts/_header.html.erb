@@ -1,6 +1,6 @@
 <header>
 
-  <% @principals.each do |principal| %>
+  <% @principal.each do |principal| %>
 
       <a href="<%= principal_path %>">
         <%= image_tag principal.logo_image.url(:medium), :alt => principal.title %>

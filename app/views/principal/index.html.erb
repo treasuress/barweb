@@ -26,7 +26,7 @@
 
   <nav>
 
-    <% @principals.each do |principal| %>
+    <% @principal.each do |principal| %>
         <h2><%= principal.description %></h2>
 
         <div class="principal-links" style="margin-left: 8%;">
@@ -107,7 +107,7 @@
   <% @all_active_bars.each_with_index do |all_active_bars, index| %>
       <!-- dados para mapa -->
       <script type="text/javascript">
-        local[<%= index %>] = '<%= all_active_bars.address + ", " + all_active_bars.number.to_s + ", " + @home_bar_city.name %>';
+        local[<%= index %>] = '<%= all_active_bars.address + ", " + all_active_bars.number.to_s + ", " + @current_city.name %>';
       </script>
   <% end %>
 

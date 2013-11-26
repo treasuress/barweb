@@ -1,9 +1,6 @@
 <!-- todo now - mudar txt -->
 <% @title = @home_bar.name %>
 
-
-<!-- todo now futuro - colocar forma de voltar pra pagina anterior - talvez menu lateral ou breadcrumb em cima -->
-
 <%= render :partial => 'layouts/social', :locals => {:url => home_bar_path(@home_bar.name), :share_text => @title, :type => 'home_bar'} %>
 <hr/>
 
@@ -27,7 +24,7 @@
           <%= image_tag @home_bar.logo_bar_image.url(:home), :style => "float:left;margin-right: 7%;", :alt => @home_bar.name %>
       <% end %>
 
-      <!--todo now - colokr pequena descrição em cima do mapa pra falar o q eh o mapa - em tdas as paginas-->
+      <!--todo now - colokr pequena descrição em cima do mapa pra falar o q eh o mapa - em tdas as paginas q tem mapa-->
       <div id="map_canvas" style="height: 300px; width: 449px;margin-top: 3%;" class="map"></div>
 
       <h2><%= @home_bar.description %></h2>
@@ -45,9 +42,9 @@
                 <%= " - " + @home_bar.complement if !@home_bar.complement.blank? %>
           </h3>
           <h4>
-            <%= @home_bar_city.name %>
-            - <%= @home_bar_state.name %>
-            - <%= @home_bar_country.name %>
+            <%= @current_city.name %>
+            - <%= @current_state.name %>
+            - <%= @current_country.name %>
             <%= "- " + I18n.t("home_bar.index.zip") + @home_bar.zip if !@home_bar.zip.blank? %>
           </h4>
           <h5>
@@ -73,7 +70,7 @@
       <!-- dados para mapa -->
       <script type="text/javascript">
           local = new Array();
-          local[0] = '<%= @home_bar.address + ", " + @home_bar.number.to_s + ", " + @home_bar_city.name %>';
+          local[0] = '<%= @home_bar.address + ", " + @home_bar.number.to_s + ", " + @current_city.name %>';
       </script>
 
   <% else %>
