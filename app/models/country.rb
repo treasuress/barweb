@@ -7,7 +7,7 @@ class Country < ActiveRecord::Base
   validates_presence_of :name, :iso
 
   def self.getCountryName(country_id)
-    where("id = " + country_id.to_s)["name".to_i]
+    where(:id => country_id.to_s)["name".to_i]
   end
 
 end

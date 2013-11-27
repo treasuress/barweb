@@ -1,9 +1,7 @@
 class PrincipalController < ApplicationController
 
   def index
-    get_principal_data
-
-    get_active_bars
+    get_principal
 
     #todo futuro - talvez dah pra colokr até rand() em application pra poder usar em homeBar/all qndo for buscar randomicamente lá
     #todo futuro - futuro buscar aqui por categoria de estabelecimento - qndo tiver mais d uma categoria
@@ -11,7 +9,7 @@ class PrincipalController < ApplicationController
     @home_bars = get_active_bars.all(:order => 'RAND()', :limit => 7)
 
 
-    @home_bar = HomeBar.find_by_name(get_current_bar_name)
+    #@home_bar = HomeBar.find_by_name(get_current_bar_name)
 
 
     #Filtros de Busca
@@ -20,7 +18,9 @@ class PrincipalController < ApplicationController
     #todo futuro - colokr no fim dos resultados - link para lista completa de bares e criar uma otra pagina pra mostrar todos os resultados
     @bar_name = HomeBar.find_by_name(params[:name])
 
-    get_current_city
+    #todo now - preciso pegar tdos os ids dinamicament, como faz?
+    get_current_city_from_bar(@all_active_bars.first.city_id)
+
   end
 
   def contact
