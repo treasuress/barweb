@@ -1,6 +1,8 @@
 <!-- todo seb now - mudar txt -->
 <% @title = @current_bar.name %>
 
+<!--todo now - verificar se bar tah ativo, c tiver mostra, senao, mostra outra pagina-->
+
 <%= render :partial => 'layouts/social', :locals => {:url => home_bar_path(params[:city_name], @current_bar.name), :share_text => @title, :type => 'home_bar'} %>
 <hr/>
 
@@ -85,7 +87,7 @@
   <% else %>
 
       <!-- todo futuro - devia enviar email, msg, whatever pra alguem, pq isso nunk dev acontecer, jah q endereço é campo obrigatório no banco -->
-      <%= render :layout => "_page_not_found_error_404" %>
+      <%= render :partial => "layouts/page_not_found_error_404" %>
 
   <% end %>
 

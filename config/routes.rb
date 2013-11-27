@@ -17,6 +17,9 @@ Barweb::Application.routes.draw do
   get "/terms" => "principal#terms", :as => :terms
 
 
+  ActiveAdmin.routes(self)
+
+
   #PÁGINA PRINCIPAL - POR CIDADE
 
   #todo now futuro - pegar nome da cidade dinamicament - PEGA O Q EU PASSAR, ENTAO PASSO A CIDAD ATUAL
@@ -55,6 +58,5 @@ Barweb::Application.routes.draw do
 
   root :to =>  "principal#index"
 
-  ActiveAdmin.routes(self)
 
 end
