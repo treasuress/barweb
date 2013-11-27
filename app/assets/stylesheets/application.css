@@ -32,14 +32,14 @@ hr {
     width: 78% !important;
     margin-left: 20% !important;
 }
-/* todo now - funciona - ver que tamanho fica bom pra cada tamanho d tela */
-.map{
-    /*width: 100px !important;*/
-    /*height: 100px !important;*/
-}
 h1 {
     text-align: center;
     height: 35px;
+}
+#map_canvas {
+    height: 300px;
+    width: 449px;
+    margin-top: 3%;
 }
 /* LINKs */
 a {
@@ -62,9 +62,6 @@ a:hover, a:active {
 
 
 /*VÁRIAS PÁGINAS */
-#map_canvas {
-    height: 100%
-}
 /*todo now futuro - ver como colokr tamanho dif pra kda tamanho d tela e mudar tamanhos de imgs pra fikr como quero*/
 .category img, .principal img, .all-categories img{
     width: 100px;
@@ -131,37 +128,26 @@ header img {
 
 
 /* HOME BAR */
+.home-bar .info-bar{
+    float: left;
+    padding: 10px 7px;
+    width: 49%;
+}
+.home-bar .map-bar{
+    margin-left: auto;
+}
 .home-bar img {
-    margin: 30px 0 0 50px;
-    width: 41%;
+    margin: 19px 0 0 8px;
+    width: 82%;
+    /*width: 42%;*/
 }
 .home-bar h2 {
-    width: 31.5%;
-    margin-left: 5%;
-    margin-top: 4.5%;
+    width: 79.5%;
+    margin-left: 2.7%;
+    margin-top: 67.5%;
     height: 100px;
     font-size: 14px;
     text-align: justify;
-
-    /* layout
-    background-color: pink;
-    margin-left: 50px;
-    width: 400px;
-    margin-top: 47px;
-    */
-}
-.home-bar .address{
-    margin-left: 550px;
-    width: 50%;
-    margin-top: -90px;
-
-    /* layout
-    background-color: blue;
-    height: 100px;
-    margin-left: 450px;
-    width: 40%;
-    margin-top: -100px;
-    */
 }
 .home-bar .comments{
     text-align:center;

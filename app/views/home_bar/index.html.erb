@@ -17,44 +17,50 @@
 
       <h1><%= @home_bar.name %></h1>
 
-      <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
-      <% if @home_bar.logo_bar_image_file_size.nil? %>
-          <img src="<%= image_path "bar0.jpg" %>" style="float:left;width: 400px;height: 300px;margin-right: 7%;" alt="<%= @home_bar.name %>" />
-      <% else %>
-          <%= image_tag @home_bar.logo_bar_image.url(:home), :style => "float:left;margin-right: 7%;", :alt => @home_bar.name %>
-      <% end %>
+      <div class="info-bar">
+          <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+          <% if @home_bar.logo_bar_image_file_size.nil? %>
+              <img src="<%= image_path "bar0.jpg" %>" style="float:left;width: 400px;height: 300px;margin-right: 7%;" alt="<%= @home_bar.name %>" />
+          <% else %>
+              <%= image_tag @home_bar.logo_bar_image.url(:home), :style => "float:left;margin-right: 7%;", :alt => @home_bar.name %>
+          <% end %>
 
-      <!--todo now - colokr pequena descrição em cima do mapa pra falar o q eh o mapa - em tdas as paginas q tem mapa-->
-      <div id="map_canvas" style="height: 300px; width: 449px;margin-top: 3%;" class="map"></div>
+          <h2><%= @home_bar.description %></h2>
 
-      <h2><%= @home_bar.description %></h2>
+      </div>
 
-      <!-- todo now - arrumar  css -->
-      <div class="address">
-          <h3>
-            <%= @home_bar.address + ", " %>
-            <%= if @home_bar.number != 0
-                    @home_bar.number
-                else
-                    "s/n"
-                end %>
-                - <%= @home_bar.neighborhood %>
-                <%= " - " + @home_bar.complement if !@home_bar.complement.blank? %>
-          </h3>
-          <h4>
-            <%= @current_city.name %>
-            - <%= @current_state.name %>
-            - <%= @current_country.name %>
-            <%= "- " + I18n.t("home_bar.index.zip") + @home_bar.zip if !@home_bar.zip.blank? %>
-          </h4>
-          <h5>
-            <% if !@home_bar.phone_number.blank? %>
-                <!-- todo futuro - ver se no mobile dah pra fazer a pessoa jah clicar pra ligar -->
-                <!-- todo now - decidir forma d cadastrar tels e mostrar aqui -->
-                <%= I18n.t("home_bar.index.phone") + @home_bar.phone_number %>
-                <%= ", " + @home_bar.cellphone_number if !@home_bar.cellphone_number.blank? %>
-            <% end %>
-          </h5>
+      <div class="map-bar">
+          <!--todo now - colokr pequena descrição em cima do mapa pra falar o q eh o mapa - em tdas as paginas q tem mapa-->
+          <div id="map_canvas"></div>
+
+          <!-- todo now - arrumar  css -->
+          <div class="address">
+              <h3>
+                <%= @home_bar.address + ", " %>
+                <%= if @home_bar.number != 0
+                        @home_bar.number
+                    else
+                        "s/n"
+                    end %>
+                    - <%= @home_bar.neighborhood %>
+                    <%= " - " + @home_bar.complement if !@home_bar.complement.blank? %>
+              </h3>
+              <h4>
+                <%= @current_city.name %>
+                - <%= @current_state.name %>
+                - <%= @current_country.name %>
+                <%= "- " + I18n.t("home_bar.index.zip") + @home_bar.zip if !@home_bar.zip.blank? %>
+              </h4>
+              <h5>
+                <% if !@home_bar.phone_number.blank? %>
+                    <!-- todo futuro - ver se no mobile dah pra fazer a pessoa jah clicar pra ligar -->
+                    <!-- todo now - decidir forma d cadastrar tels e mostrar aqui -->
+                    <%= I18n.t("home_bar.index.phone") + @home_bar.phone_number %>
+                    <%= ", " + @home_bar.cellphone_number if !@home_bar.cellphone_number.blank? %>
+                <% end %>
+              </h5>
+          </div>
+
       </div>
 
       <hr/>
