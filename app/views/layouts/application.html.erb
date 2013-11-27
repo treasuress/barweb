@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <!-- todo now - mudar titulo da pagina -->
-      <!-- todo now - em tdas colokr nome da pagina, tipo: narua.com - principal -->
+      <!-- todo seb now - mudar titulo da pagina -->
+      <!-- todo seb now - em tdas colokr nome da pagina, tipo: narua.com - principal -->
       <title><%= @title %></title>
 
       <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -77,7 +77,7 @@
 
         <div class="header-body">
             <!--<= render :partial => "layouts/header", :locals => {:bars => get_bars} %>-->
-            <%= render :partial => "layouts/header", :locals => {:@principal => get_principal_data} %>
+            <%= render :partial => "layouts/header", :locals => {:@principal => get_principal} %>
             <%= yield %>
         </div>
 
