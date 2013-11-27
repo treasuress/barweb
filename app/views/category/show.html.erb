@@ -14,6 +14,7 @@
 
   <div class="breadcrumb">
     <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
+    <%= link_to params[:city_name], principal_path %> >
     <%= link_to I18n.t("breadcrumb_categories"), all_categories_path(params[:city_name]) %> >
     <%= @current_category.name %>
   </div>

@@ -8,6 +8,10 @@
 
   <div class="breadcrumb">
     <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
+    <%= link_to params[:city_name], principal_path %> >
+    <%= link_to I18n.t("breadcrumb_categories"), all_categories_path(params[:city_name]) %> >
+    <!--todo now - arrumar category_id-->
+    <%= link_to @current_bar.category_id, category_path(params[:city_name], @current_bar.category_id) %> >
     <%= @current_bar.name %>
   </div>
 
