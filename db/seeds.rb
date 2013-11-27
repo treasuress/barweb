@@ -41,7 +41,7 @@ if Rails.env.development?
   #Creating Principal example
   if Principal.all.size == 0
     Principal.create([
-                         {:title => "Principal titulo", :description => "Descricao principal", :logo_image => File.open('public/principal/logo.jpg'), :gallery_image => File.open('public/principal/gallery.jpg'), :events_image => File.open('public/principal/events.jpg'), :contact_image => File.open('public/principal/contact.jpg'), :follow_fb_image => File.open('public/principal/follow_fb.jpg'), :follow_tw_image => File.open('public/principal/follow_tw.jpg'), :all_homes_image => File.open('public/principal/all_homes.jpg') }
+                         {:title => "Principal titulo", :description => "Descricao principal", :logo_image => File.open('public/principal/rails.png'), :gallery_image => File.open('public/principal/gallery.jpg'), :events_image => File.open('public/principal/events.jpg'), :contact_image => File.open('public/principal/contact.jpg'), :follow_fb_image => File.open('public/principal/follow_fb.jpg'), :follow_tw_image => File.open('public/principal/follow_tw.jpg'), :all_homes_image => File.open('public/principal/all_homes.jpg') }
                      ], :without_protection => true)
   end
 
@@ -64,7 +64,7 @@ E para inaugurar, não poderia ser diferente: passearemos pelas delícias do nos
                        {:status_id => 1, :category_id => 1, :name => "Nome bar 11", :description => "descricao bar 11", :phone_number => "telefone bar 11", :cellphone_number => "cel bar 11", :zip => "cep bar 11", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar 11", :number => "1123", :neighborhood => "bairro bar 11", :complement => "complemento bar 11" },
 
                        #Sem descrição, cep, telefone e complemento
-                       {:status_id => 1, :category_id => 1, :name => "Rck'n Beer", :logo_bar_image => File.open('public/home_bars/bar2.png'), :country_id => 1, :state_id => 1, :city_id => 1, :address => "Av. Floriano Peixoto", :number => "18", :neighborhood => "Centro" },
+                       {:status_id => 1, :category_id => 1, :name => "Rock'n Beer", :logo_bar_image => File.open('public/home_bars/bar2.png'), :country_id => 1, :state_id => 1, :city_id => 1, :address => "Av. Floriano Peixoto", :number => "18", :neighborhood => "Centro" },
                        {:status_id => 1, :category_id => 1, :name => "Othello Bar e Restaurante", :logo_bar_image => File.open('public/home_bars/bar5.jpg'), :country_id => 1, :state_id => 1, :city_id => 1, :address => "Avenida Segismundo Pereira", :number => "169", :neighborhood => "Santa Monica" },
 
                        #0 no numero do logradouro
