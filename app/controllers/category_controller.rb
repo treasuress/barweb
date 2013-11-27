@@ -8,10 +8,9 @@ class CategoryController < ApplicationController
     get_current_city
     get_current_category
 
-    #todo now - buscar apenas estabelecimentos da categoria certa
     #todo futuro - colokr busca aleatoria aqui qndo for colokr varios tipos d ordenacao
-    #Busca estabelecimentos - ordem alfabética
-    @home_bars = get_active_bars.all.sort! { |a, b| a['name'].downcase <=> b['name'].downcase }
+    #Busca estabelecimentos por categoria - ordem alfabética
+    @bars_from_category = get_bars_from_category(@current_category.id).all.sort! { |a, b| a['name'].downcase <=> b['name'].downcase }
 
   end
 

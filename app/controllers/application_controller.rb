@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
 
   helper_method :get_principal, :get_active_bars, :get_active_categories,
-                :get_current_country, :get_current_state, :get_current_city, :get_current_category, :get_current_bar
+                :get_current_country, :get_current_state, :get_current_city, :get_current_category, :get_current_bar,
+                :get_bars_from_category
 
   #TODO futuro - buscar só a página principal ativa
   #@principal = Principal.limit(1).where("active = true")
@@ -44,13 +45,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def get_bars_from_category(category_id)
+    @bars_from_category = HomeBar.bars_from_category(category_id)
+  end
+
 
   helper_method  :get_current_city_from_bar
   def get_current_city_from_bar(city_id)
     @current_city_from_bar = City.getCityName(city_id)
   end
-
-  #todo now - buscar estabelecimentos ativos por categoria
 
   protect_from_forgery
 end

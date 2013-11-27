@@ -7,45 +7,53 @@
 <!-- todo futuro - adicionar busca por tipo de estabelecimento na de homeBar-->
 <!-- todo futuro - adicionar busca por cidad na de homeBar -->
 
+<!--todo now - arrumar path-->
 <%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @title, :type => 'all_home_bars'} %>
 <hr/>
 
 <section class="category">
 
-  <div class="breadcrumb">
-    <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
-    <%= link_to params[:city_name], principal_path %> >
-    <%= link_to I18n.t("breadcrumb_categories"), all_categories_path(params[:city_name]) %> >
-    <%= @current_category.name %>
-  </div>
+  <!--todo futuro - verificar se estiver vazia, ker dizer q exist? aih colok pagina em construcao. e c nula n existir, pagina n encontrada-->
+  <% if !@bars_from_category.empty? && !@bars_from_category.nil? %>
 
-  <hr/>
+      <div class="breadcrumb">
+        <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
+        <%= link_to params[:city_name], principal_path %> >
+        <%= link_to I18n.t("breadcrumb_categories"), all_categories_path(params[:city_name]) %> >
+        <%= @current_category.name %>
+      </div>
 
-  <!--todo seb now - verificar se tem algum bar cadastrado na categoria q está entrando, c n tiver, colokr página n existent-->
-  <h1><%= @current_category.name + I18n.t("home_bar.all.title") + @current_city.name %></h1>
+      <hr/>
 
-  <nav>
-    <% @home_bars.each do |destaque| %>
-      <a href="<%= home_bar_path(params[:city_name], destaque.name) %>">
+      <!--todo seb now - verificar se tem algum bar cadastrado na categoria q está entrando, c n tiver, colokr página n existent-->
+      <h1><%= @current_category.name + I18n.t("home_bar.all.title") + @current_city.name %></h1>
 
-        <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
-        <% if destaque.logo_bar_image_file_size.nil? %>
-            <% if destaque.name.length >= 17 %>
-                <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" />
+      <nav>
+        <% @bars_from_category.each do |destaque| %>
+          <a href="<%= home_bar_path(params[:city_name], destaque.name) %>">
+
+            <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+            <% if destaque.logo_bar_image_file_size.nil? %>
+                <% if destaque.name.length >= 17 %>
+                    <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" />
+                <% else %>
+                    <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque.name %>" />
+                <% end %>
             <% else %>
-                <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque.name %>" />
+                <% if destaque.name.length >= 17 %>
+                    <%= image_tag destaque.logo_bar_image.url(:thumb), :alt => destaque.name, :title => destaque.name %>
+                <% else %>
+                    <%= image_tag destaque.logo_bar_image.url(:thumb), :alt => destaque.name %>
+                <% end %>
             <% end %>
-        <% else %>
-            <% if destaque.name.length >= 17 %>
-                <%= image_tag destaque.logo_bar_image.url(:thumb), :alt => destaque.name, :title => destaque.name %>
-            <% else %>
-                <%= image_tag destaque.logo_bar_image.url(:thumb), :alt => destaque.name %>
-            <% end %>
+
+            <h5><%= destaque.name.truncate(16) %></h5>
+          </a>
         <% end %>
+      </nav>
 
-        <h5><%= destaque.name.truncate(16) %></h5>
-      </a>
-    <% end %>
-  </nav>
+  <% else %>
+      <%= render :partial => "layouts/page_not_found_error_404" %>
+  <% end %>
 
 </section>
