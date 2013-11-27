@@ -1,11 +1,12 @@
-<!-- todo now - mudar txt -->
+<!-- todo seb now - mudar txt -->
 <% @title = "Categorias" %>
 
-<%= render :partial => 'layouts/social', :locals => {:url => all_categories_path, :share_text => @title, :type => 'categories'} %>
+<%= render :partial => 'layouts/social', :locals => {:url => all_categories_path(params[:city_name]), :share_text => @title, :type => 'categories'} %>
 <hr/>
 
 <section class="all-categories">
 
+  <!--todo now - colokr cidad nas rotas q precisar-->
   <div class="breadcrumb">
     <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
     <%= I18n.t("breadcrumb_categories") %>
@@ -20,16 +21,14 @@
 
       <nav>
         <% @all_active_categories.each do |category| %>
-            <a href="<%= category_path(category.name)%>">
+            <a href="<%= category_path(params[:city_name], category.name)%>">
 
-              <!-- todo now - adicionar img para categories para ser feita -->
-              <!-- todo now - add img certa na pasta - do tamanho certo pra essa pagina -->
+              <!-- todo seb now - add img certa na pasta - do tamanho certo pra essa pagina -->
               <% if category.category_image_file_size.nil? %>
                   <% if category.name.length >= 17 %>
-                      <!--todo now - mudar img padrao-->
-                      <img src="<%= image_path "bar0.jpg" %>" alt="<%= category.name %>" title="<%= category.name %>" />
+                      <img src="<%= image_path "category0.jpg" %>" alt="<%= category.name %>" title="<%= category.name %>" />
                   <% else %>
-                      <img src="<%= image_path "bar0.jpg" %>" alt="<%= category.name %>" />
+                      <img src="<%= image_path "category0.jpg" %>" alt="<%= category.name %>" />
                   <% end %>
               <% else %>
                   <% if category.name.length >= 17 %>

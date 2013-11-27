@@ -20,20 +20,20 @@ Barweb::Application.routes.draw do
   #PÁGINA PRINCIPAL - POR CIDADE
 
   #todo now futuro - pegar nome da cidade dinamicament - PEGA O Q EU PASSAR, ENTAO PASSO A CIDAD ATUAL
-  get "/uberlandia" => "home_uberlandia#index", :as => :home_uberlandia
+  get "/:city_name" => "city#index", :as => :home_city
 
 
   #PÁGINA DE TODAS AS CATEGORIAS CADASTRADAS - POR CIDADE
-  get "/uberlandia/categories" => "category#index", :as => :all_categories
+  get "/:city_name/categories" => "category#index", :as => :all_categories
 
 
   #PÁGINA DE TODOS OS ESTABELCIMENTOS CADASTRADOS - POR CIDADE E CATEGORIA
-  get "/uberlandia/category/:name" => "category#show", :as => :category
+  get "/:city_name/category/:category_name" => "category#show", :as => :category
 
 
   #PÁGINA HOME - POR NOME DE ESTABELECIMENTO
 
-  get "/uberlandia/:name" => "home_bar#index", :as => :home_bar
+  get "/:city_name/:bar_name" => "home_bar#index", :as => :home_bar
 
 
   #PÁGINAS PAGAS - SÓ SÃO MOSTRADAS PARA ESTABELECIMENTOS QUE PAGAREM
@@ -42,11 +42,11 @@ Barweb::Application.routes.draw do
   #OBS: SE SÓ A GENTE FOR MEXER NO ADMIN, NÃO PRECISA DE SUPER ADMIN PARA SEPARAR ISSO, CASO CONTRÁRIO, PRECISA!
 
   # TODO futuro - PEGAR TXT DINAMICAMENTE PRA PODER CRIAR SÓ UM ARQUIVO
-  get "/uberlandia/:name/contact" => "home_bar#contact", :as => :home_bar_contac
+  get "/:city_name/:bar_name/contact" => "home_bar#contact", :as => :home_bar_contac
 
-  get "/uberlandia/:name/gallery" => "home_bar#gallery", :as => :home_bar_gallery
+  get "/:city_name/:bar_name/gallery" => "home_bar#gallery", :as => :home_bar_gallery
 
-  get "/uberlandia/:name/events" => "home_bar#events", :as => :home_bar_events
+  get "/:city_name/:bar_name/events" => "home_bar#events", :as => :home_bar_events
 
 
   #todo futuro - fazer rel q gera lista de urls dos bares

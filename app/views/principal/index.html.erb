@@ -1,4 +1,4 @@
-<!-- todo now - mudar txt -->
+<!-- todo seb now - mudar txt -->
 <% @title = "Principal" %>
 
 <!-- todo futuro - n pod ter each, só pode ter 1 principal ativa por vez -->
@@ -18,8 +18,8 @@
 
   <hr/>
 
-  <!-- todo now futuro - colokr icone personalizado -->
-  <!-- todo now futuro - colokr icones agrupados -->
+  <!-- todo seb now futuro - colokr icone personalizado -->
+  <!-- todo seb now futuro - colokr icones agrupados -->
   <div id="map_canvas" style="height: 200px; width: 100%"></div>
 
   <hr/>
@@ -51,7 +51,7 @@
         </div>
 
         <div style="display: table-caption;font-size: 14px;">
-          <!-- todo now - colocar links -->
+          <!-- todo fim now - colocar links -->
           <!-- todo futuro - colokr do g+ -->
           <%= image_tag principal.follow_fb_image.url(:thumb), :class=>"principal-links", :style => "width: 100px;height: 45px;", :alt => I18n.t("principal.index.follow_image_name") %>
           <%= image_tag principal.follow_tw_image.url(:thumb), :class=>"principal-links", :style => "padding-top:0; padding-bottom:0;width: 100px;height: 45px;", :alt => I18n.t("principal.index.follow_image_name") %>
@@ -60,15 +60,16 @@
 
         <hr/>
 
-        <!-- todo now - mudar titulo -->
+        <!-- todo seb now - mudar titulo -->
         <h4><%= I18n.t("principal.index.title_bars") %></h4>
 
         <% @home_bars.each do |destaque| %>
             <div class="principal-destaques">
 
-              <a href="<%= home_bar_path(destaque.name)%>" alt="<%= destaque.name %>" >
+              <!--todo now - arrumar chamada da rota-->
+              <a href="<%= home_bar_path("Uberlandia", destaque.name)%>" alt="<%= destaque.name %>" >
 
-                <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+                <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
                 <% if destaque.logo_bar_image_file_size.nil? %>
                     <% if destaque.name.length >= 17 %>
                         <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" />
@@ -92,9 +93,9 @@
 
         <div class="principal-destaques">
           <!--todo now - arrumar chamada da rota-->
-          <a href="<%= category_path("Bares") %>">
+          <a href="<%= category_path("Uberlandia", "Bares") %>">
             <%= image_tag principal.all_homes_image.url(:thumb)  %>
-            <!-- todo now - mudar txt -->
+            <!-- todo seb now - mudar txt -->
             <h5> <%= I18n.t("principal.index.all_bars") %> </h5>
           </a>
         </div>
@@ -105,9 +106,11 @@
   </nav>
 
   <% @all_active_bars.each_with_index do |all_active_bars, index| %>
+      <!--todo now - tirar isso-->
+      <%= @current_city_from_bar.name %>
       <!-- dados para mapa -->
       <script type="text/javascript">
-        local[<%= index %>] = '<%= all_active_bars.address + ", " + all_active_bars.number.to_s + ", " + @current_city.name %>';
+        local[<%= index %>] = '<%= all_active_bars.address + ", " + all_active_bars.number.to_s + ", " + @current_city_from_bar.name %>';
       </script>
   <% end %>
 

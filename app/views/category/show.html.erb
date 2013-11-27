@@ -1,4 +1,4 @@
-<!-- todo now - mudar txt -->
+<!-- todo seb now - mudar txt -->
 <% @title = "Todos os Bares" %>
 
 <!-- todo futuro - colokr varios tipos de ordenação para encontrar os bares -->
@@ -14,20 +14,20 @@
 
   <div class="breadcrumb">
     <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
-    <%= link_to I18n.t("breadcrumb_categories"), all_categories_path %> >
+    <%= link_to I18n.t("breadcrumb_categories"), all_categories_path(params[:city_name]) %> >
     <%= @current_category.name %>
   </div>
 
   <hr/>
 
-  <!--todo now - verificar se tem algum bar cadastrado na categoria q está entrando, c n tiver, colokr página n existent-->
+  <!--todo seb now - verificar se tem algum bar cadastrado na categoria q está entrando, c n tiver, colokr página n existent-->
   <h1><%= @current_category.name + I18n.t("home_bar.all.title") + @current_city.name %></h1>
 
   <nav>
     <% @home_bars.each do |destaque| %>
-      <a href="<%= home_bar_path(destaque.name) %>">
+      <a href="<%= home_bar_path(params[:city_name], destaque.name) %>">
 
-        <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+        <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
         <% if destaque.logo_bar_image_file_size.nil? %>
             <% if destaque.name.length >= 17 %>
                 <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" />
