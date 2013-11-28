@@ -26,21 +26,22 @@
 
       <nav>
         <% @bars_from_category.each do |destaque| %>
+            <% destaque_name =  destaque.name %>
+            <% title =  "" %>
+
           <a href="<%= home_bar_path(params[:city_name], destaque.name) %>">
 
             <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
             <% if destaque.logo_bar_image_file_size.nil? %>
                 <% if destaque.name.length >= 17 %>
-                    <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque.name %>" title="<%= destaque.name %>" />
-                <% else %>
-                    <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque.name %>" />
+                    <% title =  destaque_name %>
                 <% end %>
+                <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque_name %>" title="<%= title %>" />
             <% else %>
                 <% if destaque.name.length >= 17 %>
-                    <%= image_tag destaque.logo_bar_image.url(:thumb), :alt => destaque.name, :title => destaque.name %>
-                <% else %>
-                    <%= image_tag destaque.logo_bar_image.url(:thumb), :alt => destaque.name %>
+                    <% title =  destaque_name %>
                 <% end %>
+                <%= image_tag destaque.logo_bar_image.url(:thumb), :alt => destaque_name, :title => title %>
             <% end %>
 
             <h5><%= destaque.name.truncate(16) %></h5>

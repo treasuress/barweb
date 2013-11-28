@@ -22,21 +22,22 @@
 
       <nav>
         <% @all_active_categories.each do |category| %>
+            <% category_name =  category.name %>
+            <% title =  "" %>
+
             <a href="<%= category_path(params[:city_name], category.name)%>">
 
               <!-- todo seb now - add img certa na pasta - do tamanho certo pra essa pagina -->
               <% if category.category_image_file_size.nil? %>
                   <% if category.name.length >= 17 %>
-                      <img src="<%= image_path "category0.jpg" %>" alt="<%= category.name %>" title="<%= category.name %>" />
-                  <% else %>
-                      <img src="<%= image_path "category0.jpg" %>" alt="<%= category.name %>" />
+                      <% title =  category_name %>
                   <% end %>
+                  <img src="<%= image_path "category0.jpg" %>" alt="<%= category_name %>" title="<%= title %>" />
               <% else %>
                   <% if category.name.length >= 17 %>
-                      <%= image_tag category.category_image.url(:thumb), :alt => category.name, :title => category.name %>
-                  <% else %>
-                      <%= image_tag category.category_image.url(:thumb), :alt => category.name %>
+                      <% title =  category_name %>
                   <% end %>
+                  <%= image_tag category.category_image.url(:thumb), :alt => category_name, :title => title %>
               <% end %>
 
               <h5><%= category.name.truncate(16) %></h5>
