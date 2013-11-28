@@ -44,9 +44,9 @@ h1 {
     height: 35px;
 }
 #map_canvas {
-    height: 300px;
-    width: 449px;
     margin-top: 3%;
+    height: 283px;
+    width: 421px;
 }
 .breadcrumb{
     margin-top: -31px;
@@ -137,6 +137,8 @@ header img {
     border-radius: 3px;
     color: darkblue;
     background-color: lavender;
+
+    background-color: rgb(229, 227, 223);
 }
 .principal h4, .principal h5 {
     text-align: left;
@@ -151,24 +153,44 @@ header img {
 /* HOME BAR */
 .home-bar .info-bar{
     float: left;
-    padding: 10px 7px;
     width: 49%;
+    padding: 10px 25px;
+    padding-right: 0;
+    height: 0;
+    margin-left: 1%;
 }
 .home-bar .map-bar{
-    margin-left: auto;
+    /*margin-left: auto;*/
+
+    margin-right: 1.5%;
+    margin-top: 3%;
+    margin-left: 50.9%;
 }
 .home-bar img {
-    margin: 19px 0 0 8px;
+    margin-top: 19px;
     width: 82%;
     /*width: 42%;*/
+
+    float: left;
+    margin-right: 7%;
 }
 .home-bar h2 {
-    width: 79.5%;
-    margin-left: 2.7%;
-    margin-top: 67.5%;
+    width: 76.2%;
+    margin-top: 65.7%;
     height: 100px;
     font-size: 14px;
     text-align: justify;
+    background-color: lavender;
+    padding: 3% 3% 0 3%;
+    color: darkblue;
+    border-radius: 0 0 5px 5px;
+}
+.home-bar .address{
+    color: midnightblue;
+    border-radius: 0 0 5px 5px;
+    background-color: lavender;
+    padding: 3% 5% 4.8% 3%;
+    margin-right: 5.0%;
 }
 .home-bar .comments{
     text-align:center;
