@@ -2,7 +2,7 @@ class CreateHomeBars < ActiveRecord::Migration
   def up
     create_table :home_bars do |t|
       t.string :name, :null => false
-      t.string :description, :limit => 380
+      t.string :description, :limit => 227
 
       t.string :phone_number
       t.string :cellphone_number
