@@ -1,9 +1,11 @@
-<!-- todo now - mudar txt -->
+<!-- todo seb now - mudar txt -->
 <% @title = "Contato" %>
 
 
 <!--todo now futuro - colokr pra essas informacoes aparecerem em cima da tela na pagina inicial -->
 <section class="contact">
+
+  <%= flash_messages %>
 
   <div class="breadcrumb">
     <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
@@ -23,7 +25,32 @@
 
   Email: <%= mail_to "siac.bar@gmail.com", "siac.bar@gmail.com" %>
 
-  <!-- todo now - fazer formulario com email, assunto e txt pra pessoa enviar pra gent -->
+  <!--todo now - criar formulario-->
+
+  <br><br>
+  <div style="margin-top: 4%;">
+      <label for="name">Nome</label><br />
+      <input type="text" />
+  </div>
+  <div>
+      <label for="email">Email</label><br />
+      <input type="text" />
+  </div>
+  <div>
+      <label for="subject">Assunto</label><br />
+      <select>
+        <option>Sugestão</option>
+        <option>Crítica</option>
+        <option>Elogio</option>
+        <option>Outro</option>
+      </select>
+  </div>
+  <div>
+      <label for="message">Digite sua mensagem:</label><br />
+    <!--todo now - colokr pra n redimencionar o campo-->
+      <textarea></textarea><br />
+  </div>
+
 
 </section>
 
