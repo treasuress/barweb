@@ -10,6 +10,7 @@
 #todo now - cadastrar um dos bares na nova categoria criada
 #todo now - fazer testes cadastrando 2 bares e vendo c aparecem separados, cada um em uma página
 #todo now - criar bar inativo e ver se aparece em alguma categoria - teste
+#todo now - fazer testes de tdas as views, mostrando o q devia e acessando url errada pra mostrar o q n exist e acessando url q n exist pra v o q acontec
 
 require_relative "countries.rb"
 require_relative "categories.rb"
@@ -39,7 +40,8 @@ if Rails.env.development?
   if Category.all.size == 0
     Category.create([
                       {:name => "Bares", :active => true, :description => "Todos os Bares", :category_image => File.open('public/categories/category1.jpg') },
-                      {:name => "Restaurantes", :active => false, :description => "Todos os Restaurantes", :category_image => File.open('public/categories/category2.jpg') }
+                      {:name => "Restaurantes", :active => true, :description => "Todos os Restaurantes", :category_image => File.open('public/categories/category2.jpg') },
+                      {:name => "Pizzarias", :active => false, :description => "Todos as Pizzarias", :category_image => File.open('public/categories/category2.jpg') }
                   ], :without_protection => true)
   end
 

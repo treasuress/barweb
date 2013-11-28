@@ -36,4 +36,6 @@ class HomeBar < ActiveRecord::Base
     where(:status_id => Status.active, :category_id => category_id)
   end
 
+  #<!-- todo futuro - adicionar busca por cidad -->
+
 end

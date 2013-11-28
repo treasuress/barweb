@@ -8,7 +8,7 @@ class Principal < ActiveRecord::Base
 
   validates_attachment_presence :logo_image, :gallery_image, :events_image, :contact_image, :follow_fb_image, :follow_tw_image, :all_homes_image
 
-  #todo now - colokr tamanho certo da logo
+  #todo seb now - colokr tamanho certo da logo
   has_attached_file :logo_image,
                     :styles => {:medium => "400x300#", :thumb => "100x100#"},
                     :url => "/assets/principals/:id/images/logo_:style.:extension",

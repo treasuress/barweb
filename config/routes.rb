@@ -22,7 +22,6 @@ Barweb::Application.routes.draw do
 
   #PÁGINA PRINCIPAL - POR CIDADE
 
-  #todo now futuro - pegar nome da cidade dinamicament - PEGA O Q EU PASSAR, ENTAO PASSO A CIDAD ATUAL
   get "/:city_name" => "city#index", :as => :home_city
 
 
@@ -44,7 +43,7 @@ Barweb::Application.routes.draw do
 
   #OBS: SE SÓ A GENTE FOR MEXER NO ADMIN, NÃO PRECISA DE SUPER ADMIN PARA SEPARAR ISSO, CASO CONTRÁRIO, PRECISA!
 
-  # TODO futuro - PEGAR TXT DINAMICAMENTE PRA PODER CRIAR SÓ UM ARQUIVO
+  # TODO futuro - PEGAR TXT da página DINAMICAMENTE PRA CRIAR SÓ UM ARQUIVO
   get "/:city_name/:bar_name/contact" => "home_bar#contact", :as => :home_bar_contac
 
   get "/:city_name/:bar_name/gallery" => "home_bar#gallery", :as => :home_bar_gallery

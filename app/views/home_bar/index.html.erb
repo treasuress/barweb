@@ -1,8 +1,6 @@
 <!-- todo seb now - mudar txt -->
 <% @title = @current_bar.name %>
 
-<!--todo now - verificar se bar tah ativo, c tiver mostra, senao, mostra outra pagina-->
-
 <%= render :partial => 'layouts/social', :locals => {:url => home_bar_path(params[:city_name], @current_bar.name), :share_text => @title, :type => 'home_bar'} %>
 <hr/>
 
@@ -12,83 +10,87 @@
     <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
     <%= link_to params[:city_name], principal_path %> >
     <%= link_to I18n.t("breadcrumb_categories"), all_categories_path(params[:city_name]) %> >
-    <!--todo now - arrumar category_id-->
+    <!--todo now - arrumar category_id - colokr nome da categoria -->
     <%= link_to @current_bar.category_id, category_path(params[:city_name], @current_bar.category_id) %> >
     <%= @current_bar.name %>
   </div>
 
   <hr/>
 
-  <% if @current_bar.address.present? %>
+  <!--todo now - verificar se bar tah ativo, c tiver mostra, senao, mostra outra pagina-->
+  <!--<% if @current_bar.status_id = 1 %>-->
 
-      <h1><%= @current_bar.name %></h1>
+      <% if @current_bar.address.present? %>
 
-      <div class="info-bar">
-          <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
-          <% if @current_bar.logo_bar_image_file_size.nil? %>
-              <img src="<%= image_path "bar0.jpg" %>" style="float:left;width: 400px;height: 300px;margin-right: 7%;" alt="<%= @current_bar.name %>" />
-          <% else %>
-              <%= image_tag @current_bar.logo_bar_image.url(:home), :style => "float:left;margin-right: 7%;", :alt => @current_bar.name %>
-          <% end %>
+          <h1><%= @current_bar.name %></h1>
 
-          <h2><%= @current_bar.description %></h2>
+          <div class="info-bar">
+              <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+              <% if @current_bar.logo_bar_image_file_size.nil? %>
+                  <img src="<%= image_path "bar0.jpg" %>" style="float:left;width: 400px;height: 300px;margin-right: 7%;" alt="<%= @current_bar.name %>" />
+              <% else %>
+                  <%= image_tag @current_bar.logo_bar_image.url(:home), :style => "float:left;margin-right: 7%;", :alt => @current_bar.name %>
+              <% end %>
 
-      </div>
+              <h2><%= @current_bar.description %></h2>
 
-      <div class="map-bar">
-          <!--todo now - colokr pequena descrição em cima do mapa pra falar o q eh o mapa - em tdas as paginas q tem mapa-->
-          <div id="map_canvas"></div>
-
-          <div class="address">
-              <h3>
-                <%= @current_bar.address + ", " %>
-                <%= if @current_bar.number != 0
-                        @current_bar.number
-                    else
-                        "s/n"
-                    end %>
-                    - <%= @current_bar.neighborhood %>
-                    <%= " - " + @current_bar.complement if !@current_bar.complement.blank? %>
-              </h3>
-              <h4>
-                <%= @current_city.name %>
-                - <%= @current_state.name %>
-                - <%= @current_country.name %>
-                <%= "- " + I18n.t("home_bar.index.zip") + @current_bar.zip if !@current_bar.zip.blank? %>
-              </h4>
-              <h5>
-                <% if !@current_bar.phone_number.blank? %>
-                    <!-- todo futuro - ver se no mobile dah pra fazer a pessoa jah clicar pra ligar -->
-                    <!-- todo now - decidir forma d cadastrar tels e mostrar aqui -->
-                    <%= I18n.t("home_bar.index.phone") + @current_bar.phone_number %>
-                    <%= ", " + @current_bar.cellphone_number if !@current_bar.cellphone_number.blank? %>
-                <% end %>
-              </h5>
           </div>
 
-      </div>
+          <div class="map-bar">
+              <!--todo now - colokr pequena descrição em cima do mapa pra falar o q eh o mapa - em tdas as paginas q tem mapa-->
+              <div id="map_canvas"></div>
 
-      <hr/>
+              <div class="address">
+                  <h3>
+                    <%= @current_bar.address + ", " %>
+                    <%= if @current_bar.number != 0
+                            @current_bar.number
+                        else
+                            "s/n"
+                        end %>
+                        - <%= @current_bar.neighborhood %>
+                        <%= " - " + @current_bar.complement if !@current_bar.complement.blank? %>
+                  </h3>
+                  <h4>
+                    <%= @current_city.name %>
+                    - <%= @current_state.name %>
+                    - <%= @current_country.name %>
+                    <%= "- " + I18n.t("home_bar.index.zip") + @current_bar.zip if !@current_bar.zip.blank? %>
+                  </h4>
+                  <h5>
+                    <% if !@current_bar.phone_number.blank? %>
+                        <!-- todo futuro - ver se no mobile dah pra fazer a pessoa jah clicar pra ligar -->
+                        <!-- todo now - decidir forma d cadastrar tels e mostrar aqui -->
+                        <%= I18n.t("home_bar.index.phone") + @current_bar.phone_number %>
+                        <%= ", " + @current_bar.cellphone_number if !@current_bar.cellphone_number.blank? %>
+                    <% end %>
+                  </h5>
+              </div>
 
-      <!-- todo fim now futuro - colocar recomendações -->
-      <br /><br />
-      <!-- todo seb now - colokr da cor da logo -->
-      <div class="comments">
-          <h6><%= I18n.t("home_bar.index.fb-comments") + @current_bar.name + "!" %></h6>
-          <div class="fb-comments" data-href="<%= home_bar_path(params[:city_name], @current_bar.name) %>" data-numposts="5"></div>
-      </div>
+          </div>
 
-      <!-- dados para mapa -->
-      <script type="text/javascript">
-          local = new Array();
-          local[0] = '<%= @current_bar.address + ", " + @current_bar.number.to_s + ", " + @current_city.name %>';
-      </script>
+          <hr/>
 
-  <% else %>
+          <!-- todo fim now futuro - colocar recomendações -->
+          <br /><br />
+          <!-- todo seb now - colokr da cor da logo -->
+          <div class="comments">
+              <h6><%= I18n.t("home_bar.index.fb-comments") + @current_bar.name + "!" %></h6>
+              <div class="fb-comments" data-href="<%= home_bar_path(params[:city_name], @current_bar.name) %>" data-numposts="5"></div>
+          </div>
 
-      <!-- todo futuro - devia enviar email, msg, whatever pra alguem, pq isso nunk dev acontecer, jah q endereço é campo obrigatório no banco -->
-      <%= render :partial => "layouts/page_not_found_error_404" %>
+          <!-- dados para mapa -->
+          <script type="text/javascript">
+              local = new Array();
+              local[0] = '<%= @current_bar.address + ", " + @current_bar.number.to_s + ", " + @current_city.name %>';
+          </script>
 
-  <% end %>
+      <% else %>
+
+          <!-- todo futuro - devia enviar email, msg, whatever pra alguem, pq isso nunk dev acontecer, jah q endereço é campo obrigatório no banco -->
+          <%= render :partial => "layouts/page_not_found_error_404" %>
+
+      <% end %>
+  <!--<% end %>-->
 
 </section>
