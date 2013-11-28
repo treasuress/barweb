@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_bars_from_category(category_id)
-    @bars_from_category = HomeBar.bars_from_category(category_id)
+    @bars_from_category = HomeBar.all_by_category(category_id)
   end
 
 

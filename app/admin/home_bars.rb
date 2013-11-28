@@ -2,6 +2,7 @@ ActiveAdmin.register HomeBar do
   config.comments = false
 
   #todo we - tirar esse 'açoes em lote' da pagina
+  #todo now futuro - colokr trim() pra n fikr espaço no fim c a pessoa cadastrar com espaço
 
   scope :active, :default => true
   scope :inactive

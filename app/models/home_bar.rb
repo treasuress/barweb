@@ -32,7 +32,7 @@ class HomeBar < ActiveRecord::Base
     where(:status_id => Status.pending)
   end
 
-  def self.bars_from_category(category_id)
+  def self.all_by_category(category_id)
     where(:status_id => Status.active, :category_id => category_id)
   end
 
