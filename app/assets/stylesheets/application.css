@@ -191,6 +191,8 @@ header img {
     background-color: lavender;
     padding: 3% 5% 4.8% 3%;
     margin-right: 5.0%;
+
+    background-color: rgb(229, 227, 223);
 }
 .home-bar .comments{
     text-align:center;
@@ -209,12 +211,20 @@ header img {
 
 /* PRINCIPAL - CONTACT */
 /* todo now - fazer css */
-.contact{
-    text-align: center;
-}
 .contact .breadcrumb{
     text-align: left;
     margin-top: 0;
+}
+.contact .contact-text{
+    float: left;
+    margin: 8% 11%;
+    padding: 2%;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+    margin-right: 16%;
+}
+.contact .contact-form{
+    margin-top: -6%;
 }
 .contact div{
     margin-top: 1%;
@@ -229,6 +239,13 @@ header img {
 }
 .contact input[type="text"], .contact select, .contact textarea {
     width: 30%;
+    border-radius: 5px;
+}
+.contact select {
+    background-color: rgb(229, 227, 223);
+}
+.contact textarea {
+    height: 120px;
 }
 
 
