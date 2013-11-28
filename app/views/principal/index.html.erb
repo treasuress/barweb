@@ -13,14 +13,14 @@
   </script>
 
   <div class="breadcrumb">
-    <%= I18n.t("breadcrumb_principal") %>
+    <!--<%= I18n.t("breadcrumb_principal") %>-->
   </div>
 
   <hr/>
 
   <!-- todo seb now futuro - colokr icone personalizado -->
   <!-- todo seb now futuro - colokr icones agrupados -->
-  <div id="map_canvas" style="height: 200px; width: 100%"></div>
+  <div id="map_canvas" style="height: 200px; width: 100%;margin-top: 1%;"></div>
 
   <hr/>
 
@@ -29,7 +29,7 @@
     <% @principal.each do |principal| %>
         <h2><%= principal.description %></h2>
 
-        <div class="principal-links" style="margin-left: 8%;">
+        <div class="principal-links" style="margin-left: 2%;">
           <!--<a href="<%= principal_gallery_path %>">-->
           <%= image_tag principal.gallery_image.url(:thumb), :alt => I18n.t("principal.index.galley_image_name") %>
           <h4><%= I18n.t("principal.index.galley_image_name") %></h4>
@@ -58,10 +58,11 @@
           <h4 class="principal-links" style="padding-top:5px"><%= I18n.t("principal.index.follow_image_name") %></h4>
         </div>
 
-        <hr/>
+        <hr  class="line" />
 
+        <!--todo now futuro - pegar nomes das categorias dinamicamente nas buscas dos estabelecimentos-->
         <!-- todo seb now - mudar titulo -->
-        <h4><%= I18n.t("principal.index.title_bars") %></h4>
+        <h4 style="color: midnightblue;"><%= I18n.t("principal.index.title_bars") %></h4>
 
         <% @home_bars.each do |destaque| %>
             <% destaque_name =  destaque.name %>

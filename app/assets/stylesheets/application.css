@@ -21,12 +21,19 @@ html, body {
     height: 100%;
     font-family: Helvetica;
     width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    background-color: lavender;
+    color: #282828;
 }
 hr {
-    height: 2px;
+    /*height: 2px;*/
     clear: both;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.line{
+    border: 1px solid #d9d9d9;
 }
 .ckeditor_fields, .home_bar_description{
     width: 78% !important;
@@ -41,11 +48,16 @@ h1 {
     width: 449px;
     margin-top: 3%;
 }
+.breadcrumb{
+    margin-top: -31px;
+    margin-bottom: 25px;
+}
 /* LINKs */
 a {
     text-decoration: none;
     color: darkblue;
 }
+/*todo now - dxar cor dif nos links visitados?*/
 a:visited {
     color:#006AAB;
 }
@@ -96,7 +108,11 @@ a:hover, a:active {
 .header-body{
     height: auto !important;
     min-height: 96.7%;
-    padding-bottom: 22px;
+    background-color: white;
+    border-radius: 3px;
+    padding: 0 20px 0;
+    border: 1px solid #d9d9d9;
+    margin-top: -11px;
 }
 
 
@@ -110,12 +126,17 @@ header img {
 
 /* PRINCIPAL */
 .principal h2{
-    width: 31.4%;
-    margin-left: 5%;
+    width: 37.4%;
+    margin-left: 2%;
     float: left;
     margin-right: 1.5%;
     font-size: 14px;
     text-align: justify;
+    margin-top: 3%;
+    padding: 16px;
+    border-radius: 3px;
+    color: darkblue;
+    background-color: lavender;
 }
 .principal h4, .principal h5 {
     text-align: left;
@@ -171,6 +192,21 @@ header img {
 }
 .contact .breadcrumb{
     text-align: left;
+    margin-top: 0;
+}
+.contact div{
+    margin-top: 1%;
+}
+.contact label{
+    width: 100px;
+    text-align: left !important;
+    margin-top: 10%;
+}
+.contact input[type="text"], .contact select {
+    height: 20px;
+}
+.contact input[type="text"], .contact select, .contact textarea {
+    width: 30%;
 }
 
 
@@ -180,8 +216,8 @@ footer {
     bottom: 0;
     margin-top: -22px;
     height: 22px;
-    background-color: pink;
     width: 100%;
     clear: both;
     text-align: left;
+    margin-top: 5px;
 }
