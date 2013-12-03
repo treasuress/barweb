@@ -1,7 +1,7 @@
 Barweb::Application.routes.draw do
   resources :contacts
 
-
+  #todo now - ver se tiro referencias desse trem
   mount Ckeditor::Engine => "/ckeditor"
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -13,7 +13,7 @@ Barweb::Application.routes.draw do
 
   get "/" => "principal#index", :as => :principal
 
-  get "/contact" => "principal#contact", :as => :principal_contact
+  get "/contact" => "contacts#new", :as => :principal_contact
 
   get "/gallery" => "principal#gallery", :as => :principal_gallery
 

@@ -26,9 +26,9 @@ html, body {
     color: #282828;
 }
 hr {
-    /*height: 2px;*/
+    height: 2px;
     clear: both;
-    border: none;
+    /*border: none;*/
     margin-top: 5px;
     margin-bottom: 5px;
 }
@@ -223,9 +223,6 @@ header img {
     border-radius: 5px;
     margin-right: 16%;
 }
-.contact .contact-form{
-    margin-top: -6%;
-}
 .contact div{
     margin-top: 1%;
 }
@@ -233,12 +230,13 @@ header img {
     width: 100px;
     text-align: left !important;
     margin-top: 10%;
+    margin-bottom: 1%;
 }
 .contact input[type="text"], .contact select {
     height: 20px;
 }
 .contact input[type="text"], .contact select, .contact textarea {
-    width: 30%;
+    width: 280px;
     border-radius: 5px;
 }
 .contact select {
@@ -246,6 +244,11 @@ header img {
 }
 .contact textarea {
     height: 120px;
+}
+.contact input[type="submit"]{
+    border-radius: 5px;
+    padding: 2px 4px;
+    margin-right: 39.5%;
 }
 
 
@@ -259,4 +262,55 @@ footer {
     clear: both;
     text-align: left;
     margin-top: 5px;
+}
+
+
+/*todo now futuro - arrumar estilos de alerta*/
+.alerta {
+    background: #fcf8e3 url("../ico-alerta.png") no-repeat 10px 10px;
+    border: 1px solid #fbeed5;
+    border-radius: 4px;
+    color: #c09853;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding: .5em 35px .5em 45px;
+    position: relative;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+    text-align: center;
+}
+
+.alerta.alerta-success {
+    background: #dff0d8 url("../ico-alerta-sucesso.png") no-repeat 10px 10px;
+    border-color: #d6e9c6;
+    color: #468847
+}
+
+.alerta.alerta-error {
+    background: #f2dede url("../ico-alerta-erro.png") no-repeat 10px 10px;
+    border-color: #eed3d7;
+    color: #b94a48
+}
+
+.alerta.alerta-info {
+    background: #d9edf7 url("../ico-alerta-info.png") no-repeat 10px 10px;
+    border-color: #bce8f1;
+    color: #3a87ad
+}
+
+.alerta .bt-fechar {
+    background: transparent;
+    color: #556b80;
+    font-family: 'Proxima Nova Bold',Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    filter: alpha(opacity=60);
+    opacity: .2;
+    text-shadow: 0 1px 0 #fff
+}
+
+.alerta .bt-fechar:hover {
+    filter: alpha(opacity=60);
+    opacity: 1
 }
