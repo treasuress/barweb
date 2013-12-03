@@ -42,7 +42,9 @@
 
               <div class="address">
                   <h3>
-                    <%= @current_bar.address + ", " %>
+                    <!--todo now - ver se tem como tirar todos os comentarios pra colokr em producao-->
+                    <!--info - com strip! n pod ter numero no campo-->
+                    <%= @current_bar.address.strip! + ", " %>
                     <%= if @current_bar.number != 0
                             @current_bar.number
                         else
@@ -53,7 +55,7 @@
                   </h3>
                   <h4>
                     <%= @current_city.name %>
-                    <!--todo now - colokr soh iso?-->
+                    <!--todo now - colokr iso ao inves do nome inteiro do estado?-->
                     - <%= @current_state.name %>
                     - <%= @current_country.name %>
                     <%= "- " + I18n.t("home_bar.index.zip") + @current_bar.zip if !@current_bar.zip.blank? %>
@@ -62,8 +64,7 @@
                     <% if !@current_bar.phone_number.blank? %>
                         <!-- todo futuro - ver se no mobile dah pra fazer a pessoa jah clicar pra ligar -->
                         <!-- todo now - decidir forma d cadastrar tels e mostrar aqui -->
-                        <%= I18n.t("home_bar.index.phone") + @current_bar.phone_number %>
-                        <%= ", " + @current_bar.cellphone_number if !@current_bar.cellphone_number.blank? %>
+                        <%= I18n.t("home_bar.index.phone") + @current_bar.phone_number %><%= ", " + @current_bar.cellphone_number if !@current_bar.cellphone_number.blank? %>
                     <% end %>
                   </h5>
               </div>

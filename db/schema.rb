@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(:version => 20131120150244) do
 
   create_table "home_bars", :force => true do |t|
     t.string   "name",                                       :null => false
-    t.string   "description",                 :limit => 380
+    t.string   "description",                 :limit => 227
     t.string   "phone_number"
     t.string   "cellphone_number"
     t.string   "logo_bar_image_file_name"

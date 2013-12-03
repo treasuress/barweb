@@ -2,7 +2,6 @@ ActiveAdmin.register HomeBar do
   config.comments = false
 
   #todo we - tirar esse 'açoes em lote' da pagina
-  #todo now futuro - colokr trim() pra n fikr espaço no fim c a pessoa cadastrar com espaço
 
   scope :active, :default => true
   scope :inactive
@@ -52,9 +51,8 @@ ActiveAdmin.register HomeBar do
       f.input :name
 
       #todo we - fazer ficar 20% à direita - n pega o style nem classe separada
-      #todo we - todo colokr q n pod redimencionar campo
       #todo we - trocar pro ckeditor dps d novo pra ver se funciona (n limita qntidad d caracteres)
-      f.input :description, :as => :text, :input_html => { :maxlength => 227 }
+      f.input :description, :as => :text, :input_html => { :maxlength => 227, :style => "resize:none" }
       #f.input :description, :as => :ckeditor, :input_html => {:width => "79%", :style => 'margin-left: 20%;', :maxlength => 380}
       #f.input :description, :as => :ckeditor, :input_html => { class: 'home_bar_description'}'}
       #f.input :description, :as => :ckeditor, :input_html => {:width => "79%", :style => 'margin-left: 20%;'}
@@ -68,7 +66,8 @@ ActiveAdmin.register HomeBar do
       #todo we - pattern n funciona n sei pq
       #TODO we - COLOCAR ALGUMA MASCARA PRA N TER COMO ENVIAR ERRADO (HTML5)
       #todo we - colokr tdos os campos d tel com o 9o digito. se a pessoa n preencher, add um 0 no comeco
-      f.input :phone_number, :as => :phone, :input_html => { :pattern => "[\(]\d{3}[\)]\d{4}[\-]\d{4}", :placeholder => "(034) 3232-3232"}
+      #todo we - na hr d mostrar na tela, c comecar com 0, ignora e vai pro proximo numero
+      f.input :phone_number, :as => :phone, :pattern => "[\(]\d{3}[\)]\d{4}[\-]\d{4}", :placeholder => "(034) 3232-3232"
       f.input :cellphone_number, :as => :phone, :input_html => { :pattern => "[\(]\d{3}[\)]\d{4}[\-]\d{4}", :placeholder => "(034) 99898-9898"}
     end
 
