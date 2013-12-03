@@ -1,25 +1,23 @@
 Barweb::Application.routes.draw do
   resources :contacts
 
-  #todo now - ver se tiro referencias desse trem
+  #todo now futuro - ver se tiro referencias desse trem
   mount Ckeditor::Engine => "/ckeditor"
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
 
-  #todo now - colokr as rotas em portugues
-
   #PÁGINA PRINCIPAL GERAL
 
   get "/" => "principal#index", :as => :principal
 
-  get "/contact" => "contacts#new", :as => :principal_contact
+  get "/contato" => "contacts#new", :as => :principal_contact
 
-  get "/gallery" => "principal#gallery", :as => :principal_gallery
+  get "/fotos" => "principal#gallery", :as => :principal_gallery
 
-  get "/events" => "principal#events", :as => :principal_events
+  get "/eventos" => "principal#events", :as => :principal_events
 
-  get "/terms" => "principal#terms", :as => :terms
+  get "/termos" => "principal#terms", :as => :terms
 
 
   ActiveAdmin.routes(self)
@@ -31,11 +29,11 @@ Barweb::Application.routes.draw do
 
 
   #PÁGINA DE TODAS AS CATEGORIAS CADASTRADAS - POR CIDADE
-  get "/:city_name/categories" => "category#index", :as => :all_categories
+  get "/:city_name/categorias" => "category#index", :as => :all_categories
 
 
   #PÁGINA DE TODOS OS ESTABELCIMENTOS CADASTRADOS - POR CIDADE E CATEGORIA
-  get "/:city_name/category/:category_name" => "category#show", :as => :category
+  get "/:city_name/categoria/:category_name" => "category#show", :as => :category
 
 
   #PÁGINA HOME - POR NOME DE ESTABELECIMENTO
@@ -49,11 +47,11 @@ Barweb::Application.routes.draw do
   #OBS: SE SÓ A GENTE FOR MEXER NO ADMIN, NÃO PRECISA DE SUPER ADMIN PARA SEPARAR ISSO, CASO CONTRÁRIO, PRECISA!
 
   # TODO futuro - PEGAR TXT da página DINAMICAMENTE PRA CRIAR SÓ UM ARQUIVO
-  get "/:city_name/:bar_name/contact" => "home_bar#contact", :as => :home_bar_contac
+  get "/:city_name/:bar_name/contato" => "home_bar#contact", :as => :home_bar_contac
 
-  get "/:city_name/:bar_name/gallery" => "home_bar#gallery", :as => :home_bar_gallery
+  get "/:city_name/:bar_name/fotos" => "home_bar#gallery", :as => :home_bar_gallery
 
-  get "/:city_name/:bar_name/events" => "home_bar#events", :as => :home_bar_events
+  get "/:city_name/:bar_name/eventos" => "home_bar#events", :as => :home_bar_events
 
 
   #todo futuro - fazer rel q gera lista de urls dos bares
