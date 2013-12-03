@@ -73,5 +73,19 @@ module Barweb
     config.i18n.locale = :'pt-BR'
     config.i18n.default_locale = :'pt-BR'
     config.middleware.insert_before ActionDispatch::Session::CookieStore, Rack::P3p
+
+
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.smtp_settings = {
+        :address => "smtp.gmail.com",
+        :port => 587,
+        :domain => 'gmail.com',
+        #todo rodar - seu usuario e senha aqui (quem está enviando)
+        :user_name => 'usuario_email',
+        :password => 'senha email',
+        :authentication => 'plain',
+        :enable_starttls_auto => true
+    } # Para debug apenas, é melhor que a linha abaixo seja adicionado apenas no ambiente de desenvolvimento
+    config.action_mailer.raise_delivery_errors = true
   end
 end

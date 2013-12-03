@@ -1,8 +1,13 @@
 Barweb::Application.routes.draw do
+  resources :contacts
+
+
   mount Ckeditor::Engine => "/ckeditor"
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+
+  #todo now - colokr as rotas em portugues
 
   #PÁGINA PRINCIPAL GERAL
 
@@ -56,6 +61,8 @@ Barweb::Application.routes.draw do
   #todo futuro - fazer parte gerencial ?!
 
   root :to =>  "principal#index"
+
+  #todo now - qndo página n existir, dah erros mt feios, entao ir pra pagina n encontrada em tdas q n existir
 
 
 end
