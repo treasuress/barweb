@@ -7,7 +7,7 @@ class Contact
 
   validates :name, :length => {:in => 2..50}
   validates :email, :format => { :with => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i }
-  validates :message, :length => {:in => 10..750}
+  validates :message, :length => {:in => 1..750}
 
   def initialize(attributes = {})
     attributes.each do |name, value|

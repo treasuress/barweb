@@ -1,13 +1,11 @@
 <!-- todo seb now - mudar txt -->
 <% @title = "Contato" %>
 
-<!--todo now - colokr palavras no arquivo d traducoes-->
-
-<!--todo now futuro - colokr pra essas informacoes aparecerem em cima da tela na pagina inicial -->
+<!--todo now futuro - colokr pra essas informacoes aparecerem em cima da tela na pagina inicial - fancybox -->
 <section class="contact" >
 
   <div class="breadcrumb">
-    <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
+    <%= link_to I18n.t("breadcrumb_principal"), principal_path %> <span class="next" />
     <%= I18n.t("breadcrumb_contact") %>
   </div>
 
@@ -15,6 +13,7 @@
 
   <%= flash_messages %>
 
+  <!--todo now - colokr palavras no arquivo d traducoes-->
   <div class="contact-text">
     Tem alguma sugestão?
     <br /><br />
@@ -26,38 +25,32 @@
   </div>
 
   <div class="contact-form">
-
-    <!--todo now - colokr mais espaço entre os labels-->
-
       <%= form_for @contact do |f| %>
           <div style="margin-top: 4%;">
-            <%= f.label :name %><br />
-            <%= f.text_field :name %>
+            <%= f.label I18n.t("contacts.form.name") %><br />
+            <%= f.text_field :name, :required => true %>
           </div>
           <div>
-            <%= f.label :email %><br />
-            <%= f.text_field :email %>
+            <%= f.label I18n.t("contacts.form.email") %><br />
+            <%= f.text_field :email, :required => true %>
           </div>
           <div>
-            <%= f.label :subject %><br />
-            <!--todo now - arrumar-->
-              <%= f.select :subject, options_for_select(['Sugestão', 'Crítica', 'Elogio', 'Outro']) %><br />
+            <%= f.label I18n.t("contacts.form.subject") %><br />
+            <%= f.select :subject, options_for_select(['Sugestão', 'Crítica', 'Elogio', 'Outro']) %><br />
           </div>
           <div>
-            <%= f.label :message %><br />
-            <!--todo now - colokr pra n redimencionar o campo-->
-            <%= f.text_area :message %>
+            <%= f.label I18n.t("contacts.form.message") %><br />
+            <!--todo now - colokr quantidad minima d caracteres-->
+            <%= f.text_area :message, :required => true, :maxlength => 400, :style => "resize:none" %>
           </div>
           <div style="text-align: right;">
-            <%= f.submit %>
+            <%= f.submit value = I18n.t("contacts.form.submit") %>
           </div>
       <% end %>
-
   </div>
 
 </section>
 
-<!-- todo futuro - criar formulario com fancybox, pra aparecer em cima da tela, colocando a outra em segundo plano .. -->
 <!-- todo futuro - criar formulario com dados necessarios pra cadastrar o bar e jah colocar pra pessoa cadastrar -->
 <!-- qnto mais dados vc colocar, mais rapido o cadastro é efetuado -->
 <!-- todo futuro - talvez criar cadastro de usuario pra relacionar com bar pra sabr kem mandou cada bar e talvez colokr nome da pessoa na pagina -->

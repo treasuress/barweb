@@ -355,14 +355,6 @@ pt-BR:
 
 
 # parte web
-  home_bar:
-    all:
-      title: " de "
-    index:
-      zip: "CEP: "
-      phone: "Telefone: "
-      fb-comments: "Deixe seu comentário sobre o "
-
   principal:
     index:
       all_bars: "Todos os bares aqui!"
@@ -372,9 +364,30 @@ pt-BR:
       follow_image_name: "Siga-nos!"
       title_bars: "Bares"
 
+  home_bar:
+    index:
+      zip: "CEP: "
+      phone: "Telefone: "
+      fb-comments: "Deixe seu comentário sobre o "
+
+  category:
+    show:
+      title: " de "
+
+  contacts:
+    form:
+      name: "Nome"
+      email: "Email"
+      subject: "Assunto"
+      message: "Mensagem"
+      submit: "Enviar"
 
 
+
+
+#todo now - talvez deva mudar d pagina principal pra narua
   breadcrumb_principal: "Página Principal"
   breadcrumb_categories: "Categorias"
+  breadcrumb_category: "Categoria"
   breadcrumb_contact: "Contato"
   breadcrumb_terms: "Termos de Uso"

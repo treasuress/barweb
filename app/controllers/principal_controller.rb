@@ -7,7 +7,7 @@ class PrincipalController < ApplicationController
     #todo futuro - talvez dah pra colokr até rand() em application pra poder usar em homeBar/all qndo for buscar randomicamente lá
     #todo futuro - futuro buscar aqui por categoria de estabelecimento - qndo tiver mais d uma categoria
     #Seleciona 7 bares aleatoriamente - mysql
-    #todo now - pegar categoria dinamicamente - ou por nome
+    #todo now - pegar categoria dinamicamente
     #@home_bars = get_active_bars.all(:order => 'RAND()', :limit => 7)
     @bars_from_category = get_bars_from_category(1).all(:order => 'RAND()', :limit => 7)
     @home_bars = @bars_from_category
@@ -21,7 +21,7 @@ class PrincipalController < ApplicationController
     #todo futuro - colokr no fim dos resultados - link para lista completa de bares e criar uma otra pagina pra mostrar todos os resultados
     @bar_name = HomeBar.find_by_name(params[:name])
 
-    #todo now - preciso pegar tdos os ids dinamicament, como faz?
+    #todo now - preciso pegar tdos os ids, como faz?
     get_current_city_from_bar(@all_active_bars.first.city_id)
 
   end

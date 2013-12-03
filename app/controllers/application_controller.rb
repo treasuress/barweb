@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
 
   helper_method :get_principal, :get_active_bars, :get_active_categories,
                 :get_current_country, :get_current_state, :get_current_city, :get_current_category, :get_current_bar,
+                :get_current_category_by_id,
                 :get_bars_from_category
 
   #TODO futuro - buscar só a página principal ativa
@@ -37,6 +38,10 @@ class ApplicationController < ActionController::Base
     if !params[:category_name].nil?
       @current_category = Category.find_by_name(params[:category_name])
     end
+  end
+
+  def get_current_category_by_id(category_id)
+      @current_category_by_id = Category.getCategoryName(category_id)
   end
 
   def get_current_bar

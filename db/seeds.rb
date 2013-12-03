@@ -6,11 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-#todo now - criar mais d uma categoria para desenvolvimento
-#todo now - cadastrar um dos bares na nova categoria criada
 #todo now - fazer testes cadastrando 2 bares e vendo c aparecem separados, cada um em uma página
-#todo now - criar bar inativo e ver se aparece em alguma categoria - teste
-#todo now - fazer testes de tdas as views, mostrando o q devia e acessando url errada pra mostrar o q n exist e acessando url q n exist pra v o q acontec
+#todo now test - criar bar inativo e ver se aparece em alguma categoria
+#todo now test - fazer testes de tdas as views, mostrando o q devia e acessando url errada pra mostrar o q n exist e acessando url q n exist pra v o q acontec
 
 require_relative "countries.rb"
 require_relative "categories.rb"

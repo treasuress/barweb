@@ -11,9 +11,9 @@
 <section class="category">
 
   <div class="breadcrumb">
-    <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
-    <%= link_to params[:city_name], principal_path %> >
-    <%= link_to I18n.t("breadcrumb_categories"), all_categories_path(params[:city_name]) %> >
+    <%= link_to I18n.t("breadcrumb_principal"), principal_path %> <span class="next" />
+    <%= link_to params[:city_name], principal_path %> <span class="next" />
+    <%= link_to I18n.t("breadcrumb_category"), all_categories_path(params[:city_name]) %> <span class="next" />
     <%= @current_category.name %>
   </div>
 
@@ -22,7 +22,7 @@
   <!--todo futuro - verificar se estiver vazia, ker dizer q exist? aih colok pagina em construcao. e c nula n existir, pagina n encontrada-->
   <% if !@bars_from_category.empty? && !@bars_from_category.nil? %>
 
-      <h1><%= @current_category.name + I18n.t("home_bar.all.title") + @current_city.name %></h1>
+      <h1><%= @current_category.name + I18n.t("category.show.title") + @current_city.name %></h1>
 
       <nav>
         <% @bars_from_category.each do |destaque| %>

@@ -8,13 +8,11 @@
 
 <section class="home-bar">
 
-  <!--todo now futuro - add > em uma classe pra colokr cinza e colokr no fim dos links q tem >-->
   <div class="breadcrumb">
-    <%= link_to I18n.t("breadcrumb_principal"), principal_path %> >
-    <%= link_to params[:city_name], principal_path %> >
-    <%= link_to I18n.t("breadcrumb_categories"), all_categories_path(params[:city_name]) %> >
-    <!--todo now - arrumar category_id - colokr nome da categoria -->
-    <%= link_to @current_bar.category_id, category_path(params[:city_name], @current_bar.category_id) %> >
+    <%= link_to I18n.t("breadcrumb_principal"), principal_path %> <span class="next" />
+    <%= link_to params[:city_name], principal_path %> <span class="next" />
+    <%= link_to I18n.t("breadcrumb_category"), all_categories_path(params[:city_name]) %> <span class="next" />
+    <%= link_to @current_category_by_id.name, category_path(params[:city_name], @current_category_by_id.name) %> <span class="next" />
     <%= @current_bar.name %>
   </div>
 
@@ -33,12 +31,13 @@
                   <%= image_tag @current_bar.logo_bar_image.url(:home), :style => "float:left;margin-right: 7%;", :alt => @current_bar.name %>
               <% end %>
 
+            <% if !@current_bar.description.blank? %>
               <h2><%= @current_bar.description %></h2>
+            <% end %>
 
           </div>
 
           <div class="map-bar">
-              <!--todo now - colokr pequena descrição em cima do mapa pra falar o q eh o mapa - em tdas as paginas q tem mapa-->
               <div id="map_canvas"></div>
 
               <div class="address">
@@ -54,6 +53,7 @@
                   </h3>
                   <h4>
                     <%= @current_city.name %>
+                    <!--todo now - colokr soh iso?-->
                     - <%= @current_state.name %>
                     - <%= @current_country.name %>
                     <%= "- " + I18n.t("home_bar.index.zip") + @current_bar.zip if !@current_bar.zip.blank? %>
