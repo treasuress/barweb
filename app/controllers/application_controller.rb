@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_current_state(state_id)
-    @current_state = State.getStateName(state_id)
+    @current_state = State.getStateIso(state_id)
   end
 
   def get_current_city
