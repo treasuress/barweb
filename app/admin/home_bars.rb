@@ -63,12 +63,11 @@ ActiveAdmin.register HomeBar do
 
       f.input :logo_bar_image
 
-      #todo we - pattern n funciona n sei pq
       #TODO we - COLOCAR ALGUMA MASCARA PRA N TER COMO ENVIAR ERRADO (HTML5)
       #todo we - colokr tdos os campos d tel com o 9o digito. se a pessoa n preencher, add um 0 no comeco
       #todo we - na hr d mostrar na tela, c comecar com 0, ignora e vai pro proximo numero
-      f.input :phone_number, :as => :phone, :pattern => "[\(]\d{3}[\)]\d{4}[\-]\d{4}", :placeholder => "(034) 3232-3232"
-      f.input :cellphone_number, :as => :phone, :input_html => { :pattern => "[\(]\d{3}[\)]\d{4}[\-]\d{4}", :placeholder => "(034) 99898-9898"}
+      f.input :phone_number, :as => :phone, :placeholder => "(034) 3232-3232"
+      f.input :cellphone_number, :as => :phone, :placeholder => "(034) 99898-9898"
     end
 
     f.inputs I18n.t("activerecord.attributes.home_bar.address"), :multipart => true do
