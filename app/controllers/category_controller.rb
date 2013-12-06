@@ -12,7 +12,7 @@ class CategoryController < ApplicationController
     #Busca estabelecimentos por categoria - ordem alfabética
     @bars_from_category = get_bars_from_category(@current_category.id).all.sort! { |a, b| a['name'].downcase <=> b['name'].downcase }
 
-    #todo now - qndo a pessoa poe uma categoria q n estah cadastrada no banco, na url, dah um erro mt fei
+    #todo fim now - qndo a pessoa poe uma categoria q n estah cadastrada no banco, na url, dah um erro mt fei
 
   end
 

@@ -25,4 +25,8 @@ class Category < ActiveRecord::Base
     where(:id => category_id.to_s)["name".to_i]
   end
 
+  def self.getActiveCategoryName(category_id)
+    where(:active => true, :id => category_id.to_s["name".to_i])
+  end
+
 end

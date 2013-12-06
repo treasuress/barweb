@@ -50,7 +50,7 @@ if Rails.env.development?
                      ], :without_protection => true)
   end
 
-  #todo now - ver se isso aqui faz sentido ainda
+  #todo now - ver se isso aqui faz sentido ainda - tem q colokr rua sem numero senao n abre a pagina
   #Creating Home Bars examples
   if HomeBar.all.size == 0
     HomeBar.create([

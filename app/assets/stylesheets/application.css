@@ -275,16 +275,16 @@ header img {
 .contact div{
     margin-top: 1%;
 }
-.contact input[type="text"]{
-    padding: 2px 4px;
-}
-.contact input[type="text"], .contact select {
-    height: 20px;
-}
-.contact input[type="text"], .contact select, .contact textarea {
+.contact input[type="text"], .contact select, .contact textarea, .contact input[type="email"] {
     width: 280px;
     border-radius: 5px;
     margin-top: 0.2%;
+}
+.contact input[type="text"], .contact input[type="email"]{
+    padding: 2px 4px;
+}
+.contact input[type="text"], .contact select, .contact input[type="email"]{
+    height: 20px;
 }
 .contact select {
     background-color: rgb(229, 227, 223);

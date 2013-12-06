@@ -9,8 +9,23 @@ class PrincipalController < ApplicationController
     #Seleciona 7 bares aleatoriamente - mysql
     #todo now - pegar categoria dinamicamente
     #@home_bars = get_active_bars.all(:order => 'RAND()', :limit => 7)
-    @bars_from_category = get_bars_from_category(1).all(:order => 'RAND()', :limit => 7)
-    @home_bars = @bars_from_category
+    @home_bars = get_bars_from_category(1).all(:order => 'RAND()', :limit => 7)
+
+
+    #todo now -
+    #preciso d pegar tdas as categorias ativas
+    #preciso do nome das categorias ativas
+    #aí preciso de 7 bares de cada categoria
+
+    #@active_categories = get_current_active_category_name(Category.all)
+    #@active_categories = get_active_categories
+    #@active_categories = get_current_category_by_id(@all_active_categories)
+    #@home_bars = @all_active_bars.all(:order => 'RAND()')
+    #@home_bars_category = @home_bars.get_bars_from_category(@active_categories.id).all(:limit => 7)
+    #@home_bars = @home_bars_category
+
+    #Status.active.first[:id
+
 
     #@home_bar = HomeBar.find_by_name(get_current_bar_name)
 

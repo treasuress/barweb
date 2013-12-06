@@ -44,6 +44,12 @@ class ApplicationController < ActionController::Base
       @current_category_by_id = Category.getCategoryName(category_id)
   end
 
+
+  helper_method :get_current_active_category_name
+  def get_current_active_category_name(category_id)
+    @activeCategoryName = Category.getActiveCategoryName(category_id)
+  end
+
   def get_current_bar
     if !params[:bar_name].nil?
       @current_bar = HomeBar.find_by_name(params[:bar_name])
