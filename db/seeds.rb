@@ -68,7 +68,7 @@ As comidas, bebidas, músicas e decoração mudam de acordo com a bandeira içad
 E para inaugurar, não poderia ser diferente: passearemos pelas delícias do nosso querido Brasil. Puxe uma cadeira e aproveite uma refrescante caipirinha, ouça um samba de raiz e exagere na feijoada.", :logo_bar_image => File.open('public/home_bars/bar8.jpg'), :phone_number => " 3234-8809", :cellphone_number => "cel bar flag", :zip => "38400-160", :country_id => 1, :state_id => 1, :city_id => 1, :address => "Rua Barao de Camargos", :number => "193", :neighborhood => "Centro", :complement => "complemento bar flag" },
 
                        #Sem imagem
-                       {:status_id => 1, :category_id => 1, :name => "Nome bar 11", :description => "descricao bar 11", :phone_number => "telefone bar 11", :cellphone_number => "cel bar 11", :zip => "cep bar 11", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar 11", :number => "1123", :neighborhood => "bairro bar 11", :complement => "complemento bar 11" },
+                       {:status_id => 1, :category_id => 1, :name => "Nome bar 11", :description => "descricao bar 11", :phone_number => "", :cellphone_number => "", :zip => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar", :number => "1123", :neighborhood => "bairro bar 11", :complement => "complemento bar 11" },
 
                        #Sem descrição, cep, telefone e complemento - bar 1
                        {:status_id => 1, :category_id => 1, :name => "Rock'n Beer", :logo_bar_image => File.open('public/home_bars/bar2.png'), :country_id => 1, :state_id => 1, :city_id => 1, :address => "Av. Floriano Peixoto", :number => "18", :neighborhood => "Centro" },
@@ -78,21 +78,21 @@ E para inaugurar, não poderia ser diferente: passearemos pelas delícias do nos
 
                        #0 no numero do logradouro
                        #Completo
-                       {:status_id => 1, :category_id => 1, :name => "Thália", :description => "descricao thalia", :logo_bar_image => File.open('public/home_bars/bar3.jpg'), :phone_number => "3210-8135", :cellphone_number => "cel thalia", :zip => "cep thalia", :country_id => 1, :state_id => 1, :city_id => 1, :address => "Avenida Rondon Pacheco", :number => "0", :neighborhood => "Cazeca", :complement => "complemento thalia" },
+                       {:status_id => 1, :category_id => 1, :name => "Thália", :description => "descricao thalia", :logo_bar_image => File.open('public/home_bars/bar3.jpg'), :phone_number => "3210-8135", :cellphone_number => "", :zip => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "Avenida Rondon Pacheco", :number => "0", :neighborhood => "Cazeca", :complement => "complemento thalia" },
                        #Somente campos obrigatórios preenchidos
                        {:status_id => 1, :category_id => 1, :name => "Mimi Quiosque", :logo_bar_image => File.open('public/home_bars/bar6.png'), :country_id => 1, :state_id => 1, :city_id => 1, :address => "Avenida João Naves de Ávila", :number => "0", :neighborhood => "Santa Monica" },
 
                        #Apenas 1 telefone cadastrado
                        #Completo
-                       {:status_id => 1, :category_id => 1, :name => "Nome bar 4", :description => "descricao bar 4", :logo_bar_image => File.open('public/home_bars/bar4.jpg'), :phone_number => "telefone bar 4", :zip => "cep bar 4", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar 4", :number => "423", :neighborhood => "bairro bar 4", :complement => "complemento bar 4" },
+                       {:status_id => 1, :category_id => 1, :name => "Nome bar 4", :description => "descricao bar 4", :logo_bar_image => File.open('public/home_bars/bar4.jpg'), :phone_number => "", :zip => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar", :number => "423", :neighborhood => "bairro bar 4", :complement => "complemento bar 4" },
                        #Somente campos obrigatórios preenchidos
-                       {:status_id => 1, :category_id => 1, :name => "Nome bar 7", :logo_bar_image => File.open('public/home_bars/bar7.jpg'), :phone_number => "telefone bar 7", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar 7", :number => "723", :neighborhood => "bairro bar 7" },
+                       {:status_id => 1, :category_id => 1, :name => "Nome bar 7", :logo_bar_image => File.open('public/home_bars/bar7.jpg'), :phone_number => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar", :number => "723", :neighborhood => "bairro bar 7" },
 
                        #Inativo - Completo
-                       {:status_id => 2, :category_id => 1, :name => "Nome bar 9", :description => "descricao bar 9", :logo_bar_image => File.open('public/home_bars/bar9.jpg'), :phone_number => "telefone bar 9", :cellphone_number => "cel bar 9", :zip => "cep bar 9", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar 9", :number => "923", :neighborhood => "bairro bar 9", :complement => "complemento bar 9" },
+                       {:status_id => 2, :category_id => 1, :name => "Nome bar 9", :description => "descricao bar 9", :logo_bar_image => File.open('public/home_bars/bar9.jpg'), :phone_number => "", :cellphone_number => "", :zip => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar", :number => "923", :neighborhood => "bairro bar 9", :complement => "complemento bar 9" },
 
                        #Pendente - Completo
-                       {:status_id => 3, :category_id => 1, :name => "Nome bar 10", :description => "descricao bar 10", :logo_bar_image => File.open('public/home_bars/bar10.jpg'), :phone_number => "telefone bar 10", :cellphone_number => "cel bar 10", :zip => "cep bar 10", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar 10", :number => "1023", :neighborhood => "bairro bar 10", :complement => "complemento bar 10" }
+                       {:status_id => 3, :category_id => 1, :name => "Nome bar 10", :description => "descricao bar 10", :logo_bar_image => File.open('public/home_bars/bar10.jpg'), :phone_number => "", :cellphone_number => "", :zip => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar", :number => "1023", :neighborhood => "bairro bar 10", :complement => "complemento bar 10" }
 
                    ], :without_protection => true)
   end

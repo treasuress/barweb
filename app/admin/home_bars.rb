@@ -63,15 +63,12 @@ ActiveAdmin.register HomeBar do
 
       f.input :logo_bar_image
 
-      #TODO we - COLOCAR ALGUMA MASCARA PRA N TER COMO ENVIAR ERRADO (HTML5)
-      #todo we - colokr tdos os campos d tel com o 9o digito. se a pessoa n preencher, add um 0 no comeco
-      #todo we - na hr d mostrar na tela, c comecar com 0, ignora e vai pro proximo numero
       f.input :phone_number, :as => :phone, :placeholder => "(034) 3232-3232"
       f.input :cellphone_number, :as => :phone, :placeholder => "(034) 99898-9898"
     end
 
     f.inputs I18n.t("activerecord.attributes.home_bar.address"), :multipart => true do
-      f.input :zip, :input_html => { :pattern => "\d{5}-\d{3}", :placeholder => "38400-000" }
+      f.input :zip, :placeholder => "38400-000"
       #todo we - colokr campos maiores pq tao mt feios
       f.input :country, :include_blank => false
       f.input :state, :include_blank => false
