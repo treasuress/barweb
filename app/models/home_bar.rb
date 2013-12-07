@@ -24,6 +24,9 @@ class HomeBar < ActiveRecord::Base
                     :path => ":rails_root/public/assets/home_bars/:id/images/logo_bar_:style.:extension"
 
 
+  #todo now futuro - verificar se cel estah em branco, c n estiver, verifica c tel está em branco, c estiver, falar q tem q preencher o 1o campo 1o
+  #ou mostrar só um campo e qndo o 1o for preenchido, mostrar o 2o
+
   def self.active
     where(:status_id => Status.active)
   end

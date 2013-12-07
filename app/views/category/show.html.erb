@@ -6,7 +6,6 @@
 <!-- todo futuro - pegar qntidad d comentario e curtir e tw e colokr em: bares mais comentados, etc -->
 
 <%= render :partial => 'layouts/social', :locals => {:url => category_path(params[:city_name], @current_category.name), :share_text => @title, :type => 'all_categories'} %>
-<hr/>
 
 <section class="category">
 
@@ -17,7 +16,7 @@
     <%= @current_category.name %>
   </div>
 
-  <hr/>
+  <hr class="line"/>
 
   <!--todo futuro - verificar se estiver vazia, ker dizer q exist? aih colok pagina em construcao. e c nula n existir, pagina n encontrada-->
   <% if !@bars_from_category.empty? && !@bars_from_category.nil? %>

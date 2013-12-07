@@ -1,6 +1,9 @@
 <!-- todo seb now - mudar txt -->
 <% @title = "Contato" %>
 
+<!--todo now futuro - tirar qndo colokr pra aparecer em cima da tela-->
+<%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @title, :type => 'contact'} %>
+
 <!--todo now futuro - colokr pra essas informacoes aparecerem em cima da tela na pagina inicial - fancybox -->
 <section class="contact" >
 
@@ -9,7 +12,7 @@
     <%= I18n.t("breadcrumb_contact") %>
   </div>
 
-  <hr/>
+  <hr class="line"/>
 
   <%= flash_messages %>
 

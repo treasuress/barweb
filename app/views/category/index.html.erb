@@ -1,8 +1,7 @@
-<!-- todo seb now - mudar txt -->
+<!-- todo seb now - mudar txt - colokr nome da cidad -->
 <% @title = "Categorias" %>
 
 <%= render :partial => 'layouts/social', :locals => {:url => all_categories_path(params[:city_name]), :share_text => @title, :type => 'categories'} %>
-<hr/>
 
 <section class="all-categories">
 
@@ -12,7 +11,7 @@
     <%= I18n.t("breadcrumb_categories") %>
   </div>
 
-  <hr/>
+  <hr class="line"/>
 
   <% if @all_active_categories.present? %>
 

@@ -46,7 +46,7 @@ Barweb::Application.routes.draw do
 
   #OBS: SE SÓ A GENTE FOR MEXER NO ADMIN, NÃO PRECISA DE SUPER ADMIN PARA SEPARAR ISSO, CASO CONTRÁRIO, PRECISA!
 
-  # TODO futuro - PEGAR TXT da página DINAMICAMENTE PRA CRIAR SÓ UM ARQUIVO
+  # TODO futuro - PEGAR TXT do banco PRA pegar txts dinamicamente e CRIAR SÓ UM ARQUIVO
   get "/:city_name/:bar_name/contato" => "home_bar#contact", :as => :home_bar_contac
 
   get "/:city_name/:bar_name/fotos" => "home_bar#gallery", :as => :home_bar_gallery

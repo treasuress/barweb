@@ -43,7 +43,6 @@ ActiveAdmin.register HomeBar do
     end
   end
 
-  #todo futuro - colocar cadastro de email pra usar em contato - caso tenha pagado, senao n precisa
   form :html => {:enctype => "multipart/form-data"} do |f|
     f.inputs I18n.t("activerecord.attributes.home_bar.general_information"), :multipart => true do
       f.input :status, :include_blank => false

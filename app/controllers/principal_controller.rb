@@ -17,14 +17,8 @@ class PrincipalController < ApplicationController
     #preciso do nome das categorias ativas
     #aí preciso de 7 bares de cada categoria
 
-    #@active_categories = get_current_active_category_name(Category.all)
-    #@active_categories = get_active_categories
-    #@active_categories = get_current_category_by_id(@all_active_categories)
-    #@home_bars = @all_active_bars.all(:order => 'RAND()')
-    #@home_bars_category = @home_bars.get_bars_from_category(@active_categories.id).all(:limit => 7)
-    #@home_bars = @home_bars_category
+    #@home_bars = get_bars_from_category(get_active_categories).all(:order => 'RAND()', :limit => 7)
 
-    #Status.active.first[:id
 
 
     #@home_bar = HomeBar.find_by_name(get_current_bar_name)
@@ -34,9 +28,9 @@ class PrincipalController < ApplicationController
     #todo futuro - acho q dev fikr em application e passar o resultado pra renderizadao do header já q a busca ficará lá
     #todo futuro - buscar todos os bares ATIVOS que contem o que a pessoa digitar
     #todo futuro - colokr no fim dos resultados - link para lista completa de bares e criar uma otra pagina pra mostrar todos os resultados
-    @bar_name = HomeBar.find_by_name(params[:name])
+    #@bar_name = HomeBar.find_by_name(params[:name])
 
-    #todo now - preciso pegar tdos os ids, como faz?
+    #todo now - preciso pegar tdos os ids de cidades, como faz? - acho q tem q fazer a busca junto com a q busca os bares pra ser cidad do bar certo
     get_current_city_from_bar(@all_active_bars.first.city_id)
 
   end
