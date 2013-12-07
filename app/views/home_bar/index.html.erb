@@ -21,6 +21,7 @@
   <!--todo now - ver se dah pra melhorar validacao-->
       <% if @current_bar.address.present? and @current_bar.status_id == Status.active.first[:id] %>
 
+      <!--todo now - colokr azul-->
           <h1><%= @current_bar.name %></h1>
 
           <div class="info-bar">
@@ -63,7 +64,7 @@
                   <h5>
                     <% if !@current_bar.phone_number.blank? %>
                         <!-- todo futuro - ver se no mobile dah pra fazer a pessoa jah clicar pra ligar -->
-                        <!-- todo now - decidir forma d cadastrar tels e mostrar aqui -->
+                        <!--todo now - c colokr soh o cel, fik como?-->
                         <%= I18n.t("home_bar.index.phone") + @current_bar.phone_number %><%= ", " + @current_bar.cellphone_number if !@current_bar.cellphone_number.blank? %>
                     <% end %>
                   </h5>
