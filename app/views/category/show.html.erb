@@ -1,4 +1,4 @@
-<% if !@bars_from_category.nil? %>
+<% if !@bars_from_category.nil? && !@bars_from_category.blank? %>
 
     <% @title = @current_category.name + I18n.t("category.show.title") + @current_city.name %>
 
