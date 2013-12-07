@@ -1,27 +1,26 @@
-<!--todo now test - ver pra q serv o type -->
-<%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @title, :type => 'principal'} %>
+<!--todo now - ver validacao-->
+<% if !@principal.blank? && !@principal.nil? %>
 
-<section class="principal" style="display: inline-block;">
+    <!--todo now test - ver pra q serv o type -->
+    <%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @title, :type => 'principal'} %>
 
-  <script type="text/javascript">
-      local = new Array();
-  </script>
+    <section class="principal" style="display: inline-block;">
 
-  <div class="breadcrumb">
-    <!--<%= I18n.t("breadcrumb_principal") %>-->
-  </div>
+      <script type="text/javascript">
+          local = new Array();
+      </script>
 
-  <hr/>
+      <div class="breadcrumb">
+        <!--<%= I18n.t("breadcrumb_principal") %>-->
+      </div>
 
-  <!-- todo seb now futuro - colokr icone personalizado -->
-  <!-- todo seb now futuro - colokr icones agrupados -->
-  <div id="map_canvas" style="height: 200px; width: 100%;margin-top: 1%;"></div>
+      <hr/>
 
-  <hr/>
+      <!-- todo seb now futuro - colokr icone personalizado -->
+      <!-- todo seb now futuro - colokr icones agrupados -->
+      <div id="map_canvas" style="height: 200px; width: 100%;margin-top: 1%;"></div>
 
-  <!--todo now - ver validacao-->
-  <!--todo now - n devia mostrar o mapa c ele tah dentro do if!-->
-  <% if !@principal.blank? && !@principal.nil? %>
+      <hr/>
 
       <h2><%= @principal.description %></h2>
 
@@ -108,9 +107,9 @@
           </script>
       <% end %>
 
-  <% else %>
-      <% ContactMailer.alert_when_error_should_never_happen("Não tem nenhuma página principal ativa cadastrada - PRINCIPAL!!!").deliver %>
-      <%= render :partial => "layouts/page_not_found_error_404" %>
-  <% end %>
+    </section>
 
-</section>
+<% else %>
+    <% ContactMailer.alert_when_error_should_never_happen("Não tem nenhuma página principal ativa cadastrada - PRINCIPAL!!!").deliver %>
+    <%= render :partial => "layouts/page_not_found_error_404" %>
+<% end %>

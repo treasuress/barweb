@@ -42,7 +42,7 @@ if Rails.env.development?
   #Creating Principal example
   if Principal.all.size == 0
     Principal.create([
-                         {:title => "Principal titulo", :description => "Veja todos os bares cadastrados no mapa acima! Encontre novos bares! Dê sua opinião sobre os bares que você frequênta!", :logo_image => File.open('public/principal/logo.jpg'), :gallery_image => File.open('public/principal/gallery.jpg'), :events_image => File.open('public/principal/events.jpg'), :contact_image => File.open('public/principal/contact.jpg'), :follow_fb_image => File.open('public/principal/follow_fb.jpg'), :follow_tw_image => File.open('public/principal/follow_tw.jpg'), :all_homes_image => File.open('public/principal/all_homes.jpg') }
+                         {:title => "Principal titulo", :active => true, :description => "Veja todos os bares cadastrados no mapa acima! Encontre novos bares! Dê sua opinião sobre os bares que você frequênta!", :logo_image => File.open('public/principal/logo.jpg'), :gallery_image => File.open('public/principal/gallery.jpg'), :events_image => File.open('public/principal/events.jpg'), :contact_image => File.open('public/principal/contact.jpg'), :follow_fb_image => File.open('public/principal/follow_fb.jpg'), :follow_tw_image => File.open('public/principal/follow_tw.jpg'), :all_homes_image => File.open('public/principal/all_homes.jpg') }
                      ], :without_protection => true)
   end
 

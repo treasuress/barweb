@@ -22,6 +22,7 @@
           <div class="info-bar">
               <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
               <% if @current_bar.logo_bar_image_file_size.nil? %>
+                <!--todo now - colokr esse estilo na folha d estilo pra poder colokr o tamanho certo e ele redimencionar certo pras outras paginas-->
                   <img src="<%= image_path "bar0.jpg" %>" style="float:left;width: 400px;height: 300px;margin-right: 7%;" alt="<%= @current_bar.name %>" />
               <% else %>
                   <%= image_tag @current_bar.logo_bar_image.url(:home), :style => "float:left;margin-right: 7%;", :alt => @current_bar.name %>

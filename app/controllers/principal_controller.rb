@@ -10,6 +10,16 @@ class PrincipalController < ApplicationController
     @home_bars = get_bars_from_category(1).all(:order => 'RAND()', :limit => 7)
 
 
+
+
+    #@categories_show = Category.active
+    #todo now - pegar aqui todas as categorias q tem algum bar cadastrado e usar na busca get_bars..
+    #todo now - ver se tah vindo soh as categorias ativas
+    #todo now - ver se tah vindo soh as q tem pelo menos um bar cadastrado
+    #@categories_show = @categories_show.getCategoryWithBar
+    #todo now - ver pq n tah dando certo jah q no banco dah
+    #@categories_show = Category.getCategoryWithBar
+
     #todo now -
     #preciso d pegar tdas as categorias ativas
     #preciso do nome das categorias ativas
