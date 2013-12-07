@@ -296,6 +296,12 @@ header img {
     margin-top: 3%;
     margin-left: 50.9%;
 }
+.home-bar .no-image{
+    width: 297px;
+    height: 223px;
+    float:left;
+    margin-right: 7%;
+}
 .home-bar img {
     margin-top: 19px;
     width: 82%;

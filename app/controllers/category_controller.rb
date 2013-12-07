@@ -10,7 +10,10 @@ class CategoryController < ApplicationController
 
     #todo futuro - colokr busca aleatoria aqui qndo for colokr varios tipos d ordenacao
     #Busca estabelecimentos por categoria - ordem alfabética
-    @bars_from_category = get_bars_from_category(@current_category.id).all.sort! { |a, b| a['name'].downcase <=> b['name'].downcase }
+    if(!@current_category.nil?)
+      @bars_from_category = get_bars_from_category(@current_category.id).all.sort! { |a, b| a['name'].downcase <=> b['name'].downcase }
+    end
+
 
     #todo fim now - qndo a pessoa poe uma categoria q n estah cadastrada no banco, na url, dah um erro mt fei
 
