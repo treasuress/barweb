@@ -188,112 +188,82 @@ header img {
 
     background-color: rgb(229, 227, 223);
 }
-/*todo now - ver q tamanho q tenho q por aqui */
-@media (max-width: 915px) {
-    .principal h2{
-        margin-left: 2%;
-        margin-right: 2%;
-        width: auto;
-    }
-}
-@media (max-width: 1210px) {
-    .principal .principal-destaques img{
-        width: 96px;
-        height: 96px;
-    }
-}
 .principal .principal-links.social{
     /*todo now - acho q n precisa do width akih jah q eh igual das otras*/
     width: 100px;
     height: 45px;
 }
-@media (max-width: 1175px) {
-    .principal .principal-links img{
-        width: 90px;
-        height: 90px;
-    }
-    .principal .principal-links.social{
-        width: 90px;
-        height: 39px;
-    }
-    .principal .principal-destaques img{
-        width: 91.5px;
-        height: 91.5px;
-    }
+.principal h4, .principal h5 {
+    text-align: left;
 }
-@media (max-width: 1150px) {
-    .principal .principal-links img{
-        width: 85px;
-        height: 85px;
-    }
-    .principal .principal-links.social{
-        width: 85px;
-        height: 37px;
-    }
-    .principal .principal-destaques img{
-        width: 88px;
-        height: 88px;
-    }
-}
-@media (max-width: 1125px) {
-    .principal .principal-links img{
-        width: 80px;
-        height: 80px;
-    }
-    .principal .principal-links.social{
-        width: 80px;
-        height: 35px;
-    }
-    .principal .principal-destaques img{
-        width: 85px;
-        height: 85px;
-    }
-}
-@media (max-width: 1080px) {
-    .principal .principal-links img{
-        width: 75px;
-        height: 75px;
-    }
-    .principal .principal-links.social{
-        width: 75px;
-        height: 32px;
-    }
-    .principal .principal-destaques img{
-        width: 80px;
-        height: 80px;
-    }
-}
-@media (max-width: 1045px) {
-    .principal .principal-links img{
-        width: 70px;
-        height: 70px;
-    }
-    .principal .principal-links.social{
-        width: 70px;
-        height: 30px;
-    }
-    .principal .principal-destaques img{
-        width: 75px;
-        height: 75px;
-    }
-}
-/*todo now - isso akih tah duplicado , ver como colokr soh 1 vez - parei aqui - ver tamanhos default e me basear neles*/
-@media (max-width: 1020px) {
-    .principal .principal-links img{
-        width: 100px;
-        height: 100px;
-    }
-    .principal .principal-links.social{
-        width: 100px;
-        height: 30px;
-    }
-    .principal .principal-destaques img{
-        width: 100px;
-        height: 100px;
-    }
+.principal .principal-links {
+    float: left;
+    padding: 10px 7px;
+    font-size: 14px;
 }
 
-@media (max-width: 915px) {
+/*todo now futuro - os estilos principais sao esses, ver se precisa duplicar eles nos outros tamanhos de tela pra funcionar*/
+@media (max-width : 1382px){
+    html, body {
+        width: 85%;
+    }
+    .principal h2{
+        margin-top: 3%;
+    }
+    .principal .principal-links{
+        padding: 10px 7px;
+    }
+    /*todo now - colokr no 1o filho do principal-links */
+    /*margin-left: 4% !important;*/
+
+    .principal .principal-links img{
+        width: 100px;
+        height: 100px;
+    }
+    .principal .principal-links.social{
+        width: 100px;
+        height: 45px;
+    }
+    .principal .principal-destaques img{
+        width: 100px;
+        height: 100px;
+    }
+}
+@media (max-width : 992px){
+    .principal h2{
+        margin-top: 1%;
+    }
+    .principal .principal-links img{
+        width: 74px;
+        height: 74px;
+    }
+    .principal .principal-links.social{
+        width: 74px;
+        height: 30px;
+    }
+    .principal .principal-destaques img{
+        width: 75px;
+        height: 75px;
+    }
+}
+@media (max-width : 600px){
+    .principal h2{
+        margin-left: 2%;
+        margin-right: 2%;
+        width: auto;
+    }
+    /*todo now - centralizar imgs dos bares*/
+    .principal .principal-links img{
+        width: 85px;
+        height: 85px;
+    }
+    .principal .principal-links.social{
+        width: 85px;
+        height: 38px;
+    }
+}
+@media (max-width : 480px){
+    /*todo now futuro - centralizar imgs d contato, etc*/
     .principal .principal-links img{
         width: 100px;
         height: 100px;
@@ -308,14 +278,6 @@ header img {
     }
 }
 
-.principal h4, .principal h5 {
-    text-align: left;
-}
-.principal .principal-links {
-    float: left;
-    padding: 10px;
-    font-size: 14px;
-}
 
 
 /* HOME BAR */
@@ -379,7 +341,7 @@ header img {
 
 
 /* PRINCIPAL - CONTACT */
-
+/*todo now futuro - colocar border do campo vermelho dos campos q forem preenchidos errado*/
 .contact .contact-text{
     float: left;
     margin: 8% 11%;

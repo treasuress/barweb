@@ -357,7 +357,7 @@ pt-BR:
 # parte web
   principal:
     index:
-      all_bars: "Todos os bares aqui!"
+      all_bars: "Todos os bares!"
       galley_image_name: "Fotos"
       events_image_name: "Eventos"
       contact_image_name: "Contato"
