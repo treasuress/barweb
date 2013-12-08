@@ -229,7 +229,15 @@ header img {
         height: 100px;
     }
 }
+@media (max-width : 1336px){
+    html, body {
+        width: 90%;
+    }
+}
 @media (max-width : 992px){
+    html, body {
+        width: 90%;
+    }
     .principal h2{
         margin-top: 1%;
     }
