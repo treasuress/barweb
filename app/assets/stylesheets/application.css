@@ -236,7 +236,7 @@ header img {
 }
 @media (max-width : 992px){
     html, body {
-        width: 90%;
+        width: 91%;
     }
     .principal h2{
         margin-top: 1%;
@@ -323,14 +323,48 @@ header img {
     color: darkblue;
     border-radius: 0 0 5px 5px;
 }
+@media (max-width : 992px){
+    .home-bar h2 {
+        height: 120px;
+    }
+    #map_canvas{
+        margin-top: 8%;
+        height: 230px;
+        width: 342px;
+    }
+}
+@media (max-width : 600px){
+    .home-bar .info-bar{
+        float: none;
+        width: auto;
+    }
+    .home-bar .map-bar{
+        margin-left: auto;
+        margin-top: 97%;
+    }
+    #map_canvas{
+        height: 300px;
+        width: 339px;
+    }
+}
 .home-bar .address{
     color: midnightblue;
     border-radius: 0 0 5px 5px;
     background-color: lavender;
     padding: 3% 5% 4.8% 3%;
-    margin-right: 5.0%;
+    margin-right: 6.5%;
 
     background-color: rgb(229, 227, 223);
+}
+@media (max-width : 992px){
+    .home-bar .address{
+        padding: 2% 5% 5.5% 3%;
+    }
+}
+@media (max-width : 600px){
+    .home-bar .address{
+        margin-right: 22.5%;
+    }
 }
 .home-bar .comments{
     text-align:center;
