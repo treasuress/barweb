@@ -347,6 +347,20 @@ header img {
         width: 339px;
     }
 }
+@media (max-width : 480px){
+    .home-bar h2 {
+        height: 134px;
+    }
+    #map_canvas{
+        height: 189px;
+        width: 252px;
+    }
+    .home-bar .map-bar{
+        margin-top: 105%;
+    }
+}
+
+
 .home-bar .address{
     color: midnightblue;
     border-radius: 0 0 5px 5px;
