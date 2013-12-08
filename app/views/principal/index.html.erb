@@ -5,7 +5,7 @@
 <!--todo now test - ver pra q serv o type -->
 <%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @title, :type => 'principal'} %>
 
-<section class="principal">
+<section class="principal" style="display: inline-block;">
 
   <script type="text/javascript">
       local = new Array();
@@ -52,8 +52,9 @@
         <div style="display: table-caption;font-size: 14px;">
           <!-- todo fim now - colocar links -->
           <!-- todo futuro - colokr do g+ -->
-          <%= image_tag principal.follow_fb_image.url(:thumb), :class=>"principal-links", :style => "width: 100px;height: 45px;", :alt => I18n.t("principal.index.follow_image_name") %>
-          <%= image_tag principal.follow_tw_image.url(:thumb), :class=>"principal-links", :style => "padding-top:0; padding-bottom:0;width: 100px;height: 45px;", :alt => I18n.t("principal.index.follow_image_name") %>
+          <!--todo now - colokr na traducao - siga-nos no tw e siga-nos no fb-->
+          <%= image_tag principal.follow_fb_image.url(:thumb), :class=>"principal-links social", :alt => I18n.t("principal.index.follow_image_name") %>
+          <%= image_tag principal.follow_tw_image.url(:thumb), :class=>"principal-links social", :style => "padding-top:0; padding-bottom:0;", :alt => I18n.t("principal.index.follow_image_name") %>
           <h4 class="principal-links" style="padding-top:5px"><%= I18n.t("principal.index.follow_image_name") %></h4>
         </div>
 

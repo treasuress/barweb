@@ -4,6 +4,8 @@
 <!--todo now futuro - tirar qndo colokr pra aparecer em cima da tela-->
 <%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @title, :type => 'contact'} %>
 
+
+<!--todo now - colokr cores no balao e no formulario-->
 <!--todo now futuro - colokr pra essas informacoes aparecerem em cima da tela na pagina inicial - fancybox -->
 <section class="contact" >
 
@@ -29,7 +31,7 @@
 
   <div class="contact-form">
       <%= form_for @contact do |f| %>
-          <div style="margin-top: 4%;">
+          <div>
             <%= f.label I18n.t("contacts.form.name") %><br />
             <%= f.text_field :name, :required => true %>
           </div>
