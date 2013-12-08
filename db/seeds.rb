@@ -57,15 +57,11 @@ if Rails.env.development?
                        #Ativos
                        #Completo - bar 1
                        {:status_id => 1, :category_id => 1, :name => "Beco da Canela", :description => "O Beco da Canela é um local onde você pode passar bons momentos, em um local seguro, clima tranquilo e de pessoas de bom gosto.
-Desfrute de um cardápio de bebidas e comida variado de qualidade, além de sempre ouvir os melhores artistas de Uberlândia tocando ao vivo o que há de melhor do MPB, POP ROCK, SAMBA RAÍZ e um atendimento excelente.
-
-SEJA BEM VINDO A CASA E DIVIRTA-SE!", :logo_bar_image => File.open('public/home_bars/bar1.jpg'), :phone_number => "9173-2592", :cellphone_number => "8806-7612", :zip => "38408-100", :country_id => 1, :state_id => 1, :city_id => 1, :address => "Avenida João Naves de Ávila", :number => "123", :neighborhood => "Saraiva", :complement => "complemento beco da canela" },
+Desfrute de um cardápio de bebidas e comida variado de qualidade, além de sempre ouvir os melhores", :logo_bar_image => File.open('public/home_bars/bar1.jpg'), :phone_number => "(034) 9173-2592", :cellphone_number => "(034) 8806-7612", :zip => "38408-100", :country_id => 1, :state_id => 1, :city_id => 1, :address => "Avenida João Naves de Ávila", :number => "123", :neighborhood => "Saraiva", :complement => "complemento beco da canela" },
 
                        #Completo - bar 2
                        {:status_id => 1, :category_id => 2, :name => "Flag", :description => "O Flag é um bar mutante.
-As comidas, bebidas, músicas e decoração mudam de acordo com a bandeira içada na nossa fachada. A cada temporada, teremos novos sabores típicos de algum país, estado ou cidade. Do Brasil aos Estados Unidos. Dos Nachos ao Acarajé. Do Saquê à Sangria.
-
-E para inaugurar, não poderia ser diferente: passearemos pelas delícias do nosso querido Brasil. Puxe uma cadeira e aproveite uma refrescante caipirinha, ouça um samba de raiz e exagere na feijoada.", :logo_bar_image => File.open('public/home_bars/bar8.jpg'), :phone_number => " 3234-8809", :cellphone_number => "cel bar flag", :zip => "38400-160", :country_id => 1, :state_id => 1, :city_id => 1, :address => "Rua Barao de Camargos", :number => "193", :neighborhood => "Centro", :complement => "complemento bar flag" },
+As comidas, bebidas, músicas e decoração mudam de acordo com a bandeira içada na nossa fachada.", :logo_bar_image => File.open('public/home_bars/bar8.jpg'), :phone_number => "(034) 3234-8809", :cellphone_number => "", :zip => "38400-160", :country_id => 1, :state_id => 1, :city_id => 1, :address => "Rua Barao de Camargos", :number => "193", :neighborhood => "Centro", :complement => "complemento bar flag" },
 
                        #Sem imagem
                        {:status_id => 1, :category_id => 1, :name => "Nome bar 11", :description => "descricao bar 11", :phone_number => "", :cellphone_number => "", :zip => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar 11", :number => "1123", :neighborhood => "bairro bar 11", :complement => "complemento bar 11" },
@@ -78,7 +74,7 @@ E para inaugurar, não poderia ser diferente: passearemos pelas delícias do nos
 
                        #0 no numero do logradouro
                        #Completo
-                       {:status_id => 1, :category_id => 1, :name => "Thália", :description => "descricao thalia", :logo_bar_image => File.open('public/home_bars/bar3.jpg'), :phone_number => "3210-8135", :cellphone_number => "", :zip => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "Avenida Rondon Pacheco", :number => "0", :neighborhood => "Cazeca", :complement => "complemento thalia" },
+                       {:status_id => 1, :category_id => 1, :name => "Thália", :description => "descricao thalia", :logo_bar_image => File.open('public/home_bars/bar3.jpg'), :phone_number => "(034) 3210-8135", :cellphone_number => "", :zip => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "Avenida Rondon Pacheco", :number => "0", :neighborhood => "Cazeca", :complement => "complemento thalia" },
                        #Somente campos obrigatórios preenchidos
                        {:status_id => 1, :category_id => 1, :name => "Mimi Quiosque", :logo_bar_image => File.open('public/home_bars/bar6.png'), :country_id => 1, :state_id => 1, :city_id => 1, :address => "Avenida João Naves de Ávila", :number => "0", :neighborhood => "Santa Monica" },
 
