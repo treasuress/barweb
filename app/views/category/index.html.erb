@@ -1,5 +1,4 @@
-<!-- todo seb now - mudar txt -->
-<% @title = "Categorias de Uberlandia" %>
+<% @title = "Categorias de " + params[:city_name] %>
 
 <%= render :partial => 'layouts/social', :locals => {:url => all_categories_path(params[:city_name]), :share_text => @title, :type => 'categories'} %>
 
@@ -16,7 +15,7 @@
   <% if @all_active_categories.present? %>
 
       <!--todo seb now - arrumar -->
-      <h1><%= "Categorias de Estabelecimentos em Uberlândia" %></h1>
+      <h1><%= "Categorias de " + params[:city_name] %></h1>
 
       <nav>
         <% @all_active_categories.each do |category| %>

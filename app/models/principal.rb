@@ -8,6 +8,7 @@ class Principal < ActiveRecord::Base
 
   validates_attachment_presence :logo_image, :gallery_image, :events_image, :contact_image, :follow_fb_image, :follow_tw_image, :all_homes_image
 
+  #todo now futuro - ver se tem como validar tamanho da img pra add, senao o layout n fik igual
   #todo seb now - colokr tamanho certo da logo
   has_attached_file :logo_image,
                     :styles => {:medium => "400x300#", :thumb => "100x100#"},

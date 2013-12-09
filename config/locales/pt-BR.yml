@@ -361,6 +361,8 @@ pt-BR:
       galley_image_name: "Fotos"
       events_image_name: "Eventos"
       contact_image_name: "Contato"
+      follow_image_fb_name: "Siga-nos no Facebook!"
+      follow_image_tw_name: "Siga-nos no Twitter!"
       follow_image_name: "Siga-nos!"
       title_bars: "Bares"
 
@@ -385,7 +387,7 @@ pt-BR:
 
 
 
-#todo now - talvez deva mudar d pagina principal pra narua ou algo assim
+#todo seb now - talvez deva mudar d pagina principal pra narua ou algo assim
   breadcrumb_principal: "Página Principal"
   breadcrumb_categories: "Categorias"
   breadcrumb_category: "Categoria"

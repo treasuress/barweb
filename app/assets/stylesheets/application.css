@@ -122,7 +122,6 @@ a:hover, a:active {
 
 
 /*VÁRIAS PÁGINAS */
-/*todo fim now - ver como colokr tamanho dif pra kda tamanho d tela e mudar tamanhos de imgs pra fikr como quero*/
 .category img, .principal img, .all-categories img{
     width: 100px;
     height: 100px;
@@ -189,7 +188,6 @@ header img {
     background-color: rgb(229, 227, 223);
 }
 .principal .principal-links.social{
-    /*todo now - acho q n precisa do width akih jah q eh igual das otras*/
     width: 100px;
     height: 45px;
 }
@@ -201,8 +199,6 @@ header img {
     padding: 10px 7px;
     font-size: 14px;
 }
-
-/*todo now futuro - os estilos principais sao esses, ver se precisa duplicar eles nos outros tamanhos de tela pra funcionar*/
 @media (max-width : 1382px){
     html, body {
         width: 85%;
@@ -213,9 +209,6 @@ header img {
     .principal .principal-links{
         padding: 10px 7px;
     }
-    /*todo now - colokr no 1o filho do principal-links */
-    /*margin-left: 4% !important;*/
-
     .principal .principal-links img{
         width: 100px;
         height: 100px;
@@ -285,7 +278,6 @@ header img {
         height: 100px;
     }
 }
-
 
 
 /* HOME BAR */
@@ -397,7 +389,6 @@ header img {
 
 
 /* PRINCIPAL - CONTACT */
-/*todo now futuro - colocar border do campo vermelho dos campos q forem preenchidos errado*/
 .contact .contact-text{
     float: left;
     margin: 8% 11%;
@@ -460,7 +451,6 @@ header img {
         /*height: 90%;*/
     }
 }
-
 /*todo now - arrumar estilo do botao em otros tamanho d tela*/
 .contact input[type="submit"]{
     border-radius: 5px;
@@ -469,7 +459,6 @@ header img {
 }
 
 
-/*todo now - fik estranho qndo diminui tamanho da tela*/
 /* FOOTER */
 footer {
     position: relative;

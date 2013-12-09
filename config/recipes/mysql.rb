@@ -12,6 +12,8 @@ namespace :mysql do
   #end
   #after "deploy:install", "mysql:install"
 
+  #todo now futuro - tah mandando instalar o ruby e acho q o rvm no fim do script d instalacao
+
   desc "Create a database for this application."
   task :create_database, roles: :db, only: {primary: true} do
     run "mysql --user='root' --password='#{mysql_root_password}' --execute='create database if not exists #{mysql_database};'"
