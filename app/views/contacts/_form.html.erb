@@ -44,8 +44,7 @@
           </div>
           <div>
             <%= f.label I18n.t("contacts.form.message") %><br />
-            <!--todo now - colokr quantidad minima d caracteres-->
-            <%= f.text_area :message, :required => true, :maxlength => 400, :style => "resize:none" %>
+            <%= f.text_area :message, :required => true, :maxlength => 750, :style => "resize:none", :title => "Este campo deve ter entre 10 e 750 caracteres" %>
           </div>
           <div style="text-align: right;">
             <%= f.submit value = I18n.t("contacts.form.submit") %>
