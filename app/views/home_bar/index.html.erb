@@ -2,8 +2,6 @@
 
 <%= render :partial => 'layouts/social', :locals => {:url => home_bar_path(params[:city_name], @current_bar.name), :share_text => @title, :type => 'home_bar'} %>
 
-<!--todo now futuro - ver se tem como validar tamanho da img pra add, senao o layout n fik igual-->
-
 <section class="home-bar">
 
   <div class="breadcrumb">
@@ -53,7 +51,6 @@
                   </h3>
                   <h4>
                     <%= @current_city.name %>
-                    <!--todo seb now - colokr iso ao inves do nome inteiro do estado?-->
                     - <%= @current_state.iso %>
                     - <%= @current_country.name %>
                     <%= "- " + I18n.t("home_bar.index.zip") + @current_bar.zip if !@current_bar.zip.blank? %>
@@ -61,7 +58,6 @@
                   <h5>
                     <% if !@current_bar.phone_number.blank? %>
                         <!-- todo futuro - ver se no mobile dah pra fazer a pessoa jah clicar pra ligar -->
-                        <!--todo now - c colokr soh o cel, fik como? - n mostra o tel-->
                         <%= I18n.t("home_bar.index.phone") + @current_bar.phone_number %><%= ", " + @current_bar.cellphone_number if !@current_bar.cellphone_number.blank? %>
                     <% end %>
                   </h5>
@@ -85,8 +81,7 @@
           </script>
 
       <% else %>
-          <!-- todo now futuro - devia enviar email, msg, whatever pra alguem, pq isso nunk dev acontecer, jah q endereço é campo obrigatório no banco -->
-           <!--colokr pra enviar email pelo formulario d contato - guia d programacao -->
+          <% ContactMailer.alert_when_error_should_never_happen("Exibindo estabelecimento mesmo sem ter endereço cadastrado OU estabelecimento estando inativo").deliver %>
           <%= render :partial => "layouts/page_not_found_error_404" %>
       <% end %>
 
