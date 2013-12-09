@@ -97,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20131120150244) do
 
   create_table "principals", :force => true do |t|
     t.string   "title"
+    t.boolean  "active"
     t.string   "description",                  :limit => 380
     t.string   "logo_image_file_name"
     t.string   "logo_image_content_type"

@@ -263,6 +263,7 @@ pt-BR:
         updated_at: "ATUALIZADO EM"
       principal:
         id: "ID"
+        active: "Ativo"
         title: "Nome do Site"
         description: "Descrição"
         logo_image: "Logo"

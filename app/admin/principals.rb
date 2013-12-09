@@ -6,6 +6,9 @@ ActiveAdmin.register Principal do
   index do
     column :id
     column :title
+    column :active do |record|
+      record.active == true ? 'Ativo' : 'Inativo'
+    end
     column :logo_image do |record|
       image_tag(record.logo_image.url(:thumb))
     end
@@ -33,6 +36,9 @@ ActiveAdmin.register Principal do
   show do
     attributes_table do
       row :id
+      row :active do |record|
+        record.active == true ? 'Ativo' : 'Inativo'
+      end
       rows :title, :description
       row :logo_image do |record|
         image_tag(record.logo_image.url(:thumb))
@@ -60,6 +66,7 @@ ActiveAdmin.register Principal do
 
   form :html => {:enctype => "multipart/form-data"} do |f|
     f.inputs I18n.t("activerecord.models.principal"), :multipart => true do
+      f.input :active
       f.input :title
       #f.input :description, :as => :ckeditor, :input_html => {:width => "79%", :style => 'margin-left: 20%'}
       f.input :description, :as => :text, :input_html => { :maxlength => 380 }

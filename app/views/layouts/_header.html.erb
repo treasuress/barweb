@@ -1,10 +1,13 @@
 <header>
 
-  <% @principal.each do |principal| %>
-
+  <% if !@principal.blank? %>
       <a href="<%= principal_path %>">
-        <%= image_tag principal.logo_image.url(:medium), :alt => principal.title %>
+        <%= image_tag @principal.logo_image.url(:medium), :alt => @principal.title %>
       </a>
+  <% else %>
+      <!--todo now - testar pra ver o q aparec e c recebo email-->
+      <% ContactMailer.alert_when_error_should_never_happen("Não tem nenhuma página principal ativa cadastrada!!!").deliver %>
+  <% end %>
 
       <hr/>
 
@@ -14,7 +17,5 @@
       <!--</div>-->
 
       <!--<hr/>-->
-
-  <% end %>
 
 </header>

@@ -5,10 +5,8 @@ class ApplicationController < ActionController::Base
                 :get_current_category_by_id,
                 :get_bars_from_category
 
-  #TODO futuro - buscar só a página principal ativa
-  #@principal = Principal.limit(1).where("active = true")
   def get_principal
-    @principal = Principal.all
+    @principal = Principal.active.first
   end
 
   def get_active_bars

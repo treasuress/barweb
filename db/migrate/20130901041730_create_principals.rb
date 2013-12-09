@@ -2,6 +2,7 @@ class CreatePrincipals < ActiveRecord::Migration
   def up
     create_table :principals do |t|
       t.string :title
+      t.boolean :active
       t.string :description, :limit => 380
 
       t.string :logo_image_file_name

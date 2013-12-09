@@ -1,6 +1,6 @@
 class Principal < ActiveRecord::Base
   attr_accessible :title, :description, :logo_image, :gallery_image, :events_image, :contact_image,
-                  :follow_fb_image, :follow_tw_image, :all_homes_image
+                  :follow_fb_image, :follow_tw_image, :all_homes_image, :active
 
   has_many :home_bars
 
@@ -39,5 +39,13 @@ class Principal < ActiveRecord::Base
                     :url => "/assets/principals/:id/images/all_homes_:style.:extension",
                     :path => ":rails_root/public/assets/principals/:id/images/all_homes_:style.:extension"
 
-  #TODO we futuro - COLOCAR SE ESTÁ OU NÃO ATIVA, PERMITIR QUE APENAS UMA FIQUE ATIVA
+  def self.active
+    where(:active => true)
+  end
+
+  def self.inactive
+    where(:active => false)
+  end
+
+  #TODO we futuro - PERMITIR QUE APENAS UMA FIQUE ATIVA
 end
