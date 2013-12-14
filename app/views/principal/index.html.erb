@@ -19,7 +19,9 @@
 
   <hr/>
 
-  <% if !@principal.blank? %>
+  <!--todo now - ver validacao-->
+  <!--todo now - n devia mostrar o mapa c ele tah dentro do if!-->
+  <% if !@principal.blank? && !@principal.nil? %>
 
       <h2><%= @principal.description %></h2>
 
@@ -107,8 +109,7 @@
       <% end %>
 
   <% else %>
-      <!--todo now - testar pra ver c recebo email-->
-      <% ContactMailer.alert_when_error_should_never_happen("Não tem nenhuma página principal ativa cadastrada!!!").deliver %>
+      <% ContactMailer.alert_when_error_should_never_happen("Não tem nenhuma página principal ativa cadastrada - PRINCIPAL!!!").deliver %>
       <%= render :partial => "layouts/page_not_found_error_404" %>
   <% end %>
 
