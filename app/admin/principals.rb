@@ -6,8 +6,9 @@ ActiveAdmin.register Principal do
   index do
     column :id
     column :title
-    column :active do |record|
-      record.active == true ? 'Ativo' : 'Inativo'
+    column do |record|
+      links = link_to (record.active? ? I18n.t('active_admin.deactivate') : I18n.t('active_admin.activate')), change_status_admin_principal_path(record), :method => :put, :data => { :confirm => "Deseja alterar o status deste estabelecimento?" }, :class => "member_link view_link"
+      links
     end
     column :logo_image do |record|
       image_tag(record.logo_image.url(:thumb))
@@ -68,7 +69,6 @@ ActiveAdmin.register Principal do
     f.inputs I18n.t("activerecord.models.principal"), :multipart => true do
       f.input :active
       f.input :title
-      #f.input :description, :as => :ckeditor, :input_html => {:width => "79%", :style => 'margin-left: 20%'}
       f.input :description, :as => :text, :input_html => { :maxlength => 380 }
       f.input :logo_image
       f.input :gallery_image
@@ -81,6 +81,12 @@ ActiveAdmin.register Principal do
     f.actions
   end
 
+  member_action :change_status, :method => :put do
+    record = Principal.find(params[:id])
+    record.change_status!
+    redirect_to admin_principals_path, :notice => I18n.t('activerecord.attributes.principal.activate_message', :name => record.title, :status => record.active_status_name)
+  end
+
 end
 
-#todo we - colokr pra pessoa poder visualizar a pagina antes de criar
+#todo we - colokr pra pessoa poder visualizar a pagina antes de criar - precisa do fancybox

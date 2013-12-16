@@ -38,6 +38,18 @@ class Principal < ActiveRecord::Base
                     :url => "/assets/principals/:id/images/all_homes_:style.:extension",
                     :path => ":rails_root/public/assets/principals/:id/images/all_homes_:style.:extension"
 
+
+  def change_status!
+    self.active = !self.active?
+    save!
+  end
+
+  def active_status_name
+    self.active? ? I18n.t('active_admin.active') : I18n.t('active_admin.inactive')
+  end
+
+
+  #Buscas
   def self.active
     where(:active => true)
   end
