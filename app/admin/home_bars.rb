@@ -48,20 +48,8 @@ ActiveAdmin.register HomeBar do
       f.input :status, :include_blank => false
       f.input :category, :include_blank => false, :collection => Category.active
       f.input :name
-
-      #todo we - fazer ficar 20% à direita - n pega o style nem classe separada
-      #todo we - trocar pro ckeditor dps d novo pra ver se funciona (n limita qntidad d caracteres)
       f.input :description, :as => :text, :input_html => { :maxlength => 227, :style => "resize:none" }
-      #f.input :description, :as => :ckeditor, :input_html => {:width => "79%", :style => 'margin-left: 20%;', :maxlength => 380}
-      #f.input :description, :as => :ckeditor, :input_html => { class: 'home_bar_description'}'}
-      #f.input :description, :as => :ckeditor, :input_html => {:width => "79%", :style => 'margin-left: 20%;'}
-      #f.input :description, :as => :ckeditor, :input_html => { class: 'home_bar_description'}
-      #f.input :description, :as => :ckeditor, :input_html => {:width => "78%", :"margin-left" => "20%" }
-      #f.input :description, :as => :ckeditor, :input_html => {:width => "78%", "margin-left" => "20%" }
-
-
       f.input :logo_bar_image
-
       f.input :phone_number, :as => :phone, :placeholder => "(034) 3232-3232"
       f.input :cellphone_number, :as => :phone, :placeholder => "(034) 99898-9898"
     end
@@ -79,4 +67,5 @@ ActiveAdmin.register HomeBar do
     end
     f.actions
   end
+
 end

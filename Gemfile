@@ -9,8 +9,10 @@ gem 'mysql2'
 gem 'activeadmin'
 gem 'paperclip'
 gem 'rack-p3p'
+#gem 'fancybox-rails'
+#gem 'fancybox-rails', :git => 'https://github.com/sverigemeny/fancybox-rails'
 
-#todo futuro - seria bom mudar pra versao atual, mas n conseguih fazer funcionar direito
+#todo futuro - seria bom mudar pra versao atual, mas n conseguih fazer funcionar direito (se for usar algum dia)
 gem 'ckeditor', '3.7.1'
 
 

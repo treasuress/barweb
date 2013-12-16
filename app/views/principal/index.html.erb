@@ -55,6 +55,7 @@
 
         <hr class="line"/>
 
+        <!--todo now - colokr link para tdos os bares-->
         <!--todo now futuro - pegar nomes das categorias dinamicamente nas buscas dos estabelecimentos-->
         <h4 style="color: midnightblue;"><%= I18n.t("principal.index.title_bars") %></h4>
 
@@ -101,7 +102,7 @@
       <% @all_active_bars.each_with_index do |active_bar, index| %>
           <!-- dados para mapa -->
           <script type="text/javascript">
-    //        todo now - a cada bar ativo, tenho q passar o id da cidad desse bar pra pegar a cidade dakele bar especifico
+            //        todo now - a cada bar ativo, tenho q passar o id da cidad desse bar pra pegar a cidade dakele bar especifico
             local[<%= index %>] = '<%= active_bar.address + ", " + active_bar.number.to_s + ", " + @current_city_from_bar.name %>';
           </script>
       <% end %>

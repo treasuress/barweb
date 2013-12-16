@@ -25,6 +25,7 @@ class HomeBar < ActiveRecord::Base
                     :path => ":rails_root/public/assets/home_bars/:id/images/logo_bar_:style.:extension"
 
 
+  #Buscas
   def self.active
     where(:status_id => Status.active)
   end
