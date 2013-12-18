@@ -57,7 +57,7 @@
               </h4>
               <h5>
                 <% if !@current_bar.phone_number.blank? %>
-                    <!-- todo futuro - ver se no mobile dah pra fazer a pessoa jah clicar pra ligar -->
+                    <!-- todo futuro - ver se no mobile dah pra fazer a pessoa jah clicar pra ligar - plugin skype - funciona pra desktop tb -->
                     <%= I18n.t("home_bar.index.phone") + @current_bar.phone_number %><%= ", " + @current_bar.cellphone_number if !@current_bar.cellphone_number.blank? %>
                 <% end %>
               </h5>

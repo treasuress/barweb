@@ -60,7 +60,7 @@ Barweb::Application.routes.draw do
 
   root :to =>  "principal#index"
 
-  #todo now - qndo página n existir, dah erros mt feios, entao ir pra pagina n encontrada em tdas q n existir
+  #todo now - qndo der erro de rota, ir pra pagina de n encontrada
 
 
 end
