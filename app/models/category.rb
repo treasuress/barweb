@@ -31,7 +31,7 @@ class Category < ActiveRecord::Base
 
   def self.getActiveCategoryWithBar
     #todo futuro - melhorar busca
-    find_by_sql("select c.name from categories c, home_bars h where c.active = true and c.id = h.category_id group by c.name")
+    find_by_sql("select * from  home_bars h, categories c where c.active = true and c.id = h.category_id group by c.name")
   end
 
 end

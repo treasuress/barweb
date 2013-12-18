@@ -28,9 +28,6 @@ ActiveAdmin.register Principal do
     column :follow_tw_image do |record|
       image_tag(record.follow_tw_image.url(:thumb))
     end
-    column :all_homes_image do |record|
-      image_tag(record.all_homes_image.url(:thumb))
-    end
     default_actions
   end
 
@@ -59,9 +56,6 @@ ActiveAdmin.register Principal do
       row :follow_tw_image do |record|
         image_tag(record.follow_tw_image.url(:thumb))
       end
-      row :all_homes_image do |record|
-        image_tag(record.all_homes_image.url(:thumb))
-      end
     end
   end
 
@@ -76,7 +70,6 @@ ActiveAdmin.register Principal do
       f.input :contact_image
       f.input :follow_fb_image
       f.input :follow_tw_image
-      f.input :all_homes_image
     end
     f.actions
   end

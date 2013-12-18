@@ -272,7 +272,6 @@ pt-BR:
         contact_image: "Imagem Contato"
         follow_fb_image: "Imagem Facebook"
         follow_tw_image: "Imagem Twitter"
-        all_homes_image: "Imagem Todas as Homes"
         created_at: "CADASTRADO EM"
         updated_at: "ATUALIZADO EM"
 
@@ -361,7 +360,6 @@ pt-BR:
 # parte web
   principal:
     index:
-      all_bars: "Todos os bares!"
       galley_image_name: "Fotos"
       events_image_name: "Eventos"
       contact_image_name: "Contato"

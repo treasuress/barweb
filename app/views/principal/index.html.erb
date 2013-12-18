@@ -57,6 +57,7 @@
 
         <% @active_categories_with_bar.each do |category| %>
 
+            <!--todo now - colokr display block ou inline - o q faz n ficar a linha inteira - o link tah ateh o final da pagina-->
             <a href="<%= category_path("Uberlandia", category.name) %>" alt="<%= category.name %>" >
                 <h4 style="color: midnightblue;"><%= category.name %></h4>
             </a>
@@ -90,20 +91,34 @@
 
                 </div>
             <% end %>
-            <!-- todo now - ver como arrumar isso em tdos os tamanho de tela -->
-            <br><br><br><br><br><br><br><br><br>
+
+            <div class="principal-destaques">
+              <!--todo now - arrumar chamada da rota-->
+              <a href="<%= category_path("Uberlandia", category.name) %>">
+
+                <% category_name =  category.name %>
+                <% title =  "" %>
+
+                <!-- todo seb now - add img certa na pasta - do tamanho certo pra essa pagina -->
+                <% if category.category_image_file_size.nil? %>
+                    <% if category.name.length >= 17 %>
+                        <% title =  category_name %>
+                    <% end %>
+                    <img src="<%= image_path "category0.jpg" %>" alt="<%= category_name %>" title="<%= title %>" />
+                <% else %>
+                    <% if category.name.length >= 17 %>
+                        <% title =  category_name %>
+                    <% end %>
+                    <%= image_tag category.category_image.url(:thumb), :alt => category_name, :title => title %>
+                <% end %>
+
+                <h5> <%= category.name.truncate(16) %> </h5>
+              </a>
+            </div>
+
+            <hr/>
+
         <% end %>
-
-        <!--todo now - colokr lah ond tah o br, no fim d kda busca-->
-        <div class="principal-destaques">
-          <!--todo now - arrumar chamada da rota-->
-          <a href="<%= category_path("Uberlandia", "Bares") %>">
-            <%= image_tag @principal.all_homes_image.url(:thumb)  %>
-            <!-- todo seb now - mudar txt -->
-            <h5> <%= I18n.t("principal.index.all_bars") %> </h5>
-          </a>
-        </div>
-
       </nav>
 
       <% @all_active_bars.each_with_index do |active_bar, index| %>

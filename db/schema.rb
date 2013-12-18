@@ -123,10 +123,6 @@ ActiveRecord::Schema.define(:version => 20131120150244) do
     t.string   "follow_tw_image_content_type"
     t.integer  "follow_tw_image_file_size"
     t.datetime "follow_tw_image_updated_at"
-    t.string   "all_homes_image_file_name"
-    t.string   "all_homes_image_content_type"
-    t.integer  "all_homes_image_file_size"
-    t.datetime "all_homes_image_updated_at"
     t.datetime "created_at",                                  :null => false
     t.datetime "updated_at",                                  :null => false
   end
