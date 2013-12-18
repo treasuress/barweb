@@ -33,4 +33,8 @@ class Status < ActiveRecord::Base
      self.find_all_by_name('pendente')
    end
 
+   def self.active!
+     self.find_by_name('ativo')
+   end
+
 end

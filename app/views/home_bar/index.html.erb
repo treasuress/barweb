@@ -1,5 +1,4 @@
-<!--todo now - ver se dah pra melhorar validacao-->
-<% if !@current_bar.nil? && !@current_bar.blank? && @current_bar.status_id == Status.active.first[:id] && @current_bar.address.present? %>
+<% if !@current_bar.nil? && !@current_bar.blank? && @current_bar.status_id == Status.active![:id] && @current_bar.address.present? %>
 
     <% @title = @current_bar.name %>
 

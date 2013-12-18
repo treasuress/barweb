@@ -39,7 +39,7 @@ class HomeBar < ActiveRecord::Base
   end
 
   def self.all_by_category(category_id)
-    where(:status_id => Status.active, :category_id => category_id)
+    active.where(:category_id => category_id)
   end
 
   #def self.all_by_category(category_id)
