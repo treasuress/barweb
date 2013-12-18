@@ -1,18 +1,18 @@
-<% @title = "Categorias de " + params[:city_name] %>
+<% if !@all_active_categories.blank? && !@all_active_categories.nil? %>
 
-<%= render :partial => 'layouts/social', :locals => {:url => all_categories_path(params[:city_name]), :share_text => @title, :type => 'categories'} %>
+    <% @title = "Categorias de " + params[:city_name] %>
 
-<section class="all-categories">
+    <%= render :partial => 'layouts/social', :locals => {:url => all_categories_path(params[:city_name]), :share_text => @title, :type => 'categories'} %>
 
-  <div class="breadcrumb">
-    <%= link_to I18n.t("breadcrumb_principal"), principal_path %> <span class="next" />
-    <%= link_to params[:city_name], principal_path %> <span class="next" />
-    <%= I18n.t("breadcrumb_categories") %>
-  </div>
+    <section class="all-categories">
 
-  <hr class="line"/>
+      <div class="breadcrumb">
+        <%= link_to I18n.t("breadcrumb_principal"), principal_path %> <span class="next" />
+        <%= link_to params[:city_name], principal_path %> <span class="next" />
+        <%= I18n.t("breadcrumb_categories") %>
+      </div>
 
-  <% if @all_active_categories.present? %>
+      <hr class="line"/>
 
       <h1><%= "Categorias de " + params[:city_name] %></h1>
 
@@ -41,6 +41,5 @@
         <% end %>
       </nav>
 
-  <% end %>
-
-</section>
+    </section>
+<% end %>
