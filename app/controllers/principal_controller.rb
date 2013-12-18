@@ -4,28 +4,23 @@ class PrincipalController < ApplicationController
     get_principal
     get_active_bars
 
+    @active_categories_with_bar = Category.getActiveCategoryWithBar
+
+
     #todo futuro - talvez dah pra colokr até rand() em application pra poder usar em homeBar/all qndo for buscar randomicamente lá
     #Seleciona 7 bares aleatoriamente - mysql
-    #todo now - pegar categoria dinamicamente
-    @home_bars = get_bars_from_category(1).all(:order => 'RAND()', :limit => 7)
-
-
-
-
-    #@categories_show = Category.active
-    #todo now - pegar aqui todas as categorias q tem algum bar cadastrado e usar na busca get_bars..
-    #todo now - ver se tah vindo soh as categorias ativas
-    #todo now - ver se tah vindo soh as q tem pelo menos um bar cadastrado
-    #@categories_show = @categories_show.getCategoryWithBar
-    #todo now - ver pq n tah dando certo jah q no banco dah
-    #@categories_show = Category.getCategoryWithBar
 
     #todo now -
-    #preciso d pegar tdas as categorias ativas
-    #preciso do nome das categorias ativas
-    #aí preciso de 7 bares de cada categoria
+    #preciso de 7 bares de cada categoria
 
-    #@home_bars = get_bars_from_category(get_active_categories).all(:order => 'RAND()', :limit => 7)
+    @active_categories_with_bar.each_with_index do |category, index|
+      #todo now - acho q tem q gravar em um vetor e pegar em vetor na index dps
+      @home_bars = get_bars_from_category(index).all(:order => 'RAND()', :limit => 7)
+    end
+
+
+      #@home_bars = get_bars_from_category(@active_categories_with_bar)
+
 
 
 

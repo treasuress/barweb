@@ -42,6 +42,14 @@ class HomeBar < ActiveRecord::Base
     where(:status_id => Status.active, :category_id => category_id)
   end
 
+  #def self.all_by_category(category_id)
+  #  result = []
+  #  category_id.each do |category|
+  #    result << where(:status_id => Status.active, :category_id => category)
+  #  end
+  #  result
+  #end
+
   #<!-- todo futuro - adicionar busca por cidad -->
 
 end
