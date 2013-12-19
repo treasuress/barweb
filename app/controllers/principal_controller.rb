@@ -1,5 +1,8 @@
 class PrincipalController < ApplicationController
 
+  #todo now - fazer busca com tdu q precisa ao inves d fazer um mont d conultas.
+  #fazer consulta q pega td q precisa pra usar akih
+
   def index
     get_principal
     get_active_bars
@@ -34,6 +37,7 @@ class PrincipalController < ApplicationController
     #@bar_name = HomeBar.find_by_name(params[:name])
 
     #todo now - preciso pegar tdos os ids de cidades, como faz? - acho q tem q fazer a busca junto com a q busca os bares pra ser cidad do bar certo
+    #todo now - acho q pod usar a mesma busca do home bars, mas sem a part d ordenacao e limite - ou seja, fazer a busca generica separada
     get_current_city_from_bar(@all_active_bars.first.city_id)
 
   end

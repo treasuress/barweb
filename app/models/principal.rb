@@ -54,5 +54,5 @@ class Principal < ActiveRecord::Base
     where(:active => false)
   end
 
-  #TODO we futuro - PERMITIR QUE APENAS UMA FIQUE ATIVA
+  #TODO we futuro - PERMITIR QUE APENAS UMA FIQUE ATIVA - antes d gravar, buscar tdos e ver se tem algum ativo
 end
