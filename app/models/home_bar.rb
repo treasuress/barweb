@@ -12,6 +12,7 @@ class HomeBar < ActiveRecord::Base
 
   validates_presence_of :name, :address, :number, :neighborhood, :country_id, :state_id, :city_id, :category_id, :status_id
 
+  #todo now - n pod ter mesm nome d bar na mesma cidad, em cidad diferente pod
   validates_uniqueness_of :name
 
   validates_format_of :phone_number, :cellphone_number, :allow_blank => true, :with => /\A\(\d{3}\) \d{4,5}-\d{4}\Z/, :message => "Formato correto: (099) 9999-9999 ou (099) 09999-9999"

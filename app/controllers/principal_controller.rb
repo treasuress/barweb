@@ -1,6 +1,6 @@
 class PrincipalController < ApplicationController
 
-  #todo now - fazer busca com tdu q precisa ao inves d fazer um mont d conultas.
+  #todo now - fazer busca com tdu q precisa ao inves d fazer um mont d consultas.
   #fazer consulta q pega td q precisa pra usar akih
 
   def index
@@ -13,17 +13,10 @@ class PrincipalController < ApplicationController
     #todo futuro - talvez dah pra colokr até rand() em application pra poder usar em homeBar/all qndo for buscar randomicamente lá
     #Seleciona 7 bares aleatoriamente - mysql
 
-    #todo now -
-    #preciso de 7 bares de cada categoria
-
     @active_categories_with_bar.each_with_index do |category, index|
       #todo now - acho q tem q gravar em um vetor e pegar em vetor na index dps
       @home_bars = get_bars_from_category(index).all(:order => 'RAND()', :limit => 7)
     end
-
-
-      #@home_bars = get_bars_from_category(@active_categories_with_bar)
-
 
 
 

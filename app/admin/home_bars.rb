@@ -36,7 +36,7 @@ ActiveAdmin.register HomeBar do
       row :logo_bar_image do |record|
         image_tag(record.logo_bar_image.url(:thumb))
       end
-      rows :phone_number, :cellphone_number   #todo futuro - cellphone? - colocar pra escolher tipo de telefone - criar funcao q cria no banco os tipos d telefones, aí chamar no combo esses tipos
+      rows :phone_number, :cellphone_number
 
       rows :address, :number, :complement, :zip
       rows :neighborhood, :city, :state, :country
@@ -50,7 +50,7 @@ ActiveAdmin.register HomeBar do
       f.input :name
       f.input :description, :as => :text, :input_html => { :maxlength => 227, :style => "resize:none" }
       f.input :logo_bar_image
-      f.input :phone_number, :as => :phone, :placeholder => "(034) 3232-3232"
+      f.input :phone_number, :as => :phone, :placeholder => "(034) 3232-3232" #todo futuro , :collection => ['Sugestão', 'Crítica', 'Elogio', 'Outro']
       f.input :cellphone_number, :as => :phone, :placeholder => "(034) 99898-9898"
     end
 
