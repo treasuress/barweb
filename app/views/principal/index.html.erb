@@ -55,53 +55,77 @@
 
         <hr class="line"/>
 
-        <!--todo now futuro - pegar nomes das categorias dinamicamente nas buscas dos estabelecimentos-->
-        <h4 style="color: midnightblue;"><%= I18n.t("principal.index.title_bars") %></h4>
+        <% @active_categories_with_bar.each do |category| %>
 
-        <% @home_bars.each do |destaque| %>
-            <% destaque_name =  destaque.name %>
-            <% title =  "" %>
+            <a href="<%= category_path("Uberlandia", category.name) %>" alt="<%= category.name %>" style="width: <%= category.name.length %>%;display: block;" >
+                <h4 style="color: midnightblue;"><%= category.name %></h4>
+            </a>
 
+            <% @home_bars.each do |destaque| %>
+
+                <% destaque_name =  destaque.name %>
+                <% title =  "" %>
+
+                <!--7 estabelecimentos da categoria-->
+                <div class="principal-destaques">
+
+                  <!--todo now - arrumar chamada da rota-->
+                  <a href="<%= home_bar_path("Uberlandia", destaque.name)%>" alt="<%= destaque.name %>" >
+
+                    <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+                    <% if destaque.logo_bar_image_file_size.nil? %>
+                        <% if destaque.name.length >= 17 %>
+                            <% title =  destaque_name %>
+                        <% end %>
+                        <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque_name %>" title="<%= title %>" />
+                    <% else %>
+                        <% if destaque.name.length >= 17 %>
+                            <% title =  destaque_name %>
+                        <% end %>
+                        <%= image_tag destaque.logo_bar_image.url(:thumb), :alt => destaque_name, :title => title %>
+                    <% end %>
+
+                    <h5><%= destaque.name.truncate(16) %></h5>
+
+                  </a>
+
+                </div>
+            <% end %>
+
+            <!--imagem para todos os estabelecimentos da categoria-->
             <div class="principal-destaques">
-
               <!--todo now - arrumar chamada da rota-->
-              <a href="<%= home_bar_path("Uberlandia", destaque.name)%>" alt="<%= destaque.name %>" >
+              <a href="<%= category_path("Uberlandia", category.name) %>">
 
-                <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
-                <% if destaque.logo_bar_image_file_size.nil? %>
-                    <% if destaque.name.length >= 17 %>
-                        <% title =  destaque_name %>
+                <% category_name =  category.name %>
+                <% title =  "" %>
+
+                <!-- todo seb now - add img certa na pasta - do tamanho certo pra essa pagina -->
+                <% if category.category_image_file_size.nil? %>
+                    <% if category.name.length >= 17 %>
+                        <% title =  category_name %>
                     <% end %>
-                    <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque_name %>" title="<%= title %>" />
+                    <img src="<%= image_path "category0.jpg" %>" alt="<%= category_name %>" title="<%= title %>" />
                 <% else %>
-                    <% if destaque.name.length >= 17 %>
-                        <% title =  destaque_name %>
+                    <% if category.name.length >= 17 %>
+                        <% title =  category_name %>
                     <% end %>
-                    <%= image_tag destaque.logo_bar_image.url(:thumb), :alt => destaque_name, :title => title %>
+                    <%= image_tag category.category_image.url(:thumb), :alt => category_name, :title => title %>
                 <% end %>
 
-                <h5><%= destaque.name.truncate(16) %></h5>
-
+                <h5> <%= category.name.truncate(16) %> </h5>
               </a>
-
             </div>
+
+            <hr style="margin-bottom: 25px;"/>
+
         <% end %>
-
-        <div class="principal-destaques">
-          <!--todo now - arrumar chamada da rota-->
-          <a href="<%= category_path("Uberlandia", "Bares") %>">
-            <%= image_tag @principal.all_homes_image.url(:thumb)  %>
-            <!-- todo seb now - mudar txt -->
-            <h5> <%= I18n.t("principal.index.all_bars") %> </h5>
-          </a>
-        </div>
-
       </nav>
 
       <% @all_active_bars.each_with_index do |active_bar, index| %>
           <!-- dados para mapa -->
           <script type="text/javascript">
-    //        todo now - a cada bar ativo, tenho q passar o id da cidad desse bar pra pegar a cidade dakele bar especifico
+            //        todo now - a cada bar ativo, tenho q passar o id da cidad desse bar pra pegar a cidade dakele bar especifico
             local[<%= index %>] = '<%= active_bar.address + ", " + active_bar.number.to_s + ", " + @current_city_from_bar.name %>';
           </script>
       <% end %>

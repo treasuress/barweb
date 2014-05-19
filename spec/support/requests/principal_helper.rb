@@ -33,7 +33,6 @@ def fill_in_principal
   attach_file("principal_contact_image", IMAGE_EXAMPLE)
   attach_file("principal_follow_fb_image", IMAGE_EXAMPLE)
   attach_file("principal_follow_tw_image", IMAGE_EXAMPLE)
-  attach_file("principal_all_homes_image", IMAGE_EXAMPLE)
 
   click_button "Criar Página Principal"
 end

@@ -272,9 +272,10 @@ pt-BR:
         contact_image: "Imagem Contato"
         follow_fb_image: "Imagem Facebook"
         follow_tw_image: "Imagem Twitter"
-        all_homes_image: "Imagem Todas as Homes"
         created_at: "CADASTRADO EM"
         updated_at: "ATUALIZADO EM"
+
+        activate_message: "Status alterado com sucesso!"
       home_bar:
         id: "ID"
         category: "Categoria"
@@ -308,9 +309,10 @@ pt-BR:
     delete: "Remover"
     deactivate: "Desativar"
     activate: "Ativar"
+    pending: "Pendente"
     delete_confirmation: "Você tem certeza que deseja remover este item?"
-    activate_confirmation: "Você tem certeza que deseja ativar esta loja?"
-    deactivate_confirmation: "Você tem certeza que deseja desativar esta loja?"
+    activate_confirmation: "Você tem certeza que deseja ativar este item?"
+    deactivate_confirmation: "Você tem certeza que deseja desativar este item?"
     new_model: "Novo(a) %{model}"
     create_model: "Novo(a) %{model}"
     edit_model: "Editar %{model}"
@@ -358,7 +360,6 @@ pt-BR:
 # parte web
   principal:
     index:
-      all_bars: "Todos os bares!"
       galley_image_name: "Fotos"
       events_image_name: "Eventos"
       contact_image_name: "Contato"

@@ -1,31 +1,22 @@
 class PrincipalController < ApplicationController
 
+  #todo now - fazer busca com tdu q precisa ao inves d fazer um mont d consultas.
+  #fazer consulta q pega td q precisa pra usar akih
+
   def index
     get_principal
     get_active_bars
 
+    @active_categories_with_bar = Category.getActiveCategoryWithBar
+
+
     #todo futuro - talvez dah pra colokr até rand() em application pra poder usar em homeBar/all qndo for buscar randomicamente lá
     #Seleciona 7 bares aleatoriamente - mysql
-    #todo now - pegar categoria dinamicamente
-    @home_bars = get_bars_from_category(1).all(:order => 'RAND()', :limit => 7)
 
-
-
-
-    #@categories_show = Category.active
-    #todo now - pegar aqui todas as categorias q tem algum bar cadastrado e usar na busca get_bars..
-    #todo now - ver se tah vindo soh as categorias ativas
-    #todo now - ver se tah vindo soh as q tem pelo menos um bar cadastrado
-    #@categories_show = @categories_show.getCategoryWithBar
-    #todo now - ver pq n tah dando certo jah q no banco dah
-    #@categories_show = Category.getCategoryWithBar
-
-    #todo now -
-    #preciso d pegar tdas as categorias ativas
-    #preciso do nome das categorias ativas
-    #aí preciso de 7 bares de cada categoria
-
-    #@home_bars = get_bars_from_category(get_active_categories).all(:order => 'RAND()', :limit => 7)
+    @active_categories_with_bar.each_with_index do |category, index|
+      #todo now - acho q tem q gravar em um vetor e pegar em vetor na index dps
+      @home_bars = get_bars_from_category(index).all(:order => 'RAND()', :limit => 7)
+    end
 
 
 
@@ -39,6 +30,7 @@ class PrincipalController < ApplicationController
     #@bar_name = HomeBar.find_by_name(params[:name])
 
     #todo now - preciso pegar tdos os ids de cidades, como faz? - acho q tem q fazer a busca junto com a q busca os bares pra ser cidad do bar certo
+    #todo now - acho q pod usar a mesma busca do home bars, mas sem a part d ordenacao e limite - ou seja, fazer a busca generica separada
     get_current_city_from_bar(@all_active_bars.first.city_id)
 
   end
