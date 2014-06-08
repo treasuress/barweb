@@ -24,7 +24,10 @@ ActiveAdmin.register HomeBar do
     default_actions
   end
 
-  #todo we - colokr botao para cadastrar novo bar no show
+  action_item :only => :show do
+    link_to "Novo Estabelecimento", 'new'
+  end
+
   show do
     attributes_table do
       row :id
