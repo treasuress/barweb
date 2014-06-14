@@ -63,8 +63,11 @@ ActiveAdmin.register HomeBar do
       f.input :country, :include_blank => false
       f.input :state, :include_blank => false
       f.input :city, :include_blank => false
+      #todo - colokr logradouto ao inves d endereço
       f.input :address
+      #todo - colokr campo menor pq tah mt feio
       f.input :number
+      #todo - colokr menor e tdos do mesmo tamanho
       f.input :neighborhood
       f.input :complement
     end
