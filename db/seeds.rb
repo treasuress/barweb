@@ -63,7 +63,7 @@ As comidas, bebidas, músicas e decoração mudam de acordo com a bandeira içad
                        {:status_id => 1, :category_id => 1, :name => "Nome bar 11", :description => "descricao bar 11", :phone_number => "", :cellphone_number => "", :zip => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar 11", :number => "1123", :neighborhood => "bairro bar 11", :complement => "complemento bar 11" },
 
                        #Sem descrição, cep, telefone e complemento - bar 1
-                       {:status_id => 1, :category_id => 1, :name => "Rock'n Beer", :logo_bar_image => File.open('public/home_bars/bar2.png'), :country_id => 1, :state_id => 1, :city_id => 1, :address => "Av. Floriano Peixoto", :number => "18", :neighborhood => "Centro" },
+                       {:status_id => 1, :category_id => 1, :name => "Rock'n Beer", :logo_bar_image => File.open('public/home_bars/bar2.png'), :country_id => 1, :state_id => 1, :city_id => 2, :address => "Av. Floriano Peixoto", :number => "18", :neighborhood => "Centro" },
 
                        #Sem descrição, cep, telefone e complemento - bar 2
                        {:status_id => 1, :category_id => 2, :name => "Othello Bar e Restaurante", :logo_bar_image => File.open('public/home_bars/bar5.jpg'), :country_id => 1, :state_id => 1, :city_id => 1, :address => "Avenida Segismundo Pereira", :number => "169", :neighborhood => "Santa Monica" },

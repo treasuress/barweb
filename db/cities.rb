@@ -9,7 +9,8 @@ def create_cities
     current_state = State.find_by_iso("MG")
 
     City.create([
-                    {:name => "Uberlândia", :state_id => current_state}
+                    {:name => "Uberlândia", :state_id => current_state},
+                    {:name => "Uberaba", :state_id => current_state}
                 ])
 
     end
