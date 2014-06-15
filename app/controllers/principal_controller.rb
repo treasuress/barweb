@@ -9,19 +9,7 @@ class PrincipalController < ApplicationController
 
     @active_categories_with_bar = Category.getActiveCategoryWithBar
 
-
-    #todo futuro - talvez dah pra colokr até rand() em application pra poder usar em homeBar/all qndo for buscar randomicamente lá
-    #Seleciona 7 bares aleatoriamente - mysql
-
-    @active_categories_with_bar.each_with_index do |category, index|
-      #todo now - acho q tem q gravar em um vetor e pegar em vetor na index dps
-      @home_bars = get_bars_from_category(index).all(:order => 'RAND()', :limit => 7)
-    end
-
-
-
     #@home_bar = HomeBar.find_by_name(get_current_bar_name)
-
 
     #Filtros de Busca
     #todo futuro - acho q dev fikr em application e passar o resultado pra renderizadao do header já q a busca ficará lá

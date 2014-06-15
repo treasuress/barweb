@@ -55,13 +55,16 @@
 
         <hr class="line"/>
 
-        <% @active_categories_with_bar.each do |category| %>
+        <% @active_categories_with_bar.each_with_index do |category, index| %>
 
             <a href="<%= category_path("Uberlandia", category.name) %>" alt="<%= category.name %>" style="width: <%= category.name.length %>%;display: block;" >
                 <h4 style="color: midnightblue;"><%= category.name %></h4>
             </a>
 
-            <% @home_bars.each do |destaque| %>
+            <!--Seleciona 7 bares aleatoriamente de cada categoria - mysql-->
+            <% @all = get_bars_from_category(category.id).all(:order => 'RAND()', :limit => 7) %>
+
+            <% @all.each do |destaque| %>
 
                 <% destaque_name =  destaque.name %>
                 <% title =  "" %>
