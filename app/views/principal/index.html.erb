@@ -125,11 +125,12 @@
         <% end %>
       </nav>
 
+      <!--todo now - fazer mapa aparecer de forma que mostre tdos os pontos do mapa-->
+      <!-- dados para mapa -->
       <% @all_active_bars.each_with_index do |active_bar, index| %>
-          <!-- dados para mapa -->
+          <% city = City.getCityName(active_bar.city_id.to_s) %>
           <script type="text/javascript">
-            //        todo now - a cada bar ativo, tenho q passar o id da cidad do bar pra pegar o nome da cidade do bar especifico
-            local[<%= index %>] = '<%= active_bar.address + ", " + active_bar.number.to_s + ", " + @current_city_from_bar.name %>';
+            local[<%= index %>] = '<%= active_bar.address + ", " + active_bar.number.to_s + ", " + city.name %>';
           </script>
       <% end %>
 
