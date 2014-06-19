@@ -26,11 +26,15 @@ class ApplicationController < ActionController::Base
     @current_state = State.getStateIso(state_id)
   end
 
-  def get_current_city
-    if !params[:city_name].nil?
-      @current_city = City.find_by_name(params[:city_name])
-    end
+  def get_current_city(city_id)
+    @current_city = City.getCityName(city_id)
   end
+
+  #def get_current_city
+  #  if !params[:city_name].nil?
+  #    @current_city = City.find_by_name(params[:city_name])
+  #  end
+  #end
 
   def get_current_category
     if !params[:category_name].nil?
@@ -56,12 +60,6 @@ class ApplicationController < ActionController::Base
 
   def get_bars_from_category(category_id)
     @bars_from_category = HomeBar.all_by_category(category_id)
-  end
-
-
-  helper_method  :get_current_city_from_bar
-  def get_current_city_from_bar(city_id)
-    @current_city_from_bar = City.getCityName(city_id)
   end
 
   protect_from_forgery
