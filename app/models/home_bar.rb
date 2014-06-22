@@ -43,6 +43,10 @@ class HomeBar < ActiveRecord::Base
     active.where(:category_id => category_id)
   end
 
+  def self.all_by_category_and_city(category_id, city_id)
+    active.where(:category_id => category_id, :city_id => city_id)
+  end
+
   #def self.all_by_category(category_id)
   #  result = []
   #  category_id.each do |category|

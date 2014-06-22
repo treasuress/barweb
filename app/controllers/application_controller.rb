@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :get_principal, :get_active_bars, :get_active_categories,
                 :get_current_country, :get_current_state, :get_current_city, :get_current_category, :get_current_bar,
                 :get_current_category_by_id,
-                :get_bars_from_category
+                :get_bars_from_category, :get_bars_from_category_and_city
 
   def get_principal
     @principal = Principal.active.first
@@ -60,6 +60,10 @@ class ApplicationController < ActionController::Base
 
   def get_bars_from_category(category_id)
     @bars_from_category = HomeBar.all_by_category(category_id)
+  end
+
+  def get_bars_from_category_and_city(category_id, city_id)
+    @bars_from_category_and_city = HomeBar.all_by_category_and_city(category_id, city_id)
   end
 
   protect_from_forgery
