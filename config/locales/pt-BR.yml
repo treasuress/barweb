@@ -296,7 +296,7 @@ pt-BR:
         updated_at: "ATUALIZADO EM"
 
         general_information: "Informações Gerais"
-        address: "Endereço"
+        all_address: "Endereço"
 
 
   active_admin:

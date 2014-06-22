@@ -81,4 +81,4 @@ ActiveAdmin.register Principal do
 
 end
 
-#todo we - colokr pra pessoa poder visualizar a pagina antes de criar - precisa do fancybox
+#todo we - colokr pra pessoa poder visualizar a pagina antes de criar - fancybox

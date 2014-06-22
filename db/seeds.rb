@@ -46,7 +46,6 @@ if Rails.env.development?
                      ], :without_protection => true)
   end
 
-  #todo now - ver se isso aqui faz sentido ainda
   #Creating Home Bars examples
   if HomeBar.all.size == 0
     HomeBar.create([

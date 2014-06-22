@@ -18,7 +18,10 @@ ActiveAdmin.register HomeBar do
       image_tag(record.logo_bar_image.url(:thumb))
     end
 
-    #todo we - colokr akih forma de mudar o status dos bares
+    #todo we - colokr akih forma de mudar o status dos bares - criar janela com combo de opcoes: ativar, inativar, pendente
+    #se pendente, ativar?   ativa   : inativo - tem q ter como cancelar
+    #se inativo,  ativar?   ativa   : pendente
+    #se ativo,    inativar? inativa : pendente
     column :status
 
     default_actions
@@ -57,17 +60,16 @@ ActiveAdmin.register HomeBar do
       f.input :cellphone_number, :as => :phone, :placeholder => "(034) 99898-9898"
     end
 
-    f.inputs I18n.t("activerecord.attributes.home_bar.address"), :multipart => true do
+    f.inputs I18n.t("activerecord.attributes.home_bar.all_address"), :multipart => true do
       f.input :zip, :placeholder => "38400-000"
-      #todo we - colokr campos maiores pq tao mt feios
+      #todo we - colokr campos maiores pq tao mt feios - olhar no proj q muda interface do proj - acho q netsabr ou algo assim
       f.input :country, :include_blank => false
       f.input :state, :include_blank => false
       f.input :city, :include_blank => false
-      #todo - colokr logradouto ao inves d endereço
       f.input :address
-      #todo - colokr campo menor pq tah mt feio
+      #todo proj - colokr campo menor pq tah mt feio
       f.input :number
-      #todo - colokr menor e tdos do mesmo tamanho
+      #todo proj - colokr menor e tdos do mesmo tamanho
       f.input :neighborhood
       f.input :complement
     end
