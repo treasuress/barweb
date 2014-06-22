@@ -5,6 +5,8 @@ class CategoryController < ApplicationController
   end
 
   def show
+    #todo now - ver como procurar cidade corrent - ver se só descomentar metodo do application resolv
+    #todo now - ver se tem pagina pra outra cidad já criada, tem q criar qndo add cidad no script
     get_current_city
     get_current_category
 
