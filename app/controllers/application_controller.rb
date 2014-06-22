@@ -58,8 +58,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  #Seleciona 7 bares aleatoriamente de cada categoria - mysql
   def get_bars_from_category(category_id)
-    @bars_from_category = HomeBar.all_by_category(category_id)
+    @bars_from_category = HomeBar.all_by_category(category_id).all(:order => 'RAND()', :limit => 7)
   end
 
   def get_bars_from_category_and_city(category_id, city_id)

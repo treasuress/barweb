@@ -62,9 +62,7 @@
                 <h4 style="color: midnightblue;"><%= category.name %></h4>
             </a>
 
-            <!--todo now - acho q essas buscar deviam ser na controller-->
-            <!--Seleciona 7 bares aleatoriamente de cada categoria - mysql-->
-            <% @all = get_bars_from_category(category.id).all(:order => 'RAND()', :limit => 7) %>
+            <% @all = get_bars_from_category(category.id) %>
 
             <% @all.each do |destaque| %>
 
@@ -100,7 +98,6 @@
             <!--imagem para todos os estabelecimentos da categoria-->
             <div class="principal-destaques">
               <!--todo now - arrumar chamada da rota-->
-              <!--todo now - n está abrindo página de cada categoria-->
               <a href="<%= category_path("Uberlandia", category.name) %>">
 
                 <% category_name =  category.name %>
@@ -130,11 +127,11 @@
 
       <!-- dados para mapa -->
       <% @all_active_bars.each_with_index do |active_bar, index| %>
-          <!--todo now - acho q essa busca devia ser na controller-->
           <% city = City.getCityName(active_bar.city_id.to_s) %>
           <script type="text/javascript">
             local[<%= index %>] = '<%= active_bar.address + ", " + active_bar.number.to_s + ", " + city.name %>';
           </script>
+
       <% end %>
 
     </section>
