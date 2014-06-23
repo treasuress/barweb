@@ -240,6 +240,7 @@ pt-BR:
     models:
       admin_user: "Administrador"
       category: "Categoria"
+      city: "Cidade"
       home_bar: "Estabelecimento"
       principal: "Página Principal"
     attributes:
@@ -259,6 +260,12 @@ pt-BR:
         description: "Descrição"
         active: "Ativo"
         category_image: "Imagem"
+        created_at: "CADASTRADO EM"
+        updated_at: "ATUALIZADO EM"
+      city:
+        id: "ID"
+        state: "Estado"
+        name: "Nome"
         created_at: "CADASTRADO EM"
         updated_at: "ATUALIZADO EM"
       principal:

@@ -1,0 +1,145 @@
+<!--todo now! - personalizar isso melhor pra td estar por cidad (tah td pra principal)-->
+<!--todo now! - pegar part q vai c realment igual em tdas e colocar em um arquivo separado pra chamar em kda pagina q for necessario-->
+
+<% if !@principal.blank? && !@principal.nil? %>
+
+    <!--todo now test - ver pra q serv o type -->
+    <%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @title, :type => 'principal'} %>
+
+    <section class="principal" style="display: inline-block;">
+
+      <!--todo now! - fazer breadcrumb ficar pra cima igual nas outras paginas -->
+      <div class="breadcrumb">
+        <%= link_to I18n.t("breadcrumb_principal"), principal_path %> <span class="next" />
+        <%= link_to params[:city_name], principal_path %>
+      </div>
+
+      <hr class="line"/>
+
+      <script type="text/javascript">
+          local = new Array();
+      </script>
+
+      <div id="map_canvas" style="height: 200px; width: 100%;margin-top: 1%;"></div>
+
+      <hr/>
+
+      <h2><%= @principal.description %></h2>
+
+      <nav>
+        <div class="principal-links" style="margin-left: 4%;">
+          <!--<a href="<%= principal_gallery_path %>">-->
+          <%= image_tag @principal.gallery_image.url(:thumb), :alt => I18n.t("principal.index.galley_image_name") %>
+          <h4><%= I18n.t("principal.index.galley_image_name") %></h4>
+          <!--</a>-->
+        </div>
+
+        <div class="principal-links">
+          <!--<a href="<%= principal_events_path %>">-->
+          <%= image_tag @principal.events_image.url(:thumb), :alt => I18n.t("principal.index.events_image_name") %>
+          <h4><%= I18n.t("principal.index.events_image_name") %></h4>
+          <!--</a>-->
+        </div>
+
+        <div class="principal-links">
+          <a href="<%= principal_contact_path %>">
+            <%= image_tag @principal.contact_image.url(:thumb), :alt => I18n.t("principal.index.contact_image_name") %>
+            <h4><%= I18n.t("principal.index.contact_image_name") %></h4>
+          </a>
+        </div>
+
+        <div style="display: table-caption;font-size: 14px;">
+          <!-- todo fim now - colocar links -->
+          <!-- todo futuro - colokr do g+ -->
+          <%= image_tag @principal.follow_fb_image.url(:thumb), :class=>"principal-links social", :alt => I18n.t("principal.index.follow_image_fb_name") %>
+          <%= image_tag @principal.follow_tw_image.url(:thumb), :class=>"principal-links social", :style => "padding-top:0; padding-bottom:0;", :alt => I18n.t("principal.index.follow_image_tw_name") %>
+          <h4 class="principal-links" style="padding-top:5px"><%= I18n.t("principal.index.follow_image_name") %></h4>
+        </div>
+
+        <hr class="line"/>
+
+        <!--todo now - ver se tenho q filtrar por cidad aqui-->
+        <% @active_categories_with_bar.each_with_index do |category, index| %>
+
+            <a href="<%= category_path("Uberlandia", category.name) %>" alt="<%= category.name %>" style="width: <%= category.name.length %>%;display: block;" >
+                <h4 style="color: midnightblue;"><%= category.name %></h4>
+            </a>
+
+            <% @all = get_bars_from_category(category.id) %>
+
+            <% @all.each do |destaque| %>
+
+                <% destaque_name =  destaque.name %>
+                <% title =  "" %>
+
+                <!--7 estabelecimentos da categoria-->
+                <div class="principal-destaques">
+
+                  <!--todo now - arrumar chamada da rota-->
+                  <a href="<%= home_bar_path("Uberlandia", destaque.name)%>" alt="<%= destaque.name %>" >
+
+                    <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+                    <% if destaque.logo_bar_image_file_size.nil? %>
+                        <% if destaque.name.length >= 17 %>
+                            <% title =  destaque_name %>
+                        <% end %>
+                        <img src="<%= image_path "bar0.jpg" %>" alt="<%= destaque_name %>" title="<%= title %>" />
+                    <% else %>
+                        <% if destaque.name.length >= 17 %>
+                            <% title =  destaque_name %>
+                        <% end %>
+                        <%= image_tag destaque.logo_bar_image.url(:thumb), :alt => destaque_name, :title => title %>
+                    <% end %>
+
+                    <h5><%= destaque.name.truncate(16) %></h5>
+
+                  </a>
+
+                </div>
+            <% end %>
+
+            <!--imagem para todos os estabelecimentos da categoria-->
+            <div class="principal-destaques">
+              <!--todo now - arrumar chamada da rota-->
+              <a href="<%= category_path("Uberlandia", category.name) %>">
+
+                <% category_name =  category.name %>
+                <% title =  "" %>
+
+                <!-- todo seb now - add img certa na pasta - do tamanho certo pra essa pagina -->
+                <% if category.category_image_file_size.nil? %>
+                    <% if category.name.length >= 17 %>
+                        <% title =  category_name %>
+                    <% end %>
+                    <img src="<%= image_path "category0.jpg" %>" alt="<%= category_name %>" title="<%= title %>" />
+                <% else %>
+                    <% if category.name.length >= 17 %>
+                        <% title =  category_name %>
+                    <% end %>
+                    <%= image_tag category.category_image.url(:thumb), :alt => category_name, :title => title %>
+                <% end %>
+
+                <h5> <%= category.name.truncate(16) %> </h5>
+              </a>
+            </div>
+
+            <hr style="margin-bottom: 25px;"/>
+
+        <% end %>
+      </nav>
+
+      <!-- dados para mapa -->
+      <% @all_active_bars.each_with_index do |active_bar, index| %>
+          <% city = City.getCityName(active_bar.city_id.to_s) %>
+          <script type="text/javascript">
+            local[<%= index %>] = '<%= active_bar.address + ", " + active_bar.number.to_s + ", " + city.name %>';
+          </script>
+
+      <% end %>
+
+    </section>
+
+<% else %>
+    <% ContactMailer.alert_when_error_should_never_happen("Não tem nenhuma página principal ativa cadastrada - PRINCIPAL!!!").deliver %>
+    <%= render :partial => "layouts/page_not_found_error_404" %>
+<% end %>
