@@ -3,7 +3,7 @@ class City < ActiveRecord::Base
 
   belongs_to :state
   has_many :home_bars
-  
+
   validates_presence_of :name
 
   def self.getCityName(city_id)

@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
                 :get_current_category_by_id,
                 :get_bars_from_category, :get_bars_from_category_and_city
 
+  #todo now = mudar busca qndo tiver só uma principal ativa
   def get_principal
     @principal = Principal.active.first
   end

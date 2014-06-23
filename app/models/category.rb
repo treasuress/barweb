@@ -30,13 +30,14 @@ class Category < ActiveRecord::Base
   end
 
   #todo now - tem q buscar apenas os bares ativos - n tem? - ver ond está usando isso
+  #todo now - ver se precisa dessa busca já q a q tah em home bars parec igual
   def self.getActiveCategoryWithBar
-    find_by_sql("select * from  home_bars h, categories c where c.active = true and c.id = h.category_id group by c.name")
+    find_by_sql("select * from home_bars h, categories c where c.active = true and c.id = h.category_id group by c.name")
   end
 
   #todo tirar se n for mesm usar - seria usado pra busca do show da categoria, mas parec q n precisa
   #def getBarsWithActiveCategoryAndCity(city_id)
-  #  @all_bars_from_category_and_city = find_by_sql("select * from  home_bars h, cities city, categories c where c.active = true and c.id = h.category_id and city.id = h.city_id and city.id = " + city_id + " and c.id = h.category_id")
+  #  @all_bars_from_category_and_city = find_by_sql("select * from home_bars h, cities city, categories c where c.active = true and c.id = h.category_id and city.id = h.city_id and city.id = " + city_id)
   #end
 
 end
