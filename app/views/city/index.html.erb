@@ -8,7 +8,7 @@
 
     <section class="principal" style="display: inline-block;">
 
-      <!--todo now! - fazer breadcrumb ficar pra cima igual nas outras paginas -->
+      <!--todo now! - fazer breadcrumb ficar pra cima igual nas outras paginas - criar novo estilo para pagina d cidad -->
       <div class="breadcrumb">
         <%= link_to I18n.t("breadcrumb_principal"), principal_path %> <span class="next" />
         <%= link_to params[:city_name], principal_path %>
@@ -28,21 +28,21 @@
 
       <nav>
         <div class="principal-links" style="margin-left: 4%;">
-          <!--<a href="<%= principal_gallery_path %>">-->
+          <!--<a href="<%= home_city_gallery_path %>">-->
           <%= image_tag @principal.gallery_image.url(:thumb), :alt => I18n.t("principal.index.galley_image_name") %>
           <h4><%= I18n.t("principal.index.galley_image_name") %></h4>
           <!--</a>-->
         </div>
 
         <div class="principal-links">
-          <!--<a href="<%= principal_events_path %>">-->
+          <!--<a href="<%= home_city_events_path %>">-->
           <%= image_tag @principal.events_image.url(:thumb), :alt => I18n.t("principal.index.events_image_name") %>
           <h4><%= I18n.t("principal.index.events_image_name") %></h4>
           <!--</a>-->
         </div>
 
         <div class="principal-links">
-          <a href="<%= principal_contact_path %>">
+          <a href="<%= home_city_contact_path %>">
             <%= image_tag @principal.contact_image.url(:thumb), :alt => I18n.t("principal.index.contact_image_name") %>
             <h4><%= I18n.t("principal.index.contact_image_name") %></h4>
           </a>
@@ -58,6 +58,7 @@
 
         <hr class="line"/>
 
+        <!--todo now - acho q nessa busca preciso q retorne as categ ativas e na prox os bares das categorias, acho q n tah sendo assim-->
         <!--todo now - ver se tenho q filtrar por cidad aqui-->
         <% @active_categories_with_bar.each_with_index do |category, index| %>
 
@@ -129,10 +130,10 @@
       </nav>
 
       <!-- dados para mapa -->
-      <% @all_active_bars.each_with_index do |active_bar, index| %>
-          <% city = City.getCityName(active_bar.city_id.to_s) %>
+      <% @all_bars_from_city.each_with_index do |bars_from_city, index| %>
+          <% city = City.getCityName(bars_from_city.city_id.to_s) %>
           <script type="text/javascript">
-            local[<%= index %>] = '<%= active_bar.address + ", " + active_bar.number.to_s + ", " + city.name %>';
+            local[<%= index %>] = '<%= bars_from_city.address + ", " + bars_from_city.number.to_s + ", " + city.name %>';
           </script>
 
       <% end %>

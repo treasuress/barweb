@@ -7,7 +7,7 @@ Barweb::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
 
-  #PÁGINA PRINCIPAL GERAL
+  #PÁGINA PRINCIPAL - GERAL
 
   get "/" => "principal#index", :as => :principal
 
@@ -24,8 +24,14 @@ Barweb::Application.routes.draw do
 
 
   #PÁGINA PRINCIPAL - POR CIDADE
-
   get "/:city_name" => "city#index", :as => :home_city
+
+
+  get "/:city_name/contato" => "city#contact", :as => :home_city_contact
+
+  get "/:city_name/fotos" => "city#gallery", :as => :home_city_gallery
+
+  get "/:city_name/eventos" => "city#events", :as => :home_city_events
 
 
   #PÁGINA DE TODAS AS CATEGORIAS CADASTRADAS - POR CIDADE
@@ -41,13 +47,13 @@ Barweb::Application.routes.draw do
   get "/:city_name/:bar_name" => "home_bar#index", :as => :home_bar
 
 
+
   #PÁGINAS PAGAS - SÓ SÃO MOSTRADAS PARA ESTABELECIMENTOS QUE PAGAREM
 
 
-  #OBS: SE SÓ A GENTE FOR MEXER NO ADMIN, NÃO PRECISA DE SUPER ADMIN PARA SEPARAR ISSO, CASO CONTRÁRIO, PRECISA!
+  #todo - OBS: SE SÓ A GENTE FOR MEXER NO ADMIN, NÃO PRECISA DE SUPER ADMIN PARA SEPARAR ISSO, CASO CONTRÁRIO, PRECISA!
 
-  # TODO futuro - PEGAR TXT do banco PRA pegar txts dinamicamente e CRIAR SÓ UM ARQUIVO
-  get "/:city_name/:bar_name/contato" => "home_bar#contact", :as => :home_bar_contac
+  get "/:city_name/:bar_name/contato" => "home_bar#contact", :as => :home_bar_contact
 
   get "/:city_name/:bar_name/fotos" => "home_bar#gallery", :as => :home_bar_gallery
 

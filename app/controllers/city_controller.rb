@@ -3,9 +3,13 @@ class CityController < ApplicationController
     get_principal
     get_active_bars
 
-    @active_categories_with_bar = Category.getActiveCategoryWithBar
-    #todo now! - ver pq n tah fazendo essa busca, ver o q ela retorna
-    #@active_categories_with_bar = HomeBar.all_by_city(1)
+    #todo now - está retornando bar q n é d udia (no banco retorna certo)
+    #@active_categories_with_bar = Category.getBarsWithActiveCategoryAndCity("1")
+    get_bars_from_city("1")
+
+    #todo now - ver diferenca das consultas, ver qual está certa
+    #@active_categories_with_bar = get_bars_from_city("1")
+    @active_categories_with_bar = Category.getBarsWithActiveCategoryAndCity("1")
 
   end
 

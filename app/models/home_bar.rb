@@ -12,9 +12,6 @@ class HomeBar < ActiveRecord::Base
 
   validates_presence_of :name, :address, :number, :neighborhood, :country_id, :state_id, :city_id, :category_id, :status_id
 
-  #todo now - n pod ter mesm nome d bar na mesma cidad, em cidad diferente pod
-  validates_uniqueness_of :name
-
   validates_format_of :phone_number, :cellphone_number, :allow_blank => true, :with => /\A\(\d{3}\) \d{4,5}-\d{4}\Z/, :message => "Formato correto: (099) 9999-9999 ou (099) 09999-9999"
   validates_format_of :zip, :allow_blank => true, :with => /\A\d{5}-\d{3}\Z/, :message => "Formato correto: 38400-000"
 
@@ -43,6 +40,13 @@ class HomeBar < ActiveRecord::Base
     active.where(:category_id => category_id)
   end
 
+  #todo now - ver se está usando em algum lugar
+  def self.all_by_city(city_id)
+    active.where(:city_id => city_id)
+  end
+
+  #todo now - colokr: categoria = ativa, h.category_id = c.id group by name
+  #todo - fazer join com categoria pra poder validar c ela está ativa e excluir a busca igual essa q está em category getActiveCategoryWithBar
   def self.all_by_category_and_city(category_id, city_id)
     active.where(:category_id => category_id, :city_id => city_id)
   end
@@ -54,7 +58,5 @@ class HomeBar < ActiveRecord::Base
   #  end
   #  result
   #end
-
-  #<!-- todo futuro - adicionar busca por cidad -->
 
 end

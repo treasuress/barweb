@@ -1,9 +1,10 @@
 class ApplicationController < ActionController::Base
 
   helper_method :get_principal, :get_active_bars, :get_active_categories,
+                :get_bars_from_category, :get_bars_from_city, :get_bars_from_category_and_city,
                 :get_current_country, :get_current_state, :get_current_city, :get_current_category, :get_current_bar,
-                :get_current_category_by_id,
-                :get_bars_from_category, :get_bars_from_category_and_city
+                :get_current_category_by_id
+
 
   #todo now = mudar busca qndo tiver só uma principal ativa
   def get_principal
@@ -19,6 +20,21 @@ class ApplicationController < ActionController::Base
   end
 
 
+  #Seleciona 7 bares aleatoriamente de cada categoria - mysql
+  def get_bars_from_category(category_id)
+    @all_bars_from_category = HomeBar.all_by_category(category_id).all(:order => 'RAND()', :limit => 7)
+  end
+
+  def get_bars_from_city(city_id)
+    @all_bars_from_city = HomeBar.all_by_city(city_id)
+  end
+
+  #todo now - ver se buscar pra cima podem ser usadas - deletar essa, n tah usando em nenhum lugar
+  def get_bars_from_category_and_city(category_id, city_id)
+    @all_bars_from_category_and_city = HomeBar.all_by_category_and_city(category_id, city_id)
+  end
+
+
   def get_current_country(country_id)
     @current_country = Country.getCountryName(country_id)
   end
@@ -28,7 +44,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_current_city_by_id(city_id)
-    @current_city = City.getCityName(city_id)
+    @current_city_by_id = City.getCityName(city_id)
   end
 
   def get_current_city
@@ -59,14 +75,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  #Seleciona 7 bares aleatoriamente de cada categoria - mysql
-  def get_bars_from_category(category_id)
-    @bars_from_category = HomeBar.all_by_category(category_id).all(:order => 'RAND()', :limit => 7)
-  end
-
-  def get_bars_from_category_and_city(category_id, city_id)
-    @bars_from_category_and_city = HomeBar.all_by_category_and_city(category_id, city_id)
-  end
 
   protect_from_forgery
 end

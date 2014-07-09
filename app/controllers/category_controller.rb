@@ -12,8 +12,7 @@ class CategoryController < ApplicationController
     #todo futuro - colokr busca aleatoria aqui qndo for colokr varios tipos d ordenacao
     #Busca estabelecimentos por categoria - ordem alfabética
     if(!@current_category.nil?)
-      #todo now - verifica se o bar está ativo, mas n verifica se a categoria está ativa - verificar!
-      @bars_from_category_and_city = get_bars_from_category_and_city(@current_category.id, @current_city.id).all.sort! { |a, b| a['name'].downcase <=> b['name'].downcase }
+      @all_bars_from_category_and_city = get_bars_from_category_and_city(@current_category.id, @current_city.id).all.sort! { |a, b| a['name'].downcase <=> b['name'].downcase }
     end
   end
 

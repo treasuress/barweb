@@ -1,4 +1,4 @@
-<% if !@bars_from_category_and_city.nil? && !@bars_from_category_and_city.blank? %>
+<% if !@all_bars_from_category_and_city.nil? && !@all_bars_from_category_and_city.blank? %>
 
     <% @title = @current_category.name + I18n.t("category.show.title") + @current_city.name %>
 
@@ -22,7 +22,7 @@
       <h1><%= @current_category.name + I18n.t("category.show.title") + @current_city.name %></h1>
 
       <nav>
-        <% @bars_from_category_and_city.each do |destaque| %>
+        <% @all_bars_from_category_and_city.each do |destaque| %>
             <% destaque_name =  destaque.name %>
             <% title =  "" %>
 
