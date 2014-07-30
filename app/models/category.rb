@@ -38,11 +38,23 @@ class Category < ActiveRecord::Base
   end
 
   #todo now - ver forma melhor d procurar por homeBars ativos
+  def self.getBarsWithActiveCategory
+    find_by_sql("select * from home_bars h, categories c where c.active = true and h.status_id = 1 and c.id = h.category_id")
+  end
+
+  #todo now - ver forma melhor d procurar por homeBars ativos
   #todo now - ver q q tah retornando aqui
   #todo - busca parecida no show da categoria
   def self.getBarsWithActiveCategoryAndCity(city_id)
     #retorna soh os restaurantes no banco, mas na tela retorna ok
     find_by_sql("select * from home_bars h, cities city, categories c where c.active = true and h.status_id = 1 and c.id = h.category_id and city.id = h.city_id and city.id = " + city_id + " group by c.name")
+    #retorna ok no banco, mas na tela n
+    #find_by_sql("select * from home_bars h, cities city, categories c where c.active = true and h.status_id = 1 and c.id = h.category_id and city.id = h.city_id and city.id = " + city_id )
+  end
+
+  def self.getBarsWithActiveCategoryAndCity2(city_id)
+    #retorna soh os restaurantes no banco, mas na tela retorna ok
+    find_by_sql("select * from home_bars h, cities city, categories c where c.active = true and h.status_id = 1 and c.id = h.category_id and city.id = h.city_id and city.id = " + city_id)
     #retorna ok no banco, mas na tela n
     #find_by_sql("select * from home_bars h, cities city, categories c where c.active = true and h.status_id = 1 and c.id = h.category_id and city.id = h.city_id and city.id = " + city_id )
   end

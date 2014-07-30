@@ -127,7 +127,7 @@
       </nav>
 
       <!-- dados para mapa -->
-      <% @all_active_bars.each_with_index do |active_bar, index| %>
+      <% @all_bars_from_active_categories.each_with_index do |active_bar, index| %>
           <% city = City.getCityName(active_bar.city_id.to_s) %>
           <script type="text/javascript">
             local[<%= index %>] = '<%= active_bar.address + ", " + active_bar.number.to_s + ", " + city.name %>';
