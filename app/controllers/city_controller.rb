@@ -1,8 +1,8 @@
 class CityController < ApplicationController
   def index
     get_principal
-    get_active_bars
 
+    #todo now - talvez precise d relacionar com bar para a categoria n ficar vazia qndo aparecer
     @active_categories_with_city = Category.getCategoryWithCity("1")
 
     #Busca para mapa

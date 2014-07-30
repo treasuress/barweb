@@ -1,18 +1,17 @@
 class ApplicationController < ActionController::Base
 
-  helper_method :get_principal, :get_active_bars, :get_active_categories,
+  helper_method :get_principal, :get_active_categories,
                 :get_bars_from_category, :get_bars_from_city, :get_bars_from_category_and_city, :get_bars_from_category_and_city_limit,
                 :get_current_country, :get_current_state, :get_current_city, :get_current_category, :get_current_bar,
                 :get_current_category_by_id
 
 
+  #todo now - verificar quais buscas estao sendo usadas em mais d uma pagina,
+  #as q estiverem, continuam aqui, as q n estiverem, colokr na pagina adequada
+
   #todo now - mudar busca qndo tiver só uma principal ativa
   def get_principal
     @principal = Principal.active.first
-  end
-
-  def get_active_bars
-    @all_active_bars = HomeBar.active
   end
 
   def get_active_categories
