@@ -18,11 +18,38 @@ ActiveAdmin.register HomeBar do
       image_tag(record.logo_bar_image.url(:thumb))
     end
 
-    #todo we - colokr akih forma de mudar o status dos bares - criar janela com combo de opcoes: ativar, inativar, pendente
-    #se pendente, ativar?   ativa   : inativo - tem q ter como cancelar
-    #se inativo,  ativar?   ativa   : pendente
-    #se ativo,    inativar? inativa : pendente
+
+    #todo now - colokr em negrito o status atual ou tirar já q a pessoa seleciona em qual status ver
     column :status
+
+    #colokr partial aqui para escolher estatus do bar
+    #todo now - n sei pq n tah aparecendo certo já q parece estar tao certo
+    #todo now - colokr link para mudar status realment, pra pelo menos ver se vai dar certo
+    column :status do |record|
+      #if record.status_id = 2 || record.status_id = 3
+      if record.bar_pending? || record.bar_inactive?
+        #todo now - colokr pra alterar status
+        link_to I18n.t('activerecord.attributes.home_bar.activate')
+
+
+        #link_to I18n.t('active_admin.active'), :method => :put, :data => { :confirm => "Deseja alterar o status deste estabelecimento?" }, :class => "member_link view_link"
+        #:status_id => 1, :confirm => "Deseja ativar este estabelecimento?" }, :class => "member_link view_link"
+        #link_to (record.active? ? I18n.t('active_admin.active') : I18n.t('active_admin.inactive')), change_status_admin_principal_path(record), :method => :put, :data => { :confirm => "Deseja alterar o status deste estabelecimento?" }, :class => "member_link view_link"
+        #link_to (record.status_id = 2 ? I18n.t('active_admin.active') : I18n.t('active_admin.inactive')), change_status_admin_status_path(record), :method => :put, :data => { :confirm => "Deseja alterar o status deste estabelecimento?" }, :class => "member_link view_link"
+      end
+      if record.bar_active?
+        link_to I18n.t('activerecord.attributes.home_bar.deactivate')
+      end
+    end
+
+    column :status do |record|
+      if record.bar_inactive? || record.bar_active?
+        link_to I18n.t('activerecord.attributes.home_bar.keep_pending')
+      end
+      if record.bar_pending?
+        link_to I18n.t('activerecord.attributes.home_bar.deactivate')
+      end
+    end
 
     default_actions
   end
@@ -56,20 +83,21 @@ ActiveAdmin.register HomeBar do
       f.input :name
       f.input :description, :as => :text, :input_html => { :maxlength => 227, :style => "resize:none" }
       f.input :logo_bar_image
-      f.input :phone_number, :as => :phone, :placeholder => "(034) 3232-3232" #todo futuro , :collection => ['Sugestão', 'Crítica', 'Elogio', 'Outro']
+      #todo now - devia aparecer mascara qndo a pessoa digita
+      f.input :phone_number, :as => :phone, :placeholder => "(034) 3232-3232" #todo futuro , :collection => ['Sugestão', 'Crítica', 'Elogio', 'Outro'] - escolher tipo de telefone q será add
+
       f.input :cellphone_number, :as => :phone, :placeholder => "(034) 99898-9898"
     end
 
     f.inputs I18n.t("activerecord.attributes.home_bar.all_address"), :multipart => true do
+      #todo now - devia aparecer mascara qndo a pessoa digita
       f.input :zip, :placeholder => "38400-000"
-      #todo we - colokr campos maiores pq tao mt feios - olhar no proj q muda interface do proj - acho q netsabr ou algo assim
+
       f.input :country, :include_blank => false
       f.input :state, :include_blank => false
       f.input :city, :include_blank => false
       f.input :address
-      #todo proj - colokr campo menor pq tah mt feio
       f.input :number
-      #todo proj - colokr menor e tdos do mesmo tamanho
       f.input :neighborhood
       f.input :complement
     end
