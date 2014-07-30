@@ -21,7 +21,6 @@ class Category < ActiveRecord::Base
     where(:active => false)
   end
 
-  #todo now - essas buscas n deviam fikr em application controller? senao, as q estao lah deviam estar em outro lugar
   #ver busca de cidad em otros projs
   def self.getCategoryName(category_id)
     where(:id => category_id.to_s)["name".to_i]
@@ -31,6 +30,7 @@ class Category < ActiveRecord::Base
     active.where(:id => category_id.to_s["name".to_i])
   end
 
+  #todo now - verificar tdas essas buscas c deviam estar aqui, se estao sendo usadas e se podem ser melhoradas
 
   #todo now - ver forma melhor d procurar por homeBars ativos
   def self.getActiveCategoryWithBar
@@ -40,6 +40,10 @@ class Category < ActiveRecord::Base
   #todo now - ver forma melhor d procurar por homeBars ativos
   def self.getBarsWithActiveCategory
     find_by_sql("select * from home_bars h, categories c where c.active = true and h.status_id = 1 and c.id = h.category_id")
+    #HomeBar.active.joins(:category).where(:category_id => true).where(:category_id => "home_bars.home_bars_id")
+    #HomeBar.active.where(:category_id => true, :category_id => "home_bars.home_bars_id")
+
+    #HomeBar.active.joins {category}.where{ (:category_id == true) & (:category_id == "home_bars.home_bars_id") }
   end
 
   #todo now - ver forma melhor d procurar por homeBars ativos

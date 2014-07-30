@@ -3,6 +3,7 @@ class PrincipalController < ApplicationController
   def index
     get_principal
 
+    #todo now - talvez precise d relacionar com bar para a categoria n ficar vazia qndo aparecer
     @active_categories = Category.active
 
 

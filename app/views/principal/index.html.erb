@@ -55,7 +55,6 @@
 
         <hr class="line"/>
 
-        <!--todo now - ver se tenho q filtrar por cidad aqui-->
         <% @active_categories.each_with_index do |category, index| %>
 
             <!--todo now - pegar cidad do bar pra colokr na rota-->
@@ -64,6 +63,8 @@
             </a>
 
             <% @all_bars = get_bars_from_category(category.id) %>
+
+            <!--todo now - verificar aqui se a categoria possui algum bar, se possuir, colokr nome da categoria, caso contrario, pular pra prox-->
 
             <% @all_bars.each do |destaque| %>
 
