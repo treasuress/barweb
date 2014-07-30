@@ -6,7 +6,7 @@ def create_countries
     if Country.all.size == 0
 
       Country.create([
-                         {:iso => "BR", :name => "Brasil"}
+                         {:name => "Brasil", :iso => "BR"}
                      ])
     end
 
