@@ -81,8 +81,8 @@ module Barweb
         :port => 587,
         :domain => 'gmail.com',
         #todo rodar - seu usuario e senha aqui (quem está enviando)
-        :user_name => 'usuario_email',
-        :password => 'senha email',
+        :user_name => 'email_user',
+        :password => 'email_password',
         :authentication => 'plain',
         :enable_starttls_auto => true
     } # Para debug apenas, é melhor que a linha abaixo seja adicionado apenas no ambiente de desenvolvimento
