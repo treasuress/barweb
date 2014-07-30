@@ -8,7 +8,7 @@ class Principal < ActiveRecord::Base
 
   validates_attachment_presence :logo_image, :gallery_image, :events_image, :contact_image, :follow_fb_image, :follow_tw_image
 
-  #todo seb now - colokr tamanho certo da logo
+  #todo now - colokr tamanho certo da logo
   has_attached_file :logo_image,
                     :styles => {:medium => "400x300#", :thumb => "100x100#"},
                     :url => "/assets/principals/:id/images/logo_:style.:extension",
@@ -35,6 +35,9 @@ class Principal < ActiveRecord::Base
                     :path => ":rails_root/public/assets/principals/:id/images/follow_tw_:style.:extension"
 
 
+  before_save :verify_actives
+
+
   def change_status!
     self.active = !self.active?
     save!
@@ -54,5 +57,30 @@ class Principal < ActiveRecord::Base
     where(:active => false)
   end
 
-  #TODO we futuro: vitrine ou faq - PERMITIR QUE APENAS UMA FIQUE ATIVA - antes d gravar, buscar tdos e ver se tem algum ativo
+
+
+  private
+
+  #TODO we futuro: - PERMITIR QUE APENAS UMA FIQUE ATIVA - antes d gravar, buscar tdos e ver se tem algum ativo
+  def verify_actives
+    unique = Principal.active
+    if unique != 0
+
+      #if confirm("Apenas 1 página principal deve permanecer ativa, desaja que esta seja a página principal ativa?")
+      #  unique.active = false
+      #end
+
+      #link_to ("Mudar"), change_status_admin_principal_path(unique), :method => :put, :data => { :confirm => "Apenas 1 principal pode permanecer ativa. Deseja que esta seja a principal ativa?" }, :class => "member_link view_link"
+
+      #unique.active = false
+
+      #errors[:active] = Principal.active.first.active
+
+    else
+
+      #errors[:active] = unique
+    end
+  end
+
+
 end
