@@ -19,7 +19,7 @@
       <h1><%= @current_bar.name %></h1>
 
       <div class="info-bar">
-          <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+          <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
           <% if @current_bar.logo_bar_image_file_size.nil? %>
               <img src="<%= image_path "bar0.jpg" %>" class="no-image" alt="<%= @current_bar.name %>" />
           <% else %>
@@ -49,7 +49,7 @@
                     <%= " - " + @current_bar.complement.strip if !@current_bar.complement.blank? %>
               </h3>
               <h4>
-                <%= @current_city.name %>
+                <%= @current_city_by_id.name %>
                 - <%= @current_state.iso %>
                 - <%= @current_country.name %>
                 <%= "- " + I18n.t("home_bar.index.zip") + @current_bar.zip if !@current_bar.zip.blank? %>
@@ -76,7 +76,7 @@
       <!-- dados para mapa -->
       <script type="text/javascript">
           local = new Array();
-          local[0] = '<%= @current_bar.address + ", " + @current_bar.number.to_s + ", " + @current_city.name %>';
+          local[0] = '<%= @current_bar.address + ", " + @current_bar.number.to_s + ", " + @current_city_by_id.name %>';
       </script>
 
     </section>

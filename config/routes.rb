@@ -24,8 +24,8 @@ Barweb::Application.routes.draw do
 
 
   #PÁGINA PRINCIPAL - POR CIDADE
-  get "/:city_name" => "city#index", :as => :home_city
 
+  get "/:city_name" => "city#index", :as => :home_city
 
   get "/:city_name/contato" => "city#contact", :as => :home_city_contact
 
@@ -70,3 +70,6 @@ Barweb::Application.routes.draw do
 
 
 end
+
+#todo now! - n pod funcionar!
+#http://localhost:3000/Uberlandia/Rock'n%20Beer

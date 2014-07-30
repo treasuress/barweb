@@ -23,7 +23,7 @@
 
             <a href="<%= category_path(params[:city_name], category.name)%>">
 
-              <!-- todo seb now - add img certa na pasta - do tamanho certo pra essa pagina -->
+              <!-- todo now - add img certa na pasta - do tamanho certo pra essa pagina -->
               <% if category.category_image_file_size.nil? %>
                   <% if category.name.length >= 17 %>
                       <% title =  category_name %>

@@ -58,6 +58,7 @@
         <!--todo now - ver se tenho q filtrar por cidad aqui-->
         <% @active_categories_with_bar.each_with_index do |category, index| %>
 
+            <!--todo now - pegar cidad do bar pra colokr na rota-->
             <a href="<%= category_path("Uberlandia", category.name) %>" alt="<%= category.name %>" style="width: <%= category.name.length %>%;display: block;" >
                 <h4 style="color: midnightblue;"><%= category.name %></h4>
             </a>
@@ -72,7 +73,7 @@
                 <!--7 estabelecimentos da categoria-->
                 <div class="principal-destaques">
 
-                  <!--todo now - arrumar chamada da rota-->
+                  <!--todo now - arrumar chamada da rota - tem q pegar a busca do bar e pegar a cidad q está nela-->
                   <a href="<%= home_bar_path("Uberlandia", destaque.name)%>" alt="<%= destaque.name %>" >
 
                     <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->

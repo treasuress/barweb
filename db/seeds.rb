@@ -97,7 +97,3 @@ if Rails.env.test?
                       ], :without_protection => true)
     end
 end
-
-
-#todo now! - n pod funcionar!
-#http://localhost:3000/Uberlandia/Rock'n%20Beer

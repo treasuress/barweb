@@ -5,7 +5,6 @@ class CategoryController < ApplicationController
   end
 
   def show
-    #todo now - ver como procurar cidade corrent - ver se só descomentar metodo do application resolv
     get_current_city
     get_current_category
 
