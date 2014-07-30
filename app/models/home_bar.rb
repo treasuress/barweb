@@ -3,7 +3,7 @@ class HomeBar < ActiveRecord::Base
                   :address, :number, :complement, :zip, :neighborhood, :category_id, :status_id,
                   :country_id, :state_id, :city_id
 
-  belongs_to :principal
+  belongs_to :principal  #todo now - aih akih n teria isso pq a cidad teria
   belongs_to :category
   belongs_to :status
   belongs_to :country
@@ -36,17 +36,35 @@ class HomeBar < ActiveRecord::Base
     where(:status_id => Status.pending)
   end
 
-  def self.all_by_category(category_id)
-    active.where(:category_id => category_id)
+
+
+  #todo now - tentar n dxar fixo
+  #Status dos Estabelecimentos
+  def bar_active?
+    status_id == 1
   end
 
-  #todo now - ver se está usando em algum lugar
+  def bar_inactive?
+    status_id == 2
+  end
+
+  def bar_pending?
+    status_id == 3
+  end
+
+
+
+  #retorna ok
   def self.all_by_city(city_id)
     active.where(:city_id => city_id)
   end
 
-  #todo now - colokr: categoria = ativa, h.category_id = c.id group by name
-  #todo - fazer join com categoria pra poder validar c ela está ativa e excluir a busca igual essa q está em category getActiveCategoryWithBar
+  def self.all_by_category(category_id)
+    active.where(:category_id => category_id)
+  end
+
+  #todo now - colokr: categoria = ativa (join categoria), h.category_id = c.id group by name
+  #todo now - excluir a busca igual essa q está em category getActiveCategoryWithBar
   def self.all_by_category_and_city(category_id, city_id)
     active.where(:category_id => category_id, :city_id => city_id)
   end

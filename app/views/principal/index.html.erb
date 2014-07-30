@@ -56,16 +56,16 @@
         <hr class="line"/>
 
         <!--todo now - ver se tenho q filtrar por cidad aqui-->
-        <% @active_categories_with_bar.each_with_index do |category, index| %>
+        <% @active_categories.each_with_index do |category, index| %>
 
             <!--todo now - pegar cidad do bar pra colokr na rota-->
             <a href="<%= category_path("Uberlandia", category.name) %>" alt="<%= category.name %>" style="width: <%= category.name.length %>%;display: block;" >
                 <h4 style="color: midnightblue;"><%= category.name %></h4>
             </a>
 
-            <% @all = get_bars_from_category(category.id) %>
+            <% @all_bars = get_bars_from_category(category.id) %>
 
-            <% @all.each do |destaque| %>
+            <% @all_bars.each do |destaque| %>
 
                 <% destaque_name =  destaque.name %>
                 <% title =  "" %>

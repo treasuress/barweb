@@ -2,11 +2,8 @@ class PrincipalController < ApplicationController
 
   def index
     get_principal
-    get_active_bars
 
-    #todo now - acho q n dev tah fazendo a busca certo já q no city controller n tah
-    @active_categories_with_bar = Category.getActiveCategoryWithBar
-
+    @active_categories = Category.active
 
 
     #@home_bar = HomeBar.find_by_name(get_current_bar_name)
