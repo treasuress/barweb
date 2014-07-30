@@ -302,6 +302,9 @@ pt-BR:
         created_at: "CADASTRADO EM"
         updated_at: "ATUALIZADO EM"
 
+        activate: "Ativar"
+        deactivate: "Desativar"
+        keep_pending: "Manter perndente"
         general_information: "Informações Gerais"
         all_address: "Endereço"
 
