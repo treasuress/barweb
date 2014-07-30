@@ -1,17 +1,16 @@
-<!--todo now! - personalizar isso melhor pra td estar por cidad (tah td pra principal)-->
-<!--todo now! - pegar part q vai c realment igual em tdas e colocar em um arquivo separado pra chamar em kda pagina q for necessario-->
-
+<!--todo now - ver se rola colokr alguma parte em uma página separada pra só chamar aqui e na principal-->
 <% if !@principal.blank? && !@principal.nil? %>
 
     <!--todo now test - ver pra q serv o type -->
-    <%= render :partial => 'layouts/social', :locals => {:url => principal_path, :share_text => @title, :type => 'principal'} %>
+    <%= render :partial => 'layouts/social', :locals => {:url => home_city_path, :share_text => @title, :type => 'city'} %>
 
+    <!--todo seb now - criar estilo personalizado para cidade-->
     <section class="principal" style="display: inline-block;">
 
-      <!--todo now! - fazer breadcrumb ficar pra cima igual nas outras paginas - criar novo estilo para pagina d cidad -->
+      <!--todo seb now - fazer breadcrumb ficar pra cima igual nas outras paginas - criar novo estilo para pagina d cidad -->
       <div class="breadcrumb">
         <%= link_to I18n.t("breadcrumb_principal"), principal_path %> <span class="next" />
-        <%= link_to params[:city_name], principal_path %>
+        <%= params[:city_name] %>
       </div>
 
       <hr class="line"/>
@@ -58,15 +57,14 @@
 
         <hr class="line"/>
 
-        <!--todo now - acho q nessa busca preciso q retorne as categ ativas e na prox os bares das categorias, acho q n tah sendo assim-->
-        <!--todo now - ver se tenho q filtrar por cidad aqui-->
-        <% @active_categories_with_bar.each_with_index do |category, index| %>
+        <% @active_categories_with_city.each_with_index do |category, index| %>
 
-            <a href="<%= category_path("Uberlandia", category.name) %>" alt="<%= category.name %>" style="width: <%= category.name.length %>%;display: block;" >
+            <a href="<%= category_path(params[:city_name], category.name) %>" alt="<%= category.name %>" style="width: <%= category.name.length %>%;display: block;" >
                 <h4 style="color: midnightblue;"><%= category.name %></h4>
             </a>
 
-            <% @all = get_bars_from_category(category.id) %>
+            <!--todo now - n dxar cidad fixa akih-->
+            <% @all = get_bars_from_category_and_city_limit(category.id, 1) %>
 
             <% @all.each do |destaque| %>
 
@@ -76,10 +74,9 @@
                 <!--7 estabelecimentos da categoria-->
                 <div class="principal-destaques">
 
-                  <!--todo now - arrumar chamada da rota-->
-                  <a href="<%= home_bar_path("Uberlandia", destaque.name)%>" alt="<%= destaque.name %>" >
+                  <a href="<%= home_bar_path(params[:city_name], destaque.name)%>" alt="<%= destaque.name %>" >
 
-                    <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+                    <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
                     <% if destaque.logo_bar_image_file_size.nil? %>
                         <% if destaque.name.length >= 17 %>
                             <% title =  destaque_name %>
@@ -101,13 +98,12 @@
 
             <!--imagem para todos os estabelecimentos da categoria-->
             <div class="principal-destaques">
-              <!--todo now - arrumar chamada da rota-->
-              <a href="<%= category_path("Uberlandia", category.name) %>">
+              <a href="<%= category_path(params[:city_name], category.name) %>">
 
                 <% category_name =  category.name %>
                 <% title =  "" %>
 
-                <!-- todo seb now - add img certa na pasta - do tamanho certo pra essa pagina -->
+                <!-- todo now - add img certa na pasta - do tamanho certo pra essa pagina -->
                 <% if category.category_image_file_size.nil? %>
                     <% if category.name.length >= 17 %>
                         <% title =  category_name %>
@@ -141,6 +137,6 @@
     </section>
 
 <% else %>
-    <% ContactMailer.alert_when_error_should_never_happen("Não tem nenhuma página principal ativa cadastrada - PRINCIPAL!!!").deliver %>
+    <% ContactMailer.alert_when_error_should_never_happen("Não tem nenhuma página cidade ativa cadastrada - CIDADE!!!").deliver %>
     <%= render :partial => "layouts/page_not_found_error_404" %>
 <% end %>

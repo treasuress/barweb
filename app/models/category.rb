@@ -1,7 +1,7 @@
 class Category < ActiveRecord::Base
   attr_accessible :active, :name, :description, :category_image
 
-  has_many :home_bars
+  has_many :home_bars #todo now categoria n tem varios bares, a cidad q tem. categoria tem varias cidads
 
   validates_presence_of :name
 
@@ -21,6 +21,8 @@ class Category < ActiveRecord::Base
     where(:active => false)
   end
 
+  #todo now - essas buscas n deviam fikr em application controller? senao, as q estao lah deviam estar em outro lugar
+  #ver busca de cidad em otros projs
   def self.getCategoryName(category_id)
     where(:id => category_id.to_s)["name".to_i]
   end
@@ -29,14 +31,24 @@ class Category < ActiveRecord::Base
     active.where(:id => category_id.to_s["name".to_i])
   end
 
+
+  #todo now - ver forma melhor d procurar por homeBars ativos
   def self.getActiveCategoryWithBar
     find_by_sql("select * from home_bars h, categories c where c.active = true and h.status_id = 1 and c.id = h.category_id group by c.name")
   end
 
+  #todo now - ver forma melhor d procurar por homeBars ativos
   #todo now - ver q q tah retornando aqui
   #todo - busca parecida no show da categoria
   def self.getBarsWithActiveCategoryAndCity(city_id)
-    find_by_sql("select * from home_bars h, cities city, categories c where c.active = true and c.id = h.category_id and city.id = h.city_id and city.id = " + city_id + " group by c.name")
+    #retorna soh os restaurantes no banco, mas na tela retorna ok
+    find_by_sql("select * from home_bars h, cities city, categories c where c.active = true and h.status_id = 1 and c.id = h.category_id and city.id = h.city_id and city.id = " + city_id + " group by c.name")
+    #retorna ok no banco, mas na tela n
+    #find_by_sql("select * from home_bars h, cities city, categories c where c.active = true and h.status_id = 1 and c.id = h.category_id and city.id = h.city_id and city.id = " + city_id )
+  end
+
+  def self.getCategoryWithCity(city_id)
+    find_by_sql("select * from cities city, categories c where c.active = true and city.id = " + city_id + " group by c.name")
   end
 
 end

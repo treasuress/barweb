@@ -3,14 +3,13 @@ class CityController < ApplicationController
     get_principal
     get_active_bars
 
-    #todo now - está retornando bar q n é d udia (no banco retorna certo)
+    #todo now - ver diferenca das consultas, ver qual está certa
+    #acho q a 1a está mais certa, mas precisa faze o join com a categoria pra n dar pau
+    #@active_categories_with_bar = get_bars_from_city("1")
+    @active_categories_with_city = Category.getCategoryWithCity("1")
+
     #@active_categories_with_bar = Category.getBarsWithActiveCategoryAndCity("1")
     get_bars_from_city("1")
-
-    #todo now - ver diferenca das consultas, ver qual está certa
-    #@active_categories_with_bar = get_bars_from_city("1")
-    @active_categories_with_bar = Category.getBarsWithActiveCategoryAndCity("1")
-
   end
 
   def contact
