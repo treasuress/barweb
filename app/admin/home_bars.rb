@@ -18,17 +18,16 @@ ActiveAdmin.register HomeBar do
       image_tag(record.logo_bar_image.url(:thumb))
     end
 
-
-    #todo now - colokr em negrito o status atual ou tirar já q a pessoa seleciona em qual status ver
+    #todo seb now - colokr em negrito o status atual ou tirar já q a pessoa seleciona em qual status ver
     column :status
 
     #colokr partial aqui para escolher estatus do bar
-    #todo now - n sei pq n tah aparecendo certo já q parece estar tao certo
-    #todo now - colokr link para mudar status realment, pra pelo menos ver se vai dar certo
     column :status do |record|
-      #if record.status_id = 2 || record.status_id = 3
       if record.bar_pending? || record.bar_inactive?
         #todo now - colokr pra alterar status
+        #se n conseguir link, talvez consiga entrar na pagina d edicao, mudar o status e confirmar -
+        #se tiver algum dado obrigatorio n preenchido, dah msg d erro informando e falar q n foi possivel fazer a alteração
+
         link_to I18n.t('activerecord.attributes.home_bar.activate')
 
 
@@ -36,18 +35,20 @@ ActiveAdmin.register HomeBar do
         #:status_id => 1, :confirm => "Deseja ativar este estabelecimento?" }, :class => "member_link view_link"
         #link_to (record.active? ? I18n.t('active_admin.active') : I18n.t('active_admin.inactive')), change_status_admin_principal_path(record), :method => :put, :data => { :confirm => "Deseja alterar o status deste estabelecimento?" }, :class => "member_link view_link"
         #link_to (record.status_id = 2 ? I18n.t('active_admin.active') : I18n.t('active_admin.inactive')), change_status_admin_status_path(record), :method => :put, :data => { :confirm => "Deseja alterar o status deste estabelecimento?" }, :class => "member_link view_link"
-      end
-      if record.bar_active?
+
+      else if record.bar_active?
         link_to I18n.t('activerecord.attributes.home_bar.deactivate')
+           end
       end
     end
 
     column :status do |record|
       if record.bar_inactive? || record.bar_active?
         link_to I18n.t('activerecord.attributes.home_bar.keep_pending')
-      end
-      if record.bar_pending?
+
+      else if record.bar_pending?
         link_to I18n.t('activerecord.attributes.home_bar.deactivate')
+           end
       end
     end
 

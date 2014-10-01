@@ -286,7 +286,7 @@ pt-BR:
       home_bar:
         id: "ID"
         category: "Categoria"
-        name: "Nome do Estabelecimento"
+        name: "Nome"
         description: "Descrição"
         logo_bar_image: "Imagem"
         phone_number: "Telefone para Contato"
@@ -363,6 +363,7 @@ pt-BR:
       general: "Todos"
       active: "Ativos"
       inactive: "Inativos"
+      pending: "Pendentes"
       super_users: "Super Adminstradores"
       normal_users: "Lojas"
 
