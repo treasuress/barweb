@@ -49,7 +49,7 @@ h1 {
     height: 283px;
     width: 421px;
 }
-/*todo now - arrumar estilo d breadcrumb em otros tamanhos d tela*/
+/*todo seb - arrumar estilo d breadcrumb em otros tamanhos d tela*/
 .breadcrumb{
     margin-top: 1.5%;
 }
@@ -253,7 +253,7 @@ header img {
         margin-right: 2%;
         width: auto;
     }
-    /*todo now - centralizar imgs dos bares*/
+    /*todo seb - centralizar imgs dos bares*/
     .principal .principal-links img{
         width: 85px;
         height: 85px;
@@ -264,7 +264,7 @@ header img {
     }
 }
 @media (max-width : 480px){
-    /*todo now futuro - centralizar imgs d contato, etc*/
+    /*todo seb futuro - centralizar imgs d contato, etc*/
     .principal .principal-links img{
         width: 100px;
         height: 100px;
@@ -455,7 +455,7 @@ header img {
         /*height: 90%;*/
     }
 }
-/*todo now - arrumar estilo do botao em otros tamanho d tela*/
+/*todo seb - arrumar estilo do botao em otros tamanho d tela*/
 .contact input[type="submit"]{
     border-radius: 5px;
     padding: 2px 4px;

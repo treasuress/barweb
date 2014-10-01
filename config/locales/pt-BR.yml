@@ -240,6 +240,7 @@ pt-BR:
     models:
       admin_user: "Administrador"
       category: "Categoria"
+      city: "Cidade"
       home_bar: "Estabelecimento"
       principal: "Página Principal"
     attributes:
@@ -259,6 +260,12 @@ pt-BR:
         description: "Descrição"
         active: "Ativo"
         category_image: "Imagem"
+        created_at: "CADASTRADO EM"
+        updated_at: "ATUALIZADO EM"
+      city:
+        id: "ID"
+        state: "Estado"
+        name: "Nome"
         created_at: "CADASTRADO EM"
         updated_at: "ATUALIZADO EM"
       principal:
@@ -295,8 +302,11 @@ pt-BR:
         created_at: "CADASTRADO EM"
         updated_at: "ATUALIZADO EM"
 
+        activate: "Ativar"
+        deactivate: "Desativar"
+        keep_pending: "Manter perndente"
         general_information: "Informações Gerais"
-        address: "Endereço"
+        all_address: "Endereço"
 
 
   active_admin:
@@ -307,8 +317,8 @@ pt-BR:
     view: "Visualizar"
     edit: "Editar"
     delete: "Remover"
-    deactivate: "Desativar"
-    activate: "Ativar"
+    inactive: "Inativo"
+    active: "Ativo"
     pending: "Pendente"
     delete_confirmation: "Você tem certeza que deseja remover este item?"
     activate_confirmation: "Você tem certeza que deseja ativar este item?"

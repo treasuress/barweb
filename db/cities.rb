@@ -8,8 +8,10 @@ def create_cities
     #Minas Gerais
     current_state = State.find_by_iso("MG")
 
+    #todo now - algum otro prog - n está gravando estado - tem tabela de estado - ver esse state_id
     City.create([
-                    {:name => "Uberlândia", :state_id => current_state}
+                    {:name => "Uberlândia", :state => current_state},
+                    {:name => "Uberaba", :state => current_state}
                 ])
 
     end

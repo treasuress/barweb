@@ -1,8 +1,8 @@
-<% if !@bars_from_category.nil? && !@bars_from_category.blank? %>
+<% if !@all_bars_from_category_and_city.nil? && !@all_bars_from_category_and_city.blank? %>
 
     <% @title = @current_category.name + I18n.t("category.show.title") + @current_city.name %>
 
-    <!-- todo futuro - colokr varios tipos de ordenação para encontrar os bares -->
+    <!-- todo futuro - colokr varios tipos de ordenação para encontrar os bares - se n conseguir fazer textbox, colokr links com tipos de ordenação -->
     <!-- todo now futuro - colokr qntidad d curtir, tw e comentario o bar teve em cada um
     <!-- todo futuro - pegar qntidad d comentario e curtir e tw e colokr em: bares mais comentados, etc -->
 
@@ -22,13 +22,13 @@
       <h1><%= @current_category.name + I18n.t("category.show.title") + @current_city.name %></h1>
 
       <nav>
-        <% @bars_from_category.each do |destaque| %>
+        <% @all_bars_from_category_and_city.each do |destaque| %>
             <% destaque_name =  destaque.name %>
             <% title =  "" %>
 
           <a href="<%= home_bar_path(params[:city_name], destaque.name) %>">
 
-            <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
+            <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
             <% if destaque.logo_bar_image_file_size.nil? %>
                 <% if destaque.name.length >= 17 %>
                     <% title =  destaque_name %>

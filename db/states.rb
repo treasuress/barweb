@@ -6,10 +6,10 @@ def create_states
     if State.all.size == 0
 
       #Brasil
-      current_Country = Country.find_by_iso("BR")
+      current_country = Country.find_by_iso("BR")
 
       State.create([
-                       {:iso => "MG", :name => "Minas Gerais", :country_id => current_Country}
+                       {:name => "Minas Gerais", :iso => "MG", :country => current_country}
                    ])
     end
 

@@ -27,3 +27,25 @@
 // .active_admin       applies to any Active Admin namespace
 // .admin_namespace    applies to the admin namespace (eg: /admin)
 // .other_namespace    applies to a custom namespace named other (eg: /other)
+
+
+//todo servidor - arquivo diferente, talvez por isso n esteja achando css qndo roda
+
+#home_bar_phone_number, #home_bar_cellphone_number{
+  width: 10.5%;
+  min-width: 90px;
+}
+
+#home_bar_zip, #home_bar_number {
+  width: 9.5%;
+  min-width: 82px;
+}
+
+#home_bar_country_id, #home_bar_city_id {
+  min-width: 103px;
+}
+
+#home_bar_neighborhood, #home_bar_complement{
+  width: 25.5%;
+  min-width: 217px;
+}

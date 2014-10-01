@@ -1,5 +1,5 @@
 class State < ActiveRecord::Base
-  attr_accessible :iso, :name, :country_id
+  attr_accessible :iso, :name, :country_id,   :id, :coutry
 
   belongs_to :country
   has_many :cities

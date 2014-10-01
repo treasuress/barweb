@@ -46,7 +46,6 @@ if Rails.env.development?
                      ], :without_protection => true)
   end
 
-  #todo now - ver se isso aqui faz sentido ainda
   #Creating Home Bars examples
   if HomeBar.all.size == 0
     HomeBar.create([
@@ -63,7 +62,7 @@ As comidas, bebidas, músicas e decoração mudam de acordo com a bandeira içad
                        {:status_id => 1, :category_id => 1, :name => "Nome bar 11", :description => "descricao bar 11", :phone_number => "", :cellphone_number => "", :zip => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar 11", :number => "1123", :neighborhood => "bairro bar 11", :complement => "complemento bar 11" },
 
                        #Sem descrição, cep, telefone e complemento - bar 1
-                       {:status_id => 1, :category_id => 1, :name => "Rock'n Beer", :logo_bar_image => File.open('public/home_bars/bar2.png'), :country_id => 1, :state_id => 1, :city_id => 1, :address => "Av. Floriano Peixoto", :number => "18", :neighborhood => "Centro" },
+                       {:status_id => 1, :category_id => 1, :name => "Rock'n Beer", :logo_bar_image => File.open('public/home_bars/bar2.png'), :country_id => 1, :state_id => 1, :city_id => 2, :address => "Av. Floriano Peixoto", :number => "18", :neighborhood => "Centro" },
 
                        #Sem descrição, cep, telefone e complemento - bar 2
                        {:status_id => 1, :category_id => 2, :name => "Othello Bar e Restaurante", :logo_bar_image => File.open('public/home_bars/bar5.jpg'), :country_id => 1, :state_id => 1, :city_id => 1, :address => "Avenida Segismundo Pereira", :number => "169", :neighborhood => "Santa Monica" },
@@ -81,10 +80,10 @@ As comidas, bebidas, músicas e decoração mudam de acordo com a bandeira içad
                        {:status_id => 1, :category_id => 1, :name => "Nome bar 7", :logo_bar_image => File.open('public/home_bars/bar7.jpg'), :phone_number => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar 7", :number => "723", :neighborhood => "bairro bar 7" },
 
                        #Inativo - Completo
-                       {:status_id => 2, :category_id => 1, :name => "Nome bar 9", :description => "descricao bar 9", :logo_bar_image => File.open('public/home_bars/bar9.jpg'), :phone_number => "", :cellphone_number => "", :zip => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar 9", :number => "923", :neighborhood => "bairro bar 9", :complement => "complemento bar 9" },
+                       {:status_id => 2, :category_id => 1, :name => "Nome bar inativo 9", :description => "descricao bar 9", :logo_bar_image => File.open('public/home_bars/bar9.jpg'), :phone_number => "", :cellphone_number => "", :zip => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar 9", :number => "923", :neighborhood => "bairro bar 9", :complement => "complemento bar 9" },
 
                        #Pendente - Completo
-                       {:status_id => 3, :category_id => 1, :name => "Nome bar 10", :description => "descricao bar 10", :logo_bar_image => File.open('public/home_bars/bar10.jpg'), :phone_number => "", :cellphone_number => "", :zip => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar 10", :number => "1023", :neighborhood => "bairro bar 10", :complement => "complemento bar 10" }
+                       {:status_id => 3, :category_id => 1, :name => "Nome bar pendente 10", :description => "descricao bar 10", :logo_bar_image => File.open('public/home_bars/bar10.jpg'), :phone_number => "", :cellphone_number => "", :zip => "", :country_id => 1, :state_id => 1, :city_id => 1, :address => "logradouro bar 10", :number => "1023", :neighborhood => "bairro bar 10", :complement => "complemento bar 10" }
 
                    ], :without_protection => true)
   end
