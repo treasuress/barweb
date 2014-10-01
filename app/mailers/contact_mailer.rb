@@ -9,7 +9,7 @@ class ContactMailer < ActionMailer::Base
   end
 
   def alert_when_error_should_never_happen(comment)
-    mail(:to => "lsiac.bar@gmail.com", :subject => "ERRO - " + comment, :body => comment)
+    mail(:to => "siac.bar@gmail.com", :subject => "ERRO - " + comment, :body => comment)
   end
 
 end
