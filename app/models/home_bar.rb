@@ -23,8 +23,6 @@ class HomeBar < ActiveRecord::Base
                     :path => ":rails_root/public/assets/home_bars/:id/images/logo_bar_:style.:extension"
 
 
-  #todo now - será q eu n devia colokr essas coisas d status na classe d status?
-
   #Buscas
   def self.active
     where(:status_id => Status.active)
@@ -39,8 +37,8 @@ class HomeBar < ActiveRecord::Base
   end
 
 
-
-  #todo now - tentar n dxar fixo - buscar pelo nome (pelo do arquivo d traducoes)
+  #todo now - tentar n dxar fixo - buscar pelo nome (pelo do arquivo d traducoes) -
+  #só daria c buscasse no banco fazendo join com a tabela de status
   #Status dos Estabelecimentos
   def bar_active?
     status_id == 1

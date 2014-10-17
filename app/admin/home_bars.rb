@@ -18,9 +18,6 @@ ActiveAdmin.register HomeBar do
       image_tag(record.logo_bar_image.url(:thumb))
     end
 
-    #todo seb now - colokr em negrito o status atual ou tirar já q a pessoa seleciona em qual status ver
-    column :status
-
     #colokr partial aqui para escolher estatus do bar
     column :status do |record|
       if record.bar_pending? || record.bar_inactive?
@@ -29,6 +26,7 @@ ActiveAdmin.register HomeBar do
         #se tiver algum dado obrigatorio n preenchido, dah msg d erro informando e falar q n foi possivel fazer a alteração
 
         link_to I18n.t('activerecord.attributes.home_bar.activate')
+
 
 
         #link_to I18n.t('active_admin.active'), :method => :put, :data => { :confirm => "Deseja alterar o status deste estabelecimento?" }, :class => "member_link view_link"
@@ -87,7 +85,12 @@ ActiveAdmin.register HomeBar do
       #todo now - devia aparecer mascara qndo a pessoa digita
       f.input :phone_number, :as => :phone, :placeholder => "(034) 3232-3232" #todo futuro , :collection => ['Sugestão', 'Crítica', 'Elogio', 'Outro'] - escolher tipo de telefone q será add
 
+
+      #todo now -  qndo conseguir colokr mascaram soh permitir numeros nos campos
+      #f.input :cellphone_number, :as => :phone, :input_html => {:"home_bar_cellphone_number-mask" => "(000) 0000-00009"}
       f.input :cellphone_number, :as => :phone, :placeholder => "(034) 99898-9898"
+
+
     end
 
     f.inputs I18n.t("activerecord.attributes.home_bar.all_address"), :multipart => true do
