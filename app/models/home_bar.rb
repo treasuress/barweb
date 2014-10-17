@@ -22,6 +22,7 @@ class HomeBar < ActiveRecord::Base
                     :url => "/assets/home_bars/:id/images/logo_bar_:style.:extension",
                     :path => ":rails_root/public/assets/home_bars/:id/images/logo_bar_:style.:extension"
 
+  #todo now seb - antes de salvar o bar, verificar se já tem um com o nome q está sendo salvo, se tiver, add um 2 no fim do nome?
 
   #Buscas
   def self.active

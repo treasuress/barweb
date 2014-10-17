@@ -3,8 +3,8 @@ def new_home_bar_hash
   {
       :status_id => 1,
       :category_id => 1,
-      :name => "Bares",
-      :description => "Todos os Bares",
+      :name => "Nome bar 1",
+      :description => "Bar 1",
       :logo_bar_image => File.new(IMAGE_EXAMPLE),
       :phone_number => "(034) 3234-8809",
       :cellphone_number => "(034) 3234-8809",
