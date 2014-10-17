@@ -21,7 +21,23 @@ function MostraPonto(lat, long)
     var marker = new google.maps.Marker({
         position: new google.maps.LatLng(lat, long),
         map: map
+//        ,
+//        todo now - criar icone para mapa
+//        todo now - add icone para mapa aqui
+//        icon: 'apps/assets/images/icon_map.png'
     });
+
+
+    //mostra informações do estabelecimento
+    var infowindow = new google.maps.InfoWindow(), marker;
+
+    google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+//            todo now - colokr nome do bar, tel, endereço
+            infowindow.setContent("Conteúdo do marcador.");
+            infowindow.open(map, marker);
+        }
+    })(marker))
 }
 
 <!-- Transforma endereço em latitude e latitude -->
