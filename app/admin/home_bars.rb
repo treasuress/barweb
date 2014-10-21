@@ -64,12 +64,10 @@ ActiveAdmin.register HomeBar do
       row :category
       row :name
       row :description
-
       row :logo_bar_image do |record|
         image_tag(record.logo_bar_image.url(:thumb))
       end
       rows :phone_number, :cellphone_number
-
       rows :address, :number, :complement, :zip
       rows :neighborhood, :city, :state, :country
     end
@@ -77,29 +75,21 @@ ActiveAdmin.register HomeBar do
 
   form :html => {:enctype => "multipart/form-data"} do |f|
     f.inputs I18n.t("activerecord.attributes.home_bar.general_information"), :multipart => true do
-      f.input :status, :include_blank => false
+      f.input :status,   :include_blank => false
       f.input :category, :include_blank => false, :collection => Category.active
       f.input :name
       f.input :description, :as => :text, :input_html => { :maxlength => 227, :style => "resize:none" }
       f.input :logo_bar_image
-      #todo now - devia aparecer mascara qndo a pessoa digita
-      f.input :phone_number, :as => :phone, :placeholder => "(034) 3232-3232" #todo futuro , :collection => ['Sugestão', 'Crítica', 'Elogio', 'Outro'] - escolher tipo de telefone q será add
-
-
-      #todo now -  qndo conseguir colokr mascaram soh permitir numeros nos campos
-      #f.input :cellphone_number, :as => :phone, :input_html => {:"home_bar_cellphone_number-mask" => "(000) 0000-00009"}
+      #todo now - ver como colokr esses campos nos tests (+cep)
+      f.input :phone_number,     :as => :phone, :placeholder => "(034) 3232-3232" #todo futuro , :collection => ['Comercial', 'Celular', 'Outro'] - escolher tipo de telefone q será add
       f.input :cellphone_number, :as => :phone, :placeholder => "(034) 99898-9898"
-
-
     end
 
     f.inputs I18n.t("activerecord.attributes.home_bar.all_address"), :multipart => true do
-      #todo now - devia aparecer mascara qndo a pessoa digita
-      f.input :zip, :placeholder => "38400-000"
-
+      f.input :zip, :placeholder => "38.400-000"
       f.input :country, :include_blank => false
-      f.input :state, :include_blank => false
-      f.input :city, :include_blank => false
+      f.input :state,   :include_blank => false
+      f.input :city,    :include_blank => false
       f.input :address
       f.input :number
       f.input :neighborhood

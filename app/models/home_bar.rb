@@ -12,8 +12,9 @@ class HomeBar < ActiveRecord::Base
 
   validates_presence_of :name, :address, :number, :neighborhood, :country_id, :state_id, :city_id, :category_id, :status_id
 
-  validates_format_of :phone_number, :cellphone_number, :allow_blank => true, :with => /\A\(\d{3}\) \d{4,5}-\d{4}\Z/, :message => "Formato correto: (099) 9999-9999 ou (099) 09999-9999"
-  validates_format_of :zip, :allow_blank => true, :with => /\A\d{5}-\d{3}\Z/, :message => "Formato correto: 38400-000"
+  #todo now - arrumar validacao para 4 ou 5 digitos no comeco do numero
+  validates_format_of :phone_number, :cellphone_number, :allow_blank => true, :with => /\A\(\d{3}\) \d{4}\-\d{4,5}\Z/, :message => "Formato correto: (099) 9999-9999 ou (099) 99999-9999"
+  validates_format_of :zip, :allow_blank => true, :with => /\A\d{2}.\d{3}\-\d{3}\Z/, :message => "Formato correto: 38.400-000"
 
   validates_presence_of :phone_number, :if => Proc.new { |bar| bar.cellphone_number.present? }
 
