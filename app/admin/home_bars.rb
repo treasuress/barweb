@@ -80,7 +80,6 @@ ActiveAdmin.register HomeBar do
       f.input :name
       f.input :description, :as => :text, :input_html => { :maxlength => 227, :style => "resize:none" }
       f.input :logo_bar_image
-      #todo now - ver como colokr esses campos nos tests (+cep)
       f.input :phone_number,     :as => :phone, :placeholder => "(034) 3232-3232" #todo futuro , :collection => ['Comercial', 'Celular', 'Outro'] - escolher tipo de telefone q será add
       f.input :cellphone_number, :as => :phone, :placeholder => "(034) 99898-9898"
     end

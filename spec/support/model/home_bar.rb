@@ -8,7 +8,7 @@ def new_home_bar_hash
       :logo_bar_image => File.new(IMAGE_EXAMPLE),
       :phone_number => "(034) 3234-8809",
       :cellphone_number => "(034) 3234-8809",
-      :zip => "38408-100",
+      :zip => "38.408-100",
       :country_id => 1,
       :state_id => 1,
       :city_id => 1,
