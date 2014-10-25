@@ -66,7 +66,7 @@ if Rails.env.development?
 Desfrute de um cardápio de bebidas e comida variado de qualidade, além de sempre ouvir os melhores",
                         :logo_bar_image => File.open("public/home_bars/bar1.jpg"),
                         :phone_number => "(034) 9173-2592", :cellphone_number => "(034) 8806-7612",
-                        :zip => "38408-100", :country_id => 1, :state_id => 1, :city_id => 1,
+                        :zip => "38.408-100", :country_id => 1, :state_id => 1, :city_id => 1,
                         :address => "Avenida João Naves de Ávila", :number => "123",
                         :neighborhood => "Saraiva", :complement => "complemento beco da canela" },
 
@@ -75,8 +75,8 @@ Desfrute de um cardápio de bebidas e comida variado de qualidade, além de semp
                         :description => "O Flag é um bar mutante.
 As comidas, bebidas, músicas e decoração mudam de acordo com a bandeira içada na nossa fachada.",
                         :logo_bar_image => File.open('public/home_bars/bar8.jpg'),
-                        :phone_number => "(034) 3234-8809", :cellphone_number => "", :zip => "38400-160",
-                        :country_id => 1, :state_id => 1, :city_id => 1,
+                        :phone_number => "(034) 3234-8809", :cellphone_number => "",
+                        :zip => "38.400-160", :country_id => 1, :state_id => 1, :city_id => 1,
                         :address => "Rua Barao de Camargos", :number => "193",
                         :neighborhood => "Centro", :complement => "complemento bar flag" },
 
