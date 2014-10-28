@@ -12,4 +12,8 @@ class City < ActiveRecord::Base
     where("id = " + city_id.to_s)["name".to_i]
   end
 
+  def self.find_by_home_bar(home_bar_name)
+    find_by_sql("select c.name from cities c, home_bars h where c.id = h.city_id and h.name = '#{home_bar_name}' ").first.name
+  end
+
 end
