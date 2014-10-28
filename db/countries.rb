@@ -8,9 +8,11 @@ def create_countries
       Country.create([
                          {:name => "Brasil", :iso => "BR"}
                      ])
+
+      puts "#{Country.all.count} pais(es) criado(s)"
     end
 
   end
+  create_states
 end
 
-create_states
