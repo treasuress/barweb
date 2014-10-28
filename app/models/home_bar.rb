@@ -39,7 +39,7 @@ class HomeBar < ActiveRecord::Base
   end
 
 
-  #todo now - tentar n dxar fixo - buscar pelo nome (pelo do arquivo d traducoes) -
+  #todo now seb - tentar n dxar fixo - buscar pelo nome (pelo do arquivo d traducoes) -
   #só daria c buscasse no banco fazendo join com a tabela de status
   #Status dos Estabelecimentos
   def bar_active?
