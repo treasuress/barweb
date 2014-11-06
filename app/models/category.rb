@@ -37,7 +37,7 @@ class Category < ActiveRecord::Base
     find_by_sql("select * from home_bars h, categories c where c.active = true and h.status_id = 1 and c.id = h.category_id group by c.name")
   end
 
-  #todo now - ver forma melhor d procurar por homeBars ativos
+  #todo now - correto - verificar se deve ficar aqui ou na model de home_bars
   def self.getBarsWithActiveCategory
     find_by_sql("select * from home_bars h, categories c where c.active = true and h.status_id = 1 and c.id = h.category_id")
     #HomeBar.active.joins(:category).where(:category_id => true).where(:category_id => "home_bars.home_bars_id")

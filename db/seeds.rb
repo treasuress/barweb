@@ -6,6 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+if Rails.env.development?
+  Country.delete_all
+  State.delete_all
+  City.delete_all
+end
+
 require_relative "countries.rb"
 require_relative "categories.rb"
 
@@ -25,7 +32,6 @@ if Rails.env.production?
 end
 
 if Rails.env.development?
-
   Category.delete_all
   Principal.delete_all
   HomeBar.delete_all
@@ -88,12 +94,13 @@ As comidas, bebidas, músicas e decoração mudam de acordo com a bandeira içad
                         :address => "logradouro bar 11", :number => "1123",
                         :neighborhood => "bairro bar 11", :complement => "complemento bar 11" },
 
-                       #Sem descrição, cep, telefone e complemento - bar 1
-                       {:status_id => 1, :category_id => 1, :name => "Rock'n Beer",
-                        :logo_bar_image => File.open('public/home_bars/bar2.png'),
-                        :country_id => 1, :state_id => 1, :city_id => 2,
-                        :address => "Av. Floriano Peixoto", :number => "18",
-                        :neighborhood => "Centro" },
+                       #todo now - apostrofe de nome tá atrapalhando na busca City.find_by_home_bar
+                       ##Sem descrição, cep, telefone e complemento - bar 1
+                       #{:status_id => 1, :category_id => 1, :name => "Rock'n Beer",
+                       # :logo_bar_image => File.open('public/home_bars/bar2.png'),
+                       # :country_id => 1, :state_id => 1, :city_id => 2,
+                       # :address => "Av. Floriano Peixoto", :number => "18",
+                       # :neighborhood => "Centro" },
 
                        #Sem descrição, cep, telefone e complemento - bar 2
                        {:status_id => 1, :category_id => 2, :name => "Othello Bar e Restaurante",
@@ -133,7 +140,7 @@ As comidas, bebidas, músicas e decoração mudam de acordo com a bandeira içad
                        {:status_id => 1, :category_id => 1, :name => "Nome bar 7",
                         :logo_bar_image => File.open('public/home_bars/bar7.jpg'),
                         :phone_number => "",
-                        :country_id => 1, :state_id => 1, :city_id => 1,
+                        :country_id => 1, :state_id => 1, :city_id => 2,
                         :address => "logradouro bar 7", :number => "723",
                         :neighborhood => "bairro bar 7" },
 

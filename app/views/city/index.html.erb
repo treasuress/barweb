@@ -56,6 +56,7 @@
 
         <hr class="line"/>
 
+        <!--todo now - ver se tem forma melhor de buscar essas categorias - com a busca dos bares agrupadas por categoria, por exemplo-->
         <% @active_categories_with_city.each_with_index do |category, index| %>
 
             <a href="<%= category_path(params[:city_name], category.name) %>" alt="<%= category.name %>" style="width: <%= category.name.length %>%;display: block;" >
