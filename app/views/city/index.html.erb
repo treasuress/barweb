@@ -127,6 +127,7 @@
         <% end %>
       </nav>
 
+      <!--todo now - fazer igual na busca de bares, pq acho q n dah pra n dxar fixo c a chamada da busca for na controller-->
       <!-- dados para mapa -->
       <% @all_bars_from_city.each_with_index do |bars_from_city, index| %>
           <% city = City.getCityName(bars_from_city.city_id.to_s) %>
