@@ -3,7 +3,6 @@ class State < ActiveRecord::Base
 
   belongs_to :country
   has_many :cities
-  has_many :home_bars
 
   validates_presence_of :iso, :name
 
