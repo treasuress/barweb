@@ -56,18 +56,18 @@
 
         <hr class="line"/>
 
+        <% @categories_with_city = Category.getCategoryWithCity(@current_city.id.to_s) %>
+
         <!--todo now - ver se tem forma melhor de buscar essas categorias - com a busca dos bares agrupadas por categoria, por exemplo-->
-        <% @active_categories_with_city.each_with_index do |category, index| %>
+        <% @categories_with_city.each_with_index do |category, index| %>
 
             <a href="<%= category_path(params[:city_name], category.name) %>" alt="<%= category.name %>" style="width: <%= category.name.length %>%;display: block;" >
                 <h4 style="color: midnightblue;"><%= category.name %></h4>
             </a>
 
-            <!--todo now - n dxar cidad fixa akih-->
-            <% @all_bars_by_city = get_bars_from_category_and_city_limit(category.id, 1) %>
+            <% @all_bars_by_city = get_bars_from_category_and_city_limit(category.id, @current_city.id.to_s) %>
 
             <!--todo now - verificar aqui se a categoria possui algum bar, se possuir, colokr nome da categoria, caso contrario, pular pra prox-->
-
             <% @all_bars_by_city.each do |destaque| %>
 
                 <% destaque_name =  destaque.name %>
@@ -76,6 +76,7 @@
                 <!--7 estabelecimentos da categoria-->
                 <div class="principal-destaques">
 
+                  <!--todo now - talvez n precise dessa funcao, dah pra pegar pelo @current_home_bar ou algo assim-->
                   <a href="<%= home_bar_path(get_current_city_by_home_bar(destaque.name), destaque.name)%>" alt="<%= destaque.name %>" >
 
                     <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
@@ -127,8 +128,8 @@
         <% end %>
       </nav>
 
-      <!--todo now - fazer igual na busca de bares, pq acho q n dah pra n dxar fixo c a chamada da busca for na controller-->
       <!-- dados para mapa -->
+      <% @all_bars_from_city = HomeBar.all_by_city(@current_city.id.to_s) %>
       <% @all_bars_from_city.each_with_index do |bars_from_city, index| %>
           <% city = City.getCityName(bars_from_city.city_id.to_s) %>
           <script type="text/javascript">

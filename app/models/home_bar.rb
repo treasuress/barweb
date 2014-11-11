@@ -61,9 +61,12 @@ class HomeBar < ActiveRecord::Base
   end
 
   #Cidade
-  #todo now - colokr: categoria = ativa (join categoria)
   def self.all_by_category_and_city(category_id, city_id)
     HomeBar.getActiveBarsWithActiveCategories.where(:category_id => category_id, :city_id => city_id)
+  end
+
+  def self.all_by_city(city_id)
+    HomeBar.getActiveBarsWithActiveCategories.where(:city_id => city_id)
   end
 
 end
