@@ -4,7 +4,7 @@ class PrincipalController < ApplicationController
     get_principal
 
     #todo now - talvez precise d relacionar com bar para a categoria n ficar vazia qndo aparecer
-    @active_categories = Category.active
+    get_active_categories
 
 
     #@home_bar = HomeBar.find_by_name(get_current_bar_name)
@@ -16,7 +16,7 @@ class PrincipalController < ApplicationController
 
 
     #Busca para mapa
-    @all_bars_from_active_categories = Category.getBarsWithActiveCategory
+    @all_bars_from_active_categories = HomeBar.getActiveBarsWithActiveCategories
   end
 
   def contact

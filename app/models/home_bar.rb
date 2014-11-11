@@ -6,8 +6,6 @@ class HomeBar < ActiveRecord::Base
   belongs_to :principal  #todo now - aih akih n teria isso pq a cidad teria
   belongs_to :category
   belongs_to :status
-  belongs_to :country
-  belongs_to :state
   belongs_to :city
 
   validates_presence_of :name, :address, :number, :neighborhood, :country_id, :state_id, :city_id, :category_id, :status_id
@@ -39,8 +37,7 @@ class HomeBar < ActiveRecord::Base
   end
 
 
-  #todo now seb - tentar n dxar fixo - buscar pelo nome (pelo do arquivo d traducoes) -
-  #só daria c buscasse no banco fazendo join com a tabela de status
+  #todo now seb - tentar n dxar fixo - buscar pelo nome do arquivo d traducoes e fazer join com a tabela de status
   #Status dos Estabelecimentos
   def bar_active?
     status_id == 1
@@ -54,35 +51,19 @@ class HomeBar < ActiveRecord::Base
     status_id == 3
   end
 
-
-
-  #retorna ok
-  def self.all_by_city(city_id)
-    active.where(:city_id => city_id)
-  end
-
+  #Principal
   def self.all_by_category(category_id)
     active.where(:category_id => category_id)
   end
 
-  #todo now - colokr: categoria = ativa (join categoria), h.category_id = c.id group by name
-  #todo now - excluir a busca igual essa q está em category getActiveCategoryWithBar
-  def self.all_by_category_and_city(category_id, city_id)
-    active.where(:category_id => category_id, :city_id => city_id)
+  def self.getActiveBarsWithActiveCategories
+    HomeBar.active.joins(:category).where(:'categories.active' => true)
   end
 
-  #def self.all_by_category(category_id)
-  #  result = []
-  #  category_id.each do |category|
-  #    result << where(:status_id => Status.active, :category_id => category)
-  #  end
-  #  result
-  #end
-
-
-
-  def self.getActiveCategoryWithBar
-    HomeBar.active.joins(:category).where(:category_id => true, :category_id => "home_bars.home_bars_id").group(:category_name)
+  #Cidade
+  #todo now - colokr: categoria = ativa (join categoria)
+  def self.all_by_category_and_city(category_id, city_id)
+    HomeBar.getActiveBarsWithActiveCategories.where(:category_id => category_id, :city_id => city_id)
   end
 
 end

@@ -55,14 +55,14 @@
 
         <hr class="line"/>
 
-        <% @active_categories.each_with_index do |category, index| %>
+        <% @all_active_categories.each_with_index do |category, index| %>
 
             <!--todo now - n dxar cidad fixa aqui-->
             <a href="<%= category_path("Uberlandia", category.name) %>" alt="<%= category.name %>" style="width: <%= category.name.length %>%;display: block;" >
                 <h4 style="color: midnightblue;"><%= category.name %></h4>
             </a>
 
-            <% @all_bars = get_bars_from_category(category.id) %>
+            <% @all_bars = get_bars_from_category_limit(category.id) %>
 
             <!--todo now - verificar aqui se a categoria possui algum bar, se possuir, colokr nome da categoria, caso contrario, pular pra prox-->
 
