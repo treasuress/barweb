@@ -5,7 +5,6 @@ def create_states
 
     if State.all.size == 0
 
-      #todo now - por algum motivo, qndo chega aqui, n tem nenhum pais cadastrado
       #Brasil
       current_country = Country.find_by_iso("BR")
       State.create([

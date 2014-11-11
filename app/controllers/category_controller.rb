@@ -8,7 +8,6 @@ class CategoryController < ApplicationController
     get_current_city
     get_current_category
 
-    #todo now - verificar se categoria está ativa
     #todo futuro - colokr busca aleatoria aqui qndo for colokr varios tipos d ordenacao
     #Busca estabelecimentos por categoria - ordem alfabética
     if(!@current_category.nil?)

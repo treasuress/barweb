@@ -76,6 +76,7 @@ ActiveAdmin.register HomeBar do
   form :html => {:enctype => "multipart/form-data"} do |f|
     f.inputs I18n.t("activerecord.attributes.home_bar.general_information"), :multipart => true do
       f.input :status,   :include_blank => false
+      #todo now - na hr d editar deve pegar só as categorias ativas?
       f.input :category, :include_blank => false, :collection => Category.active
       f.input :name
       f.input :description, :as => :text, :input_html => { :maxlength => 227, :style => "resize:none" }

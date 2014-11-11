@@ -3,6 +3,7 @@ require 'spec_helper'
 #todo now test - fazer testes cadastrando 2 bares e vendo c aparecem separados, cada um em uma página
 #todo now test - criar bar inativo e ver se aparece em alguma categoria
 #todo now test - fazer testes de tdas as views, mostrando o q devia e acessando url errada pra mostrar o q n exist e acessando url q n exist pra v o q acontec
+#todo now test - cadastrar 1 bar em uma cidad e 1 em outra e ver se mostra 2 qndo seleciona uma determinada categoria (categoria n seleciona por cidad)
 describe HomeBar do
 
   it "create HomeBar success - complete" do
