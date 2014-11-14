@@ -31,7 +31,6 @@ class Category < ActiveRecord::Base
   end
 
   #todo seb now - verificar se busca pode ser melhorada
-
   #todo now - talvez precise d relacionar com bar para a categoria n ficar vazia qndo aparecer
   def self.getCategoryWithCity(city_id)
     find_by_sql("select * from cities city, categories c where c.active = true and city.id = #{city_id} group by c.name")

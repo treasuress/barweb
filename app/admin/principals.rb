@@ -7,7 +7,7 @@ ActiveAdmin.register Principal do
     column :id
     column :title
     column :status do |record|
-      link_to (record.active? ? I18n.t('active_admin.active') : I18n.t('active_admin.inactive')), change_status_admin_principal_path(record), :method => :put, :data => { :confirm => "Deseja alterar o status deste estabelecimento?" }, :class => "member_link view_link"
+      link_to (record.active? ? I18n.t('active_admin.active') : I18n.t('active_admin.inactive')), change_status_admin_principal_path(record), :method => :put, :data => { :confirm => "Deseja alterar o status desta página principal?" }, :class => "member_link view_link"
     end
     column :logo_image do |record|
       image_tag(record.logo_image.url(:thumb))
