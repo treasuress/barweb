@@ -3,6 +3,7 @@ class City < ActiveRecord::Base
 
   belongs_to :state
   has_many :home_bars
+  belongs_to :principal
 
   #belongs_to :principal   ?
 
@@ -12,8 +13,10 @@ class City < ActiveRecord::Base
     where("id = " + city_id.to_s)["name".to_i]
   end
 
+  #todo now - melhorar busca - ver comando select em algum proj
   def self.find_by_home_bar(home_bar_name)
     find_by_sql("select c.name from cities c, home_bars h where c.id = h.city_id and h.name = '#{home_bar_name}' ").first.name
+    #City.joins(:home_bars).where(:id => :'home_bars.city_id', :'home_bars.name' => home_bar_name)
   end
 
 end

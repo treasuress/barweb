@@ -2,7 +2,7 @@ class Principal < ActiveRecord::Base
   attr_accessible :title, :description, :logo_image, :gallery_image, :events_image, :contact_image,
                   :follow_fb_image, :follow_tw_image, :active
 
-  has_many :home_bars
+  has_many :cities
 
   validates_presence_of :title
 
