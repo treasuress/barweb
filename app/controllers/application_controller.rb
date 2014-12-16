@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
                 :get_current_city_by_home_bar
 
 
-  #todo now - verificar quais buscas estao sendo usadas em mais d uma pagina,
+  #todo fim - verificar quais buscas estao sendo usadas em mais d uma pagina,
   #as q estiverem, continuam aqui, as q n estiverem, colokr na pagina adequada
 
   def get_principal

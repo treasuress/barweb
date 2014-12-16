@@ -55,6 +55,8 @@
 
         <hr class="line"/>
 
+
+
         <% @all_active_categories.each_with_index do |category, index| %>
 
             <!--todo now - n dxar cidad fixa aqui - categoria n tem cidad -->
@@ -63,13 +65,14 @@
             </a>
 
             <% @all_bars = get_bars_from_category_limit(category.id) %>
-
-            <!--todo now - verificar aqui se a categoria possui algum bar, se possuir, colokr nome da categoria, caso contrario, pular pra prox-->
-
             <% @all_bars.each do |destaque| %>
 
                 <% destaque_name =  destaque.name %>
                 <% title =  "" %>
+
+
+                <!--todo now - verificar aqui se a categoria possui algum bar, se possuir, colokr nome da categoria, caso contrario, pular pra prox-->
+
 
                 <!--7 estabelecimentos da categoria-->
                 <div class="principal-destaques">
