@@ -26,6 +26,10 @@ ActiveAdmin.register HomeBar do
         #se tiver algum dado obrigatorio n preenchido, dah msg d erro informando e falar q n foi possivel fazer a alteração
 
         link_to I18n.t('activerecord.attributes.home_bar.activate')
+        #link_to('Ativar', change_home_bar_status(1))
+
+
+        #link_to (record.bar_pending? ? I18n.t('activerecord.attributes.home_bar.activate') : I18n.t('activerecord.attributes.home_bar.keep_pending')), change_status_admin_home_bar_path(record), :method => :put, :data => { :confirm => "Deseja alterar o status deste estabelecimento?" }, :class => "member_link view_link"
 
 
 
@@ -76,8 +80,7 @@ ActiveAdmin.register HomeBar do
   form :html => {:enctype => "multipart/form-data"} do |f|
     f.inputs I18n.t("activerecord.attributes.home_bar.general_information"), :multipart => true do
       f.input :status,   :include_blank => false
-      #todo now - na hr d editar deve pegar só as categorias ativas?
-      f.input :category, :include_blank => false, :collection => Category.active
+      f.input :category, :include_blank => false, :collection => Category.all
       f.input :name
       f.input :description, :as => :text, :input_html => { :maxlength => 227, :style => "resize:none" }
       f.input :logo_bar_image

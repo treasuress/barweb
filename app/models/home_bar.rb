@@ -3,10 +3,12 @@ class HomeBar < ActiveRecord::Base
                   :address, :number, :complement, :zip, :neighborhood, :category_id, :status_id,
                   :country_id, :state_id, :city_id
 
-  belongs_to :principal  #todo now - aih akih n teria isso pq a cidad teria
+  #todo now - verificar se as relações aqui estão iguais as do banco
   belongs_to :category
   belongs_to :status
   belongs_to :city
+  belongs_to :state
+  belongs_to :country
 
   validates_presence_of :name, :address, :number, :neighborhood, :country_id, :state_id, :city_id, :category_id, :status_id
 
@@ -38,6 +40,7 @@ class HomeBar < ActiveRecord::Base
 
 
   #todo now seb - tentar n dxar fixo - buscar pelo nome do arquivo d traducoes e fazer join com a tabela de status
+  #ou usar as buscar no Status
   #Status dos Estabelecimentos
   def bar_active?
     status_id == 1
@@ -49,6 +52,24 @@ class HomeBar < ActiveRecord::Base
 
   def bar_pending?
     status_id == 3
+  end
+
+  #todo now - ver se consigo mudar status do bar com isso
+  def self.change_home_bar_status(status_id)
+    #self.status_id == status_id
+
+    home_bar_by_status = HomeBar.find_or_initialize_by_status_id [:status_id]
+    home_bar_by_status = status_id
+    #self.status_id == status_id
+  end
+
+  #todo now - assim q eh feita mudanca d status da principal, dev ajudar em algo
+  def change_status!
+    self.active = !self.active?
+    save!
+  end
+  def active_status_name
+    self.bar_pending? ? I18n.t('activerecord.attributes.home_bar.activate') : I18n.t('activerecord.attributes.home_bar.keep_pending')
   end
 
   #Principal
