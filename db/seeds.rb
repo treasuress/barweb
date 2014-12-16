@@ -94,7 +94,7 @@ As comidas, bebidas, músicas e decoração mudam de acordo com a bandeira içad
                         :address => "logradouro bar 11", :number => "1123",
                         :neighborhood => "bairro bar 11", :complement => "complemento bar 11" },
 
-                       #todo now - apostrofe de nome tá atrapalhando na busca City.find_by_home_bar
+                       #todo seb now - apostrofe de nome tá atrapalhando na busca City.find_by_home_bar
                        ##Sem descrição, cep, telefone e complemento - bar 1
                        #{:status_id => 1, :category_id => 1, :name => "Rock'n Beer",
                        # :logo_bar_image => File.open('public/home_bars/bar2.png'),

@@ -3,7 +3,7 @@ class State < ActiveRecord::Base
 
   belongs_to :country
   has_many :cities
-  has_many :home_bars
+  has_many :home_bars   #todo now - ver se precisa disso - se precisar, add no bd
 
   validates_presence_of :iso, :name
 
