@@ -1,11 +1,11 @@
 class ContactMailer < ActionMailer::Base
-  #todo rodar - seu email aqui (quem está enviando)
+  #todo rodar - seu email aqui (quem está enviando o erro)
   #todo now - testar colokr akih @contact.email
   default from: "email"
 
   def contact_message(contact)
     @contact = contact
-    #todo rodar - colokr seu email pra poder ver resultado
+    #todo rodar - colokr seu email - para poder ver resultado
     mail(:to => 'siac.bar@gmail.com', :subject => @contact['subject'])
   end
 

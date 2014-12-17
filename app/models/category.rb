@@ -34,6 +34,8 @@ class Category < ActiveRecord::Base
   #todo now - talvez precise d relacionar com bar para a categoria n ficar vazia qndo aparecer
   def self.getCategoryWithCity(city_id)
     find_by_sql("select * from cities city, categories c where c.active = true and city.id = #{city_id} group by c.name")
+    #select("*").from("cities city, categories c").where(:active => true, :'city.id' => city_id).group_by(:'categories.name')
+    #active.joins('cities').where(:'city.id' => city_id).group_by(:name)
   end
 
 end
