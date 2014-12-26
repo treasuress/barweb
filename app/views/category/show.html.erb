@@ -29,7 +29,6 @@
 
           <a href="<%= home_bar_path(params[:city_name], destaque.name) %>">
 
-            <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
             <% if destaque.logo_bar_image_file_size.nil? %>
                 <% if destaque.name.length >= 17 %>
                     <% title =  destaque_name %>

@@ -19,7 +19,6 @@
       <h1><%= @current_bar.name %></h1>
 
       <div class="info-bar">
-          <!-- todo now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
           <% if @current_bar.logo_bar_image_file_size.nil? %>
               <img src="<%= image_path "bar0.jpg" %>" class="no-image" alt="<%= @current_bar.name %>" />
           <% else %>

@@ -8,10 +8,8 @@ class Principal < ActiveRecord::Base
 
   validates_attachment_presence :logo_image, :gallery_image, :events_image, :contact_image, :follow_fb_image, :follow_tw_image
 
-  #todo now - colokr tamanho certo da logo
-  #todo now - principal parece q só eh usada d um tamanho (conferir) 100x150
   has_attached_file :logo_image,
-                    :styles => {:medium => "1000x150#", :thumb => "100x100#"},
+                    :styles => {:medium => "1000x150#"},
                     :url => "/assets/principals/:id/images/logo_:style.:extension",
                     :path => ":rails_root/public/assets/principals/:id/images/logo_:style.:extension"
   has_attached_file :gallery_image,

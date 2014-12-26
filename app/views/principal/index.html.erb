@@ -78,7 +78,6 @@
 
                   <a href="<%= home_bar_path(get_current_city_by_home_bar(destaque.name), destaque.name)%>" alt="<%= destaque.name %>" >
 
-                    <!-- todo seb now - adicionar img certa na pasta - do tamanho certo pra essa pagina -->
                     <% if destaque.logo_bar_image_file_size.nil? %>
                         <% if destaque.name.length >= 17 %>
                             <% title =  destaque_name %>
@@ -106,7 +105,6 @@
                 <% category_name =  category.name %>
                 <% title =  "" %>
 
-                <!-- todo seb now - add img certa na pasta - do tamanho certo pra essa pagina -->
                 <% if category.category_image_file_size.nil? %>
                     <% if category.name.length >= 17 %>
                         <% title =  category_name %>
