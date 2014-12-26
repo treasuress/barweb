@@ -41,9 +41,11 @@ if Rails.env.development?
     Category.create([
                       {:active => true, :name => "Bares",        :description => "Todos os Bares",        :category_image => File.open('public/categories/category1.jpg') },
 
-                      {:active => true, :name => "Restaurantes", :description => "Todos os Restaurantes", :category_image => File.open('public/categories/category2.jpg') },
+                      {:active => true, :name => "Pizzarias",    :description => "Todos as Pizzarias",    :category_image => File.open('public/categories/category2.jpg') },
 
-                      {:active => true, :name => "Pizzarias",    :description => "Todos as Pizzarias",    :category_image => File.open('public/categories/category2.jpg') }
+                      {:active => true, :name => "Restaurantes", :description => "Todos os Restaurantes", :category_image => File.open('public/categories/category3.jpg') }
+
+
 
                   ], :without_protection => true)
   end
@@ -95,12 +97,13 @@ As comidas, bebidas, músicas e decoração mudam de acordo com a bandeira içad
                         :neighborhood => "bairro bar 11", :complement => "complemento bar 11" },
 
                        #todo seb now - apostrofe de nome tá atrapalhando na busca City.find_by_home_bar
-                       ##Sem descrição, cep, telefone e complemento - bar 1
-                       #{:status_id => 1, :category_id => 1, :name => "Rock'n Beer",
-                       # :logo_bar_image => File.open('public/home_bars/bar2.png'),
-                       # :country_id => 1, :state_id => 1, :city_id => 2,
-                       # :address => "Av. Floriano Peixoto", :number => "18",
-                       # :neighborhood => "Centro" },
+                       #todo now - mudar status para ativo qndo resolver prob da apostrofe
+                       #Sem descrição, cep, telefone e complemento - bar 1
+                       {:status_id => 2, :category_id => 1, :name => "Rock'n Beer",
+                       :logo_bar_image => File.open('public/home_bars/bar2.png'),
+                       :country_id => 1, :state_id => 1, :city_id => 2,
+                       :address => "Av. Floriano Peixoto", :number => "18",
+                       :neighborhood => "Centro" },
 
                        #Sem descrição, cep, telefone e complemento - bar 2
                        {:status_id => 1, :category_id => 2, :name => "Othello Bar e Restaurante",
